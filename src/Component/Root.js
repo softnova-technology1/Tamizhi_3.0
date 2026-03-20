@@ -1,0 +1,132 @@
+import { Outlet, useLocation } from 'react-router-dom';
+import Footer from './Home/Footer';
+import ScrollToTop from './ScrollToTop';
+import styles from '../Stylesheet/Root.module.css';
+import Login from './LoginDetails/Login';
+import { useContext, useEffect, useState } from 'react';
+import { Context } from '../Context/contextApi';
+import { Container, Row, Col } from 'react-bootstrap';
+import TopNavBar from './TopNavBar';
+import ScrollToTopComponent from './ScrollToTopComponent';
+import Spinner from './Spinner';
+export default function Root() {
+  const {
+    tokenContext,
+    changeDarkMode,
+    navopen,
+    handleNavOpen,
+    sticky,
+    handleSticky,
+    darkmode,
+    loading,
+    handleMobileView,
+  } = useContext(Context);
+
+  const [showModal, setShowModal] = useState(false);
+  const location = useLocation();
+  function handleDarkmode(value) {
+    changeDarkMode(value);
+  }
+  function handleModal() {
+    setShowModal((pre) => !pre);
+  }
+  const modalView = showModal && (
+    <div className={styles.modalOverlay}>
+      <div className={styles.modal}>
+        <div className={styles.modalContainer}>
+          <div className={styles.modalTop}>
+            <span
+              onClick={() => setShowModal(false)}
+              style={{ fontSize: '2.5rem' }}
+            >
+              &times;
+            </span>
+          </div>
+          <div className={styles.modalBody}>
+            <Login homePage={true} handleModal={handleModal} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+  useEffect(() => {
+    document.addEventListener('scroll', (event) => {
+      handleSticky();
+    });
+    return () => {
+      document.removeEventListener('scroll', (event) => {
+        handleSticky();
+      });
+    };
+  }, [handleSticky]);
+  useEffect(() => {
+    if (!tokenContext) {
+      const timer = setTimeout(() => {
+        setShowModal(true);
+      }, 300000);
+      return () => clearTimeout(timer);
+    } else {
+      return;
+    }
+  }, [tokenContext]);
+  useEffect(() => {
+    handleMobileView();
+  }, [handleMobileView]);
+  return location.pathname !== '/' ? (
+    <>
+      <ScrollToTop />
+      <ScrollToTopComponent />
+      <Container
+        style={{
+          margin: 0,
+          maxWidth: '100%',
+          padding: 0,
+          height: navopen ? '100vh' : '',
+          overflow: navopen ? 'hidden' : '',
+        }}
+      >
+        <Row
+          style={{ maxWidth: '100%', margin: 0, padding: 0 }}
+          className={sticky ? `${styles.sticky}` : ''}
+        >
+          <Col xs={12} sm={12} md={12} style={{ padding: 0 }}>
+            <TopNavBar
+              handleNavClick={handleNavOpen}
+              handleDarkmode={handleDarkmode}
+              darkmode={darkmode}
+              navopen={navopen}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={12}>
+            <Container
+              className={styles.container}
+              style={{
+                opacity: navopen ? 0.5 : '',
+              }}
+            >
+              <Row>
+                <Outlet /> <div>{modalView}</div> <Footer />
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  ) : (
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <ScrollToTop />
+          <ScrollToTopComponent />
+          <Outlet />
+          <div>{modalView}</div>
+          <Footer />
+        </>
+      )}
+    </>
+  );
+}

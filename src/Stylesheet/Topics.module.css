@@ -1,0 +1,249 @@
+.topicsSection {
+    /* background-color: var(--bg-light); */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.languageSwitch {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    background: var(--bg-light);
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.langLabel {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.toggleBox {
+    width: 50px;
+    height: 24px;
+    background-color: #eee;
+    border: 2px solid var(--primary);
+    border-radius: 999px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.moveRight {
+    left: calc(100% - 20px);
+}
+
+.viewAll {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.viewAll:hover {
+    color: var(--primary-hover);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    grid-template-rows: auto auto;
+}
+
+.smallGrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 400px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.smallCard {
+    min-height: 200px;
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chola {
+    background-image: url('../Component/Homes/chola_carvings.png');
+}
+
+.historical {
+    background-image: url('../Component/Homes/historical_ruins.png');
+}
+
+.pandyan {
+    background-image: url('../Component/Homes/pandyan_temple.png');
+}
+
+.tamilar {
+    background-image: url('../Component/Homes/tamilar_culture.png');
+    /* Illustration-like */
+}
+
+.tamilarSmall {
+    background-image: url('../Component/Homes/tamilar_culture.png');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+.overlayLight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    color: var(--light);
+}
+
+.content h3 {
+    font-size: 2rem;
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+.content p {
+    color: #ddd;
+    margin-bottom: 2rem;
+    max-width: 80%;
+    font-size: 16px !important;
+}
+
+.btn {
+    background-color: var(--light);
+    color: var(--darker);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 999px;
+    align-self: flex-start;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+}
+
+.contentBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 2rem;
+    color: var(--light);
+}
+
+.contentBottom h3 {
+    color: var(--light);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+.contentBottom p{
+    font-size: 16px !important;
+
+}
+.smallDesc {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+    max-width: 95%;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.exploreLink {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.hugeText {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,460 @@
+{
+  "culture": {
+    "id": 1,
+    "title": "Culture",
+    "subTitle": [
+      {
+        "subHeading": "People of TamilNadu",
+        "data": [
+          {
+            "title": "People of TamilNadu",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/1.People+of+TamilNadu.jpg",
+                "name": "culture+and+tradition"
+              }
+            ],
+            "description": [
+              "Out of 74 million Tamil people in the world, around 62 million live in Tamil Nadu. Rest of the Tamilians are scattered in different parts of India and the world, mostly in the northeast of Sri Lanka. People who live in the state understand the ethnicity of their culture and how it marks their identity in the world. They are very adherent towards their rituals and traditions like following the caste system, religion and community traits, etc.",
+              "Tamil is the official language of the state. It is a derivative of Brahmi script, and the letters represent sounds, much like the Mandarin language. Not only most of the people in Tamil Nadu speak Tamil, but it is also spoken by many in Sri Lanka, Mauritius, Singapore, and Malaysia."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Religion",
+        "data": [
+          {
+            "title": "Religion",
+            "image": [],
+            "description": [
+              "When it comes to personal identity, a person's religion is accorded a lot of weight. While Hindus make up four-fifths of the state's population, the remaining individuals are split between Islam, Christianity, and Jainism. They worship gods and practice animism, which includes worshiping trees, animals, and the stars and planets. Numerous Hindus are adherents of various religious establishments known as Matha, which serve as hubs for monastic education."
+            ]
+          },
+          {
+            "title": "Religion and Spiritual in TamilNadu",
+            "image": [],
+            "description": [
+              "Tamil Nadu, a state in southern India, is renowned for its rich cultural heritage and deeply rooted spiritual traditions. The religious identity of its people is multifaceted, reflecting a harmonious blend of ancient practices, philosophical schools, and modern beliefs. Religion in Tamil Nadu is not just a personal matter but an integral part of social and cultural life, influencing art, architecture, festivals, and daily routines."
+            ]
+          },
+          {
+            "title": "Hinduism: The Dominant Faith",
+            "image": [],
+            "description": [
+              "Hinduism is the predominant religion in Tamil Nadu, with approximately 80% of the population adhering to its principles and practices. The state is home to some of the oldest temples in the world, including the Meenakshi Amman Temple in Madurai, Brihadeeswarar Temple in Thanjavur, and Rameswaram Temple. These temples are not only places of worship but also centers of cultural and artistic expression, attracting millions of devotees and tourists annually.",
+              "Hinduism in Tamil Nadu is diverse, encompassing various sects, including Shaivism, Vaishnavism, and Shaktism. Shaivism, the worship of Lord Shiva, is particularly prominent, with numerous temples dedicated to this deity. Vaishnavism, centered on the worship of Lord Vishnu and his avatars, also has a significant following. Shaktism, which venerates the goddess in her various forms, is celebrated through festivals like Navaratri.",
+              "The concept of Matha or monastic institutions is integral to Tamil Nadu's religious landscape. These establishments serve as hubs of spiritual education, philosophical discourse, and community service. They are instrumental in preserving and propagating traditional knowledge systems, including ancient Tamil literature and Vedic scriptures."
+            ]
+          },
+          {
+            "title": "Other Religions in TamilNadu",
+            "image": [],
+            "description": [
+              "While Hinduism dominates, Tamil Nadu is also home to a vibrant mix of other religions, including Islam, Christianity, and Jainism."
+            ]
+          },
+          {
+            "title": "Islam",
+            "image": [],
+            "description": [
+              "Muslims constitute a significant minority in Tamil Nadu. The state has several historic mosques, such as the Thousand Lights Mosque in Chennai and the Kazimar Big Mosque in Madurai. Islamic practices and traditions contribute to the cultural diversity of the region, with festivals like Eid and Ramadan celebrated with enthusiasm."
+            ]
+          },
+          {
+            "title": "Christianity",
+            "image": [],
+            "description": [
+              "Christianity has a long history in Tamil Nadu, tracing back to the arrival of St. Thomas, one of the twelve apostles of Jesus, in the 1st century CE. The state boasts ancient churches like the Santhome Basilica in Chennai and the Velankanni Church, a popular pilgrimage site. Christian institutions have also played a crucial role in education and healthcare."
+            ]
+          },
+          {
+            "title": "Jainism",
+            "image": [],
+            "description": [
+              "Jainism has a historical presence in Tamil Nadu, particularly in regions like Madurai and Kanchipuram. Jain temples, such as the ones in Sittanavasal and Gingee, reflect the religion's emphasis on non-violence, asceticism, and spiritual purity."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Traditional Dress",
+        "data": [
+          {
+            "title": "Traditional Dress",
+            "image": [],
+            "description": [
+              "Men can be seen wearing a Lungi with a shirt and Angavastra. Lungi is a rectangular cotton cloth tied across the waist, and Angavastra is a cloth draped around the shoulders. It can be worn over or without a shirt. Some people may also wear dhoti which is a long form of Lungi, the bottom of which is mostly stuck at the waist. Men also wear Vibhuti on their foretitle.",
+              "The saree, a rectangular garment of five to six yards composed of cotton, silk, or any other fabric, is the primary garment worn by Tamil Nadu women. The fabric and customs of the culture determine the prints, style, and design. Kanchipuram Sarees are frequently worn during festivals. Young girls dress in half-sarees, which consist of a long skirt, blouse, and dupatta that stretches from the waist to the shoulders. Salwar kameez and even western attire are popular these days. "
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Tamil Cuisine",
+        "data": [
+          {
+            "title": "Tamil Cuisine",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/4.Tamil+Cuisine.jpg",
+                "name": "amazonaws.com"
+              }
+            ],
+            "description": [
+              "The primary components of Tamil cuisine are vegetables, grains, rice, and lentils. Here, rice is a basic food. Almost everything is served with sambar and coconut chutney, and you know what? Idli, Dosa, Sambhar, Vada, Upma, and other dishes are the first that spring to mind when you think of South Indian food. It is a common Madrasi dish among North Indians. Both vegetarians and non-vegetarians enjoy Tamil cuisine. Otherwise, they go well with most of them. Mutton, venison, fish, and turtle are the favorite meats for non-vegetarians. Even today, some Tamilians continue the custom of eating banana leaves."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Tamilians Music and Dance",
+        "data": [
+          {
+            "title": "Tamilians Music and Dance",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/5.Tamilians+Music+and+Dance+1.jpg",
+                "name": "Tamilians+1"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/5.Tamilians+Music+and+Dance+2.jpg",
+                "name": "Tamilians+2"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/5.Tamilians+Music+and+Dance+3.jpg",
+                "name": "Tamilians+3"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/5.Tamilians+Music+and+Dance+4.jpg",
+                "name": "Tamilians+4"
+              }
+            ],
+            "description": [
+              "Tamil Music has evolved over the years. The most important form of music was the Carnatic music which considered only for the elite who could understand the intricacy of music. For others, Telugu songs and a mix of traditional numbers from a source of entertainment.",
+              "Bharatnatyam is the official dance form of Tamil Nadu, recognized all over India and the world. It's a complicated dance form with subtle moves of body parts and expressions. Some other folk dances like descriptioni, Villupattu Karakaatam, and Kuthu are also performed by local people including tribal people."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Art and Craft",
+        "data": [
+          {
+            "title": "Art and Craft",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+1.jpg",
+                "name": "Art+and+Craft+1"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+2.jpg",
+                "name": "Art+and+Craft+2"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+3.jpg",
+                "name": "Art+and+Craft+3"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+4.jpg",
+                "name": "Art+and+Craft+4"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+5.jpg",
+                "name": "Art+and+Craft+5"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+6.jpg",
+                "name": "Art+and+Craft+6"
+              }
+            ],
+            "description": [
+              "The art and craft of Tamil people are a vibrant reflection of their rich culture, history, and traditions. Rooted in centuries-old practices, Tamil art and craft showcase the creativity and skill of artisans who have preserved their heritage while adapting to contemporary influences. These art forms are deeply intertwined with daily life, religion, and festivals, making them an essential part of Tamil Nadu’s identity.",
+              "Tamil Nadu is known for its Tanjore paintings, a classical South Indian painting style characterized by rich colors, compact composition, and glittering gold foil. These paintings, often depicting Hindu deities, are adorned with semi-precious stones and intricate designs. Originating in the temple town of Thanjavur, they are an expression of devotion and artistic excellence."
+            ]
+          },
+          {
+            "title": "Kolam",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+7.jpg",
+                "name": "Art+and+Craft+7"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+8.jpg",
+                "name": "Art+and+Craft+8"
+              }
+            ],
+            "description": [
+              "Another notable art form is Kolam, a traditional decorative art created using rice flour or powdered colors. Tamil women draw these geometric patterns and motifs at the entrance of their homes every morning, symbolizing prosperity and harmony."
+            ]
+          },
+          {
+            "title": "Sculpture and Architecture ",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+9.jpg",
+                "name": "Art+and+Craft+9"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+10.jpg",
+                "name": "Art+and+Craft+10"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+11.jpg",
+                "name": "Art+and+Craft+11"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+12.jpg",
+                "name": "Art+and+Craft+12"
+              }
+            ],
+            "description": [
+              "Sculpture and Architecture are also significant aspects of Tamil art. The intricately carved temple gopurams (tower gateways) and statues of gods and goddesses are prime examples. The Brihadeeswarar Temple in Thanjavur and the Meenakshi Temple in Madurai are iconic landmarks showcasing the artistry of Tamil sculptors.",
+              "Tamil Nadu's handicrafts are as diverse as its culture. Bronze casting, an age-old craft, stands out for its precision and beauty. The Chola bronzes, particularly the Nataraja statues, are renowned worldwide for their aesthetic appeal and spiritual significance."
+            ]
+          },
+          {
+            "title": "Wood carving",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+13.jpg",
+                "name": "Art+and+Craft+13"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+14.jpg",
+                "name": "Art+and+Craft+14"
+              }
+            ],
+            "description": [
+              "Wood carving is another traditional craft practiced in Tamil Nadu, often seen in temple doors, chariots, and decorative household items. The delicate workmanship demonstrates the artisans' expertise in creating intricate patterns and religious motifs."
+            ]
+          },
+          {
+            "title": "Poompuhar handicrafts",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+15.jpg",
+                "name": "Art+and+Craft+15"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+16.jpg",
+                "name": "Art+and+Craft+16"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+17.jpg",
+                "name": "Art+and+Craft+17"
+              }
+            ],
+            "description": [
+              "The Poompuhar handicrafts include products like papier-mâché dolls, terracotta sculptures, and metal artifacts. These crafts are celebrated for their uniqueness and are often purchased as souvenirs by tourists."
+            ]
+          },
+          {
+            "title": "Kanchipuram silk sarees",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+18.jpg",
+                "name": "Art+and+Craft+18"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/6.Art+and+Craft+19.jpg",
+                "name": "Art+and+Craft+19"
+              }
+            ],
+            "description": [
+              "The Tamil weaving tradition is epitomized by the Kanchipuram silk sarees, considered one of the finest handwoven textiles in India. These sarees are characterized by their vibrant colors, gold zari work, and durability. Each piece is a labor of love, taking several days to complete.",
+              "Other notable textile crafts include Chettinad cotton sarees and Madurai Sungudi sarees, known for their distinctive patterns and affordability. Tamil Nadu’s weaving communities continue to keep these traditions alive, blending heritage with contemporary styles."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Culture Festival of Tamil Nadu",
+        "data": [
+          {
+            "title": "Culture Festival of Tamil Nadu",
+            "image": [],
+            "description": [
+              "The state's most important and well-known cultural event is Pongal. The festival, which takes place in January and is a celebration of thankfulness for the Harvest, is sometimes referred to as the state's Harvest festival. The event lasts for four days, and each day has a special meaning. The first day is known as Bhogi Pongal, and the second day is Surya Pongal, when traditional attire is worn. The famed Jallikattu event takes place on the third day of the festival, known as Mattu Pongal, and the festivities come to a close on the last day, Kaanum Pongal."
+            ]
+          },
+          {
+            "title": "Puthandu",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/7.Culture+Festival+of+Tamil+Nadu+1.jpg",
+                "name": "Culture+Festival+of+1"
+              }
+            ],
+            "description": [
+              "Observed in April, Puthandu marks the beginning of the Tamil calendar year. Families celebrate by preparing special meals and visiting temples."
+            ]
+          },
+          {
+            "title": "Bhogi Pongal",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/7.Culture+Festival+of+Tamil+Nadu+2.jpg",
+                "name": "Culture+Festival+of+2"
+              }
+            ],
+            "description": [
+              "The festival begins with Bhogi Pongal, a day dedicated to Lord Indra, the Rain God, whose blessings are essential for a good harvest. On this day, people engage in cleaning and decluttering their homes, discarding old and unwanted items in bonfires. This practice symbolizes discarding the old to make way for the new. Homes are decorated with intricate kolams (rangoli) drawn using rice flour, signifying prosperity and welcoming positive energy."
+            ]
+          },
+          {
+            "title": "Surya Pongal",
+            "image": [],
+            "description": [
+              "The second day, Surya Pongal, is the most important and is devoted to the Sun God. Traditional Pongal dishes are prepared using freshly harvested rice, milk, and jaggery. The cooking is performed outdoors in clay pots, allowing the overflowing of the dish to signify abundance and prosperity. Families dress in traditional attire, with women wearing vibrant silk sarees and men in dhotis, adding to the festive spirit. Prayers and offerings are made to the Sun God, thanking him for sustaining life on earth."
+            ]
+          },
+          {
+            "title": "Mattu Pongal",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/7.Culture+Festival+of+Tamil+Nadu+4.jpg",
+                "name": "Culture+Festival+of+3"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/7.Culture+Festival+of+Tamil+Nadu+5.jpg",
+                "name": "Culture+Festival+of+4"
+              }
+            ],
+            "description": [
+              "The third day, Mattu Pongal, celebrates the contribution of cattle, particularly cows and bulls, in agriculture. Cows are bathed, adorned with garlands, and their horns painted in bright colors. They are worshipped and fed with special treats like jaggery, bananas, and sugarcane. A highlight of this day is the famed Jallikattu, a traditional bull-taming sport that showcases the courage and valor of participants. This event is deeply rooted in Tamil heritage and is a major attraction during Pongal."
+            ]
+          },
+          {
+            "title": "Kaanum Pongal",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/7.Culture+Festival+of+Tamil+Nadu+6.jpg",
+                "name": "Culture+Festival+of+5"
+              }
+            ],
+            "description": [
+              "The festival concludes with Kaanum Pongal, a day for socializing and bonding. Families and friends gather for picnics, share festive meals, and visit elders to seek blessings. It is also a day of thanksgiving, where people express gratitude to nature, animals, and fellow human beings for their contributions to the cycle of life."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Hospitality",
+        "data": [
+          {
+            "title": "Hospitality",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/8.Hospitality+1.jpg",
+                "name": "Hospitality+1"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/8.Hospitality+2.jpg",
+                "name": "Hospitality+2"
+              }
+            ],
+            "description": [
+              "The Tamil people are renowned for their exceptional hospitality, deeply rooted in their culture and traditions. Hospitality in Tamil Nadu is not merely a practice but a way of life, reflecting the region's ethos of warmth, generosity, and respect for others. Tamils believe in the ancient adage Virundhombal One of the defining aspects of Tamil hospitality is the welcoming atmosphere extended to guests. From the moment someone enters a Tamil home, they are greeted with heartfelt smiles and treated with utmost care. Hosts often ensure their guests are comfortable, offering refreshments and engaging conversations. Serving delicious food is an integral part of this experience, as Tamils take great pride in their culinary traditions. Guests are treated to traditional dishes like sambar, rasam, Idli, and Payasam, often served on banana leaves, symbolizing purity and respect.",
+              "In Tamil Nadu, festivals and celebrations further highlight their hospitality. During Pongal, Diwali, or weddings, people go the extra mile to ensure their guests feel valued and included. The spirit of sharing and togetherness during such occasions exemplifies the Tamil way of fostering relationships.",
+              "Hospitality extends beyond homes; it is visible in Tamil Nadu's temples, cultural events, and even public interactions. Whether it's offering water to travelers, sharing meals with strangers, or guiding tourists, Tamil people are known for their genuine kindness and willingness to help.",
+              "The hospitality of Tamil people reflects their values of humility, respect, and community, making visitors feel not just welcomed but cherished. This timeless tradition continues to leave a lasting impression on anyone fortunate enough to experience it."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Architecture",
+        "data": [
+          {
+            "title": "Architecture",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/9.Architecture+1.jpg",
+                "name": "Architecture+1"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/9.Architecture+2.jpg",
+                "name": "Architecture+2"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/9.Architecture+3.jpg",
+                "name": "Architecture+3"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/9.Architecture+4.jpg",
+                "name": "Architecture+4"
+              }
+            ],
+            "description": [
+              "Tamil architecture is a testament to the ingenuity, spirituality, and artistic excellence of the Tamil people. Rooted in ancient traditions, it reflects a harmonious blend of functionality, aesthetics, and cultural significance. Spanning thousands of years, Tamil architecture has evolved through dynasties like the Cholas, Pandyas, and Pallavas, leaving behind an enduring legacy.",
+              "One of the most iconic aspects of Tamil architecture is its magnificent temples. These temples are not merely places of worship but also hubs of art, culture, and social interaction. Temples like the Brihadeeswarar Temple in Thanjavur, Meenakshi Amman Temple in Madurai, and Shore Temple in Mahabalipuram are renowned for their grandeur and intricate designs. These structures showcase precise geometric layouts, towering gopurams (gateway towers), and exquisite carvings that narrate stories from Hindu mythology.",
+              "The use of stone and granite is a hallmark of Tamil architecture, highlighting the advanced skills of ancient artisans. The temples often incorporate vastu shastra principles, ensuring harmony with the natural elements. The interiors feature ornate pillars, detailed frescoes, and sculptures of deities, animals, and celestial beings, each with symbolic meanings.",
+              "Tamil secular architecture is equally impressive. Palaces like the Thirumalai Nayakkar Mahal in Madurai and the Chettinad mansions of Karaikudi reflect opulence, with intricate woodwork, vibrant murals, and sprawling courtyards. The Chettinad region is particularly famous for its unique blend of Tamil and colonial influences, evident in its architecture.",
+              "Tamil architecture also respects sustainability, as seen in traditional homes designed for natural ventilation and efficient use of resources.",
+              "From ancient temples to modern adaptations, Tamil architecture stands as a symbol of cultural identity and artistic brilliance. It continues to inspire awe and admiration, embodying the spirit and heritage of the Tamil people."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Tamilargalin Veera vilayattukal",
+        "data": [
+          {
+            "title": "Tamilargalin Veera vilayattukal",
+            "image": [],
+            "description": [
+              "Tamilargalin Veera Vilayattu, or the heroic sports of the Tamil people, is a vibrant expression of their valor, physical prowess, and cultural heritage. These traditional sports, deeply rooted in Tamil Nadu's history, are more than recreational activities—they symbolize bravery, community spirit, and an enduring connection to Tamil traditions.",
+              "Tamilargalin veera vilayattu transcends mere physical competition. These sports foster unity, celebrate heritage, and uphold values of respect, resilience, and responsibility. They continue to be cherished traditions that honor Tamil Nadu’s rich cultural legacy, inspiring both participants and spectators with their spirit of bravery and excellence."
+            ]
+          },
+          {
+            "title": "Jallikattu",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/10.Tamilargalin+Veera+vilayattukal+1.jpg",
+                "name": "Tamilargalin+Veera+vilayattukal+1"
+              }
+            ],
+            "description": [
+              "One of the most iconic veera vilayattu is Jallikattu, the traditional bull-taming sport. Held during the harvest festival of Pongal, particularly on Mattu Pongal, Jallikattu is celebrated with great enthusiasm in rural Tamil Nadu. Participants display extraordinary courage as they attempt to tame ferocious bulls without causing harm. The event highlights the bond between humans and animals while showcasing the strength, skill, and determination of the participants.",
+              "In addition to these, games like Kabaddi and traditional wrestling are also prominent in Tamil culture, promoting teamwork, endurance, and strategic thinking."
+            ]
+          },
+          {
+            "title": "Silambam",
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/10.Tamilargalin+Veera+vilayattukal+3.jpg",
+                "name": "Tamilargalin+Veera+vilayattukal+3"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/10.Tamilargalin+Veera+vilayattukal+2.jpg",
+                "name": "Tamilargalin+Veera+vilayattukal+2"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/10.Tamilargalin+Veera+vilayattukal+4.jpg",
+                "name": "Tamilargalin+Veera+vilayattukal+4"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/culture+and+tradition/10.Tamilargalin+Veera+vilayattukal+5.jpg",
+                "name": "Tamilargalin+Veera+vilayattukal+5"
+              }
+            ],
+            "description": [
+              "Another notable sport is Silambam, an ancient martial art practiced with bamboo sticks. Originating as a form of self-defense, Silambam emphasizes agility, precision, and technique. It is not only a demonstration of combat skills but also a cherished art form that has been passed down through generations."
+            ]
+          },
+          {
+            "title": "Eruthu Vidum Vizha",
+            "image": [],
+            "description": [
+              "Eruthu Vidum Vizha (bull races) is another thrilling sport, where bulls are raced over short distances, reflecting the community's agricultural roots and the importance of cattle in Tamil life. This sport is a test of speed, stamina, and the bond between the bull and its handler."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

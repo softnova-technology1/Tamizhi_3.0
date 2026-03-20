@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spin buttons in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+body {
+  line-height: 1.5;
+  font-family: sans-serif;
+  letter-spacing: 1;
+  width: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+p {
+  font-size: 1rem; /* Resetting to standard 16px */
+}
+@media (max-width: 1000px) {
+  html {
+    font-size: 87.5%; /* Compares to ~14px on small screens */
+  }
+}
+:root {
+  --primary: #facc15;
+  --primary-hover: #eab308;
+  --dark: #111827;
+  --darker: #020617;
+  --light: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-dark: #1e293b;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --max-width: 1280px;
+}
+.section-padding {
+  padding: 5rem 0;
+}
+.containers {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+/* Utilities */
+.btn-primarys {
+  background-color: var(--primary);
+  color: var(--darker);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primarys:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(250, 204, 21, 0.4);
+}
+
+.btn-secondarys {
+  background-color: transparent;
+  color: var(--darker);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  border: 2px solid var(--darker);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-secondarys:hover {
+  background-color: var(--darker);
+  color: var(--light);
+  transform: translateY(-2px);
+}

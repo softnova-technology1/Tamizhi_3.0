@@ -1,0 +1,761 @@
+{
+  "excavation": {
+    "id": 1,
+    "title": "Excavation",
+    "description": [
+      "Excavation is an enthralling voyage into the layers of history, where buried remnants of past civilizations whisper forgotten tales. This meticulous process of uncovering artifacts, structures, and ancient relics serves as a bridge to the bygone eras, revealing the origins of cultures, the evolution of societies, and the ingenuity of our ancestors. Beyond the tangible discoveries, excavation offers profound insights into the human spirit, resilience, and creativity, piecing together the intricate puzzle of our shared heritage. It inspires a deeper connection to our roots, influencing modern understanding of identity and history, while fueling imagination and wonder for what lies beneath."
+    ],
+    "subTitle": [
+      {
+        "subHeading": "Attirambakkam",
+        "data": [
+          {
+            "title": "Attirambakkam",
+            "description": [
+              "Athirampakkam is a historic village situated near the Kortallaiyar River, approximately 60 kilometers from Chennai, Tamil Nadu, India. This site holds immense archaeological significance as one of the earliest known locations in India where Paleolithic stone tools were discovered. The findings include hand axes, cleavers, scrapers, and flakes, which date back to the Paleolithic Era, specifically associated with the Madrasian culture.",
+              "The archaeological explorations at Athirampakkam were conducted between 1863 and 1866 by Robert Bruce Foote and William King, making it one of the earliest documented prehistoric sites in the country. These discoveries not only highlight the region’s importance in early human history but also established the foundation for Paleolithic research in South Asia. The tools and artefacts uncovered at Athirampakkam reflect the technological and cultural advancements of early human populations."
+            ],
+            "details": [
+              "Location: Athirampakkam",
+              "Village: Athirampakkam",
+              "District: Thiruvallur",
+              "Category: Stone Tools",
+              "Artefacts Found: Hand axes, cleavers, scrapers, and flakes",
+              "Cultural Period: Paleolithic Era",
+              "Period of Discovery: 1863–1866",
+              "Discoverer/Institution: Robert Bruce Foote and William King"
+            ],
+            "persons": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.1.+Robert+Bruce+Foote.jpg",
+                "name": "Robert+Bruce+Foote.jpg",
+                "imgTitle": "Robert Bruce Foote",
+                "dob": "22 September 1834 – 29 December 1912",
+                "content": "Robert Bruce Foote was a renowned British geologist and archaeologist, celebrated as the 'Father of Indian Prehistory' for his pivotal contributions to the understanding of India's ancient past. He is best known for conducting geological surveys of prehistoric sites across India while working with the Geological Survey of India (GSI).",
+                "heading": "Discoveries and Contributions",
+                "description": "Foote joined the GSI in 1858 and was assigned to regions such as the Madras Presidency, Hyderabad State, and Bombay Presidency. His interest in prehistory was sparked by the works of Joseph Prestwich. In 1863, he discovered India's first Paleolithic stone tool, a hand axe, in Pallavaram near Chennai. This marked the beginning of Paleolithic research in India.He later discovered the site of Athirampakkam, the type site of the Madrasian culture, along with numerous other prehistoric settlements and tools in southern and western India. In 1884, he identified the Belum Caves, India’s second-longest cave "
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.2.+William+King+FGS.jpg",
+                "name": "William+King+FGS.jpg",
+                "imgTitle": "William King FGS",
+                "dob": "(1834 – 1900)",
+                "content": "William King was a prominent British geologist and the son of William King Sr., a renowned geologist. He contributed extensively to geological studies in India and served as the Director of the Geological Survey of India (GSI) from 1887 to 1894.",
+                "heading": "",
+                "description": ""
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "subHeading": "Excavations and Research at Attirampakkam",
+        "data": [
+          {
+            "title": "Location and Significance",
+            "description": [
+              "Attirampakkam, an open-air Palaeolithic site, is located near a tributary of the Kortallaiyar River, northwest of Chennai, Tamil Nadu. Discovered in 1863 by Robert Bruce Foote and William King, the site is one of the most significant prehistoric locations in India. It has been studied extensively by scholars such as T.T. Paterson, V.D. Krishnaswami, and K.D. Banerjee during the 20th century."
+            ]
+          },
+          {
+            "title": "Research and Excavations",
+            "description": [
+              "Modern excavations, initiated in 1999 by S. Pappu, focused on understanding the stratigraphy, cultural sequence, and chronology of the site. These studies also aimed to investigate changes in hominin behavior during the Pleistocene epoch. The research has provided groundbreaking insights into the Acheulian and Middle Palaeolithic phases in South Asia."
+            ]
+          },
+          {
+            "title": "Global Implications",
+            "description": [
+              "The discovery challenges earlier assumptions about human migration. It suggests Homo erectus carried Acheulian tools to India long before Homo heidelbergensis introduced them to Europe around 600,000 years ago. This extends the timeline of Acheulian toolmakers’ presence in India to 1.4 million years (from 1.5 million to 120,000 years ago)."
+            ]
+          },
+          {
+            "title": "Scientific Recognition",
+            "description": [
+              "The meticulous work by the Indo-French team has garnered international praise. Renowned archaeologist Michael Petraglia highlighted the significance of this discovery, emphasizing its accuracy and its contribution to understanding early human history."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Key Discoveries and Contributions",
+        "data": [
+          {
+            "title": "Stratigraphic Sequence :",
+            "description": [
+              "A detailed stratigraphic sequence revealed distinct Acheulian and Middle Palaeolithic occupation levels, showcasing the site's long ",
+              " history of human activity."
+            ]
+          },
+          {
+            "title": "New Acheulian Horizon :",
+            "description": [
+              "A previously unknown Acheulian horizon was discovered in deeply buried deposits, expanding knowledge of prehistoric settlements."
+            ]
+          },
+          {
+            "title": "Oldest Acheulian in India :",
+            "description": [
+              "The site yielded the oldest Acheulian tools in India, dated between 1 and 1.7 million years ago, providing critical evidence for the ",
+              " migration of Homo erectus across Asia."
+            ]
+          },
+          {
+            "title": "Stone Tool Analysis :",
+            "description": [
+              "Comprehensive studies on tool-making techniques, typology, and technology offered new insights into prehistoric tool use and ",
+              " hominin innovation."
+            ]
+          },
+          {
+            "title": "Experimental Studies :",
+            "description": [
+              "Experiments on tool manufacturing and microwear analysis illuminated the functional aspects of stone tools."
+            ]
+          },
+          {
+            "title": "Palaeomonsoons and Vegetation :",
+            "description": [
+              "Sediment studies revealed patterns of palaeomonsoons, while phytolith and pollen analysis provided insights into past vegetation and environmental conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Stone tools from Attirampakkam",
+        "data": [
+          {
+            "title": "Age",
+            "description": [
+              "The tools are between 385,000 and 172,000 years old, which is much older than other Middle Paleolithic tools found in India. "
+            ]
+          },
+          {
+            "title": "Technology",
+            "description": [
+              "The tools were made using the Levallois technique, which is different from     the older Acheulean technology found at the site. "
+            ]
+          },
+          {
+            "title": "Implications",
+            "description": [
+              "The tools suggest that early humans, possibly Homo sapiens, may have moved out of Africa much earlier than previously thought. "
+            ]
+          },
+          {
+            "title": "Location",
+            "description": [
+              "The tools were found in a creekside site in the southern Indian state of Tamil Nadu. "
+            ]
+          },
+          {
+            "title": "Research",
+            "description": [
+              "Archaeologists from the Sharma Centre for Heritage Education have excavated over 7,000 tools from the site."
+            ]
+          },
+          {
+            "title": "Timeline",
+            "description": [
+              "The research team dated the layers of soil where the tools were found, and came up with the following timeline:",
+              "1.7 to 1.07 million years ago: Hominins made primitive hand axes and cleavers.",
+              "449 to 321 thousand years ago: Levallois points and flakes took over. "
+            ]
+          },
+          {
+            "title": "Significance",
+            "description": [
+              "The tools provide insights into the lives of ancient hominins during a key period of technological change. "
+            ]
+          },
+          {
+            "title": "Comparison",
+            "description": [
+              "The tools resemble Middle Paleolithic tools found elsewhere, but that doesn't necessarily mean they were created by the same people. "
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Research Team: Sharma Centre for Heritage Education",
+        "data": [
+          {
+            "title": "Research Team: Sharma Centre for Heritage Education",
+            "details": [
+              "Dr. Kumar Akhilesh-Experimental Archaeology",
+              "Prof. Yanni Gunnell, Prof. Maurice Taieb (France)-Geomorphology & Paleoenvironments",
+              "Prof. S. Balakrishnan, Dr. Arun Sreedhar (Pondicherry University)-Clay Mineralogy & Isotope Studies",
+              "Prof. R. Shankar, Dr. Anish Warrier, Dr. K. Sandeep (Mangalore University)-Rock Magnetics",
+              "Prof. J-P. Brugal (France)-Palaeontology",
+              "Dr. Anupama Krishnamurthy, Mr. S. Prasad, Prof. R. Premathilake (Sri Lanka)-Palaeobotany",
+              "Prof. C. Rajshekhar (Pune)-Micropaleontology",
+              "Prof. R. Sukumar (IISc Bangalore)-Animal Activity at Sites"
+            ],
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+1.jpg",
+                "name": "South+India+1.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+2.jpg",
+                "name": "South+India+2.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+3.jpg",
+                "name": "South+India+3.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+4.jpg",
+                "name": "South+India+4.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+5.jpg",
+                "name": "South+India+5.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+6.jpg",
+                "name": "South+India+6.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+7.jpg",
+                "name": "South+India+7.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/1.5.+Excavations+at+the+Palaeolithic+Site+of+Attirampakkam%2C+South+India+8.jpg",
+                "name": "South+India+8.jpg"
+              }
+            ]
+          },
+          {
+            "title": "Conclusion",
+            "description": [
+              "Attirampakkam stands as a monumental site in global archaeology, offering unparalleled insights into early human behavior, migration, and technological development. Its findings continue to transform the narrative of prehistoric human activity in South Asia."
+            ]
+          }
+        ]
+      },
+
+      {
+        "subHeading": "Arikamedu: The Lost Roman Trading Port Of India",
+        "data": [
+          {
+            "title": "Arikamedu: The Lost Roman Trading Port Of India",
+            "description": [
+              "Arikamedu, an archaeological site near Kakkayanthope in Puducherry, is located 4 km from Pondicherry city. Excavations by Sir Mortimer Wheeler (1945) and Jean-Marie Casal (1947–1950) identified it as the ancient port of Podouke, mentioned in the Periplus of the Erythraean Sea and by Ptolemy. Key discoveries include Roman amphorae, Arretine ware, lamps, glassware, beads, and gems, indicating it was a significant Indo-Roman trading post from the reign of Augustus Caesar (1st century BCE) to the 2nd century CE. Further research by Vimala Begley (1989–1992) extended its period of occupation from the 2nd century BCE to the 8th century CE. Red and black ceramics and Indo-Pacific beads found at the site highlight its historical significance, predating and postdating its peak trading period."
+            ],
+            "details": [
+              "Location: Arikamedu, Kakkayanthope, Puducherry.",
+              "Village: Arikamedu (near Ariyankuppam Commune).",
+              "District: Puducherry district",
+              "Category: Archaeological and trading site.",
+              "Artefacts Found: Amphorae, Arretine ware, Roman lamps, Indo-Pacific beads, ceramics, shell beads, gems, and terracotta figurines.",
+              "Cultural Period: From 2nd century BCE to 8th century CE.",
+              "Period of Discovery: Excavations in 1945 and 1947–1950.",
+              "Discoverers/Institution: Sir Mortimer Wheeler and Jean-Marie Casal."
+            ],
+            "persons": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/2.1.+Sir+Mortimer+Wheeler.jpg",
+                "name": "Sir+Mortimer+Wheeler.jpg",
+                "imgTitle": "Sir Mortimer Wheeler",
+                "dob": "",
+                "content": "Sir Mortimer Wheeler, born on September 10, 1890, conducted the first major excavation at Arikamedu in 1945. During his work, he identified the site as the ancient port of Podouke, mentioned in the Periplus of the Erythraean Sea and by Ptolemy. Wheeler uncovered important artefacts, including amphorae, Arretine ware, Roman lamps, glassware, and beads. Based on these findings, he concluded that Arikamedu served as a Greek (Yavana) trading post engaged in commerce with Rome. He dated the trading activity at the site from the late 1st century BCE to the 1st and 2nd centuries CE, linking it to the reign of Augustus Caesar.",
+                "heading": "",
+                "description": ""
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/2.2.+Jean-Marie+Casal.jpg",
+                "imgTitle": "Jean-Marie Casal",
+                "dob": "",
+                "content": "Jean-Marie Casal, born on March 8, 1905, conducted subsequent excavations at Arikamedu between 1947 and 1950. His work unearthed additional artefacts, such as glass and stone beads, and gems. Casal’s findings further supported Wheeler’s conclusions about Arikamedu's significance as an international trading hub, emphasizing its role as a thriving emporium connecting India with Rome and other parts of the ancient world.",
+                "heading": "",
+                "description": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "ARIKAIMEDU DETAILS",
+
+        "data": [
+          {
+            "title": "ARIKAIMEDU DETAILS",
+            "description": [
+              "Discovered in the 1930s, the town of Arikamedu was excavated three times in the 1940s. While the excavation is often credited to Mortimer Wheeler in 1945, he was not the first to explore the site. According to reports in The Hindu, the initial excavations were conducted by French archaeologist Jouveau Dubreuil and Dr. A. Aiyappan, the Superintendent of the Government Museum in Madras, four years before Wheeler's involvement.",
+              "The archaeological site, which houses the ruins of the ancient city Arikamedu, is rapidly deteriorating. Suresh Pillai, an interdisciplinary artist and filmmaker, highlights that this site is the only one in South India with such a rare cultural continuity spanning from 300 BC to 1800 AD.",
+              "However, there is a differing view from historian J.B.P. More, expressed in his book From Arikamedu to the Foundation of Modern Pondicherry. More contends that Arikamedu was not a flourishing port 2,000 years ago, citing the absence of references to the town and its trade relations with Rome in ancient Tamil literature, local temples, and other sources. He argues that the presence of Roman pottery, coins, and other artifacts does not provide sufficient evidence to establish Arikamedu as a thriving town or to connect it definitively with the ancient port of Poduke or Pondicherry.",
+              "In contrast, Pillai argues that the lack of references in classical Tamil literature does not negate Arikamedu’s significance. He suggests that most of this literature emerged after Arikamedu reached its peak, which could explain the absence of mention. This view supports the idea that Arikamedu played a key role in ancient trade and cultural exchanges, influencing subsequent developments in the region."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Significant discoveries at Arikamedu include",
+        "data": [
+          {
+            "title": "Pottery",
+            "description": [
+              "Remnants of pottery from the Mediterranean region, highlighting trade connections with the Roman Empire."
+            ]
+          },
+          {
+            "title": "Indo-Pacific Beads",
+            "description": [
+              "Numerous beads that have helped date the site's origins and trade activity."
+            ]
+          },
+          {
+            "title": "Terra Sigillata",
+            "description": [
+              "Small fragments of cups and plates, also known as Arretine ware, showcasing fine Roman ceramics."
+            ]
+          },
+          {
+            "title": "Intaglios",
+            "description": [
+              "Gemstones engraved with designs typical of Greco-Roman craftsmanship."
+            ]
+          },
+          {
+            "title": "Chola Coins",
+            "description": [
+              "Coins from the Chola dynasty, including those issued by Raja Raja I, frequently found during excavations."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Details about Arikamedu",
+        "data": [
+          {
+            "title": "Location",
+            "description": ["Arikamedu is situated in Pondicherry, India."]
+          },
+          {
+            "title": "History",
+            "description": [
+              "This coastal settlement thrived between 2200 and 1900 years ago, serving as a key trade center between the Roman world and the Indian subcontinent."
+            ]
+          },
+          {
+            "title": "Artifacts",
+            "description": [
+              "Excavations at Arikamedu have uncovered pottery, glass beads, coins, and intaglios."
+            ]
+          },
+          {
+            "title": "Trade",
+            "description": [
+              "Romans imported wine, olive oil, and garum (fish sauce) from Arikamedu, while the region supplied glass and semi-precious stone beads in return."
+            ]
+          },
+          {
+            "title": "Crafts",
+            "description": [
+              "The trade connections between Rome and India fostered a cultural exchange, influencing skills in pottery, gem cutting, and stone bead production."
+            ],
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/2.6.Other+significant+discoveries+at+Arikamedu+include+1.jpg",
+                "name": "Arikamedu+include+1.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/2.6.Other+significant+discoveries+at+Arikamedu+include+2.jpg",
+                "name": "Arikamedu+include+2.jpg",
+                "imgTitle": "Indian coins in Arikaimedu"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/2.6.Other+significant+discoveries+at+Arikamedu+include+3.jpg",
+                "name": "Arikamedu+include+3.jpg",
+                "imgTitle": "Ancient Roman pottery found in Arikamedu"
+              }
+            ]
+          },
+
+          {
+            "title": "Conclusion",
+            "description": [
+              "The debate over Arikamedu's significance highlights the ongoing mystery of its role in ancient trade networks. While the evidence of Roman artifacts supports the theory of Arikamedu as a flourishing trade center, differing viewpoints question the extent of its influence. Regardless, its archaeological importance remains undeniable, and its legacy continues to shape our understanding of ancient South Indian and Greco-Roman exchanges."
+            ]
+          }
+        ]
+      },
+
+      {
+        "subHeading": "Keezhadi",
+        "data": [
+          {
+            "title": "Keezhadi",
+            "description": [
+              "Keezhadi, or Keeladi, is a Sangam-period settlement site where excavations are conducted by the Archaeological Survey of India (ASI) and the Tamil Nadu State Department of Archaeology. This significant site is situated near the town of Keezhadi in Sivaganga district, Tamil Nadu, approximately 12 km southeast of Madurai.",
+              "Located on the banks of the Vaigai River, Keezhadi showcases the ancient culture of Tamil Nadu. According to epigraphist V. Vedachalam, who served as a domain expert for the excavations, the remains unearthed from the site have been dated to a period between the 6th century BCE and the 3rd century BCE, shedding light on Tamil Nadu's rich cultural heritage during that era"
+            ],
+            "details": [
+              "Location: Keezhadi",
+              "Village: Keezhadi",
+              "District: Sivagangai",
+              "Category: Sangam-period settlement",
+              "Artifacts Found: Pottery, beads, iron tools, brick structures, graffiti marks",
+              "Cultural Period: Sangam Era (6th century BCE to 3rd century BCE)",
+              "Period of Discovery: Excavations began in 2014 and are ongoing",
+              "Discoverer/Institution: Archaeological Survey of India (ASI) and Tamil Nadu State Department of Archaeology.",
+              "Keezhadi Excavation: An In-Depth Overview",
+              "Alternative Name: Vaigai Valley Civilization",
+              "Location: Keezhadi, Tamil Nadu, India",
+              "Region: Thiruppuvanam, Sivaganga District",
+              "Coordinates: 9.8630727°N 78.1820931°E",
+              "Type: Ancient Settlement",
+              "Area: Spans 32.37 hectares (approximately 80 acres)"
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Keezhadi Excavation",
+        "data": [
+          {
+            "title": "Location and Importance",
+            "description": [
+              "The Keezhadi excavation site, located in Sivaganga District, Tamil Nadu, near the town of Keezhadi, lies on the banks of the Vaigai River. It is considered a Sangam-period settlement, reflecting the ancient urban culture of Tamil Nadu. Spanning 80 acres, the site connects to other historic towns like Kondagai and Manalur, indicating a thriving civilization."
+            ]
+          },
+          {
+            "title": "Dating and Cultural Significance",
+            "description": [
+              "The carbon dating of artifacts suggests the site dates back to between 580 BCE and 200 BCE, making it an essential discovery for understanding Tamil civilization during the Sangam Age. Initial findings indicated the settlement belonged to 200 BCE, but later excavations pushed this timeline to as early as 6th century BCE."
+            ]
+          },
+          {
+            "title": "Permission and Dating",
+            "description": [
+              "The Keezhadi excavations were permitted by the Central Advisory Board of Archaeology (CABA) on the recommendation of the State Department of Archaeology, covering the years 2017–2021. Carbon dating analysis of samples from the site placed them in the 6th century BCE (580 BCE). This discovery pushed the date of the Tamil-Brahmi script back to the 6th century BCE, a century earlier than previously believed, providing evidence of high literacy levels in Tamil Nadu during that time. The findings challenge earlier assumptions about Tamil Nadu's cultural and historical timeline."
+            ]
+          },
+          {
+            "title": "Urbanization in Tamil Nadu",
+            "description": [
+              "Contrary to the prevailing belief that the second urbanization occurred only in the Gangetic Valley, the Keezhadi excavations provide evidence that the phenomenon also took place in Tamil Nadu during the 6th century BCE. This highlights the advanced societal and cultural developments of the region, contemporaneous with northern India."
+            ]
+          },
+          {
+            "title": "Cultural Historiography of the Sangam Age",
+            "description": [
+              "Artefacts recovered from Keezhadi underwent rigorous scientific analysis, including Accelerator Mass Spectrometry (AMS) dating. Verified by experts, these results reaffirm the antiquity of Tamils in global history and highlight the sophisticated nature of their society during the Sangam Age. These findings strengthen Tamil Nadu’s cultural significance in ancient history."
+            ]
+          },
+          {
+            "title": "Agrarian Society and Cattle Rearing",
+            "description": [
+              "Analysis of faunal remains by Deccan College, Pune, revealed a predominantly agrarian society with cattle rearing as a central activity. The remains included species such as cow/ox, buffalo, goat, sheep, antelope, and wild boar. Approximately 53% of the animal remains belonged to domesticated cattle like cows, oxen, and goats, indicating their importance to the economy. Evidence of meat consumption was found through cut marks on antelope, goat, and wild boar bones. These findings suggest a reliance on agriculture and animal husbandry, with future botanical analyses expected to provide further insights."
+            ]
+          },
+          {
+            "title": "Structural Remains and Engineering",
+            "description": [
+              "Keezhadi’s structural remains reveal advanced construction techniques. Samples such as bricks, lime mortar, roof tiles, and binding materials were analyzed by the Vellore Institute of Technology. The materials, rich in silica, lime, ferrous, aluminum, and magnesium, ensured durability and strength. Excavations uncovered a 13-meter-long wall with well-laid clay floors and evidence of wooden poles used in construction. Iron nails and roof tiles with drainage grooves point to advanced engineering skills. These findings illustrate the high standards of living and technological capabilities during the Sangam Age."
+            ]
+          },
+          {
+            "title": "Graffiti and Tamil-Brahmi Script",
+            "description": [
+              "Graffiti marks, considered precursors to the Brahmi script, were found in large numbers, with over 1,001 graffiti sherds recovered. These marks, believed to have evolved from Indus scripts, were widely used for symbolic communication in the Iron Age. Tamil-Brahmi script, or Tamiḻi, was prominently featured on inscribed potsherds, with 56 such artefacts recovered from Keezhadi alone. These inscriptions, often carrying personal names like Kuvira and Atan, lacked diacritical marks, confirming their antiquity and the early development of the script."
+            ]
+          },
+          {
+            "title": "High Literacy Levels of the Sangam Age",
+            "description": [
+              "The Tamil-Brahmi inscriptions at Keezhadi demonstrate the high literacy levels of the Sangam society in the 6th century BCE. Engraved on pottery using pointed tools, these inscriptions were often added post-firing, indicating ownership and widespread literacy. The variety in writing styles further underscores the advanced communication practices of the time. These findings provide a significant glimpse into the intellectual and cultural sophistication of the ancient Tamil civilization."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Findings from Keezhadi Excavation",
+        "data": [
+          {
+            "title": "Structures and Artifacts",
+            "description": [
+              "The excavation uncovered brick walls, roof tiles, pottery, skeletal tools, iron Vel, and Tamil-Brahmi-etched plates. A notable find was the identification of this site as Perumanalur, a Pandyan city linked to early literature. The use of fired bricks, large building complexes, and aligned pots suggests a civilized Sangam-era settlement."
+            ]
+          },
+          {
+            "title": "Ring Wells and Brick Walls",
+            "description": [
+              "Ancient earthenware and ring wells were found, indicative of water storage traditions near rivers and ponds. A significant number of brick buildings, rare for ancient times, highlighted advanced construction techniques."
+            ]
+          },
+          {
+            "title": "Pottery",
+            "description": [
+              "Various pottery types, including Black-and-Red ware, Black ware, and Red ware, were discovered. The black coloring resulted from carbon material, while hematite provided the red. These potteries were fired at temperatures up to 1,100°C. Evidence of Indo-Roman trade was noted in imported ceramics like rouletted and arretine-type ware. Tamil names such as Aathan, Uthiran, and Thiesan were engraved on the pottery."
+            ]
+          },
+          {
+            "title": "Tamil-Brahmi Script and Graffiti",
+            "description": [
+              "The fourth phase revealed 72 potsherds with Tamil-Brahmi inscriptions and graffiti marks, some resembling Indus Valley scripts. While findings suggest that Tamil-Brahmi may date back to 580 BCE, this claim has been debated due to questions about archaeological layers and dating methods."
+            ]
+          },
+          {
+            "title": "Ornaments and Antiquities",
+            "description": [
+              "Numerous ornaments, including beads of glass, marble, and agate, along with gold ornaments, were discovered. Other unique finds include elephant tusks, copper ointments, terracotta stamps, firefly toys, and tools like styluses and iron edges, underscoring the settlement's advanced craftsmanship.",
+              "These discoveries highlight Keezhadi's significance in understanding the cultural, linguistic, and trade practices of the Sangam era."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Phases of Keezhadi Excavation",
+        "data": [
+          {
+            "title": "First Phase (2015)",
+            "description": [
+              "In June 2015, the Archaeological Survey of India (ASI), led by Amarnath Ramakrishnan, initiated the first phase of excavation near the Vaigai River. This marked the beginning of the exploration of Keezhadi’s urban settlement potential."
+            ]
+          },
+          {
+            "title": "Second Phase (2016)",
+            "description": [
+              "The second phase commenced on January 2, 2016. Key findings included medical jars, kitchen wells, and seals, with over 6,000 artifacts unearthed. Radiocarbon dating confirmed the artifacts were approximately 2,200 years old, reflecting the settlement's historical significance."
+            ]
+          },
+          {
+            "title": "Third Phase (2017)",
+            "description": [
+              "Under the leadership of Sri Ramanan, the third phase began in January 2017 and concluded by September 30, 2017. Excavation expanded to 16 sites over 400 square meters. This phase deepened the understanding of the settlement's scale and significance."
+            ]
+          },
+          {
+            "title": "Fourth Phase (2017-2018)",
+            "description": [
+              "The fourth phase, managed by the Tamil Nadu Archaeology Department, unearthed 5,820 artifacts, including samples sent for Accelerator Mass Spectrometry (AMS) dating to Beta Analytic, USA. Results dated some findings to as early as 580 BCE, confirming the settlement's ancient origins."
+            ]
+          },
+          {
+            "title": "Fifth Phase (2019)",
+            "description": [
+              "Led by Dr. R. Sivanantham, the fifth phase began in June 2019 and focused on excavating 15 trenches. Discoveries included Sangam-era bricks and over 700 artifacts, which were sent for further analysis."
+            ]
+          },
+          {
+            "title": "Sixth Phase (2020)",
+            "description": [
+              "Excavations during this phase, starting on February 19, 2020, extended to neighboring villages like Manalur, Kondhagai, and Agaram, expanding the area of study and connecting Keezhadi to surrounding settlements."
+            ]
+          },
+          {
+            "title": "Seventh Phase (2021)",
+            "description": [
+              "Launched on February 13, 2021, the seventh phase focused on detailed excavation work and concluded on September 20, 2021, revealing further insights into the site's cultural and historical importance."
+            ]
+          },
+          {
+            "title": "Eighth Phase (2022)",
+            "description": [
+              "The eighth phase began on February 11, 2022, with continued efforts to uncover artifacts and structures, ensuring a deeper understanding of Keezhadi's role in Tamil Nadu's history."
+            ]
+          }
+        ]
+      },
+      {
+        "subHeading": "Members associated with the research and excavation work at Keezhadi",
+        "data": [
+          {
+            "title": "K. Amarnath Ramakrishna",
+            "description": [
+              "Former Superintending Archaeologist, Archaeological Survey of India (ASI)",
+              "Played a pivotal role during the initial phases of the Keezhadi excavation."
+            ]
+          },
+          {
+            "title": "P. S. Sriraman",
+            "description": [
+              "Superintending Archaeologist, ASI (took over after K. Amarnath Ramakrishna)."
+            ]
+          },
+          {
+            "title": "R. Sivanandam",
+            "description": [
+              "Director, Tamil Nadu State Department of Archaeology",
+              "Oversaw later excavation phases and research."
+            ]
+          },
+          {
+            "title": "M. Rajesh",
+            "description": [
+              "Member of the excavation team involved in fieldwork and analyses."
+            ]
+          },
+          {
+            "title": "N. Veeraraghavan",
+            "description": [
+              "Team member contributing to exploration and interpretation of findings."
+            ]
+          },
+          {
+            "title": "K. Rajan",
+            "description": [
+              "Senior archaeologist and scholar from Pondicherry University",
+              "Provided expertise on Tamil-Brahmi inscriptions and historical analysis."
+            ]
+          },
+          {
+            "title": "R. Kaviya",
+            "description": [
+              "Site Archaeology Officer, Tamil Nadu State Department of Archaeology",
+              "Actively participated in the seventh phase of excavation."
+            ]
+          },
+          {
+            "title": "V. P. Yatheeskumar",
+            "description": [
+              "Research collaborator and contributor to studies on cultural transformations."
+            ],
+            "image": [
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+1.jpg",
+                "name": "Keezhadi+Excavation+1.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+2.jpg",
+                "name": "Keezhadi+Excavation+2.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+3.jpg",
+                "name": "Keezhadi+Excavation+3.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+4.jpg",
+                "name": "Keezhadi+Excavation+4.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+5.jpg",
+                "name": "Keezhadi+Excavation+5.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+6.jpg",
+                "name": "Keezhadi+Excavation+6.jpg",
+                "imgTitle": "Gold coin"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+7.jpg",
+                "name": "Keezhadi+Excavation+7.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+8.png",
+                "name": "Keezhadi+Excavation+8.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+9.png",
+                "name": "Keezhadi+Excavation+9.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+10.jpg",
+                "name": "Keezhadi+Excavation+10.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+11.jpg",
+                "name": "Keezhadi+Excavation+11.jpg",
+                "imgTitle": "Spinal cord of the Bovine with ribs"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+12.jpg",
+                "name": "Keezhadi+Excavation+12.jpg",
+                "imgTitle": "Carnelian, Agate and Amethyst beads "
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+13.jpg",
+                "name": "Keezhadi+Excavation+13.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+14.jpg",
+                "name": "Keezhadi+Excavation+14.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+15.jpg",
+                "name": "Keezhadi+Excavation+15.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+16.jpg",
+                "name": "Keezhadi+Excavation+16.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.2.+Findings+from+Keezhadi+Excavation+17.jpg",
+                "name": "Keezhadi+Excavation+17.jpg"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.9.+Keeladi+-+Semi-precious+stone+beads.jpg",
+                "name": "Semi-precious+stone+beads.jpg",
+                "imgTitle": "Keeladi - Semi-precious stone beads (2014-15) "
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.10.+Russet+coated+painted+ware+sherds.jpg",
+                "name": "Russet+coated+painted+ware+sherds.jpg",
+                "imgTitle": "Russet coated painted ware sherds"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.11.+Keeladi+-+Shell+bangles.jpg",
+                "name": "Keeladi+-+Shell+bangles.jpg",
+                "imgTitle": "Keeladi - Shell bangles (2014-15)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.12.+++Russet+coated+pot.jpg",
+                "name": "Russet+coated+pot.jpg",
+                "imgTitle": "Russet coated pot sherd with graffiti"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.13.+Keeladi+%E2%80%93+Roulette+pot+sherds.jpg",
+                "name": "Roulette+pot+sherds.jpg",
+                "imgTitle": "Keeladi – Roulette pot sherds (2014-15)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.14.+Keeladi+Thamizhi+inscribed.jpg",
+                "name": "Keeladi+Thamizhi+inscribed.jpg",
+                "imgTitle": "Keeladi:Thamizhi inscribed potsherd ‘ti sa n’ (2014-15)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.15.+Keeladi++Thamizhi+inscribed+potsherd.jpg",
+                "name": "Thamizhi+inscribed+potsherd.jpg",
+                "imgTitle": "Keeladi: Thamizhi inscribed potsherd ‘sat a n’ (2014-15)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.16.+Potsherd+with+fish+symbol.jpg",
+                "name": "Potsherd+with+fish+symbol.jpg",
+                "imgTitle": "Potsherd with fish symbol (2014-15)  "
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.17.+Keeladi+%E2%80%93+Ivory+Dice.jpg",
+                "name": "Keeladi+%E2%80%93+Ivory+Dice.jpg",
+                "imgTitle": "Keeladi – Ivory Dice (2014-15)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.18.+Black+and+red+ware.jpg",
+                "name": "Black+and+red+ware.jpg",
+                "imgTitle": "Black and red ware & Black ware pots (2015-16)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.19.++Ivory+Combs+(2015-16).jpg",
+                "name": "Ivory+Combs+(2015-16).jpg",
+                "imgTitle": "Ivory Combs (2015-16)"
+              },
+              {
+                "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/Archeological/3.20.+Stone+weights.jpg",
+                "name": "Stone+weights.jpg",
+                "imgTitle": "Stone weights (2015-16)"
+              }
+            ]
+          },
+          {
+            "title": "Conclusion",
+            "description": [
+              "The Keeladi excavations provide significant evidence of an advanced urban civilization in Tamil Nadu. Discoveries like Tamil-Brahmi inscriptions, punch-marked coins, and iron tools highlight thriving trade and skilled craftsmanship. Burial urns and faunal remains suggest agricultural and cattle-rearing practices. Structural findings reveal urban planning and advanced construction techniques. The excavations challenge earlier historical views, reshaping our understanding of the Sangam era. Keeladi stands as a key site, confirming the region’s early urbanization."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

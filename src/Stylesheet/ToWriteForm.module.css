@@ -1,0 +1,237 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  /* background-color: #f6f6fc; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  font-family: 'Georgia', serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  /* color: #000; */
+}
+.warning {
+  background-color: #ffc107;
+  padding: 1rem;
+}
+.success {
+  background-color: #198754;
+  color: white;
+  padding: 1rem;
+}
+.danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 1rem;
+}
+.formContainer {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 80%;
+  max-width: 900px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #ccc;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%;
+}
+
+.input {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to top, #e9b36b, #f7b9c3);
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: none;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to top, #e9b36b, #f7b9c3);
+  padding: 12px 15px;
+  font-size: 14px;
+  outline: none;
+  font-family: 'Georgia', serif;
+}
+
+.button {
+  width: 120px;
+  padding: 10px 0;
+  background: linear-gradient(to top, #f7b900, #a64545);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+.select {
+  font-size: 15px;
+  padding-top: 12px;
+}
+.myfile {
+  display: flex;
+  gap: 10px;
+}
+.error {
+  color: red;
+}
+/* 1280x1440 */
+@media (min-width: 1280px) and (max-height: 1440px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .formContainer {
+    padding: 35px;
+  }
+
+  .input,
+  .textarea {
+    font-size: 15px;
+  }
+}
+
+/* 1920x1080 */
+@media (min-width: 1920px) and (max-height: 1080px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .formContainer {
+    width: 70%;
+    padding: 40px;
+  }
+
+  .input,
+  .textarea {
+    font-size: 16px;
+    padding: 14px 18px;
+  }
+
+  .button {
+    width: 140px;
+    font-size: 15px;
+  }
+}
+
+/* 1440x900 */
+@media (min-width: 1440px) and (max-height: 900px) {
+  .formContainer {
+    width: 75%;
+    padding: 30px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .formContainer {
+    flex-direction: column;
+    width: 90%;
+    padding: 20px;
+  }
+
+  .form,
+  .imageContainer {
+    width: 100%;
+  }
+
+  .image {
+    /* max-height: 250px; */
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+@media (min-width: 1691px) and (max-width: 2560px) {
+  .container {
+    width: 100%;
+    min-height: 37vh;
+    background-color: #f6f6fc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Georgia', serif;
+  }
+  .formContainer {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%;
+    max-width: 1190px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ccc;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+  }
+  .image {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,110 @@
+.scrollTitleWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.scrollTitleContainer {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 3.5rem;
+    /* Padding for text to not overwrite rollers */
+    min-width: 250px;
+}
+
+.scrollTitleContainer h1,
+.scrollTitleContainer h2,
+.scrollTitleContainer h3 {
+    margin: 0 !important;
+    /* override any layout margins so the scroll fits perfectly */
+    position: relative;
+    z-index: 2;
+    color: #3b2210;
+    /* Dark vintage ink color */
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    /* starts hidden for animation */
+}
+
+.scrollBg {
+    position: absolute;
+    top: 4px;
+    left: 11px;
+    /* Offset inwards from the left roller */
+    height: calc(100% - 8px);
+    /* Create a highly realistic vintage paper texture look */
+    background-color: #ebd193;
+    background-image:
+        linear-gradient(90deg, rgba(70, 30, 10, 0.4) 0%, rgba(70, 30, 10, 0.05) 5%, transparent 20%, transparent 80%, rgba(70, 30, 10, 0.05) 95%, rgba(70, 30, 10, 0.4) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139, 69, 19, 0.06) 3.5px, rgba(139, 69, 19, 0.05) 4px);
+    box-shadow: 
+        0 12px 20px -5px rgba(0, 0, 0, 0.15),
+        inset 0 4px 15px -3px rgba(139, 69, 19, 0.25),
+        inset 0 -4px 15px -3px rgba(139, 69, 19, 0.25);
+    border-top: 1px solid rgba(160, 110, 60, 0.4);
+    border-bottom: 1px solid rgba(160, 110, 60, 0.4);
+    border-radius: 1px;
+    z-index: 1; /* Above left knobs, below left cylinder */
+    overflow: visible;
+    /* allows right roller to show outside the div */
+    width: 0;
+    /* Start rolled up */
+}
+
+/* LEFT ROLLER MAIN CYLINDER: Fixed on the container */
+.scrollTitleContainer::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: -5%;
+    height: 110%;
+    width: 18px;
+    background: linear-gradient(to right, #1f0d05 0%, #4a2311 35%, #66331a 50%, #4a2311 65%, #1f0d05 100%);
+    box-shadow: inset -1px 0 3px rgba(0,0,0,0.5), 2px 3px 6px rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+/* LEFT ROLLER KNOBS (Pill shape behind) */
+.scrollTitleContainer::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: -12%;
+    height: 124%;
+    width: 22px;
+    background: linear-gradient(to right, #1f0d05 0%, #381b0c 40%, #472211 50%, #381b0c 60%, #1f0d05 100%);
+    border-radius: 11px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* RIGHT ROLLER MAIN CYLINDER: Moves with the expanding width of .scrollBg */
+.scrollBg::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: -5%;
+    height: 110%;
+    width: 18px;
+    background: linear-gradient(to right, #1f0d05 0%, #4a2311 25%, #66331a 40%, #4a2311 65%, #1f0d05 100%);
+    box-shadow: inset 1px 0 3px rgba(0,0,0,0.5), 2px 3px 6px rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+/* RIGHT ROLLER KNOBS (Pill shape behind) */
+.scrollBg::before {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: -12%;
+    height: 124%;
+    width: 22px;
+    background: linear-gradient(to right, #1f0d05 0%, #381b0c 30%, #472211 50%, #381b0c 70%, #1f0d05 100%);
+    border-radius: 11px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+    z-index: -1; /* Paints perfectly behind the scrollBg paper */
+}

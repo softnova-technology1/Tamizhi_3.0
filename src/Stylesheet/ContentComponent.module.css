@@ -1,0 +1,55 @@
+.title1 {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+.clickbtn {
+  float: right;
+  background-color: white;
+  color: #c11574;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.title2 {
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.imgtext {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 1rem;
+}
+
+.listname {
+  font-size: 1.5rem;
+}
+.marginBottomdes {
+  margin-bottom: 1.5rem;
+}
+.contentOver {
+  margin-bottom: 5rem;
+}
+.flexContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+.flexContainerSingle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgsize {
+  width: 300px;
+  height: 300px;
+}
