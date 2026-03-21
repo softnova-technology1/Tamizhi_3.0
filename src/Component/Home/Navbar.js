@@ -6,6 +6,7 @@ import { MdEmail, MdOutlineMenuOpen, MdPerson } from 'react-icons/md';
 import { ImUser } from 'react-icons/im';
 import dayjs from 'dayjs';
 import { Link, useNavigate } from 'react-router-dom';
+import navbarimg from '../../image/navbarimg.png'
 import { Context } from '../../Context/contextApi';
 const kings = ['chola', 'chera', 'pandyan', 'kalabhra', 'pallavas'];
 const history = ['tamilagam', 'thamizhar', 'tamizh', 'brahmi'];
@@ -430,7 +431,7 @@ const Header = () => {
               </div>
             )}
           </div>
-
+         
           <h1 className={styles.logo}>Tamizhi</h1>
           <div className={styles.userLogin}>
             <MdPerson className={styles.iconuser} />
