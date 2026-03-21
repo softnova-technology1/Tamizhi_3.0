@@ -1,38 +1,45 @@
 .head {
   margin-top: 10px;
 }
+
 .backdropfilter {
   backdrop-filter: blur(10px);
 }
+
 .warning {
   background-color: #ffc107 !important;
   color: black !important;
   padding: 1rem !important;
   width: 100% !important;
 }
+
 .success {
   background-color: #198754;
   color: white;
   padding: 1rem;
   width: 100%;
 }
+
 .danger {
   background-color: #dc3545;
   color: white;
   padding: 1rem;
   width: 100%;
 }
+
 .welcome {
   text-align: center;
   font-weight: bold;
   font-size: 5rem !important;
   padding: 40px 0px 30px 0px;
 }
+
 .welcomeHome {
   text-align: center;
   font-weight: bold;
   font-size: 2.5rem !important;
 }
+
 .input {
   width: 350px !important;
   margin-top: 30px;
@@ -45,6 +52,7 @@
   border: 2px solid black;
   text-decoration: none;
 }
+
 .inputpass {
   width: 350px !important;
   margin-top: 60px;
@@ -68,6 +76,7 @@
   border-radius: 8px;
   margin-top: 25px;
 }
+
 .forms1 {
   margin-top: 25px;
 }
@@ -75,41 +84,49 @@
 .contains {
   padding: 30px 30px 30px 30px;
 }
+
 .image {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   margin-top: 70px;
 }
+
 .check {
   width: 15px;
   height: 15px;
   margin-top: 30px;
 }
+
 .label {
   padding-top: 26px;
   font-size: 1.6rem;
   font-weight: 550;
 }
+
 .checkgap {
   display: flex;
   gap: 10px;
 }
+
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .forgot {
   padding-top: 35px;
   padding-left: 20px;
   font-size: 1.6rem;
   font-weight: 550;
 }
+
 .buttons {
   display: flex !important;
   justify-content: center !important;
 }
+
 .buttontxt {
   font-size: 1.6rem;
   font-weight: 550;
@@ -121,6 +138,7 @@
   border-radius: 10;
   margin-top: 35px;
 }
+
 .create {
   text-align: center;
   padding-top: 30px;
@@ -130,6 +148,7 @@
   font-weight: 580;
   cursor: pointer;
 }
+
 .divider {
   display: flex;
   align-items: center;
@@ -137,15 +156,18 @@
   gap: 10px;
   margin: 20px 0;
 }
+
 .hrLine {
   flex: 1;
   height: 2px;
   background: #000000;
   border: none;
 }
+
 .divider span b {
   font-size: 16px;
 }
+
 .flexbutton {
   display: flex;
   justify-content: space-evenly;
@@ -154,53 +176,66 @@
   width: 270px;
   height: 70px;
 }
+
 .icons {
   width: 30px;
   height: 30px;
 }
+
 .centerbutton {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .tamilimgs {
   width: 60%;
   height: auto;
 }
+
 .toastContainer {
   display: flex;
   justify-content: center;
 }
+
 .loginerror {
   font-size: 2rem !important;
   color: red;
 }
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .welcome {
     padding: 20px 0px 0px 0px;
   }
+
   .warning {
     width: 100%;
   }
+
   .danger {
     width: 100%;
   }
+
   .forms1 {
     display: none;
   }
+
   .input,
   .inputpass {
     width: 100% !important;
   }
+
   .head {
     padding: 0px 10px 10px 10px;
   }
+
   .label,
   .forgot {
     font-size: 1.5rem;
     align-self: center;
     justify-self: center;
   }
+
   .flex {
     display: flex;
     align-items: flex-start;
@@ -212,25 +247,31 @@
   .welcome {
     padding: 20px 0px 0px 0px;
   }
+
   .input,
   .inputpass {
     width: 100% !important;
   }
+
   .head {
     padding: 0px 10px 10px 10px;
   }
+
   .tamilimgs {
     width: 90%;
     height: auto;
   }
+
   .forms {
     width: 50%;
     height: auto;
   }
+
   .formsHome {
     width: 100%;
     height: auto;
   }
+
   .label,
   .forgot {
     font-size: 1.5rem;
@@ -241,21 +282,26 @@
   .welcome {
     padding: 20px 0px 0px 0px;
   }
+
   .input,
   .inputpass {
     width: 100% !important;
   }
+
   .head {
     padding: 0px 10px 10px 10px;
   }
+
   .tamilimgs {
     width: 90%;
     height: auto;
   }
+
   .forms {
     width: 50%;
     height: auto;
   }
+
   .label,
   .forgot {
     font-size: 1.5rem;
@@ -266,21 +312,26 @@
   .welcome {
     padding: 20px 0px 0px 0px;
   }
+
   .input,
   .inputpass {
     width: 100% !important;
   }
+
   .head {
     padding: 0px 10px 10px 10px;
   }
+
   .tamilimgs {
     width: 90%;
     height: auto;
   }
+
   .forms {
     width: 50%;
     height: auto;
   }
+
   .label,
   .forgot {
     font-size: 1.5rem;

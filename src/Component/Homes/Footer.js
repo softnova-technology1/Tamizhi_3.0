@@ -14,7 +14,7 @@ import logo1 from './../../image/softnovaLogo.webp';
 
 const Footer = () => {
   return (
-    <>
+    <div className="containers">
       <div className={styles.footer1}>
         <div className={styles.scrollBg}></div>
       </div>
@@ -174,7 +174,7 @@ const Footer = () => {
           </a>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

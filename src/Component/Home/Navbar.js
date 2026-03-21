@@ -1,12 +1,12 @@
 import { useState, useContext } from 'react';
 import styles from '../../Stylesheet/Navbar.module.css';
-import { Container, Col } from 'react-bootstrap';
-import { FaSearch, FaClock, FaPhoneAlt } from 'react-icons/fa';
-import { MdEmail, MdOutlineMenuOpen, MdPerson } from 'react-icons/md';
+import { FaSearch, FaScroll } from 'react-icons/fa';
+import { MdOutlineMenuOpen, MdPerson } from 'react-icons/md';
 import { ImUser } from 'react-icons/im';
 import dayjs from 'dayjs';
 import { Link, useNavigate } from 'react-router-dom';
 import { Context } from '../../Context/contextApi';
+
 const kings = ['chola', 'chera', 'pandyan', 'kalabhra', 'pallavas'];
 const history = ['tamilagam', 'thamizhar', 'tamizh', 'brahmi'];
 const searchTextContent = [
@@ -38,20 +38,12 @@ function dayRepresentation(dayIndex) {
 }
 
 const Header = () => {
-  const handleSelectAndClose = (name, value) => {
-    handleCategorySelect(name, value);
-    setShowMobileMenu(false);
-  };
-
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [category, setCategory] = useState({
     categorySelection: '',
     searchText: '',
   });
 
-  const now = dayjs();
-  const time = now.format('hh:mm');
-  const day = dayRepresentation(now.day());
   const {
     language,
     changeLanguage,
@@ -65,18 +57,27 @@ const Header = () => {
   const toggleLanguage = () => {
     changeLanguage(language === 'en' ? 'tn' : 'en');
   };
+
+  const handleSelectAndClose = (name, value) => {
+    handleCategorySelect(name, value);
+    setShowMobileMenu(false);
+  };
+
   function handleCategorySelect(id, value) {
     setCategory((pre) => ({ ...pre, [id]: value }));
     navigate(`${value}`);
   }
+
   function handleSearch(id, value) {
     setCategory((pre) => ({ ...pre, [id]: value }));
   }
+
   function handleLogOut() {
     localStorage.removeItem('token');
     handleToken(null);
     findUserFunction(null);
   }
+
   function handleClick(event) {
     const serachingText = category.searchText.trim().toLowerCase();
 
@@ -128,201 +129,122 @@ const Header = () => {
       }
     }
   }
+
   return (
     <>
-      <header className={`${styles.headerWrapper} fixed-top`} >
+      <header className={`${styles.headerWrapper} fixed-top`}>
         <div className={styles.topBar}>
+          {/* Logo Section */}
           <div className={styles.leftTop}>
-            <div className={styles.brand}>Tamizhi</div>
+            <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <div className={styles.gLogoBox}>G</div>
+              <div className={styles.brandInfo}>
+                <span className={styles.brandMain}>TAMIZHI</span>
+                <span className={styles.brandSub}>SCHOLARLY ARCHIVE</span>
+              </div>
+            </Link>
           </div>
-          <div className={styles.rightTop}>
-            <div className={styles.topfirst}>
-              <div className={styles.contactWrapper}>
-                <div className={styles.item}>
-                  <FaClock className={styles.icon} />
-                  <span className={styles.text} style={{ color: '#250505f7' }}>
-                    {day} – {time}
-                  </span>
-                </div>
-                <div className={styles.separator} />
-                <div className={styles.item}>
-                  <FaPhoneAlt className={styles.icon} />
-                  <span className={styles.text} style={{ color: '#250505f7' }}>
-                    +91 6385118083
-                  </span>
-                </div>
-                <div className={styles.separator} />
-                <div className={styles.item}>
-                  <MdEmail className={styles.icon} />
-                  <span className={styles.text} style={{ color: '#250505f7' }}>
-                    vanakkam@tamizhi.blog
-                  </span>
+
+          {/* Navigation Section */}
+          <ul className={styles.navLinks}>
+            <li className={styles.navItem}><Link to="/">HOME</Link></li>
+            <li className={styles.navItem}>
+              <Link to="/category" onClick={(e) => {
+                e.preventDefault();
+                // Logic to toggle a category list if needed, or just link
+                navigate('/category');
+              }}>CATEGORY</Link>
+            </li>
+            <li className={styles.navItem}><Link to="/podcast">PODCAST</Link></li>
+            {/* <li className={styles.navItem}>
+              <Link to="/category-books">
+                <FaScroll className={styles.iconScroll} /> BOOKS
+              </Link>
+            </li> */}
+            <li className={styles.navItem}><Link to="/about">ABOUT</Link></li>
+            <li className={styles.navItem}><Link to="/contact">CONTACT</Link></li>
+            {/* <li className={styles.navItem}><Link to="/donate">DONATE</Link></li> */}
+          </ul>
+
+          {/* Search Section */}
+          <div className={styles.searchContainer}>
+            <div className={styles.categorySection}>
+              <select
+                className={styles.categorySelect}
+                aria-label="categorySelection"
+                name="categorySelection"
+                onChange={(event) =>
+                  handleCategorySelect(
+                    'categorySelection',
+                    event.target.value,
+                  )
+                }
+                value={category.categorySelection}
+              >
+                <option value="" disabled>CATEGORY</option>
+                <option value="/subcategory/history">HISTORY</option>
+                <option value="/subcategory/kings">KINGS</option>
+                <option value="/war">WAR</option>
+                <option value="/culture">CULTURE</option>
+                <option value="/temple">TEMPLE</option>
+                <option value="/architecture">ARCHITECTURE</option>
+                <option value="/historical_place">HISTORICAL PLACE</option>
+                <option value="/poet">POET</option>
+                <option value="/category-books">BOOKS</option>
+                <option value="/lord">LORD</option>
+                <option value="/excavation">EXCAVATION</option>
+                <option value="/mythology">MYTHOLOGY</option>
+              </select>
+            </div>
+
+            <div className={styles.verticalLine}></div>
+
+            <input
+              type="text"
+              placeholder="Search articles, manuscript..."
+              className={styles.searchInput}
+              onChange={(e) => handleSearch('searchText', e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleClick(e)}
+            />
+
+            <button className={styles.searchIcon} onClick={handleClick}>
+              <FaSearch size={20} />
+            </button>
+          </div>
+
+          {/* Actions Section */}
+          <div className={styles.actionButtons}>
+            <a href="#towrite" className={styles.writeBtn}>TO WRITE</a>
+
+            {tokenContext ? (
+              <button className={styles.loginBtn} onClick={handleLogOut}>LOGOUT</button>
+            ) : (
+              <Link to="/login" className={styles.loginBtn}>LOGIN</Link>
+            )}
+
+            {/* Premium Language Switcher */}
+            <div className={styles.langSwitchWrapper}>
+              <div className={styles.langSwitchBtn} onClick={toggleLanguage}>
+                <div className={`${styles.langSwitchCircle} ${language === 'en' ? styles.enActive : styles.tnActive}`}></div>
+                <div className={styles.langLabels}>
+                  <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>EN</span>
+                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>TN</span>
                 </div>
               </div>
-              <div className={styles.actions}>
-                <div className={styles.languageWrapper}>
-                  <span className={styles.label} style={{ color: '#250505f7' }}>
-                    Language
-                  </span>
-                  <div className={styles.toggleBox} onClick={toggleLanguage}>
-                    <div
-                      className={`${styles.circle} ${language === 'en' ? styles.moveRight : ''
-                        }`}
-                    />
-                    <span className={styles.langText}>
-                      {language === 'en' ? (
-                        <span
-                          className={styles.leftText}
-                          style={{ color: '#250505f7' }}
-                        >
-                          English
-                        </span>
-                      ) : (
-                        <span
-                          className={styles.rightTextHidden}
-                          style={{ color: '#250505f7' }}
-                        >
-                          Tamil
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                </div>
-                <div className={styles.loginWrapper}>
-                  <ImUser size={30} />
-                  {tokenContext ? (
-                    <button
-                      className={styles.logout}
-                      onClick={() => handleLogOut()}
-                      style={{ color: 'black' }}
-                    >
-                      Logout
-                    </button>
-                  ) : (
-                    <Link
-                      to="/login"
-                      className={styles.text1}
-                      style={{ color: 'black' }}
-                    >
-                      Login
-                    </Link>
-                  )}
-                </div>
+            </div>
+
+            <div 
+              className={styles.profileAvatar} 
+              title={language === 'en' ? 'Switch to Tamil' : 'Switch to English'} 
+            >
+              <div className={styles.avatarImg}>
+                <MdPerson />
               </div>
             </div>
           </div>
         </div>
-        <nav className={styles.navBar} style={{ backgroundColor: 'white' }}>
-          <Container>
-            <div
-              className={styles.newbar}
-              style={{ alignItems: 'center', marginTop: '1rem' }}
-            >
-              <Col xs={12} md={6}>
-                <ul className={`nav ${styles.navLinks}`}>
-                  {[
-                    '/',
-                    '/category',
-                    '/podcast',
-                    // '/books',
-                    '/about',
-                    '/contact',
-                    // '/donate',
-                  ].map((path) => (
-                    <li className="nav-item" key={path}>
-                      <Link key={path} to={path} style={{ color: 'black' }}>
-                        {path === '/'
-                          ? 'Home'
-                          : path.slice(1).charAt(0).toUpperCase() +
-                          path.slice(2)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </Col>
-
-              {/* Search */}
-              <div className={styles.newbar1}>
-                <Col md={4}>
-                  <div className={styles.searchContainer}>
-                    <div className={styles.categorySection}>
-                      <select
-                        className={styles.categorySelect}
-                        aria-label="categorySelection"
-                        name="categorySelection"
-                        onChange={(event) =>
-                          handleCategorySelect(
-                            'categorySelection',
-                            event.target.value,
-                          )
-                        }
-                        value={category.categorySelection}
-                      >
-                        <option value="" disabled>
-                          Category
-                        </option>
-                        <option value="/subcategory/history">History</option>
-                        <option value="/subcategory/kings">Kings</option>
-                        <option value="/war">War</option>
-                        <option value="/culture">Culture</option>
-                        <option value="/temple">Temple</option>
-                        <option value="/architecture">Architecture</option>
-                        <option value="/historical_place">
-                          Historical place
-                        </option>
-                        <option value="/poet">Poet</option>
-                        <option value="/category-books">Books</option>
-                        <option value="/lord">Lord</option>
-                        <option value="/excavation">Excavation</option>
-                        <option value="/mythology">Mythology</option>
-                      </select>
-                    </div>
-
-                    <input
-                      type="text"
-                      placeholder="Search"
-                      name="searchText"
-                      onKeyDown={(e) =>
-                        e.key === 'Enter' ? handleClick(e) : ''
-                      }
-                      onChange={(event) =>
-                        handleSearch('searchText', event.target.value)
-                      }
-                      className={styles.searchInput}
-                    />
-                    <div style={{ padding: '0 1rem' }}>
-                      <button
-                        className={styles.searchIcon}
-                        aria-label="search"
-                        onClick={(event) => handleClick(event)}
-                      >
-                        <FaSearch
-                          style={{
-                            width: '20px',
-                            height: '20px',
-                            color: '#808080',
-                          }}
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </Col>
-
-                {/* To Write */}
-                <Col xs={12} md={2}>
-                  <a
-                    href="#towrite"
-                    className={`btn ${styles.writeBtn}`}
-                    style={{ color: '#b79775' }}
-                  >
-                    To Write
-                  </a>
-                </Col>
-              </div>
-            </div>
-          </Container>
-        </nav>
       </header>
+
       <div className={styles.mobileHeader}>
         <div className={styles.topBar}>
           <div className={styles.menuContainer}>
