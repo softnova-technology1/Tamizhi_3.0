@@ -4,13 +4,14 @@ import { Form, Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { nameCheck, emailCheck, numberCheck } from '../../utility/Validation';
 import { Context } from '../../Context/contextApi';
+import ScrollTitle from './ScrollTitle';
 import {
   FaFacebookF,
   FaWhatsapp,
   FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa';
-import scrollVideo from '../../image/dove.mp4';
+import scrollVideo from '../../image/contactdove.mp4';
 
 const ContactUs = () => {
   const [fieldValue, setFieldValue] = useState({
@@ -150,11 +151,11 @@ const ContactUs = () => {
 
   return (
     <div className={`containers ${styles.contactSection}`}>
-      {language === 'en' ? (
-        <h3 className={styles.title}>Contact Us</h3>
-      ) : (
-        <h3 className={styles.title}>தொடர்பு கொள்ள...</h3>
-      )}
+      <div className='mb-md-5 pb-md-5 mb-3 pb-3'>
+      <ScrollTitle className={styles.title}>
+        {language === 'en' ? 'Contact Us' : 'தொடர்பு கொள்ள...'}
+      </ScrollTitle>
+      </div>
 
       <div className="row align-items-center justify-content-around gap-5">
         <div className="col-md-5 mb-4 mb-md-0">

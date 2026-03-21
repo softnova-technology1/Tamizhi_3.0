@@ -5,6 +5,7 @@ import { Form } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { emailCheck, nameCheck, numberCheck } from '../../utility/Validation';
 import { Context } from '../../Context/contextApi';
+import ScrollTitle from './ScrollTitle';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -200,11 +201,11 @@ const WriteContent = () => {
 
   return (
     <div className={styles.container} id="towrite">
-      {language === 'en' ? (
-        <h3 className={styles.title}>Preserve the Heritage</h3>
-      ) : (
-        <h3 className={styles.title}>மரபை அழியாமல் காப்போம்</h3>
-      )}
+      <div className='mb-md-5 pb-md-5 mb-3 pb-3'>
+      <ScrollTitle className={styles.title}>
+        {language === 'en' ? 'Preserve the Heritage' : 'மரபை அழியாமல் காப்போம்'}
+      </ScrollTitle>
+      </div>
 
       <div className={styles.formContainer}>
         <Form
@@ -345,6 +346,7 @@ const WriteContent = () => {
           </p>
         </div>
       </div>
+      
     </div>
   );
 };

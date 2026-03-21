@@ -10,6 +10,7 @@ import kings from './../../image/kings.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../Context/contextApi';
+import ScrollTitle from '../Homes/ScrollTitle';
 
 const data = [
   {
@@ -101,11 +102,12 @@ export default function History() {
   return (
     <div className='containers'>
       <div className={styles.wrapper} xs={12} sm={12} md={3}>
-        {language === 'en' ? (
-          <p className={styles.title}>Category</p>
-        ) : (
-          <p className={styles.title}>வகைப்பாடு</p>
-        )}
+        <div className='mt-md-5 mb-md-5 pt-md-5 mt-3 mb-3 pt-2'>
+          <ScrollTitle className={styles.title}>
+            {language === 'en' ? 'Category' : 'வகைப்பாடு'}
+          </ScrollTitle>
+        </div>
+        <div className='pt-md-5 pt-3'>
         <div className={styles.grid} xs={12} sm={12} md={3}>
           {data.map((item, index) => (
             <div key={index} className={styles.categoryCard}>
@@ -147,6 +149,7 @@ export default function History() {
               </div>
             </div>
           ))}
+        </div>
         </div>
         <div className={styles.more}>
           <button className={styles.more1} onClick={handleMoreClick}>

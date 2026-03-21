@@ -138,10 +138,10 @@ const Header = () => {
           {/* Logo Section */}
           <div className={styles.leftTop}>
             <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '15px' }}>
-              <div className={styles.gLogoBox}>G</div>
+              {/* <div className={styles.gLogoBox}>G</div> */}
               <div className={styles.brandInfo}>
                 <span className={styles.brandMain}>TAMIZHI</span>
-                <span className={styles.brandSub}>SCHOLARLY ARCHIVE</span>
+                {/* <span className={styles.brandSub}>SCHOLARLY ARCHIVE</span> */}
               </div>
             </Link>
           </div>

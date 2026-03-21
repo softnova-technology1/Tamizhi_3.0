@@ -2,9 +2,6 @@
   margin-top: 10px;
 }
 
-.backdropfilter {
-  backdrop-filter: blur(10px);
-}
 
 .warning {
   background-color: #ffc107 !important;
@@ -36,45 +33,62 @@
 
 .welcomeHome {
   text-align: center;
-  font-weight: bold;
-  font-size: 2.5rem !important;
+  font-weight: 800;
+  font-size: 2.2rem !important;
+  color: #2c1810;
+  font-family: 'Cinzel Decorative', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media (max-width: 480px) {
+  .welcomeHome {
+    font-size: 1.8rem !important;
+  }
 }
 
-.input {
-  width: 350px !important;
-  margin-top: 30px;
-  font-size: 1.5rem !important;
-  color: rgb(198, 194, 194);
-  font-weight: 550;
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-  border: 2px solid black;
-  text-decoration: none;
-}
-
+.input,
 .inputpass {
-  width: 350px !important;
-  margin-top: 60px;
+  width: 100% !important;
+  margin-top: 25px;
   font-size: 1.5rem !important;
-  color: rgb(198, 194, 194);
-  font-weight: 550;
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-  border: 2px solid black;
-  text-decoration: none;
+  color: #2c1810 !important;
+  background: transparent !important;
+  font-weight: 700;
+  border: none !important;
+  border-bottom: 2px solid #5d4037 !important;
+  border-radius: 0 !important;
+  font-family: 'EB Garamond', serif;
+  padding: 8px 5px !important;
+  transition: all 0.3s ease;
+}
+@media (max-width: 480px) {
+  .input, .inputpass {
+    font-size: 1.3rem !important;
+    margin-top: 20px;
+  }
 }
 
-.forms {
+.input::placeholder,
+.inputpass::placeholder {
+  color: rgba(93, 64, 55, 0.7) !important;
+}
+
+.input:focus,
+.inputpass:focus {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-bottom-color: #8b4513 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.formsHome {
   position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 10px 10px 10px #7e7d7d;
-  border-radius: 8px;
-  margin-top: 25px;
+  display: flex !important;
+  justify-content: center !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  margin-top: 0;
 }
 
 .forms1 {
@@ -82,7 +96,7 @@
 }
 
 .contains {
-  padding: 30px 30px 30px 30px;
+  padding: 0px 30px 30px 30px;
 }
 
 .image {
@@ -93,33 +107,44 @@
 }
 
 .check {
-  width: 15px;
-  height: 15px;
-  margin-top: 30px;
-}
-
-.label {
-  padding-top: 26px;
-  font-size: 1.6rem;
-  font-weight: 550;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
 }
 
 .checkgap {
-  display: flex;
-  gap: 10px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
 }
 
 .flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-top: 25px;
+}
+
+.label {
+  padding-top: 5px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c1810;
+  font-family: 'EB Garamond', serif;
 }
 
 .forgot {
-  padding-top: 35px;
-  padding-left: 20px;
-  font-size: 1.6rem;
-  font-weight: 550;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8b4513;
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.forgot:hover {
+  color: #a0522d;
 }
 
 .buttons {
@@ -128,15 +153,33 @@
 }
 
 .buttontxt {
-  font-size: 1.6rem;
-  font-weight: 550;
-  background-color: rgb(201, 199, 199);
-  color: black;
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8b4513 0%, #5d4037 100%);
+  color: #f9f295;
   text-decoration: none;
-  border: none;
-  width: 220px;
-  border-radius: 10;
-  margin-top: 35px;
+  border: 1px solid #d4af37;
+  max-width: 250px;
+  width: 100%;
+  border-radius: 35px;
+  margin-top: 30px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-family: 'EB Garamond', serif;
+  text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .buttontxt {
+    font-size: 1.2rem;
+    margin-top: 25px;
+  }
+}
+
+.buttontxt:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  background: #a0522d;
 }
 
 .create {

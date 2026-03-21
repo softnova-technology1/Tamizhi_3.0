@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className="containers">
       <div className={styles.footer1}>
-        <div className={styles.scrollBg}></div>
+        {/* <div className={styles.scrollBg}></div> */}
       </div>
       {/* from second version */}
       <footer className={styles.footer}>

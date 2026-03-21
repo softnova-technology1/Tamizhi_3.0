@@ -177,6 +177,26 @@
   }
 }
 
+@media (max-width: 480px) {
+  .aboutContainer {
+    padding: 30px 15px;
+  }
+  .textSection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .textSection p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .aboutButton {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+}
+
+
 @media (min-width: 1800px) {
   .aboutContainer {
     padding: 100px 150px;

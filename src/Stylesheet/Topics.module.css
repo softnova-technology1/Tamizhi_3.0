@@ -1,5 +1,5 @@
 .topicsSection {
-    /* background-color: var(--bg-light); */
+    background-color: transparent;
 }
 
 .header {
@@ -219,6 +219,7 @@
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -246,4 +247,34 @@
     .grid {
         grid-template-columns: 1fr;
     }
+    .header {
+        margin-bottom: 3rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .card {
+        min-height: 350px;
+    }
+    .content {
+        padding: 2rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+    .card {
+        min-height: 300px;
+    }
+    .content {
+        padding: 1.5rem;
+    }
+    .content h3 {
+        font-size: 1.5rem;
+    }
+    .contentBottom h3 {
+        font-size: 1.1rem;
+    }
+}

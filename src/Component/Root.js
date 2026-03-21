@@ -6,7 +6,7 @@ import Login from './LoginDetails/Login';
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../Context/contextApi';
 import { Container, Row, Col } from 'react-bootstrap';
-import TopNavBar from './TopNavBar';
+import Header from './Homes/Navbar';
 import ScrollToTopComponent from './ScrollToTopComponent';
 import Spinner from './Spinner';
 export default function Root() {
@@ -63,7 +63,7 @@ export default function Root() {
     if (!tokenContext) {
       const timer = setTimeout(() => {
         setShowModal(true);
-      }, 300000);
+      }, 1000);
       return () => clearTimeout(timer);
     } else {
       return;
@@ -90,12 +90,7 @@ export default function Root() {
           className={sticky ? `${styles.sticky}` : ''}
         >
           <Col xs={12} sm={12} md={12} style={{ padding: 0 }}>
-            <TopNavBar
-              handleNavClick={handleNavOpen}
-              handleDarkmode={handleDarkmode}
-              darkmode={darkmode}
-              navopen={navopen}
-            />
+            <Header />
           </Col>
         </Row>
         <Row>
@@ -122,6 +117,7 @@ export default function Root() {
         <>
           <ScrollToTop />
           <ScrollToTopComponent />
+          <Header />
           <Outlet />
           <div>{modalView}</div>
           <Footer />

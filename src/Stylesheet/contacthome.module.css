@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 .contactSection {
-  padding: 6rem 2rem;
+  padding: 6rem 0rem 2rem;
   position: relative;
   overflow: hidden;
   font-family: 'EB Garamond', serif;
@@ -66,7 +66,7 @@
 
 .contactImage {
   width: 100%;
-  height: 500px;
+  height: 550px;
   object-fit: cover;
   border-radius: 100% 100% 15px 15px;
   /* Arch shape */
@@ -288,8 +288,32 @@
   .formWrapper {
     padding: 1.5rem;
   }
+}
 
-  .formTitle {
+@media (max-width: 480px) {
+  .title {
     font-size: 1.8rem;
+  }
+  .formTitle {
+    font-size: 1.4rem;
+  }
+  .inputBox,
+  .textArea {
+    font-size: 1rem !important;
+  }
+  .inputBox::placeholder,
+  .textArea::placeholder {
+    font-size: 1rem;
+  }
+  .submitButton {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+  }
+  .contactImage {
+    height: 300px;
+  }
+  .socialIcons {
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }

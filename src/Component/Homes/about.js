@@ -4,6 +4,7 @@ import bharatham from "../Homes/bharatha.mp4"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../Context/contextApi';
+import ScrollTitle from './ScrollTitle';
 const AboutUs = ({ lang = 'en' }) => {
   const { language } = useContext(Context);
   const content = {
@@ -39,14 +40,18 @@ const AboutUs = ({ lang = 'en' }) => {
             <path d="M0 10 Q 25 0, 50 10 T 100 10" fill="none" stroke="#8b4513" strokeWidth="2" />
           </svg>
         </div>
-      <div className='d-flex'>
+      <div className='d-flex flex-column flex-md-row'>
         <div className={styles.textSection}>
           <div className={styles.decorativeIcon}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 5C20 5 15 15 5 20C15 25 20 35 20 35C20 35 25 25 35 20C25 15 20 5 20 5Z" fill="#5d4037" />
             </svg>
           </div>
-          <h2>{content.heading[language]}</h2>
+          <div className='pb-md-5 pb-3'>
+          <ScrollTitle wrapperStyle={{ justifyContent: 'flex-start' }} className={styles.title} as="h2">
+            {content.heading[language]}
+          </ScrollTitle>
+          </div>
           <p>{content.paragraph1[language]}</p>
           <p>{content.paragraph2[language]}</p>
           <p>{content.paragraph3[language]}</p>

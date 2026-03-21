@@ -204,7 +204,7 @@
 }
 
 
-.tamil1Image{
+.tamil1Image {
   /* transform: translateY(-62px); */
   font-family: 'Ananthabairavi Regular';
   font-size: 10rem;
@@ -213,7 +213,7 @@
 
 
 
-.redText{
+.redText {
   color: red;
   font-weight: bold;
 }
@@ -226,4 +226,54 @@
 
 .templeImage {
   transform: skewy(15deg);
+}
+
+@media (max-width: 991px) {
+  .heroSection {
+    height: 120vh;
+  }
+  .stickyContainer {
+    min-height: 100vh;
+  }
+  .tamil1Image {
+    font-size: 6rem;
+  }
+  .vanakkamImage {
+    max-width: 80%;
+  }
+  .heading1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heroSection {
+    height: 100vh;
+  }
+  .stickyContainer {
+    min-height: 100vh;
+  }
+  .overlay {
+    padding-top: 160px; /* Offset for fixed header */
+  }
+  .tamil1Image {
+    font-size: 3.5rem;
+  }
+  .vanakkamImage {
+    max-width: 70%;
+  }
+  .heading1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .symbol img {
+    max-width: 12vh;
+  }
+}
+
+@media (max-width: 480px) {
+    .tamil1Image {
+      font-size: 2.8rem;
+    }
 }
