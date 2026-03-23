@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Footer from './Home/Footer';
 import ScrollToTop from './ScrollToTop';
 import styles from '../Stylesheet/Root.module.css';
@@ -9,6 +9,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from './Homes/Navbar';
 import ScrollToTopComponent from './ScrollToTopComponent';
 import Spinner from './Spinner';
+import backBtnImg from '../image/bacbtn.png';
+
 export default function Root() {
   const {
     tokenContext,
@@ -24,6 +26,8 @@ export default function Root() {
 
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
   function handleDarkmode(value) {
     changeDarkMode(value);
   }
@@ -63,7 +67,7 @@ export default function Root() {
     if (!tokenContext) {
       const timer = setTimeout(() => {
         setShowModal(true);
-      }, 1000);
+      }, 10000);
       return () => clearTimeout(timer);
     } else {
       return;
@@ -72,10 +76,22 @@ export default function Root() {
   useEffect(() => {
     handleMobileView();
   }, [handleMobileView]);
+
+  const showBackButton = location.pathname !== '/';
+
   return location.pathname !== '/' ? (
     <>
       <ScrollToTop />
       <ScrollToTopComponent />
+      {showBackButton && (
+        <button
+          className={styles.imageBackButton}
+          onClick={() => navigate(-1)}
+          title="Back"
+        >
+          <img src={backBtnImg} alt="Back" />
+        </button>
+      )}
       <Container
         style={{
           margin: 0,

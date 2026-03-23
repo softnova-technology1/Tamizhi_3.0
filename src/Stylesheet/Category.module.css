@@ -9,7 +9,7 @@
 }
 
 .gridContainer {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 7rem;
@@ -46,7 +46,7 @@
   padding: 60px 40px;
 }
 .card .content h5 {
-  margin-top: 5%;
+  /* margin-top: 5%;   */
   font-size: 3rem;
   color: black;
 }
@@ -63,7 +63,7 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 .categoryTitleImg {
-  width: 382px;
+     width: 382px;
     border-radius: -1px;
     max-width: 52%;
     height: auto;

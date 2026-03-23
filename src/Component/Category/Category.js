@@ -179,7 +179,7 @@ export default function Category() {
   const { language } = useContext(Context);
   return (
     <>
-      <div className={styles.wrapper} style={{ backgroundImage: `url(${stoneBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+      <div className={styles.wrapper} style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.39)), url(${stoneBg})`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
         <div className={styles.breadcrumb}>
           <Link to="/" style={{ color: 'white' }}>
             <span className={styles.home}>Home</span>

@@ -82,19 +82,19 @@
   font-size: 2.5rem;
   line-height: 0.5;
   box-shadow:
-    0 4px 8px rgba(0,0,0,0.6),
-    inset -2px -2px 4px rgba(0,0,0,0.4),
-    inset 2px 2px 4px rgba(255,255,255,0.2);
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.2);
   border: 1px solid #7c1a0f;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: 900;
 }
 
 .modalTop span:hover {
   transform: scale(1.15) rotate(15deg);
   background: radial-gradient(circle at 30% 30%, #ff5e5e, #b22222);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
 }
 
 
@@ -135,7 +135,6 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -146,17 +145,69 @@
     transform: scale(0.8) translate(-50%, -45%);
     opacity: 0;
   }
-
   100% {
     transform: scale(1) translate(-50%, -45%);
     opacity: 1;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 420px) {
+/* Back Button Stylings */
+.imageBackButton {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 10002;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatEffect 3s ease-in-out infinite;
+}
+
+.imageBackButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+.imageBackButton:hover {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.imageBackButton:active {
+  transform: scale(0.9);
+}
+
+@keyframes floatEffect {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .imageBackButton {
+    bottom: 30px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 530px) {
   .modalContainer {
-    /* padding: 1rem 1rem; */
-    /* background-color: #fff; */
+    width: 300px;
     min-width: 250px;
     position: absolute;
     top: 50%;
@@ -164,21 +215,6 @@
     transform: translate(-50%, -45%);
     border-radius: 10px;
     box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
-    animation: Root_scalePop__JIk-f 0.5s ease-in-out forwards;
-  }
-}
-
-@media screen and (min-width: 421px) and (max-width: 530px) {
-  .modalContainer {
-    padding: 1rem 1rem;
-    background-color: #fff;
-    width: 380px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    border-radius: 10px;
-    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
-    animation: Root_scalePop__JIk-f 0.5s ease-in-out forwards;
+    animation: scalePop 0.5s ease-in-out forwards;
   }
 }
