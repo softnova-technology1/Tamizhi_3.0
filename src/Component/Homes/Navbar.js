@@ -6,6 +6,7 @@ import { ImUser } from 'react-icons/im';
 import dayjs from 'dayjs';
 import { Link, useNavigate } from 'react-router-dom';
 import navbarimg from '../../image/navbarimg.png'
+import hoverimg from '../../image/hoverimg.png'
 import { Context } from '../../Context/contextApi';
 import { Modal } from 'react-bootstrap';
 import Login from '../LoginDetails/Login';
@@ -147,7 +148,10 @@ const Header = () => {
             <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '15px' }}>
               {/* <div className={styles.gLogoBox}>G</div> */}
               <div className={styles.brandInfo}>
-                <span className={styles.brandMain}>TAMIZHI</span>
+                <span className={styles.brandMain}>
+                  <span className={styles.brandText}>TAMIZHI</span>
+                  <img src={hoverimg} alt="" className={styles.logoHoverOverlay} aria-hidden="true" />
+                </span>
                 {/* <span className={styles.brandSub}>SCHOLARLY ARCHIVE</span> */}
               </div>
             </Link>

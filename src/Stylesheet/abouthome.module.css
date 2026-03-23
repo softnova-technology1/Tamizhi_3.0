@@ -135,6 +135,7 @@
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 1;
   transition: transform 0.5s ease;

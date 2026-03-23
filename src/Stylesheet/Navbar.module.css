@@ -9,6 +9,45 @@
   z-index: 1000;
 }
 
+.brandMain {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100px; /* Fixed width to prevent layout shift when text disappears */
+  height: 50px;  /* Align with line-height or image size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandText {
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.logoHoverOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 150%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 2;
+}
+
+.brandMain:hover .brandText {
+  opacity: 0;
+}
+
+.brandMain:hover .logoHoverOverlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .topBar {
   display: flex;
   align-items: center;
@@ -197,12 +236,12 @@
   align-items: center;
   padding: 0 4px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.3);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .langSwitchBtn:hover {
   border-color: #cfa15f;
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 0 15px rgba(207, 161, 95, 0.3);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(207, 161, 95, 0.3);
 }
 
 .langSwitchCircle {
@@ -213,7 +252,7 @@
   border-radius: 50%;
   top: 1px;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.6), inset 0 -2px 4px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
   z-index: 2;
   border: 1px solid #d4af37;
 }
@@ -263,6 +302,7 @@
 .langSwitchWrapper {
   margin-left: 10px;
 }
+
 .langSwitchBtn {
   position: relative;
   width: 70px;
@@ -276,6 +316,7 @@
   padding: 0 4px;
   transition: all 0.3s ease;
 }
+
 .langSwitchCircle {
   position: absolute;
   width: 22px;
@@ -287,12 +328,15 @@
   box-shadow: 0 0 10px rgba(207, 161, 95, 0.4);
   z-index: 2;
 }
+
 .enActive {
   left: 3px;
 }
+
 .tnActive {
   left: calc(100% - 25px);
 }
+
 .langLabels {
   width: 100%;
   display: flex;
@@ -300,6 +344,7 @@
   padding: 10 6px;
   z-index: 1;
 }
+
 .langLabel {
   font-family: 'EB Garamond', serif;
   font-size: 0.65rem;
@@ -308,16 +353,19 @@
   transition: all 0.9s ease;
   margin-top: 40px;
 }
+
 .activeLabel {
   color: #fff;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
- 
+
 }
+
 .actionButtons {
   display: flex;
   align-items: center;
   gap: 15px;
 }
+
 .writeBtn,
 .loginBtn {
   padding: 8px 22px;
@@ -332,7 +380,8 @@
   min-width: 130px;
   text-align: center;
   text-decoration: none !important;
-  color: #fff !important;}
+  color: #fff !important;
+}
 
 .actionButtons {
   display: flex;
@@ -438,14 +487,15 @@
 
   .mobileHeader {
     display: block;
-    background: #0f0f0f; /* Darker for better contrast */
+    background: #0f0f0f;
+    /* Darker for better contrast */
     padding: 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -633,7 +683,8 @@
     display: block;
     width: 100%;
     background-color: #1c1c1c;
-    color: #cfa15f; /* Gold color for logo/text */
+    color: #cfa15f;
+    /* Gold color for logo/text */
   }
 
   .headerWrapper {
@@ -892,6 +943,7 @@
     width: 100%;
   }
 }
+
 /* LOGIN MODAL STYLES */
 .loginModal :global(.modal-dialog) {
   max-width: 600px !important;
@@ -942,7 +994,7 @@
     max-width: 95% !important;
     margin: 1rem auto !important;
   }
-  
+
   .modalContent {
     min-height: 500px;
     padding: 15px;
@@ -955,4 +1007,3 @@
     min-height: 450px;
   }
 }
-
