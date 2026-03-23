@@ -235,8 +235,8 @@ const Header = () => {
               <div className={styles.langSwitchBtn} onClick={toggleLanguage}>
                 <div className={`${styles.langSwitchCircle} ${language === 'en' ? styles.enActive : styles.tnActive}`}></div>
                 <div className={styles.langLabels}>
-                  <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>EN</span>
-                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>TN</span>
+                  <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>ENGLISH</span>
+                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>TAMIL</span>
                 </div>
               </div>
             </div>
@@ -278,13 +278,13 @@ const Header = () => {
                   <div className={styles.menuDivider}></div>
                   <div className={styles.mobileCategoryHeader}>CATEGORIES</div>
                   <ul className={styles.customDropdown}>
-                    <li onClick={() => handleSelectAndClose('categorySelection','/subcategory/history')}>History</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection','/subcategory/kings')}>Kings</li>
+                    <li onClick={() => handleSelectAndClose('categorySelection', '/subcategory/history')}>History</li>
+                    <li onClick={() => handleSelectAndClose('categorySelection', '/subcategory/kings')}>Kings</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/war')}>War</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/culture')}>Culture</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/temple')}>Temple</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/architecture')}>Architecture</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection','/historical_place')}>Historical Place</li>
+                    <li onClick={() => handleSelectAndClose('categorySelection', '/historical_place')}>Historical Place</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/poet')}>Poet</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/books')}>Books</li>
                     <li onClick={() => handleSelectAndClose('categorySelection', '/lord')}>Lord</li>
@@ -297,6 +297,26 @@ const Header = () => {
           </div>
 
           <h1 className={styles.logo}>Tamizhi</h1>
+          {/* <div className={styles.userLogin}>
+            <MdPerson className={styles.iconuser} />
+            {tokenContext ? (
+              <button
+                className={styles.logout}
+                onClick={() => handleLogOut()}
+                style={{ color: '#4b2e0f' }}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className={styles.text1}
+                style={{ color: '#4b2e0f' }}
+              >
+                Login
+              </Link>
+            )}
+          </div> */}
           <div className={styles.userLogin}>
             <MdPerson className={styles.iconuser} />
             {tokenContext ? (
@@ -346,19 +366,19 @@ const Header = () => {
               className={`${styles.circleText} ${language === 'en' ? styles.active : ''}`}
               onClick={() => toggleLanguage('en')}
             >
-              ENG
+              English
             </div>
             <div
               className={`${styles.circleText} ${language === 'ta' ? styles.active : ''}`}
               onClick={() => toggleLanguage('ta')}
             >
-              TAM
+              தமிழ்
             </div>
           </div>
         </div>
       </div>
 
-      <Modal
+      {/* <Modal
         show={showModal}
         onHide={handleModal}
         centered
@@ -370,7 +390,7 @@ const Header = () => {
           </button>
           <Login homePage={true} handleModal={handleModal} />
         </div>
-      </Modal>
+      </Modal> */}
     </>
   );
 };

@@ -1,8 +1,8 @@
 import { Suspense, useContext, useState, lazy } from 'react';
-import log from '../../Stylesheet/Login.module.css';
+import log from '../../Stylesheet/loginpage.module.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import thamil from '../../image/logImage.png';
+import thamil from '../../image/logo2.png';
 import {
   Form as ReactRouterForm,
   useNavigate,
@@ -151,17 +151,17 @@ export default function Login({ homePage, handleModal }) {
   }
 
   return (
-    <>
+    <div className={!homePage ? log.sandbg : log.modalWrapper}>
       {loading && <Spinner loading={loading} />}
-      <Container style={{ opacity: loading ? '0.3' : '' }}>
+      <Container style={{ opacity: loading ? '0.3' : '', padding: homePage ? '0' : '' }}>
         {!homePage && <h1 className={log.welcome}>Welcome Back!</h1>}
         {homePage && <h3 className={log.welcomeHome}>Welcome Back!</h3>}
-        <Row className={log.head}>
+        <Row className={log.head} style={{justifyContent:"space-between", margin: 0}}>
           <Col
             xs={12}
             sm={12}
             md={!homePage ? 6 : 12}
-            className={!homePage ? log.forms : log.formsHome}
+            className={!homePage ? log.forms : log.formsModal}
           >
             <div className={log.contains}>
               <ReactRouterForm
@@ -268,7 +268,7 @@ export default function Login({ homePage, handleModal }) {
           )}
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 

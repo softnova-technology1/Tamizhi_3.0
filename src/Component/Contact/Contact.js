@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../Stylesheet/ContactRedesign.module.css';
-import MapImage from '../../image/contactmap.png';
+import MapImage from '../../image/tamilnadu.png';
 import {
   FaPhoneAlt,
   FaEnvelope,

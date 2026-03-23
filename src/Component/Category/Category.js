@@ -20,7 +20,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { useContext } from 'react';
 import { Context } from '../../Context/contextApi';
-
+import cats from '../../image/cats.png';
 const cardsData = [
   {
     id: 1,
@@ -188,8 +188,8 @@ export default function Category() {
           <span className={styles.current}>Category</span>
         </div>
         <div className={styles.titleSection}>
-          <img src={kingImage} alt="king" className={styles.kingImage} />
-          <h1 className={styles.title}>
+          {/* <img src={kingImage} alt="king" className={styles.kingImage} /> */}
+          {/* <h1 className={styles.title}>
             <span className={styles.orangeC}>C</span>
             <div className={styles.new}>
               ATEGOR
@@ -202,7 +202,8 @@ export default function Category() {
                 />
               </span>
             </div>
-          </h1>
+          </h1> */}
+          <img src={cats} alt="category" className={styles.categoryTitleImg} />
         </div>
         <Container style={{ maxWidth: '100%', width: '100%' }}>
           <Row>

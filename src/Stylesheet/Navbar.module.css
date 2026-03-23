@@ -219,7 +219,7 @@
 }
 
 /* Wax Seal effect on the circle */
-.langSwitchCircle::after {
+/* .langSwitchCircle::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -259,8 +259,80 @@
 .activeLabel {
   color: #fff;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+} */
+.langSwitchWrapper {
+  margin-left: 10px;
 }
-
+.langSwitchBtn {
+  position: relative;
+  width: 70px;
+  height: 28px;
+  background: rgba(207, 161, 95, 0.1);
+  border: 1.5px solid #4a3b2b;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  transition: all 0.3s ease;
+}
+.langSwitchCircle {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #cfa15f;
+  border-radius: 50%;
+  top: 1.5px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 0 10px rgba(207, 161, 95, 0.4);
+  z-index: 2;
+}
+.enActive {
+  left: 3px;
+}
+.tnActive {
+  left: calc(100% - 25px);
+}
+.langLabels {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10 6px;
+  z-index: 1;
+}
+.langLabel {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: hsla(0, 0%, 100%, 0.4);
+  transition: all 0.9s ease;
+  margin-top: 40px;
+}
+.activeLabel {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+ 
+}
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.writeBtn,
+.loginBtn {
+  padding: 8px 22px;
+  border-radius: 6px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 130px;
+  text-align: center;
+  text-decoration: none !important;
+  color: #fff !important;}
 
 .actionButtons {
   display: flex;

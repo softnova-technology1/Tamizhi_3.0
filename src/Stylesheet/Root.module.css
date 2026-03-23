@@ -64,8 +64,8 @@
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  top: 21rem;
-  right: -8px;
+  top: 11rem;
+  right: -25px;
   z-index: 10003;
 }
 

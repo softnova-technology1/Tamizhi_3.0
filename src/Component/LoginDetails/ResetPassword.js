@@ -80,7 +80,7 @@ const ResetPassword = () => {
       );
   })();
   return (
-    <>
+    <div className={styles.bg}>
       {loading && <Spinner loading={loading} />}
       <div
         className={styles.container}
@@ -118,7 +118,7 @@ const ResetPassword = () => {
           </div>
         </Form>
       </div>
-    </>
+    </div>
   );
 };
 export default ResetPassword;

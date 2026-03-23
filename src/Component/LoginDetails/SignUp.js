@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import sign from '../../Stylesheet/SignUp.module.css';
 import { Col, Container, Row, Button, Form } from 'react-bootstrap';
-import tamil1 from './../../image/logImage.png';
+import tamil1 from './../../image/logo2.png';
 import {
   Form as RouterForm,
   useSubmit,
@@ -124,7 +124,7 @@ export default function SignUp() {
   })();
 
   return (
-    <>
+    <div style={{height:"100vh"}}>
       {loading && <Spinner loading={loading} />}
       <Container
         fluid
@@ -304,11 +304,11 @@ export default function SignUp() {
           </Col>
 
           <Col md={5} className={sign.imagtamil1}>
-            <img src={tamil1} className={sign.imagtamil2} alt="gh" />
+            <img src={tamil1} className={sign.imagtamil2} alt="gh" width={'90%'} height={'100%'}/>
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 

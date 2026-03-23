@@ -62,6 +62,18 @@
   margin-top: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
+.categoryTitleImg {
+  width: 382px;
+    border-radius: -1px;
+    max-width: 52%;
+    height: auto;
+    /* margin: 30px 30px; */
+    display: block;
+    filter: drop-shadow(0 -2px 0px rgba(206, 164, 0, 68.7));
+    /* animation: Category_fadeInDown__OxGDQ 1.5s ease-out; */
+    position: relative;
+    z-index: 50;
+}
 .but {
   font-size: 1rem !important;
   font-weight: bold;

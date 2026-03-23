@@ -228,15 +228,15 @@ const Header = () => {
               <div className={styles.langSwitchBtn} onClick={toggleLanguage}>
                 <div className={`${styles.langSwitchCircle} ${language === 'en' ? styles.enActive : styles.tnActive}`}></div>
                 <div className={styles.langLabels}>
-                  <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>EN</span>
-                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>TN</span>
+                  <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>English</span>
+                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>தமிழ்</span>
                 </div>
               </div>
             </div>
 
-            <div 
-              className={styles.profileAvatar} 
-              title={language === 'en' ? 'Switch to Tamil' : 'Switch to English'} 
+            <div
+              className={styles.profileAvatar}
+              title={language === 'en' ? 'Switch to Tamil' : 'Switch to English'}
             >
               <div className={styles.avatarImg}>
                 <MdPerson />
@@ -353,7 +353,7 @@ const Header = () => {
               </div>
             )}
           </div>
-         
+
           <h1 className={styles.logo}>Tamizhi</h1>
           <div className={styles.userLogin}>
             <MdPerson className={styles.iconuser} />
