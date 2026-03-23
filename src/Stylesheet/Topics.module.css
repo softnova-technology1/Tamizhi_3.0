@@ -121,7 +121,7 @@
 }
 
 .pandyan {
-    background-image: url('../Component/Homes/pandyan_temple.png');
+    background-image: url('../image/pandyan.png');
 }
 
 .tamilar {
@@ -131,6 +131,7 @@
 
 .tamilarSmall {
     background-image: url('../Component/Homes/tamilar_culture.png');
+    background-position: top;
 }
 
 .overlay {

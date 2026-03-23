@@ -231,7 +231,7 @@ const Header = () => {
             {tokenContext ? (
               <button className={styles.loginBtn} onClick={handleLogOut}>LOGOUT</button>
             ) : (
-              <button className={styles.loginBtn} onClick={handleModal}>LOGIN</button>
+              <button className={styles.loginBtn} onClick={() => navigate('/login')}>LOGIN</button>
             )}
 
             {/* Premium Language Switcher */}
@@ -240,14 +240,22 @@ const Header = () => {
                 <div className={`${styles.langSwitchCircle} ${language === 'en' ? styles.enActive : styles.tnActive}`}></div>
                 <div className={styles.langLabels}>
                   <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>ENGLISH</span>
-                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>TAMIL</span>
+                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>தமிழ்</span>
                 </div>
               </div>
             </div>
 
             <div
               className={styles.profileAvatar}
-              title={language === 'en' ? 'Switch to Tamil' : 'Switch to English'}
+              title={tokenContext ? "Logout" : "Login"}
+              onClick={() => {
+                if (tokenContext) {
+                  handleLogOut();
+                } else {
+                  navigate('/login');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
             >
               <div className={styles.avatarImg}>
                 <MdPerson />
@@ -321,7 +329,7 @@ const Header = () => {
               </Link>
             )}
           </div> */}
-          <div className={styles.userLogin}>
+          <div className={styles.userLogin} onClick={() => !tokenContext && navigate('/login')} style={{ cursor: 'pointer' }}>
             <MdPerson className={styles.iconuser} />
             {tokenContext ? (
               <button

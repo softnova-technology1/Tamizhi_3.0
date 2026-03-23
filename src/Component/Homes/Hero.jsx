@@ -6,12 +6,10 @@ import styles from '../../Stylesheet/Hero.module.css';
 import templePng from '../Homes/fi.png'; // Updated to use isolated gopuram
 import extra from "../Homes/s.png"
 import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
-import HeaderImage from './../../image/headerimageNew.webp';
 import tamil1 from './../../image/Tamil_1x.webp';
 import tamil2 from './../../image/Tamil_2x.webp';
 import kovil from './../../image/Image20250415120343.webp';
 import { Context } from '../../Context/contextApi';
-import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 

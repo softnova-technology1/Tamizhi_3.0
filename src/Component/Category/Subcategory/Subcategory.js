@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import classes from '../../../Stylesheet/King.module.css';
+import historyStyles from '../../../Stylesheet/HistoryRedesign.module.css';
 import { useParams, Link } from 'react-router-dom';
 import tamilagam from '../../../image/Tamilagam.jpg';
 import tamizhar from '../../../image/tamilar.png';
@@ -10,9 +11,14 @@ import chera from '../../../image/cheras-img.png';
 import pandiya from '../../../image/pandiya-img.png';
 import kalabhra from '../../../image/kalabhra-img.png';
 import pallava from '../../../image/pallava-head.jpg';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import { Context } from '../../../Context/contextApi';
 import TamilAnimation from '../../TamilzhiLoader.js';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const jsonSet = {
   history: [
     {
@@ -114,15 +120,113 @@ function Subcategory() {
   const name = useParams().value;
   const { language } = useContext(Context);
   const [show, setShow] = useState(true);
+  const cardsRef = useRef([]);
+
   useEffect(() => {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!show && name === 'history') {
+      // GSAP Animations for History Cards
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              y: 100,
+              scale: 0.9,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 1,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                end: 'top 50%',
+                toggleActions: 'play none none reverse',
+              },
+            }
+          );
+        }
+      });
+
+      // Animate main title
+      gsap.fromTo(
+        '.history-main-title',
+        { opacity: 0, y: -50 },
+        { opacity: 1, y: 0, duration: 1.5, ease: 'back.out(1.7)' }
+      );
+    }
+  }, [show, name]);
+
   const tamilHead = name
     ? language !== 'en' && name.toLowerCase() === 'history'
       ? 'வரலாறு'
       : 'அரசர்கள்'
     : '';
+
+  // Redesigned History Layout
+  if (name === 'history') {
+    return (
+      <>
+        {show && <TamilAnimation show={setShow} />}
+        <div className={historyStyles.backgroundContainer}>
+          <Container>
+            <div className={historyStyles.titleWrapper}>
+              <h1 className={`${historyStyles.mainTitle} history-main-title`}>
+                {language === 'en' ? 'HISTORY' : 'வரலாறு'}
+              </h1>
+              <div className={historyStyles.titleDecorativeLine}></div>
+            </div>
+
+            {jsonSet[name].map((item, index) => (
+              <div
+                key={index}
+                className={historyStyles.historyCard}
+                ref={(el) => (cardsRef.current[index] = el)}
+              >
+                <div
+                  className={`${historyStyles.cardInner} ${
+                    index % 2 === 1 ? historyStyles.evenRow : ''
+                  }`}
+                  style={{ flexDirection: index % 2 === 1 ? 'row-reverse' : 'row' }}
+                >
+                  <div className={historyStyles.cardContent}>
+                    <h2 className={historyStyles.cardTitle}>
+                      {language === 'en' ? item.enname : item.taname}
+                    </h2>
+                    <p className={historyStyles.cardDesc}>
+                      {language === 'en' ? item.endescription : item.tadescription}
+                    </p>
+                    <Link to={item.link}>
+                      <button className={historyStyles.seeMoreBtn}>
+                        {language === 'en' ? 'Explore Legacy' : 'மேலும் அறிய'}
+                      </button>
+                    </Link>
+                  </div>
+                  <div className={historyStyles.imageWrapper}>
+                    <img
+                      src={item.image}
+                      className={historyStyles.cardImage}
+                      alt={item.enname}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Container>
+        </div>
+      </>
+    );
+  }
+
+  // Original Layout for other categories (Kings, etc.)
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
@@ -133,23 +237,16 @@ function Subcategory() {
           </h1>
           {jsonSet[name].map((item, index) => (
             <Row key={index} className="align-items-center mb-5">
-              {/* Conditional Rendering for Alternating Layout */}
               {index % 2 === 0 ? (
                 <>
                   <Col md={6}>
                     <div>
                       <h4 className={classes.Kingheight}>
-                        {language === 'en' ? (
-                          <b>{item.enname}</b>
-                        ) : (
-                          <b>{item.taname}</b>
-                        )}
+                        <b>{language === 'en' ? item.enname : item.taname}</b>
                       </h4>
-                      {language === 'en' ? (
-                        <p className={classes.kingdesc}>{item.endescription}</p>
-                      ) : (
-                        <p className={classes.kingdesc}>{item.tadescription}</p>
-                      )}
+                      <p className={classes.kingdesc}>
+                        {language === 'en' ? item.endescription : item.tadescription}
+                      </p>
                       <Link to={item.link}>
                         <button
                           type="button"
@@ -165,7 +262,7 @@ function Subcategory() {
                     <img
                       src={item.image}
                       className={`img-fluid rounded ${classes.kingsize1}`}
-                      alt={item.name}
+                      alt={item.enname}
                     />
                   </Col>
                 </>
@@ -175,23 +272,17 @@ function Subcategory() {
                     <img
                       src={item.image}
                       className={`img-fluid rounded ${classes.kingsize}`}
-                      alt={item.name}
+                      alt={item.enname}
                     />
                   </Col>
                   <Col md={6}>
                     <div>
                       <h4 className={classes.Kingheight}>
-                        {language === 'en' ? (
-                          <b>{item.enname}</b>
-                        ) : (
-                          <b>{item.taname}</b>
-                        )}
+                        <b>{language === 'en' ? item.enname : item.taname}</b>
                       </h4>
-                      {language === 'en' ? (
-                        <p className={classes.kingdesc}>{item.endescription}</p>
-                      ) : (
-                        <p className={classes.kingdesc}>{item.tadescription}</p>
-                      )}
+                      <p className={classes.kingdesc}>
+                        {language === 'en' ? item.endescription : item.tadescription}
+                      </p>
                       <Link to={item.link}>
                         <button
                           type="button"
