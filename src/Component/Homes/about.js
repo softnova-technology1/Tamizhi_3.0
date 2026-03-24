@@ -1,6 +1,6 @@
 import styles from '../../Stylesheet/abouthome.module.css';
-import about from './../../image/ancient_dancer.png';
-import bharatham from "../Homes/bharatha.mp4"
+// import about from './../../image/ancient_dancer.png';
+import bharatham from "../../image/bharatha.mp4"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../Context/contextApi';
