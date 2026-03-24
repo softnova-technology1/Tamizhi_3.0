@@ -6,6 +6,7 @@ import History from './History'
 import AboutUs from './about'
 import ContactUs from './contact'
 import WriteContent from './WriteContent'
+import Logo from './Logo'
 
 export default function Homes() {
   return (
@@ -16,7 +17,10 @@ export default function Homes() {
         <History />
         <AboutUs />
         <ContactUs />
-        <WriteContent/>
+        <div className="mb-md-5 pb-md-5 mb-3 pb-3">
+          <Logo />
+        </div>
+        <WriteContent />
       </div>
 
     </div>

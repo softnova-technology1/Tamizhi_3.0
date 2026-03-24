@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Cinzel:wght@600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+.minimalistLogoSection {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    color: #2B1B12;
+    z-index: 10;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(201, 163, 78, 0.05) 0%, rgba(43, 27, 18, 0.08) 100%);
+    pointer-events: none;
+}
+
+.headerArea {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+    z-index: 5;
+}
+
+.headerArea .title {
+    color: #554108;
+    font-size: 3rem !important;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+
+}
+
+.interactiveMandala {
+    position: relative;
+    width: 800px;
+    height: 800px;
+}
+
+/* SVG Spokes */
+.mandalaSvg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.spokeLine {
+    stroke: rgba(201, 163, 78, 0.15);
+    stroke-width: 0.2;
+    fill: none;
+    transition: all 0.5s ease;
+}
+
+.lineActive {
+    stroke: #86651d;
+    stroke-width: 0.6;
+    opacity: 1;
+}
+
+/* Hub Identity */
+.hubIdentity {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.hubWrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 50%;
+    border: 8px solid #a0720f;
+    padding: 25px;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.1),
+        inset 0 0 50px rgba(201, 163, 78, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hubWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.hubAura {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(201, 163, 78, 0.2) 0%, transparent 80%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Tagline Pill below Logo */
+.hubTagline {
+    background: #2B1B12;
+    color: #FFF;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #C9A34E;
+}
+
+/* Dot Pointers */
+.dotPointer {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dotCore {
+    width: 8px;
+    height: 8px;
+    background: #a7760d;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.dotRipple {
+    position: absolute;
+    inset: -100%;
+    border: 1px solid #916e23;
+    border-radius: 50%;
+    animation: rippleAnime 3s infinite;
+    opacity: 0.4;
+}
+
+@keyframes rippleAnime {
+    0% {
+        transform: scale(0.3);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.dotPointer:hover .dotCore {
+    transform: scale(1.5);
+    background: #FFF;
+    box-shadow: 0 0 15px #C9A34E;
+}
+
+/* Floating Detail Card (Initially Hidden) */
+.floatingDetail {
+    position: absolute;
+    bottom: 30px;
+    background: #FFF;
+    border: 2px solid #C9A34E;
+    padding: 20px 25px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: none;
+    text-align: center;
+}
+
+.floatingDetail h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #2B1B12;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(201, 163, 78, 0.2);
+    padding-bottom: 8px;
+}
+
+.floatingDetail p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: #4A3A31;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Hover State */
+.dotPointer:hover .floatingDetail {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .interactiveMandala {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .minimalistLogoSection {
+        height: auto;
+        padding: 80px 0;
+    }
+
+    .interactiveMandala {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        transform: none;
+        padding: 0 20px;
+    }
+
+    .mandalaSvg {
+        display: none;
+    }
+
+    .hubIdentity {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        order: -1;
+    }
+
+    .hubWrapper {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .dotPointer {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        cursor: default;
+    }
+
+    .dotRipple {
+        display: none;
+    }
+
+    .floatingDetail {
+        position: relative;
+        bottom: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        text-align: left;
+        padding: 0;
+    }
+
+    .floatingDetail h4 {
+        border-left: 3px solid #C9A34E;
+        border-bottom: none;
+        padding-left: 15px;
+    }
+}

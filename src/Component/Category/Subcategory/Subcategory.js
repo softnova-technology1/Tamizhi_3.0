@@ -6,7 +6,7 @@ import tamilagam from '../../../image/Tamilagam.jpg';
 import tamizhar from '../../../image/tamilar.png';
 import tamil from '../../../image/tamizh.jpg';
 import brahmi from '../../../image/brahmi.jpg';
-import chola from '../../../image/cholaimg.webp';
+import chola from '../../../image/cholar.png';
 import chera from '../../../image/cheras-img.png';
 import pandiya from '../../../image/pandiya-img.png';
 import kalabhra from '../../../image/kalabhra-img.png';
@@ -128,8 +128,8 @@ function Subcategory() {
   }, []);
 
   useEffect(() => {
-    if (!show && name === 'history') {
-      // GSAP Animations for History Cards
+    if (!show && (name === 'history' || name === 'kings')) {
+      // GSAP Animations for Cards
       cardsRef.current.forEach((card, index) => {
         if (card) {
           gsap.fromTo(
@@ -158,7 +158,7 @@ function Subcategory() {
 
       // Animate main title
       gsap.fromTo(
-        '.history-main-title',
+        '.subcategory-main-title',
         { opacity: 0, y: -50 },
         { opacity: 1, y: 0, duration: 1.5, ease: 'back.out(1.7)' }
       );
@@ -171,16 +171,16 @@ function Subcategory() {
       : 'அரசர்கள்'
     : '';
 
-  // Redesigned History Layout
-  if (name === 'history') {
+  // Redesigned Layout for History and Kings
+  if (name === 'history' || name === 'kings') {
     return (
       <>
         {show && <TamilAnimation show={setShow} />}
         <div className={historyStyles.backgroundContainer}>
           <Container>
             <div className={historyStyles.titleWrapper}>
-              <h1 className={`${historyStyles.mainTitle} history-main-title`}>
-                {language === 'en' ? 'HISTORY' : 'வரலாறு'}
+              <h1 className={`${historyStyles.mainTitle} subcategory-main-title`}>
+                {language === 'en' ? name.toUpperCase() : tamilHead}
               </h1>
               <div className={historyStyles.titleDecorativeLine}></div>
             </div>
@@ -225,6 +225,7 @@ function Subcategory() {
       </>
     );
   }
+
 
   // Original Layout for other categories (Kings, etc.)
   return (

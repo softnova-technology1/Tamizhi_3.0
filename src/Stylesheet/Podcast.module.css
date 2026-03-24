@@ -1,198 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;600&display=swap');
+
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-}
-.iconContainer {
+  background: url('../image/podcast_bg_new.png') no-repeat center center;
+  background-size: cover;
   display: flex;
-  gap: 30px;
-  margin-top: 80px;
+  align-items: center;
+  justify-content: center;
 }
 
-.iconWrapper {
-  display: flex;
-  width: 40px;
-  height: 50px;
-  font-size: 22px;
-  outline: 3px solid #fcfbfb00;
-  color: rgba(252, 249, 249, 0) !important;
-  cursor: pointer;
-  border-radius: 50%;
-  text-align: center !important;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-}
-.iconWrapper1 {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  font-size: 22px;
-  outline: 3px solid #faf8f800;
-  color: rgba(252, 249, 249, 0) !important;
-  cursor: pointer;
-  border-radius: 50%;
-  text-align: center !important;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-}
-.iconWrapper2 {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  font-size: 22px;
-  outline: 3px solid #fcfafa00;
-  color: rgba(252, 249, 249, 0) !important;
-  cursor: pointer;
-  border-radius: 50%;
-  text-align: center !important;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-}
-.iconWrapper3 {
-  display: flex;
-  width: 40px;
-  height: 50px;
-  font-size: 22px;
-  outline: 3px solid #faf7f700;
-  color: rgba(252, 249, 249, 0) !important;
-  cursor: pointer;
-  border-radius: 50%;
-  text-align: center !important;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 0 auto;
-}
-.iconWrapper:hover {
-  background-color: #0b81e200;
-   color: #ffffff00 !important; 
-   outline-color: #0b81e200;
-}
-.iconWrapper3:hover {
-  outline-offset: 4px;
-}
-.iconWrapper2:hover {
-  outline-offset: 4px;
-}
-.iconWrapper1:hover {
-  outline-offset: 4px;
-}
-.iconWrapper:hover {
-  outline-offset: 4px;
-}
-.iconWrapper1:hover {
-  background-color: #0762ad;
-  color: #ffffff !important;
-  outline-color: #0762ad;
-}
-.iconWrapper2:hover {
-  background-color: #25d366;
-  color: #ffffff !important;
- outline-color: #25d366;
-}
-.iconWrapper3:hover {
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  ); 
- color: #ffffff !important;
- outline-color: #a02d76;
-}
-.banner {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.changecolor {
-  color: rgb(248, 244, 244) !important;
-}
-.overlay {
+/* Vignette Shadow Effect */
+.vignette {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 183%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.9) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mist/Cloud Effect Animation */
+.mistCloud {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(219, 176, 34, 0.05) 0%, transparent 60%);
+  filter: blur(50px);
+  animation: moveMist 30s linear infinite;
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes moveMist {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(0%) translateY(-20px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.overlay {
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.micIcon {
+/* Mic Icon Design */
+.micIconContainer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.micIconInner {
+  font-size: 3.5rem;
+  color: #d4af37;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+}
+
+.micGlow {
   position: absolute;
-  top: 50px;
-  left: 150px;
-  width: 80px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulsate 3s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+}
+
+/* Content & Typography */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoWrapper {
+  margin-bottom: 30px;
 }
 
 .tamilLogo {
-  width: 600px;
-  transform: translateY(165px);
+  max-width: 500px;
+  width: 100%;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
 }
 
-.comingSoon {
-  width: 300px;
-  margin-top: 20px;
-  margin-left: 15%;
+.textContainer {
+  margin-bottom: 40px;
 }
 
+.comingSoonText {
+  font-family: 'Cinzel', serif;
+  font-size: 5rem;
+  color: #fff;
+  letter-spacing: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(to bottom, #f7ef8a 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+
+.decorativeLine {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin: 15px auto;
+}
+
+.tagline {
+  font-family: 'Montserrat', sans-serif;
+  color: #e0e0e0;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Social Medallions */
 .socialIcons {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.socialIcons img {
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
+.socialLink {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  background: radial-gradient(circle at 30% 30%, #2c1810 0%, #1a0f0a 100%);
+  border: 2px solid #d4af37;
+  border-radius: 15% 35% 15% 35% / 35% 15% 35% 15%; /* Unique asymmetric "carved" shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 5px rgba(212, 175, 55, 0.2);
 }
+
+.socialLink::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: inherit;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.socialLink:hover {
+  transform: translateY(-12px) rotate(8deg);
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #4a3728 0%, #2c1810 100%);
+  border-color: #f7ef8a;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.5),
+    inset 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.socialLink:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Responsiveness */
 @media screen and (max-width: 768px) {
-  .micIcon {
-    top: 20px;
-    left: 20px;
-    width: 50px;
+  .comingSoonText {
+    font-size: 2.8rem;
+    letter-spacing: 8px;
   }
-
+  
   .tamilLogo {
-    width: 280px;
-    transform: translateY(100px);
-    margin-top: 30px;
+    max-width: 280px;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  
+  .micIconContainer {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+  }
+  
+  .micIconInner {
+    font-size: 2.5rem;
   }
 
-  .comingSoon {
-    width: 180px;
-    margin-left: 0;
-    margin-top: 10px;
+  .socialIcons {
+    gap: 20px;
   }
-
-  .iconContainer {
-    gap: 15px;
-    margin-top: 25px;
-  }
-
-  .iconWrapper {
-    font-size: 20px;
-    padding: 8px;
-  }
-
-  .overlay {
-    padding: 20px;
-    justify-content: flex-start;
-  }
-
-  .banner {
-    object-position: center;
+  
+  .socialLink {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
   }
 }

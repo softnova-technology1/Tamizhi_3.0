@@ -117,7 +117,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className={styles.pad}>
-                1st Floor, Aadhil block, Shavanna apartment,
+               1st Floor, Softnova Appartment, SNV Mahal back side,
                 <br />
                 Near SBI bank, Peravurani.
               </div>
