@@ -17,10 +17,17 @@ export default function ContentComponent() {
   let activeSubHeading = null;
   let isIntroduction = false;
 
+  const normalize = (s) => (s || '').trim().toLowerCase().replace(/[\s,._-]+/g, '_');
+  const genericSections = [
+    "intro", "background", "course", "outcome", "significance", "conclusion", "sources", "summary", 
+    "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
+    "etymology", "origin", "alphabet", "languages", "significance", "cultural", "religious", "architectural", "features", "prominent",
+    "excavations", "research", "discoveries", "findings", "phases", "members", "details",
+    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம்", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்"
+  ];
+
   if (hash) {
-    const normalize = (s) => (s || '').trim().toLowerCase().replace(/[\s,._-]+/g, '_');
     const normalizedHash = normalize(hash);
-    const genericSections = ["intro", "background", "course", "outcome", "significance", "conclusion", "sources", "summary", "reign", "legacy", "early", "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்"];
     let currentMajorHeading = data.title;
 
     // Check if the hash matches the main title itself (Introduction state)
@@ -61,14 +68,23 @@ export default function ContentComponent() {
   let searchResults = [];
   if (searchQuery.trim() !== '') {
     const q = searchQuery.toLowerCase();
+    let currentMajorHeadingSearch = data.title;
+
     for (let sub of data.subTitle || []) {
+      const isGeneric = genericSections.some(g => sub.subHeading.toLowerCase().includes(g));
+      if (!isGeneric) currentMajorHeadingSearch = sub.subHeading;
+
+      const contextualId = currentMajorHeadingSearch === sub.subHeading
+        ? sub.subHeading
+        : `${currentMajorHeadingSearch}_${sub.subHeading}`;
+
       if (sub.data) {
         for (let eachData of sub.data) {
           const matchTitle = eachData.title && eachData.title.toLowerCase().includes(q);
           const matchDesc = eachData.description && eachData.description.some(d => d.toLowerCase().includes(q));
           const matchSub = sub.subHeading && sub.subHeading.toLowerCase().includes(q);
           if (matchTitle || matchDesc || matchSub) {
-            searchResults.push({ ...eachData, parentSubHeading: sub.subHeading });
+            searchResults.push({ ...eachData, parentSubHeading: sub.subHeading, contextualId });
           }
         }
       }
@@ -100,9 +116,9 @@ export default function ContentComponent() {
           onKeyDown={(e) => {
             if (e.key === 'Enter' && searchResults.length > 0) {
               const firstMatch = searchResults[0];
-              if (firstMatch.parentSubHeading) {
+              if (firstMatch.contextualId) {
                 // Navigate to the topic and clear search
-                window.location.hash = firstMatch.parentSubHeading.split(' ').join('_');
+                window.location.hash = normalize(firstMatch.contextualId);
                 setSearchQuery('');
               }
             }

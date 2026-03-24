@@ -1,0 +1,31 @@
+chola Good: வரலாறு
+Chola mismatch found
+chola Good: ஆரம்பகால சோழ ஆட்சியாளர்கள் (c. 300 BCE – 850 CE)
+chola Good: ஏகாதிபத்திய சோழப் பேரரசு (850–1279 CE)
+chola Good: முடிவுரை
+chera Good: பண்டைய தென்னிந்தியாவின் சேரர்கள்
+chera Good: சேர நாணயம்
+chera has bad obj: ஆரம்பகால சேர இராச்சியம் (கி.பி. 3ஆம் நூற்றாண்டு – கிபி 4ஆம் நூற்றாண்டு)
+chera has bad obj: கொங்கு சேர வம்சம் (கி.பி. 400–844)
+chera has bad obj: மாகோதையின் சேர பெருமாள் வம்சம் (கி.பி. 844–1124)
+chera has bad obj: வேணாடு சேர/குலசேகர வம்சம் (c. 1124–1528 CE)
+pandyan Good: தோற்றம் மற்றும் ஆதாரங்கள்
+pandyan Good: ஆரம்பகால பாண்டியர்கள் (கி.மு. 6 ஆம் நூற்றாண்டு - 3 ஆம் நூற்றாண்டு
+pandyan Good: ஏகாதிபத்திய பாண்டியர்கள் (590–920 CE)
+pandyan Good: சோழப் பேரரசின் கீழ் பாண்டியர்கள் (920–1216 CE)
+pandyan Good: பிற்கால பாண்டியர்கள் (1212–1345 CE)
+pandyan Good: தென்காசி பாண்டியர்கள் (1422–1620 CE)
+kalabhra Good: பூலாங்குறிச்சி கல்வெட்டு
+kalabhra Good: 8ஆம் நூற்றாண்டு வேள்விக்குடி மானியக் கல்வெட்டு
+kalabhra Good: நாணயவியல்
+kalabhra Good: மதம் மற்றும் இலக்கியம்
+kalabhra Good: வம்சத்தின் முடிவு
+pallavas Good: ஆரம்பகால பல்லவர்கள்
+pallavas Good: மத்திய பல்லவர்கள்
+pallavas Good: பின்னர் பல்லவர்கள்
+pallavas Good: சொற்பிறப்பியல்
+pallavas Good: தோற்றம்
+pallavas Good: பல்லவ கலை மற்றும் கட்டிடக்கலை
+pallavas Good: பயன்படுத்திய மொழிகள்
+pallavas Good: எழுத்து அமைப்பு
+pallavas Good: பல்லவ சமுதாயம்
