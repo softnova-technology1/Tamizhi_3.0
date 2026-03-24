@@ -16,10 +16,8 @@ export default function Root() {
     tokenContext,
     changeDarkMode,
     navopen,
-    handleNavOpen,
     sticky,
     handleSticky,
-    darkmode,
     loading,
     handleMobileView,
   } = useContext(Context);
@@ -37,9 +35,7 @@ export default function Root() {
     return () => clearTimeout(timer);
   }, []);
 
-  function handleDarkmode(value) {
-    changeDarkMode(value);
-  }
+
   function handleModal() {
     setShowModal((pre) => !pre);
   }
