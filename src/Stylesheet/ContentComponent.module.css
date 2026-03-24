@@ -30,7 +30,7 @@
 }
 
 .listname {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 .marginBottomdes {
   margin-bottom: 1.5rem;
@@ -52,4 +52,25 @@
 .imgsize {
   width: 300px;
   height: 300px;
+}
+
+@keyframes slideAndFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.activeSectionAnim {
+  animation: slideAndFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #d4af37;
+  transition: all 0.5s ease;
 }

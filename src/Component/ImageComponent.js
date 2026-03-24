@@ -25,10 +25,10 @@ export default function ImageComponent({
     }
   })();
   const backgroundStyle = {
-    background: `linear-gradient(rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)),url(${imgurl})`,
-    height: '37rem',
-    width: 'auto',
+    background: `linear-gradient(rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)),url(${imgurl})`,
+    height: '50rem',
+    width: '100%',
     color: 'white',
   };
   return (
@@ -36,22 +36,22 @@ export default function ImageComponent({
       style={backgroundStyle}
       className={`${classes.container} ${classes.imageContainer}`}
     >
+      <div className={classes.lightRay}></div>
       <div className={classes.pathdescription}>
         {pathArray.map((item, index) => {
           return (
-            <span key={`${getRandomInt()}+${index}`}>
+            <span key={`${getRandomInt()}+${index}`} style={{ display: 'flex', alignItems: 'center' }}>
               <Link
                 to={`${LinkArray[index]}`}
+                className={classes.pathLink}
                 style={{
-                  marginLeft: '7px',
-                  textTransform: 'capitalize',
                   color: 'white',
                 }}
               >
                 {item}
               </Link>
               {pathArray.length - 1 !== index && (
-                <span style={{ marginLeft: '7px' }}>
+                <span style={{ margin: '0 8px' }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -59,7 +59,12 @@ export default function ImageComponent({
                     stroke="currentColor"
                     className={classes.svg}
                   >
-                    <path d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+                    />
                   </svg>
                 </span>
               )}
@@ -67,11 +72,28 @@ export default function ImageComponent({
           );
         })}
       </div>
-      <div className={classes.fitCenter}>
-        <div className={classes.fontStyle}>{englishContent}</div>
-        <div className={`${classes.gapBetweenText} ${classes.fontStyle}`}>
-          {tamilContent}
-        </div>
+      <div className={classes.textWrapper} key={pathName}>
+         <div className={classes.glassContainer}>
+            {/* Scroll Rod Top */}
+            <div className={`${classes.scrollPin} ${classes.pinTop}`}>
+              <div className={`${classes.pinEnd} ${classes.pinLeft}`}></div>
+              <div className={`${classes.pinEnd} ${classes.pinRight}`}></div>
+            </div>
+
+            <div className={classes.fontStyle}>{englishContent}</div>
+            <div className={`${classes.gapBetweenText}`}>
+              {tamilContent}
+            </div>
+
+            {/* Tamil Royal Wax Seal */}
+            <div className={classes.royalSeal}></div>
+
+            {/* Scroll Rod Bottom */}
+            <div className={`${classes.scrollPin} ${classes.pinBottom}`}>
+              <div className={`${classes.pinEnd} ${classes.pinLeft}`}></div>
+              <div className={`${classes.pinEnd} ${classes.pinRight}`}></div>
+            </div>
+         </div>
       </div>
     </div>
   );

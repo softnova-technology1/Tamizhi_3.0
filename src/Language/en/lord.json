@@ -1,7 +1,10 @@
 {
   "lord": {
     "id": 1,
-    "title": "LORD SHIVA",
+    "title": "Divine Figures & Religions",
+    "description": [
+      "The spiritual landscape of the world is illuminated by the lives and teachings of profound divine figures and enlightened masters. From the cosmic dance of Lord Shiva and the compassionate message of Jesus Christ to the prophetic wisdom of Nabigal Nayagam and the non-violent paths of Jainism and Buddhism, these spiritual traditions offer diverse conduits to the ultimate truth. This section brings together the sacred stories, core philosophies, and eternal values of these great traditions, celebrating the universal quest for peace, righteousness, and spiritual liberation that unites all of humanity."
+    ],
     "subTitle": [
       {
         "subHeading": "LORD SHIVA",

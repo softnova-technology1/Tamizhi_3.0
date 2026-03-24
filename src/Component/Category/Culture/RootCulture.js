@@ -1,7 +1,8 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import classes from '../../../Stylesheet/RootHistory.module.css';
+// import classes from '../../../Stylesheet/RootHistory.module.css';
+import classes from '../../../Stylesheet/RootBooks.module.css';
 import cultureDataEn from '../../../Language/en/culture.json';
 import cultureDataTN from '../../../Language/tam/culture.json';
 import { useContext, useState, useEffect } from 'react';
@@ -9,6 +10,8 @@ import { Context } from '../../../Context/contextApi.js';
 import { Helmet } from 'react-helmet';
 import ImageComponent from '../../ImageComponent.js';
 import TamilAnimation from '../../TamilzhiLoader.js';
+import bgImage from '../../../image/sand.png';
+
 export default function RootCulture() {
   const { language, darkmode, navopen } = useContext(Context);
 
@@ -29,7 +32,10 @@ export default function RootCulture() {
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
-      <Container>
+      <Container
+        fluid
+        className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>
@@ -44,8 +50,8 @@ export default function RootCulture() {
             content="Join us in celebrating Tamil Nadu’s vibrant culture, featuring its diverse religions, stunning art forms, festivals, and the culinary delights you can't miss!"
           />
         </Helmet>
-        <Row className={classes.mobileView}>
-          <Col xs={12} sm={12} md={12}>
+        <Row className={` ${classes.bannerRow} g-0`}>
+          <Col xs={12}>
             <ImageComponent
               tamilContent="  தமிழர் பண்பாடு – காலம் மாறினாலும் வேர் மாறாது!"
               englishContent="  Tamil culture – time may change, but roots remain!"
@@ -54,43 +60,43 @@ export default function RootCulture() {
             />
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} sm={12} md={12}>
-            <Container
-              className={classes.container}
-              style={{
-                backgroundColor:
-                  darkmode === 'off'
-                    ? navopen
-                      ? '#d9d9d9'
-                      : 'white'
-                    : '#2b2a2a',
-                color: darkmode === 'off' ? 'black' : 'white',
-                opacity: navopen ? 0.5 : '',
-              }}
-            >
-              <Row>
-                <Col
-                  xs={12}
-                  sm={3}
-                  md={3}
-                  className={`${classes.setScroll} ${classes.mobileView}`}
-                >
-                  <SideNav
-                    data={data}
-                    darkmode={darkmode}
-                    handleReadMore={handleReadMore}
-                  />
-                </Col>
-                <Col xs={12} sm={9} md={9} className={classes.contentContainer}>
-                  <Outlet
-                    context={[data, nameOfContent, readMore, handleReadMore]}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
+
+        <div className={classes.contenWrapper}>
+          <Row>
+            <Col xs={12}>
+              <div
+                className={classes.ancientCard}
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(${bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center bottom',
+                  backgroundAttachment: 'fixed',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
+                <Row>
+                  <Col
+                    xs={12}
+                    sm={3}
+                    md={3}
+                    className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
+                  >
+                    <SideNav
+                      data={data}
+                      darkmode={darkmode}
+                      handleReadMore={handleReadMore}
+                    />
+                  </Col>
+                  <Col xs={12} sm={9} md={9} className={classes.contentContainer}>
+                    <Outlet
+                      context={[data, nameOfContent, readMore, handleReadMore]}
+                    />
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </>
   );
