@@ -1,298 +1,425 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Cinzel:wght@600;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
-.minimalistLogoSection {
+.horizontalLogoStory {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 100px 0;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     overflow: hidden;
-    color: #2B1B12;
-    z-index: 10;
+    padding: 0 5%;
 }
 
-.overlay {
+/* Sticky Left Side */
+.stickyLogoAside {
+    flex: 0 0 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+}
+
+.logoFrame {
+    position: relative;
+    width: 480px; /* Increased Size */
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.mainLogo {
+    width: 420px; /* Larger Logo */
+    height: 420px;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s ease;
+}
+
+.highlightActive {
+    transform: scale(1.1);
+}
+
+.logoOverlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(201, 163, 78, 0.05) 0%, rgba(43, 27, 18, 0.08) 100%);
+    background: radial-gradient(circle, rgba(201, 163, 78, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.sectionHeader {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
     pointer-events: none;
 }
 
-.headerArea {
+.sectionTitle h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #554108;
+    /* padding-top: 2rem; */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle p {
+    font-family: 'Outfit', sans-serif;
+    color: #8B7355;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Right Side Scroll Strip */
+.scrollStripContainer {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Ensured first card visibility */
+}
+
+.scrollStripInner {
+    display: flex;
+    gap: 70px; /* Increased gap */
+    height: 60%;
+    padding: 30px 100px 30px 0;
+}
+
+.cardWrapper {
+    flex: 0 0 320px; /* Reduced width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.palmLeafCard {
     width: 100%;
-    text-align: center;
-    margin-bottom: 60px;
+    height: 420px; /* Reduced height */
+    background: #E8D3B9;
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform-origin: center;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    box-shadow:
+        5px 10px 20px rgba(0, 0, 0, 0.15),
+        inset 0 0 50px rgba(139, 115, 85, 0.2);
+    border: 3px solid #C9A34E;
+    overflow: hidden;
+}
+
+.palmLeafCard:hover {
+    box-shadow:
+        10px 20px 35px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(201, 163, 78, 0.3);
+}
+
+/* Prominent Active State (Enhanced by GSAP) */
+.cardActive {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        0 0 35px rgba(201, 163, 78, 0.5) !important;
+    border-color: #86651d !important;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.cardIcon {
+    font-size: 3rem;
+    color: #C9A34E;
+    z-index: 2;
+    background: rgba(43, 27, 18, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 163, 78, 0.3);
+}
+
+.objectImg {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.palmLeafCard:hover .objectImg {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bilingualTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: 2px solid rgba(201, 163, 78, 0.4);
+    padding-bottom: 10px;
+}
+
+.cardContent h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: #4A3A31;
+    margin: 0;
+}
+
+.tamilSubtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    color: #8B7355;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tamilPoetic {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #33290e;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 15px;
+    background: rgba(201, 163, 78, 0.1);
+    padding: 8px 12px;
+    border-left: 4px solid #C9A34E;
+}
+
+.descriptionBody {
+    position: relative;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Custom Scrollbar for Card Content */
+.descriptionBody::-webkit-scrollbar {
+    width: 4px;
+}
+
+.descriptionBody::-webkit-scrollbar-thumb {
+    background: #C9A34E;
+    border-radius: 10px;
+}
+
+.meaningText {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    color: #1a110c;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.cardTexture {
+    position: absolute;
+    inset: 0;
+    /* background-image: url("https://www.transparenttextures.com/patterns/old-paper.png"); */
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Logo Highlights */
+.logoHighlightOverlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     z-index: 5;
 }
 
-.headerArea .title {
-    color: #554108;
-    font-size: 3rem !important;
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-
-}
-
-.interactiveMandala {
-    position: relative;
-    width: 800px;
-    height: 800px;
-}
-
-/* SVG Spokes */
-.mandalaSvg {
+.highlightPulsar {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    width: 30px; 
+    height: 30px;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Hidden when not active */
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s ease;
     pointer-events: none;
 }
 
-.spokeLine {
-    stroke: rgba(201, 163, 78, 0.15);
-    stroke-width: 0.2;
-    fill: none;
-    transition: all 0.5s ease;
+.pulsarActive {
+    opacity: 1; /* Only show active dot */
+    transform: translate(-50%, -50%) scale(1.4);
 }
 
-.lineActive {
-    stroke: #86651d;
-    stroke-width: 0.6;
-    opacity: 1;
-}
-
-/* Hub Identity */
-.hubIdentity {
+.pulsarCore {
+    width: 12px;
+    height: 12px;
+    background: #C9A34E;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px #C9A34E,
+        0 0 40px rgba(201, 163, 78, 0.6),
+        0 0 60px rgba(201, 163, 78, 0.4);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    z-index: 10;
+    z-index: 2;
+    border: 2px solid #FFF;
 }
 
-.hubWrapper {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    background: #FFF;
-    border-radius: 50%;
-    border: 8px solid #a0720f;
-    padding: 25px;
-    box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.1),
-        inset 0 0 50px rgba(201, 163, 78, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hubWrapper img {
+.pulsarRing {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
-}
-
-.hubAura {
+    border: 3px solid #C9A34E;
+    border-radius: 50%;
+    animation: heritagePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(201, 163, 78, 0.2) 0%, transparent 80%);
-    z-index: 1;
-    pointer-events: none;
 }
 
-/* Tagline Pill below Logo */
-.hubTagline {
-    background: #2B1B12;
-    color: #FFF;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid #C9A34E;
-}
-
-/* Dot Pointers */
-.dotPointer {
+/* Extra decorative ring for active state */
+.pulsarRing::after {
+    content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dotCore {
-    width: 8px;
-    height: 8px;
-    background: #a7760d;
+    inset: -10px;
+    border: 1px dashed rgba(255, 255, 255, 0.8);
     border-radius: 50%;
-    z-index: 2;
-    transition: all 0.3s ease;
+    animation: rotateHeritage 10s linear infinite;
 }
 
-.dotRipple {
-    position: absolute;
-    inset: -100%;
-    border: 1px solid #916e23;
-    border-radius: 50%;
-    animation: rippleAnime 3s infinite;
-    opacity: 0.4;
+@keyframes heritagePulse {
+    0% { transform: scale(0.6); opacity: 1; border-width: 4px; }
+    100% { transform: scale(3.5); opacity: 0; border_width: 1px; }
 }
 
-@keyframes rippleAnime {
-    0% {
-        transform: scale(0.3);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(3);
-        opacity: 0;
-    }
+@keyframes rotateHeritage {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-.dotPointer:hover .dotCore {
-    transform: scale(1.5);
-    background: #FFF;
-    box-shadow: 0 0 15px #C9A34E;
-}
-
-/* Floating Detail Card (Initially Hidden) */
-.floatingDetail {
-    position: absolute;
-    bottom: 30px;
-    background: #FFF;
-    border: 2px solid #C9A34E;
-    padding: 20px 25px;
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    pointer-events: none;
-    text-align: center;
-}
-
-.floatingDetail h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
-    color: #2B1B12;
-    margin-bottom: 8px;
-    border-bottom: 1px solid rgba(201, 163, 78, 0.2);
-    padding-bottom: 8px;
-}
-
-.floatingDetail p {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem;
-    color: #4A3A31;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* Hover State */
-.dotPointer:hover .floatingDetail {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 1024px) {
-    .interactiveMandala {
-        transform: scale(0.8);
+    .horizontalLogoStory {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 0;
+        overflow: visible;
+        display: block; /* Break flex for natural flow */
+    }
+
+    .sectionHeader {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding-top: 2rem;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stickyLogoAside {
+        flex: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 40px;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    .logoFrame {
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+    }
+
+    .mainLogo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .scrollStripContainer {
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+        overflow: visible;
+    }
+
+    .scrollStripInner {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 40px;
+        padding: 20px 0;
+    }
+
+    .cardWrapper {
+        flex: none;
+        width: 100%;
+        height: auto;
+        transform: none !important; /* Disable GSAP scaling on mobile if needed */
+    }
+
+    .palmLeafCard {
+        height: auto;
+        min-height: 380px;
+        padding: 40px 25px;
+    }
+
+    .highlightPulsar {
+        display: none; /* Hide interactive pulsars on mobile to avoid clutter */
     }
 }
 
 @media (max-width: 768px) {
-    .minimalistLogoSection {
-        height: auto;
-        padding: 80px 0;
+    .horizontalLogoStory {
+        padding: 30px 10px;
     }
 
-    .interactiveMandala {
-        height: auto;
-        width: 100%;
-        display: flex;
+    .logoFrame {
+        width: 260px;
+        height: 260px;
+    }
+
+    .mainLogo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .palmLeafCard {
+        min-height: 480px; /* Better for vertical text space */
+    }
+
+    .cardHeader {
         flex-direction: column;
-        gap: 40px;
-        transform: none;
-        padding: 0 20px;
-    }
-
-    .mandalaSvg {
-        display: none;
-    }
-
-    .hubIdentity {
-        position: relative;
-        width: 100%;
-        top: 0;
-        left: 0;
-        transform: none;
-        order: -1;
-    }
-
-    .hubWrapper {
-        width: 280px;
-        height: 280px;
-        margin: 0 auto;
-    }
-
-    .dotPointer {
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        transform: none !important;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
+        align-items: center;
+        text-align: center;
         gap: 20px;
-        cursor: default;
     }
 
-    .dotRipple {
-        display: none;
-    }
-
-    .floatingDetail {
-        position: relative;
-        bottom: 0;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        width: 100%;
-        border: none;
-        box-shadow: none;
-        background: transparent;
-        text-align: left;
-        padding: 0;
-    }
-
-    .floatingDetail h4 {
-        border-left: 3px solid #C9A34E;
-        border-bottom: none;
-        padding-left: 15px;
+    .objectImg {
+        width: 100px;
+        height: 100px;
     }
 }
