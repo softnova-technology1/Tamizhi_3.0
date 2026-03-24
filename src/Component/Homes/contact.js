@@ -12,6 +12,7 @@ import {
   FaLinkedin,
 } from 'react-icons/fa';
 import scrollVideo from '../../image/contactdove.mp4';
+// import Logo from './Logo';
 
 const ContactUs = () => {
   const [fieldValue, setFieldValue] = useState({
@@ -152,18 +153,20 @@ const ContactUs = () => {
   return (
     <div className={`containers ${styles.contactSection}`}>
       <div className='mb-md-5 pb-md-5 mb-3 pb-3'>
-      <ScrollTitle className={styles.title}>
-        {language === 'en' ? 'Contact Us' : 'தொடர்பு கொள்ள...'}
-      </ScrollTitle>
+        <ScrollTitle className={styles.title}>
+          {language === 'en' ? 'Contact Us' : 'தொடர்பு கொள்ள...'}
+        </ScrollTitle>
       </div>
+
+     
 
       <div className="row align-items-center justify-content-around gap-5">
         <div className="col-md-5 mb-4 mb-md-0">
           <div className={styles.imageWrapper}>
-            <video 
-              autoPlay 
-              loop 
-              muted 
+            <video
+              autoPlay
+              loop
+              muted
               className={styles.contactImage}
               loading="lazy"
               decoding="async"
@@ -181,7 +184,7 @@ const ContactUs = () => {
             </h3>
 
             {responseData && <div className="text-center">{responseData}</div>}
-            
+
             <Form
               onSubmit={(event) => handleSubmit(event)}
               method="POST"
@@ -201,7 +204,7 @@ const ContactUs = () => {
                     onChange={(event) => handleChange('firstName', event.target.value)}
                   />
                   {firstNameCheck && (
-                    <p className="text-danger" style={{fontSize:"18px"}}>
+                    <p className="text-danger" style={{ fontSize: "18px" }}>
                       {language === 'en' ? "First Name should be less than 25 characters" : "முதல் பெயர் 25 எழுத்துக்களுக்கு குறைவாக இருக்க வேண்டும்"}
                     </p>
                   )}
@@ -218,12 +221,12 @@ const ContactUs = () => {
                     onChange={(event) => handleChange('lastName', event.target.value)}
                   />
                   {lastNameCheck && (
-                    <p className="text-danger" style={{fontSize:"18px"}}>
+                    <p className="text-danger" style={{ fontSize: "18px" }}>
                       {language === 'en' ? "Last Name should be less than 25 characters" : "இறுதி பெயர் 25 எழுத்துக்களுக்கு குறைவாக இருக்க வேண்டும்"}
                     </p>
                   )}
                 </div>
-                
+
                 <div className="col-md-6">
                   <input
                     type="email"
@@ -236,7 +239,7 @@ const ContactUs = () => {
                     onChange={(event) => handleChange('email', event.target.value)}
                   />
                   {emailChecked && (
-                    <p className="text-danger" style={{fontSize:"18px"}}>
+                    <p className="text-danger" style={{ fontSize: "18px" }}>
                       {language === 'en' ? "Please enter valid email" : "சரியான மின்னஞ்சலை உள்ளிடவும்"}
                     </p>
                   )}
@@ -255,12 +258,12 @@ const ContactUs = () => {
                     name="phonenumber"
                   />
                   {phoneNumbercheck && (
-                    <p className="text-danger" style={{fontSize:"18px"}}>
+                    <p className="text-danger" style={{ fontSize: "18px" }}>
                       {language === 'en' ? "Please enter valid PhoneNumber" : "சரியான தொலைபேசி எண்ணை உள்ளிடவும்"}
                     </p>
                   )}
                 </div>
-                
+
                 <div className="col-12">
                   <textarea
                     className={styles.textArea}
@@ -272,12 +275,12 @@ const ContactUs = () => {
                     onChange={(event) => handleChange('message', event.target.value)}
                   ></textarea>
                   {messageCheck && (
-                    <p className="text-danger" style={{fontSize:"18px"}} >
+                    <p className="text-danger" style={{ fontSize: "18px" }} >
                       {language === 'en' ? "Please enter valid message" : "சரியான செய்தியை உள்ளிடவும்"}
                     </p>
                   )}
                 </div>
-                
+
                 <div className="col-12">
                   <button type="submit" className={styles.submitButton}>
                     {language === 'en' ? "SUBMIT" : "அனுப்புக"}

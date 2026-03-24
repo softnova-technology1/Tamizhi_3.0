@@ -30,6 +30,7 @@ import { useContext, useEffect } from 'react';
 import { Context } from './Context/contextApi';
 import "./App.css";
 import Homes from './Component/Homes/Homes';
+import WriteContent from './Component/WriteContent/WriteContent';
 const tokenVal = localStorage.getItem('token');
 export default function App() {
   const { findUserFunction, handleToken, handleSetLoading } =
@@ -219,6 +220,10 @@ export default function App() {
         {
           path: 'podcast',
           element: <Podcast />,
+        },
+        {
+          path: '/write',
+          element: <WriteContent />,
         },
       ],
     },

@@ -113,11 +113,11 @@
 }
 
 .chola {
-    background-image: url('../Component/Homes/chola_carvings.png');
+    background-image: url('../image/cholas.png');
 }
 
 .historical {
-    background-image: url('../Component/Homes/historical_ruins.png');
+    background-image: url('../image/historys.png');
 }
 
 .pandyan {
@@ -125,12 +125,12 @@
 }
 
 .tamilar {
-    background-image: url('../Component/Homes/tamilar_culture.png');
+    background-image: url('../image/pand.png');
     /* Illustration-like */
 }
 
 .tamilarSmall {
-    background-image: url('../Component/Homes/tamilar_culture.png');
+    background-image: url('../image/Tamilars.png');
     background-position: top;
 }
 

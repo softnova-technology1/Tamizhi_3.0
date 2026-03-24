@@ -67,7 +67,7 @@ export default function Root() {
     if (!tokenContext) {
       const timer = setTimeout(() => {
         setShowModal(true);
-      }, 10000);
+      }, 100000);
       return () => clearTimeout(timer);
     } else {
       return;

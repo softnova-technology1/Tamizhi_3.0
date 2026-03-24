@@ -217,147 +217,48 @@
   font-style: italic;
 }
 
-/* Premium Language Switcher Styles */
-.langSwitchWrapper {
-  margin-left: 20px;
+/* Premium Language Switcher (Double Tab Design) */
+.premiumLangSwitcher {
   display: flex;
   align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  padding: 4px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(207, 161, 95, 0.25);
+  margin-left: 15px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.langSwitchBtn {
-  position: relative;
-  width: 85px;
-  height: 34px;
-  background: linear-gradient(145deg, #2c251e, #3d342a);
-  border: 2px solid #5a4a35;
-  border-radius: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 0 4px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.langSwitchBtn:hover {
-  border-color: #cfa15f;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(207, 161, 95, 0.3);
-}
-
-.langSwitchCircle {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  background: radial-gradient(circle at 30% 30%, #f1c40f, #a67c00);
-  border-radius: 50%;
-  top: 1px;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
-  z-index: 2;
-  border: 1px solid #d4af37;
-}
-
-/* Wax Seal effect on the circle */
-/* .langSwitchCircle::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid rgba(0,0,0,0.2);
-  border-radius: 50%;
-}
-
-.enActive {
-  left: 3px;
-}
-
-.tnActive {
-  left: calc(100% - 31px);
-}
-
-.langLabels {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 8px;
-  z-index: 1;
-}
-
-.langLabel {
+.langTab {
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  padding: 6px 18px;
+  color: rgba(207, 161, 95, 0.5);
   font-family: 'EB Garamond', serif;
-  font-size: 1.2rem;
   font-weight: 800;
-  color: rgba(235, 199, 149, 0.966);
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-}
-
-.activeLabel {
-  color: #fff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-} */
-.langSwitchWrapper {
-  margin-left: 10px;
-}
-
-.langSwitchBtn {
-  position: relative;
-  width: 70px;
-  height: 28px;
-  background: rgba(207, 161, 95, 0.1);
-  border: 1.5px solid #4a3b2b;
-  border-radius: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  letter-spacing: 0.1em;
+  min-width: 60px;
   display: flex;
   align-items: center;
-  padding: 0 4px;
-  transition: all 0.3s ease;
+  justify-content: center;
 }
 
-.langSwitchCircle {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  background: #cfa15f;
-  border-radius: 50%;
-  top: 1.5px;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 0 0 10px rgba(207, 161, 95, 0.4);
-  z-index: 2;
+.langTabActive {
+  background: linear-gradient(135deg, #cfa15f, #8c6a3e);
+  color: #1a1a1a !important;
+  box-shadow: 0 4px 15px rgba(207, 161, 95, 0.3);
+  text-shadow: none;
 }
 
-.enActive {
-  left: 3px;
-}
-
-.tnActive {
-  left: calc(100% - 25px);
-}
-
-.langLabels {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 10 6px;
-  z-index: 1;
-}
-
-.langLabel {
-  font-family: 'EB Garamond', serif;
-  font-size: 0.65rem;
-  font-weight: 900;
-  color: hsla(0, 0%, 100%, 0.4);
-  transition: all 0.9s ease;
-  margin-top: 40px;
-}
-
-.activeLabel {
-  color: #fff;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-
+.langTab:not(.langTabActive):hover {
+  color: #cfa15f;
+  background: rgba(207, 161, 95, 0.1);
 }
 
 .actionButtons {
@@ -742,18 +643,30 @@
     align-items: center;
   }
 
-  .circleIcon,
-  .circleText {
-    width: 36px;
-    height: 36px;
-    border-radius: 20%;
-    background-color: white;
-    color: black;
+  .mobileLangSwitcher {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .langTabMobile {
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  .activeTabMobile {
+    background: #cfa15f;
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(207, 161, 95, 0.4);
   }
 
   .avatarImg {

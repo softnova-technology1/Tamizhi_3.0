@@ -5,9 +5,11 @@ import { Form } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { emailCheck, nameCheck, numberCheck } from '../../utility/Validation';
 import { Context } from '../../Context/contextApi';
-import ScrollTitle from './ScrollTitle';
+// import ScrollTitle from './ScrollTitle';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollTitle from '../Homes/ScrollTitle';
+import Logo from '../Homes/Logo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -200,12 +202,14 @@ const WriteContent = () => {
   })();
 
   return (
-    <div className={styles.container} id="towrite">
+    <div id={styles.towrite}>
+    <div className={styles.container}>
       <div className='mb-md-5 pb-md-5 mb-3 pb-3'>
         <ScrollTitle className={styles.title}>
           {language === 'en' ? 'Preserve the Heritage' : 'மரபை அழியாமல் காப்போம்'}
         </ScrollTitle>
       </div>
+
 
       <div className={styles.formContainer}>
         <Form
@@ -347,6 +351,7 @@ const WriteContent = () => {
         </div>
       </div>
 
+    </div>
     </div>
   );
 };

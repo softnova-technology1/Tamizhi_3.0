@@ -60,7 +60,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const toggleLanguage = () => {
-    changeLanguage(language === 'en' ? 'tn' : 'en');
+    changeLanguage(language === 'en' ? 'ta' : 'en');
   };
 
   const handleModal = () => {
@@ -226,7 +226,7 @@ const Header = () => {
 
           {/* Actions Section */}
           <div className={styles.actionButtons}>
-            <a href="#towrite" className={styles.writeBtn}>TO WRITE</a>
+            <a href="/write" className={styles.writeBtn}>TO WRITE</a>
 
             {tokenContext ? (
               <button className={styles.loginBtn} onClick={handleLogOut}>LOGOUT</button>
@@ -235,14 +235,19 @@ const Header = () => {
             )}
 
             {/* Premium Language Switcher */}
-            <div className={styles.langSwitchWrapper}>
-              <div className={styles.langSwitchBtn} onClick={toggleLanguage}>
-                <div className={`${styles.langSwitchCircle} ${language === 'en' ? styles.enActive : styles.tnActive}`}></div>
-                <div className={styles.langLabels}>
-                  <span className={`${styles.langLabel} ${language === 'en' ? styles.activeLabel : ''}`}>ENGLISH</span>
-                  <span className={`${styles.langLabel} ${language === 'tn' ? styles.activeLabel : ''}`}>தமிழ்</span>
-                </div>
-              </div>
+            <div className={styles.premiumLangSwitcher}>
+              <button 
+                className={`${styles.langTab} ${language === 'en' ? styles.langTabActive : ''}`} 
+                onClick={() => changeLanguage('en')}
+              >
+                EN
+              </button>
+              <button 
+                className={`${styles.langTab} ${language === 'ta' ? styles.langTabActive : ''}`} 
+                onClick={() => changeLanguage('ta')}
+              >
+                தமிழ்
+              </button>
             </div>
 
             <div
@@ -373,16 +378,16 @@ const Header = () => {
               <FaSearch style={{ width: '25px', height: '25px' }} />
             </button>
           </div>
-          <div className={styles.languageCircleToggle}>
+          <div className={styles.mobileLangSwitcher}>
             <div
-              className={`${styles.circleText} ${language === 'en' ? styles.active : ''}`}
-              onClick={() => toggleLanguage('en')}
+              className={`${styles.langTabMobile} ${language === 'en' ? styles.activeTabMobile : ''}`}
+              onClick={() => changeLanguage('en')}
             >
-              English
+              EN
             </div>
             <div
-              className={`${styles.circleText} ${language === 'ta' ? styles.active : ''}`}
-              onClick={() => toggleLanguage('ta')}
+              className={`${styles.langTabMobile} ${language === 'ta' ? styles.activeTabMobile : ''}`}
+              onClick={() => changeLanguage('ta')}
             >
               தமிழ்
             </div>
