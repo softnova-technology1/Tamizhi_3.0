@@ -1,15 +1,10 @@
 import { useState, useContext } from 'react';
 import styles from '../../Stylesheet/Navbar.module.css';
-import { FaSearch, FaScroll } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import { MdOutlineMenuOpen, MdPerson } from 'react-icons/md';
-import { ImUser } from 'react-icons/im';
-import dayjs from 'dayjs';
 import { Link, useNavigate } from 'react-router-dom';
-import navbarimg from '../../image/navbarimg.png'
 import hoverimg from '../../image/hoverimg.png'
 import { Context } from '../../Context/contextApi';
-import { Modal } from 'react-bootstrap';
-import Login from '../LoginDetails/Login';
 
 const kings = ['chola', 'chera', 'pandyan', 'kalabhra', 'pallavas'];
 const history = ['tamilagam', 'thamizhar', 'tamizh', 'brahmi'];
@@ -28,22 +23,10 @@ const searchTextContent = [
   'mythology',
 ];
 
-function dayRepresentation(dayIndex) {
-  const names = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
-  return names[dayIndex];
-}
+
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [category, setCategory] = useState({
     categorySelection: '',
     searchText: '',
@@ -63,9 +46,7 @@ const Header = () => {
     changeLanguage(language === 'en' ? 'ta' : 'en');
   };
 
-  const handleModal = () => {
-    setShowModal((prev) => !prev);
-  }
+
 
   const handleSelectAndClose = (name, value) => {
     handleCategorySelect(name, value);
