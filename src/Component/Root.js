@@ -24,9 +24,18 @@ export default function Root() {
     handleMobileView,
   } = useContext(Context);
 
+  const [isRefreshing, setIsRefreshing] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Show loader for 3 seconds on every initial refresh/mount
+    const timer = setTimeout(() => {
+      setIsRefreshing(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   function handleDarkmode(value) {
     changeDarkMode(value);
@@ -79,6 +88,10 @@ export default function Root() {
 
   const showBackButton = location.pathname !== '/';
 
+  if (loading || isRefreshing) {
+    return <Spinner loading={true} />;
+  }
+
   return location.pathname !== '/' ? (
     <>
       <ScrollToTop />
@@ -127,18 +140,13 @@ export default function Root() {
     </>
   ) : (
     <>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <>
-          <ScrollToTop />
-          <ScrollToTopComponent />
-          <Header />
-          <Outlet />
-          <div>{modalView}</div>
-          <Footer />
-        </>
-      )}
+      <ScrollToTop />
+      <ScrollToTopComponent />
+      <Header />
+      <Outlet />
+      <div>{modalView}</div>
+      <Footer />
     </>
   );
 }
+

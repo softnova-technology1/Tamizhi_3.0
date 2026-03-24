@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import styles from '../../Stylesheet/Hero.module.css';
-import templePng from '../Homes/fi.png'; // Updated to use isolated gopuram
+import templePng from '../../image/fi.png'; // Updated to use isolated gopuram
 import extra from "../Homes/s.png"
 import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
 import tamil1 from './../../image/Tamil_1x.webp';
