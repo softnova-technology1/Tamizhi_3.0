@@ -312,7 +312,7 @@ const WriteContent = () => {
               )}
             </div>
 
-            <div className={styles.inputRow}>
+            {/* <div className={styles.inputRow}>
               <input
                 type="file"
                 id="file"
@@ -322,7 +322,7 @@ const WriteContent = () => {
                 className={styles.input}
                 aria-label="File Upload"
               />
-            </div>
+            </div> */}
 
             <button type="submit" className={styles.button}>
               {language === 'en' ? "SEAL" : "அனுப்புக"}

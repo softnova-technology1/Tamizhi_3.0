@@ -1,36 +1,250 @@
 .container {
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 5%;
 }
+
+.container::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37 50%, transparent);
+  z-index: 5;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
 .imageContainer {
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  -webkit-backdrop-filter: blur(30px) !important;
-  backdrop-filter: blur(30px) !important;
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+.imageContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lightRay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 100%
+  );
+  z-index: 2;
+  transform: skewX(-20deg);
+  animation: raySweep 30s infinite;
+  pointer-events: none;
+}
+
+@keyframes raySweep {
+  0% { left: -100%; }
+  10% { left: 150%; }
+  100% { left: 150%; }
 }
 .fontStyle {
-  /* font-family: 'Tangerine', serif; */
-  font-size: 2.5rem;
-  font-style: italic;
-  text-transform: capitalize;
-  /* text-shadow: 4px 4px 4px #aaa; */
+  font-family: 'Cinzel', serif !important;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-.fitCenter {
+
+.textWrapper {
   position: absolute;
   top: 50%;
-  left: 7%;
-  transform: translate(0%, -50%);
+  left: 50%;
+  transform: translate(-50%, -40%);
+  width: 85%;
+  max-width: 1000px;
+  text-align: center;
+  z-index: 2;
 }
+
+.glassContainer {
+  background: linear-gradient(
+    180deg,
+    rgba(253, 245, 230, 0.1) 0%,
+    rgba(0, 0, 0, 0.45) 15%,
+    rgba(0, 0, 0, 0.45) 85%,
+    rgba(253, 245, 230, 0.1) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 5rem 4rem;
+  border-radius: 2px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border-left: 2px solid rgba(212, 175, 55, 0.4);
+  border-right: 2px solid rgba(212, 175, 55, 0.4);
+  animation: unroll 4.5s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+  transform: scaleY(0);
+  opacity: 0;
+  overflow: visible;
+}
+
+.royalSeal {
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  width: 62px;
+  height: 62px;
+  background: radial-gradient(circle at 35% 35%, #9b1a1a 0%, #4a0808 100%);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 0 15px rgba(0,0,0,0.6),
+    0 5px 15px rgba(0,0,0,0.4),
+    0 0 0 2px rgba(212, 175, 55, 0.6), /* Slightly thinner outer accent */
+    0 0 0 3px rgba(5d, 40, 37, 0.8);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-15deg);
+  opacity: 0;
+  animation: sealStamp 1s cubic-bezier(0.17, 0.89, 0.32, 1.28) 4.5s forwards;
+  border: 3px double #d4af37; /* Slightly thinner inner border */
+}
+
+.royalSeal::before {
+  content: 'தமிழி';
+  font-family: 'Arima', cursive;
+  font-size: 1.1rem; /* Slightly larger for visibility */
+  color: #ffcc00; /* Vibrant gold */
+  font-weight: 950; /* Extra bold for embossing look */
+  text-shadow: 
+    1px 1px 1px rgba(0,0,0,0.8), 
+    -1px -1px 0 rgba(255, 255, 255, 0.2), /* Inner highlight for depth */
+    0 0 5px rgba(255, 204, 0, 0.5);
+  letter-spacing: 0.05em;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+}
+
+@keyframes sealStamp {
+  0% { transform: scale(3) rotate(-15deg); opacity: 0; }
+  100% { transform: scale(1) rotate(-15deg); opacity: 1; }
+}
+
+.scrollPin {
+  position: absolute;
+  left: -2%;
+  width: 104%;
+  height: 12px; /* Even slimmer rod */
+  background: linear-gradient(
+    to bottom,
+    #5d4037 0%,
+    #d4af37 40%,
+    #d4af37 60%,
+    #5d4037 100%
+  );
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.pinTop {
+  top: -6px;
+}
+
+.pinBottom {
+  bottom: -6px;
+}
+
+.pinEnd {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px; /* Slightly larger end caps */
+  height: 28px;
+  background: radial-gradient(circle at 35% 35%, #fff1a8 0%, #d4af37 60%, #8b6b1d 100%);
+  border-radius: 50%;
+  border: 1.5px solid #5d4037;
+  box-shadow: 
+    0 0 15px rgba(212, 175, 55, 0.6),
+    inset 0 2px 4px rgba(255,255,255,0.8);
+}
+
+.pinLeft { left: -16px; }
+.pinRight { right: -16px; }
+
+@keyframes unroll {
+  0% {
+    transform: scaleY(0) scaleX(0.98);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+}
+
+.glassContainer::before, .glassContainer::after {
+  content: none; /* Removed the previous indicators as we now use scrollPins */
+}
+
 .gapBetweenText {
-  margin-top: 2rem;
+  margin-top: 4rem;
+  font-family: 'Arima', cursive !important; /* Switched to a more artistic Tamil font */
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #fdf5e6;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
 }
 .svg {
   width: 12px;
   height: 12px;
 }
 .pathdescription {
-  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
   position: absolute;
-  top: 15%;
-  left: 3%;
+  top: 2.5rem;
+  left: 3rem;
+  z-index: 10; /* Increased z-index */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.pathLink {
+  text-decoration: none;
+  transition: all 0.3s;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.pathLink:hover {
+  opacity: 1;
+  color: #d4af37 !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }

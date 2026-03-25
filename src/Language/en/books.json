@@ -21,7 +21,13 @@
           {
             "title": "Tholkappiyam",
             "description": [
-              "Tholkappiyam is the earliest known Tamil literary work and is considered the foundation of Tamil grammar and linguistics. Composed during the Sangam period (circa 3rd century BCE - 3rd century CE), it is attributed to the scholar Tholkappiyar. The text is a comprehensive treatise divided into three sections: </br> Ezhuthadhikaram (Phonetics and Orthography): This section delves into the Tamil script, sounds, letters, and their combinations, providing rules for pronunciation and writing. </br> Soladhikaram (Morphology and Lexicon): It explains word formation, grammar rules, and linguistic structures. The section covers various parts of speech, verb conjugations, noun declensions, and compounds. </br> Poruladhikaram (Semantics and Poetics): This part explores the meaning of words and sentences, delving into Tamil literature's themes, emotions, and cultural contexts. It includes an analysis of Akam (love and inner life) and Puram (valor and outer life) poetry, which are central to Tamil literature. </br> Tholkappiyam also reflects Tamil society, its natural landscapes, and its unique classifications of human experiences into five 'tinai' (landscapes): Kurinji (mountains), Mullai (forests), Marutham (farmlands), Neithal (coastal areas), and Palai (deserts). Each landscape symbolizes a distinct mood or aspect of life, such as love, separation, or heroism. </br> Beyond grammar, the work provides valuable insights into ancient Tamil culture, philosophy, and traditions. It serves as a vital reference for linguists, historians, and literary scholars exploring Tamil's rich heritage."
+              "Tholkappiyam is the earliest known Tamil literary work and is considered the foundation of Tamil grammar and linguistics. Composed during the Sangam period (circa 3rd century BCE - 3rd century CE), it is attributed to the scholar Tholkappiyar. The text is a comprehensive treatise divided into three critical sections:"
+            ],
+            "list": [
+              "Ezhuthadhikaram (Phonetics and Orthography): This section delves into the Tamil script, sounds, letters, and their combinations, providing rules for pronunciation and writing.",
+              "Soladhikaram (Morphology and Lexicon): It explains word formation, grammar rules, and linguistic structures. The section covers various parts of speech, verb conjugations, noun declensions, and compounds.",
+              "Poruladhikaram (Semantics and Poetics): This part explores the meaning of words and sentences, delving into Tamil literature's themes, emotions, and cultural contexts.",
+              "Reflection on Society: Tholkappiyam also reflects Tamil society, its natural landscapes, and its unique classifications of human experiences into five 'tinai': Kurinji (mountains), Mullai (forests), Marutham (farmlands), Neithal (coastal areas), and Palai (deserts)."
             ],
             "image": [
               {
@@ -312,7 +318,12 @@
           {
             "title": "Thirukkural",
             "description": [
-              "Thirukkural, authored by Thiruvalluvar, is a timeless masterpiece of Tamil literature and one of the most celebrated ethical and philosophical texts in the world. Composed of 1,330 couplets (kurals), the work is divided into three sections: Aram (virtue), Porul (wealth), and Inbam (love). It offers universal insights into leading a moral, prosperous, and fulfilling life. Each couplet is concise and profound, delivering eternal truths applicable across cultures and times. The text emphasizes values such as honesty, kindness, self-control, justice, and wisdom, making it a guide for personal and societal harmony. Thirukkural is regarded as a cultural and literary treasure, embodying the essence of Tamil thought and humanity's collective wisdom"
+              "Thirukkural, authored by Thiruvalluvar, is a timeless masterpiece of Tamil literature and one of the most celebrated ethical and philosophical texts in the world. Composed of 1,330 couplets (kurals), the work is divided into three essential sections:"
+            ],
+            "list": [
+              "Aram (Virtue): Focuses on the moral essence and ethical principles of living a righteous life.",
+              "Porul (Wealth): Deals with socio-economic aspects, statecraft, and honest prosperity.",
+              "Inbam (Love): Explores the depths of human emotions and the beauty of relationship-driven life."
             ],
             "image": [
               {

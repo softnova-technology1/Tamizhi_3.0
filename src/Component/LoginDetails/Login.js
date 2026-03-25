@@ -1,20 +1,23 @@
+
 import { Suspense, useContext, useState, lazy } from 'react';
 import log from '../../Stylesheet/loginpage.module.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import thamil from '../../image/logo2.png';
+import thamil from '../../image/FINAL-LOGO.png';
 import {
   Form as ReactRouterForm,
   useNavigate,
   Link,
   redirect,
 } from 'react-router-dom';
+import backBtnImg from '../../image/bacbtn.png';
 
 import { Context } from '../../Context/contextApi';
 import Spinner from '../Spinner';
 const GoogleLogin = lazy(() =>
   import('@react-oauth/google').then((mod) => ({ default: mod.GoogleLogin })),
 );
+
 export default function Login({ homePage, handleModal }) {
   const [fieldValue, setFieldValue] = useState({
     emailOrphone: '',
@@ -120,7 +123,7 @@ export default function Login({ homePage, handleModal }) {
   let responseData = (function () {
     if (responseValue === 'data-entry-false')
       return (
-        <p className={log.warning} style={{ width: '100%' }}>
+		<p className={log.warning} style={{ width: '100%' }}>
           All fields are mandatory.
         </p>
       );
@@ -153,6 +156,15 @@ export default function Login({ homePage, handleModal }) {
   return (
     <div className={!homePage ? log.sandbg : log.modalWrapper}>
       {loading && <Spinner loading={loading} />}
+      {!homePage && (
+        <button
+          className={log.imageBackButton}
+          onClick={() => navigate(-1)}
+          title="Back"
+        >
+          <img src={backBtnImg} alt="Back" />
+        </button>
+      )}
       <Container style={{ opacity: loading ? '0.3' : '', padding: homePage ? '0' : '' }}>
         {!homePage && <h1 className={log.welcome}>Welcome Back!</h1>}
         {homePage && <h3 className={log.welcomeHome}>Welcome Back!</h3>}

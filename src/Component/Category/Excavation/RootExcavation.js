@@ -1,7 +1,7 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import classes from '../../../Stylesheet/RootHistory.module.css';
+// import classes from '../../../Stylesheet/RootHistory.module.css';
 import excavationDataEn from '../../../Language/en/excavation.json';
 import excavationDataTN from '../../../Language/tam/excavation.json';
 import { useContext } from 'react';
@@ -10,6 +10,9 @@ import ImageComponent from '../../ImageComponent.js';
 import { useEffect, useState } from 'react';
 import TamilAnimation from '../../TamilzhiLoader.js';
 import { Helmet } from 'react-helmet';
+import bgImage from '../../../image/sand.png';
+import classes from '../../../Stylesheet/RootBooks.module.css';
+
 export default function RootExcavation() {
   const { language, darkmode, navopen } = useContext(Context);
   const location = useLocation();
@@ -26,7 +29,11 @@ export default function RootExcavation() {
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
-      <Container>
+      <Container
+        fluid
+        className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
+      >
         <Helmet>
           <meta charSet="utf-8" />
           <title>Tracing Civilizations: Excavations in Tamil Nadu</title>
@@ -39,8 +46,9 @@ export default function RootExcavation() {
             content="Explore major excavations at Attirampakkam, Arikamedu, and Keezhadi revealing ancient tools, urban cultures, and rich heritage through expert research."
           />
         </Helmet>
-        <Row className={classes.mobileView}>
-          <Col xs={12} sm={12} md={12}>
+
+        <Row className={`${classes.bannerRow} g-0`}>
+          <Col xs={12}>
             <ImageComponent
               tamilContent=" புதையலுக்குள் புதைந்த தமிழரின் பெருமை!"
               englishContent=" Buried treasures reveal Tamil pride!"
@@ -49,37 +57,42 @@ export default function RootExcavation() {
             />
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} sm={12} md={12}>
-            <Container
-              className={classes.container}
-              style={{
-                backgroundColor:
-                  darkmode === 'off'
-                    ? navopen
-                      ? '#d9d9d9'
-                      : 'white'
-                    : '#2b2a2a',
-                color: darkmode === 'off' ? 'black' : 'white',
-                opacity: navopen ? 0.5 : '',
-              }}
-            >
-              <Row>
-                <Col
-                  xs={12}
-                  sm={3}
-                  md={3}
-                  className={`${classes.setScroll} ${classes.mobileView}`}
-                >
-                  <SideNav data={data} darkmode={darkmode} />
-                </Col>
-                <Col xs={12} sm={9} md={9} className={classes.contentContainer}>
-                  <Outlet context={[data]} />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
+
+        <div className={classes.contentWrapper}>
+          <Row>
+            <Col xs={12}>
+              <div
+                className={classes.ancientCard}
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(${bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center bottom',
+                  backgroundAttachment: 'fixed',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
+                <Row>
+                  <Col
+                    xs={12}
+                    sm={3}
+                    md={3}
+                    className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
+                  >
+                    <SideNav data={data} darkmode={darkmode} />
+                  </Col>
+                  <Col
+                    xs={12}
+                    sm={9}
+                    md={9}
+                    className={classes.contentContainer}
+                  >
+                    <Outlet context={[data]} />
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </>
   );

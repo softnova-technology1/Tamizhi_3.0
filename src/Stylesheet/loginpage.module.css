@@ -373,3 +373,55 @@
     font-size: 1.5rem;
   }
 }
+
+.imageBackButton {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 10002;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatEffect 3s ease-in-out infinite;
+}
+
+.imageBackButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+.imageBackButton:hover {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.imageBackButton:active {
+  transform: scale(0.9);
+}
+
+@keyframes floatEffect {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageBackButton {
+    bottom: 30px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+  }
+}

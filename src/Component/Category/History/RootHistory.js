@@ -1,7 +1,7 @@
 import SideNav from '../SideNav';
 import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import classes from '../../../Stylesheet/RootHistory.module.css';
+import classes from '../../../Stylesheet/RootBooks.module.css';
 import historyDataEn from '../../../Language/en/history.json';
 import historyDataTN from '../../../Language/tam/history.json';
 import { useContext, useState, useEffect } from 'react';
@@ -9,6 +9,8 @@ import { Context } from '../../../Context/contextApi.js';
 import { Helmet } from 'react-helmet';
 import ImageComponent from '../../ImageComponent.js';
 import TamilAnimation from '../../TamilzhiLoader.js';
+import bgImage from '../../../image/sand.png';
+
 const contentData = {
   tamilagam: {
     tamilContent:
@@ -66,7 +68,11 @@ export default function RootHistory() {
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
-      <Container>
+      <Container
+        fluid
+        className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
+      >
         <Helmet>
           <meta charSet="utf-8" />
           <title>The Truth About Tamil: History and Cultural Obsession</title>
@@ -79,8 +85,8 @@ export default function RootHistory() {
             content="Unveil the secrets of Brahmi and its unique connection to Tamizh. Explore how this ancient script shaped the history of Tamizhagam."
           />
         </Helmet>
-        <Row className={classes.mobileView}>
-          <Col xs={12} sm={12} md={12}>
+        <Row className={`${classes.bannerRow} g-0`}>
+          <Col xs={12}>
             <ImageComponent
               tamilContent={tamilContent}
               englishContent={englishContent}
@@ -89,43 +95,48 @@ export default function RootHistory() {
             />
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} sm={12} md={12}>
-            <Container
-              className={classes.container}
-              style={{
-                backgroundColor:
-                  darkmode === 'off'
-                    ? navopen
-                      ? '#d9d9d9'
-                      : 'white'
-                    : '#2b2a2a',
-                color: darkmode === 'off' ? 'black' : 'white',
-                opacity: navopen ? 0.5 : '',
-              }}
-            >
-              <Row>
-                <Col
-                  xs={12}
-                  sm={3}
-                  md={3}
-                  className={`${classes.setScroll} ${classes.mobileView}`}
-                >
-                  <SideNav
-                    data={data}
-                    darkmode={darkmode}
-                    handleReadMore={handleReadMore}
-                  />
-                </Col>
-                <Col xs={12} sm={9} md={9} className={classes.contentContainer}>
-                  <Outlet
-                    context={[data, nameOfContent, readMore, handleReadMore]}
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-        </Row>
+
+        <div className={classes.contentWrapper}>
+          <Row>
+            <Col xs={12}>
+              <div
+                className={classes.ancientCard}
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(${bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center bottom',
+                  backgroundAttachment: 'fixed',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
+                <Row>
+                  <Col
+                    xs={12}
+                    sm={3}
+                    md={3}
+                    className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
+                  >
+                    <SideNav
+                      data={data}
+                      darkmode={darkmode}
+                      handleReadMore={handleReadMore}
+                    />
+                  </Col>
+                  <Col
+                    xs={12}
+                    sm={9}
+                    md={9}
+                    className={classes.contentContainer}
+                  >
+                    <Outlet
+                      context={[data, nameOfContent, readMore, handleReadMore]}
+                    />
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
     </>
   );

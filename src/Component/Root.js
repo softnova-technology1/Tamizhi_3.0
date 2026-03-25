@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import Footer from './Home/Footer';
+import Footer from './Homes/Footer';
 import ScrollToTop from './ScrollToTop';
 import styles from '../Stylesheet/Root.module.css';
 import Login from './LoginDetails/Login';

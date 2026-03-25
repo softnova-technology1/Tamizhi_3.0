@@ -2,6 +2,9 @@
   "culture": {
     "id": 1,
     "title": "Culture",
+    "description": [
+      "The culture of Tamil Nadu is a breathtaking tapestry woven with threads of ancient history, profound spirituality, and vibrant artistic expression. Known for its 'Iyal' (Literature), 'Isai' (Music), and 'Natakam' (Drama), the state preserves a legacy that dates back over two millennia. From the intricate geometry of Kolams to the spiritual heights of the Great Living Chola Temples, every facet of Tamil life reflects a deep-rooted identity that is both classical and contemporary. This section explores the heart of the Tamil people—their customs, their flavors, and the timeless traditions that continue to inspire the world."
+    ],
     "subTitle": [
       {
         "subHeading": "People of TamilNadu",

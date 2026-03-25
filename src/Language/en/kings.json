@@ -40,7 +40,7 @@
             ]
           },
           {
-            "title": "Later Chola ",
+            "title": "Later Chola",
             "image": [
               {
                 "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/king's+his/6.Chola+dynasty+2.jpg",
@@ -103,7 +103,7 @@
         ]
       },
       {
-        "subHeading": "History",
+        "subHeading": "Administration",
         "title": "Administration",
         "data": [
           {
@@ -498,10 +498,10 @@
         ]
       },
       {
-        "subHeading": "Early Pandyans (c. 6th century BCE – 3rd century",
+        "subHeading": "Early Pandyans (c. 6th century BCE – 3rd century CE)",
         "data": [
           {
-            "title": "Early Pandyans (c. 6th century BCE – 3rd century",
+            "title": "Early Pandyans (c. 6th century BCE – 3rd century CE)",
             "list": [
               "KoonPandiyan",
               "Nedunjeliyan I (he was mentioned in legend ofKannagi)",
@@ -702,6 +702,16 @@
   "pallavas": {
     "id": 5,
     "title": "Pallava Empire (275–897 CE)",
+    "description": [
+      "The Pallava dynasty existed from 275 CE to 897 CE, ruling a significant portion of the Deccan, also known as Tondaimandalam. The Pallavas played a crucial role in shaping in particular southern Indian history and heritage.The dynasty rose to prominence after the downfall of the Satavahana Empire, whom they had formerly served as feudatories. The Pallavas became a major southern Indian power during the reign of Mahendravarman I (600–630 CE) and Narasimhavarman I (630–668 CE), and dominated the southern Telugu region and the northern parts of the Tamil region for about 600 years, until the end of the 9th century.",
+      "Throughout their reign, they remained in constant conflict with both the Chalukyas of Vatapi to the north, and the Tamil kingdoms of Chola and Pandyas to their south. The Pallavas were finally defeated by the Chola ruler Aditya I in the 9th century CE.The Pallavas are most noted for their patronage of Hindu Vaishnava temple architecture, the finest example being the Shore Temple, a UNESCO World Heritage Site in Mamallapuram. Kancheepuram served as the capital of the Pallava kingdom. The dynasty left behind magnificent sculptures and temples, and are recognized to have established the foundations of medieval southern Indian architecture."
+    ],
+    "image": [
+      {
+        "image": "https://tamizhi.s3.eu-north-1.amazonaws.com/king's+his/2.Pallava+Empire+3.jpg",
+        "name": "King Mamalla (Narasimhavarman I)"
+      }
+    ],
     "subTitle": [
       {
         "subHeading": "Early Pallavas",
@@ -937,7 +947,6 @@
                 "name": "2.Pallava+Empire+24.jpg"
               }
             ],
-
             "description": [
               "Coin of the Pallavas of Coromandel, king Narasimhavarman I. (630-668 AD). Obv Lion left Rev Name of Narasimhavarman with solar and lunar symbols around.Pallava inscriptions have been found in Tamil, Prakrit and Sanskrit.Tamil was main language used by the Pallavas in their inscriptions although a few records continued to be in Sanskrit. At the time of the time of Paramesvaravarman I, the practice came into vogue of inscribing a part of the record in Sanskrit and the rest in Tamil. Almost all the copper plate records, viz., Kasakudi, Tandantottam, Pattattalmangalm, Udayendiram and Velurpalaiyam are composed both in Sanskrit and Tamil.",
               "Many Pallava royal inscriptions were in Sanskrit or Prakrit, considered the official languages. Similarly, inscriptions found in Andhra Pradesh and Karnataka State are in Sanskrit and Prakrit. Sanskrit was widely used by Simhavishnu and Narasimhavarman II in literature. The phenomenon of using Prakrit as official languages in which rulers left their inscriptions and epigraphies continued till the 6th century.It would have been in the interest of the ruling elite to protect their privileges by perpetuating their hegemony of Prakrit in order to exclude the common people from sharing power (Mahadevan 1995a: 173–188). The Pallavas in their Tamil country used Tamil and Sanskrit in their inscriptions."

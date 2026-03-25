@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useContext, useState } from 'react';
+import React, { useLayoutEffect, useRef, useContext, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from '../../Stylesheet/Logo.module.css';
 import { Context } from '../../Context/contextApi';
-import logoImg from '../../image/logo2.png';
+import logoImg from '../../image/FINAL-LOGO.png';
 
 import {
     MdOutlineWbSunny,
@@ -11,7 +11,8 @@ import {
     MdEmojiPeople,
     MdMenuBook,
     MdMap,
-    MdTranslate
+    MdTranslate,
+    MdHistoryEdu
 } from 'react-icons/md';
 
 import ScrollTitle from '../Homes/ScrollTitle';
@@ -22,6 +23,7 @@ import statueImg from '../../image/logoD1.png';
 import palmImg from '../../image/logoD3.png';
 import tamilImg from '../../image/logoD5.png';
 import mapImg from '../../image/logoD6.png';
+import grammarImg from '../../image/books1.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,7 +92,18 @@ const infoData = [
         tamilHighlight: 'நிலமும் மக்களும் எமது பலம்',
         meaningTn: 'குமரிக்கண்டம் முதல் நவீன தமிழகம் வரை பரந்து விரிந்த நமது நிலம். கீழடி மற்றும் ஆதிச்சநல்லூர் அகழ்வாய்வுகள் தமிழரின் தொன்மையை உலகிற்குப் பறைசாற்றுகின்றன. கடல் கடந்து வாணிபம் செய்த வீரப் பரம்பரை இது.',
         meaningEn: 'From Ancient Lemuria to modern Tamil Nadu, our land defines us. Excavations at Keeladi and Adichanallur prove our urban sophistication dating back millennia. Ours is a seafaring legacy of global commerce and bravery.',
-        cx: 50, cy: 85
+        cx: 50, cy: 95
+    },
+    {
+        id: 'grammar',
+        titleTn: 'ஐந்திலக்கணம்',
+        titleEn: 'Literary Wisdom',
+        img: grammarImg,
+        icon: <MdHistoryEdu />,
+        tamilHighlight: 'எழுத்து சொல் பொருள் யாப்பு அணி',
+        meaningTn: 'தமிழின் தனித்துவம் அதன் ஐந்திலக்கணங்களில் உள்ளது. எழுத்து, சொல், பொருள், யாப்பு மற்றும் அணி என ஐந்தும் ஒரு மொழியின் உயிர்நாடி. இது உலகின் மற்ற மொழிகளிலிருந்து தமிழை வேறுபடுத்திக் காட்டுகிறது.',
+        meaningEn: 'The uniqueness of Tamil lies in its five-fold grammar: Letters (Ezhuttu), Words (Sol), Content (Porul), Prosody (Yappu), and Rhetoric (Ani). This comprehensive system ensures the language\'s purity and artistic depth across millennia.',
+        cx: 25, cy: 75
     }
 ];
 
@@ -101,7 +114,7 @@ const Logo = () => {
     const scrollRef = useRef(null);
     const logoRef = useRef(null);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         let mm = gsap.matchMedia();
 
         mm.add("(min-width: 1025px)", () => {
@@ -122,9 +135,17 @@ const Logo = () => {
                         ease: "power2.inOut"
                     },
                     start: "top top",
-                    end: () => `+=${scrollRef.current.scrollWidth}`,
+                    end: () => `+=${scrollRef.current.scrollWidth - scrollRef.current.offsetWidth}`,
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1,
+                    pinSpacing: true
                 }
             });
+
+            // Refresh ScrollTrigger after a short delay to ensure dimensions are correct
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 500);
 
             // Card Highlight & Active Detection
             sections.forEach((section, i) => {
@@ -188,7 +209,6 @@ const Logo = () => {
         <section
             className={styles.horizontalLogoStory}
             ref={containerRef}
-           
         >
             {/* Standardized Scroll Title at Top */}
             <div className={styles.sectionHeader}>
@@ -235,8 +255,10 @@ const Logo = () => {
                                 </div>
                                 <div className={styles.cardContent}>
                                     <div className={styles.bilingualTitle}>
-                                        <h3>{item.titleEn}</h3>
-                                        <h4 className={styles.tamilSubtitle}>{item.titleTn}</h4>
+                                        <h3>{language === 'en' ? item.titleEn : item.titleTn}</h3>
+                                        <h4 className={styles.tamilSubtitle}>
+                                            {language === 'en' ? 'Heritage Artifact' : 'பாரம்பரிய சின்னம்'}
+                                        </h4>
                                     </div>
                                     <div className={styles.descriptionBody}>
                                         <p className={styles.tamilPoetic}>{item.tamilHighlight}</p>
