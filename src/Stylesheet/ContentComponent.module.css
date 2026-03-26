@@ -39,19 +39,56 @@
   margin-bottom: 5rem;
 }
 .flexContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  row-gap: 2rem;
-  column-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 2.5rem 0;
 }
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  max-width: fit-content;
+  align-items: center;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 .flexContainerSingle {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 2.5rem 0;
 }
+
 .imgsize {
-  width: 300px;
+  max-width: 450px;
   height: 300px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.imageCaption {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #5d4037;
+  text-align: center;
+  font-family: inherit;
+  opacity: 0.8;
+  margin-bottom: 0px;
 }
 
 @keyframes slideAndFade {

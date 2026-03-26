@@ -8,7 +8,6 @@ import extra from "../Homes/s.png"
 import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
 import tamil1 from './../../image/Tamil_1x.webp';
 import tamil2 from './../../image/Tamil_2x.webp';
-import kovil from './../../image/Image20250415120343.webp';
 import { Context } from '../../Context/contextApi';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -88,7 +87,7 @@ const Hero = () => {
     }, { scope: heroRef });
 
 
-     const { language, mobileViewOn } = useContext(Context);
+     const { mobileViewOn } = useContext(Context);
     
      
     return (

@@ -14,7 +14,6 @@ import backBtnImg from '../image/bacbtn.png';
 export default function Root() {
   const {
     tokenContext,
-    changeDarkMode,
     navopen,
     sticky,
     handleSticky,

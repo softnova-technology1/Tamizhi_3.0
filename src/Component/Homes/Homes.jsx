@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './Navbar'
 import Hero from './Hero'
 import Topics from './Topics'
 import History from './History'

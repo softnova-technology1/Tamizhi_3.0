@@ -87,6 +87,7 @@ export default function RootBooks() {
                       data={data}
                       darkmode={darkmode}
                       handleReadMore={handleReadMore}
+                      nameOfContent={nameOfContent}
                     />
                   </Col>
                   <Col
