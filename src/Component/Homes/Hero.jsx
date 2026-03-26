@@ -3,8 +3,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import styles from '../../Stylesheet/Hero.module.css';
-import templePng from '../../image/fi.png'; // Updated to use isolated gopuram
-import extra from "../Homes/s.png"
+import templePng from '../../image/parralaxone.png'; // Updated to use isolated gopuram
+
+import extra from "../../image/pa.png"
 import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
 import tamil1 from './../../image/Tamil_1x.webp';
 import tamil2 from './../../image/Tamil_2x.webp';
@@ -21,66 +22,77 @@ const Hero = () => {
     useGSAP(() => {
         let mm = gsap.matchMedia();
 
-        const animOptions = {
-            scrollTrigger: {
-                trigger: heroRef.current,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1.5,
-            }
-        };
-
         mm.add("(min-width: 769px)", () => {
             gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0 });
 
-            // Background Image (Larger/Further)
-            gsap.fromTo(pngRef.current,
-                { y: "60vh", scale: 0.8 },
-                {
-                    y: "-10vh",
-                    scale: 0.9,
-                    opacity: 1,
-                    ease: "power2.out",
-                    ...animOptions
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1.5,
+                }
+            });
+
+            // 1. Parallaxone Comes Up First
+            tl.fromTo(pngRef.current,
+                { y: "100vh", scale: 0.7, opacity: 0 },
+                { 
+                    y: "-10vh", 
+                    scale: 0.9, 
+                    opacity: 1, 
+                    duration: 1.5, 
+                    ease: "power2.out" 
                 }
             );
 
-            // Foreground Image (Main/Nearer)
-            gsap.fromTo(pngRef2.current,
-                { y: "70vh", scale: 0.9 },
-                {
-                    y: "-20vh",
-                    scale: 1,
-                    opacity: 1,
-                    ease: "power2.out",
-                    ...animOptions
-                }
+            // 2. Pa.png Comes Up Second
+            tl.fromTo(pngRef2.current,
+                { y: "100vh", scale: 0.8, opacity: 0 },
+                { 
+                    y: "-20vh", 
+                    scale: 1, 
+                    opacity: 1, 
+                    duration: 1.5, 
+                    ease: "power2.out" 
+                },
+                "-=0.7" // Staggered overlap for smooth transition
             );
         });
 
         mm.add("(max-width: 768px)", () => {
             gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0 });
 
-            gsap.fromTo(pngRef.current,
-                { y: "40vh", scale: 0.9 },
-                {
-                    y: "0vh",
-                    scale: 0.95,
-                    opacity: 1,
-                    ease: "power2.out",
-                    ...animOptions
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                }
+            });
+
+            tl.fromTo(pngRef.current,
+                { y: "80vh", scale: 0.85, opacity: 0 },
+                { 
+                    y: "0vh", 
+                    scale: 0.95, 
+                    opacity: 1, 
+                    duration: 1, 
+                    ease: "power1.out" 
                 }
             );
 
-            gsap.fromTo(pngRef2.current,
-                { y: "50vh", scale: 0.95 },
-                {
-                    y: "-5vh",
-                    scale: 1,
-                    opacity: 1,
-                    ease: "power2.out",
-                    ...animOptions
-                }
+            tl.fromTo(pngRef2.current,
+                { y: "90vh", scale: 0.9, opacity: 0 },
+                { 
+                    y: "-5vh", 
+                    scale: 1, 
+                    opacity: 1, 
+                    duration: 1, 
+                    ease: "power1.out" 
+                },
+                "-=0.5"
             );
         });
 
