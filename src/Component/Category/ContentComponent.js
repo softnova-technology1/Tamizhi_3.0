@@ -274,23 +274,24 @@ export default function ContentComponent() {
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', padding: '1rem 0' }}>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
         <input
           type="text"
           placeholder="Global Search..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           style={{
-            padding: '10px 20px',
-            borderRadius: '25px',
-            border: `1px solid ${darkmode === 'off' ? '#d4af37' : '#8b6b1d'}`,
-            backgroundColor: darkmode === 'off' ? 'rgba(255, 255, 255, 0.7)' : '#2b2a2a',
+            padding: '12px 25px',
+            borderRadius: '30px',
+            border: `2px solid ${darkmode === 'off' ? '#d4af37' : '#8b6b1d'}`,
+            backgroundColor: darkmode === 'off' ? 'rgba(255, 255, 255, 0.8)' : '#2b2a2a',
             color: darkmode === 'off' ? '#1a0f0a' : '#d1c9c9',
             outline: 'none',
-            fontSize: '1rem',
-            width: '250px',
-            transition: 'all 0.3s ease',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.05)'
+            fontSize: '1.2rem',
+            width: '350px',
+            fontWeight: '500',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && searchResults.length > 0) {
@@ -302,8 +303,16 @@ export default function ContentComponent() {
               }
             }
           }}
-          onFocus={(e) => e.target.style.width = '300px'}
-          onBlur={(e) => e.target.style.width = '250px'}
+          onFocus={(e) => {
+            e.target.style.width = '450px';
+            e.target.style.borderColor = '#d4af37';
+            e.target.style.boxShadow = '0 6px 25px rgba(212, 175, 55, 0.15)';
+          }}
+          onBlur={(e) => {
+            e.target.style.width = '350px';
+            e.target.style.borderColor = darkmode === 'off' ? '#d4af37' : '#8b6b1d';
+            e.target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+          }}
         />
       </div>
 
