@@ -14,11 +14,11 @@ const topicData = [
     alt: 'Chola Dynasty',
     title: {
       en: 'Chola Dynasty',
-      tn: 'சோழர் அரசாட்சி',
+      ta: 'சோழர் அரசாட்சி',
     },
     description: {
       en: 'The Cholas were a prominent dynasty in South India, and they played a significant role in the Sangam Age, which is generally considered to span from 300 BCE to 1297 CE. During this period, the Cholas engaged in extensive trade both within the Indian.....',
-      tn: 'சோழர்கள் தென்னிந்தியாவில் ஒரு முக்கிய வம்சமாக இருந்தனர், மேலும் அவர்கள் சங்க காலத்தில் குறிப்பிடத்தக்க பங்கைக் கொண்டிருந்தனர் இது பொதுவாக கிமு 300 முதல் கிபி 1297 வரை நீடித்ததாகக் கருதப்படுகிறது. இந்த காலகட்டத்தில்,.....',
+      ta: 'சோழர்கள் தென்னிந்தியாவில் ஒரு முக்கிய வம்சமாக இருந்தனர், மேலும் அவர்கள் சங்க காலத்தில் குறிப்பிடத்தக்க பங்கைக் கொண்டிருந்தனர் இது பொதுவாக கிமு 300 முதல் கிபி 1297 வரை நீடித்ததாகக் கருதப்படுகிறது. இந்த காலகட்டத்தில்,.....',
     },
     link: '/kings/chola',
   },
@@ -29,11 +29,11 @@ const topicData = [
     alt: 'Historical Place',
     title: {
       en: 'Historical Place',
-      tn: 'பாரம்பரிய இடங்கள்',
+      ta: 'பாரம்பரிய இடங்கள்',
     },
     description: {
       en: 'Tamil Nadu, a state located in the southern part of India, is known for its rich cultural heritage  historical landmarks, and architectural marvels. The state is home to numerous historical places that reflect....',
-      tn: 'இந்தியாவின் தெற்குப் பகுதியில் அமைந்துள்ள தமிழ்நாடு, அதன் வளமான கலாச்சார பாரம்பரியம்,வரலாற்று அடையாளங்கள் மற்றும் கட்டிடக்கலை அற்புதங்களுக்கு பெயர் பெற்றது. இந்த மாநிலம்.....',
+      ta: 'இந்தியாவின் தெற்குப் பகுதியில் அமைந்துள்ள தமிழ்நாடு, அதன் வளமான கலாச்சார பாரம்பரியம்,வரலாற்று அடையாளங்கள் மற்றும் கட்டிடக்கலை அற்புதங்களுக்கு பெயர் பெற்றது. இந்த மாநிலம்.....',
     },
     link: '/historical_place',
   },
@@ -44,11 +44,11 @@ const topicData = [
     alt: 'Tamilar',
     title: {
       en: 'Tamilar',
-      tn: 'தமிழர்',
+      ta: 'தமிழர்',
     },
     description: {
       en: 'The Tamils, also known as the Tamilar, are a Dravidian ethnolinguistic group who natively speak the Tamil language and trace their ancestry mainly to the southern part of the Indian subcontinent...',
-      tn: 'தமிழர்கள் என்றும் அழைக்கப்படும் தமிழர்கள், திராவிட இனமொழிக் குழுவாகும், அவர்கள் தமிழ் மொழியை பூர்வீகமாகப் பேசுகிறார்கள் மற்றும் அவர்களின் வம்சாவளியை முக்கியமாக இந்திய ...',
+      ta: 'தமிழர்கள் என்றும் அழைக்கப்படும் தமிழர்கள், திராவிட இனமொழிக் குழுவாகும், அவர்கள் தமிழ் மொழியை பூர்வீகமாகப் பேசுகிறார்கள் மற்றும் அவர்களின் வம்சாவளியை முக்கியமாக இந்திய ...',
     },
     link: '/history/thamizhar',
   },
@@ -59,11 +59,11 @@ const topicData = [
     alt: 'Pandyan Dynasty',
     title: {
       en: 'Pandyan Dynasty',
-      tn: 'பாண்டியர் அரசாட்சி',
+      ta: 'பாண்டியர் அரசாட்சி',
     },
     description: {
       en: 'The Pandyas were the earliest of the Muvendhar and were of high antiquity being mentioned by Kātyāyana and Valmiki.However the establishment of a Pandya territory is not known until the sixth century under King Kadungon who liberated the Pandya country from the Kalabhras. Xuanzang reports that Jainism was flourishing while Buddhism was declining during this period.They were famous for being patrons of the Tamil Sangams which were held in their capital, Madurai....',
-      tn: 'பாண்டியர்கள் மூவேந்தர்களில் முந்தியவர்கள் மற்றும் காத்யாயனர் மற்றும் வால்மீகி ஆகியோரால் குறிப்பிடப்பட்ட பழமை வாய்ந்தவர்கள்.  இருப்பினும் களப்பிரர்களிடமிருந்து பாண்டிய நாட்டை விடுவித்த கடுங்கோன் மன்னனின் கீழ் ஆறாம் நூற்றாண்டு வரை பாண்டிய பிரதேசம் நிறுவப்பட்டது அறியப்படவில்லை . இந்த காலகட்டத்தில் பௌத்தம் வீழ்ச்சியடைந்து கொண்டிருந்த சமயம் சமண மதம் தழைத்தோங்கி இருந்ததாக சுவான்சாங் தெரிவிக்கிறார் . அவர்கள் தங்கள் தலைநகரான மதுரையில் நடைபெற்ற....',
+      ta: 'பாண்டியர்கள் மூவேந்தர்களில் முந்தியவர்கள் மற்றும் காத்யாயனர் மற்றும் வால்மீகி ஆகியோரால் குறிப்பிடப்பட்ட பழமை வாய்ந்தவர்கள்.  இருப்பினும் களப்பிரர்களிடமிருந்து பாண்டிய நாட்டை விடுவித்த கடுங்கோன் மன்னனின் கீழ் ஆறாம் நூற்றாண்டு வரை பாண்டிய பிரதேசம் நிறுவப்பட்டது அறியப்படவில்லை . இந்த காலகட்டத்தில் பௌத்தம் வீழ்ச்சியடைந்து கொண்டிருந்த சமயம் சமண மதம் தழைத்தோங்கி இருந்ததாக சுவான்சாங் தெரிவிக்கிறார் . அவர்கள் தங்கள் தலைநகரான மதுரையில் நடைபெற்ற....',
     },
     link: '/kings/pandyan',
   },
@@ -115,7 +115,7 @@ const InterestingTopics = () => {
                       <span className={styles.visually_hidden}>
                         {largeCard.label}
                       </span>
-                      See More
+                      {language === 'en' ? 'See More' : 'மேலும் பார்க்க'}
                     </a>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const InterestingTopics = () => {
                             <span className={styles.visually_hidden}>
                               {card.label}
                             </span>
-                            See More
+                            {language === 'en' ? 'See More' : 'மேலும் பார்க்க'}
                           </a>
                         </div>
                       </div>
@@ -196,7 +196,7 @@ const InterestingTopics = () => {
                   <span className={styles.visually_hidden}>
                     {staticSection.label}
                   </span>
-                  See More
+                  {language === 'en' ? 'See More' : 'மேலும் பார்க்க'}
                 </a>
               </div>
             </Col>

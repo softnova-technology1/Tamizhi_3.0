@@ -17,7 +17,7 @@ export default function Homes() {
         <History />
         <AboutUs />
         <ContactUs />
-        <div className="mb-md-5 pb-md-5 mb-3 pb-3">
+        <div className="mb-md-5">
           <Logo />
         </div>
         <WriteContent />

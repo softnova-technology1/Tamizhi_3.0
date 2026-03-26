@@ -54,11 +54,11 @@ export default function TopNavBar({
         {/* Navigation Section */}
         <nav className={`${classes.active} ${classes.navBar}`}>
           <div className={classes.layout_nav_list}>
-            <Link to="/" className={classes.linkStyle}>Home</Link>
-            <Link to="/category" className={classes.linkStyle}>Category</Link>
-            <Link to="/podcast" className={classes.linkStyle}>Podcast</Link>
-            <Link to="/about" className={classes.linkStyle}>About</Link>
-            <Link to="/contact" className={classes.linkStyle}>Contact</Link>
+            <Link to="/" className={classes.linkStyle}>{language === 'en' ? 'Home' : 'முகப்பு'}</Link>
+            <Link to="/category" className={classes.linkStyle}>{language === 'en' ? 'Category' : 'வகைப்பாடு'}</Link>
+            <Link to="/podcast" className={classes.linkStyle}>{language === 'en' ? 'Podcast' : 'ஒலித்தடம்'}</Link>
+            <Link to="/about" className={classes.linkStyle}>{language === 'en' ? 'About' : 'எங்களைப் பற்றி'}</Link>
+            <Link to="/contact" className={classes.linkStyle}>{language === 'en' ? 'Contact' : 'தொடர்புக்கு'}</Link>
           </div>
         </nav>
 
@@ -110,11 +110,11 @@ export default function TopNavBar({
             <div onClick={() => handleNavClick()} className={classes.closeIcon}>
                <MdOutlineMenuOpen className={classes.svg} style={{ transform: 'rotate(180deg)' }} />
             </div>
-            <Link to="/" className={classes.linkStyle} onClick={handleNavClick}>Home</Link>
-            <Link to="/category" className={classes.linkStyle} onClick={handleNavClick}>Category</Link>
-            <Link to="/podcast" className={classes.linkStyle} onClick={handleNavClick}>Podcast</Link>
-            <Link to="/about" className={classes.linkStyle} onClick={handleNavClick}>About</Link>
-            <Link to="/contact" className={classes.linkStyle} onClick={handleNavClick}>Contact</Link>
+            <Link to="/" className={classes.linkStyle} onClick={handleNavClick}>{language === 'en' ? 'Home' : 'முகப்பு'}</Link>
+            <Link to="/category" className={classes.linkStyle} onClick={handleNavClick}>{language === 'en' ? 'Category' : 'வகைப்பாடு'}</Link>
+            <Link to="/podcast" className={classes.linkStyle} onClick={handleNavClick}>{language === 'en' ? 'Podcast' : 'ஒலித்தடம்'}</Link>
+            <Link to="/about" className={classes.linkStyle} onClick={handleNavClick}>{language === 'en' ? 'About' : 'எங்களைப் பற்றி'}</Link>
+            <Link to="/contact" className={classes.linkStyle} onClick={handleNavClick}>{language === 'en' ? 'Contact' : 'தொடர்புக்கு'}</Link>
           </div>
         </div>
       )}

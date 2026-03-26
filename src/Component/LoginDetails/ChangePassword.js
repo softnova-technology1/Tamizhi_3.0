@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
 import styles from '../../Stylesheet/ChangePassword.module.css';
-import { Form } from 'react-router-dom';
 import { passwordCheck, confirmPasswordCheck } from '../../utility/Validation';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, Form } from 'react-router-dom';
 import { Context } from '../../Context/contextApi';
 import Spinner from '../Spinner';
+import backBtnImg from '../../image/bacbtn.png';
+
 const ChangePassword = () => {
   const [fieldValue, setFieldValue] = useState({
     newPassword: '',
@@ -159,6 +160,13 @@ const ChangePassword = () => {
   return (
     <>
       {loading && <Spinner loading={loading} />}
+      <button
+        className={styles.imageBackButton}
+        onClick={() => navigate(-1)}
+        title="Back"
+      >
+        <img src={backBtnImg} alt="Back" />
+      </button>
       <div
         className={styles.container}
         style={{ opacity: loading ? '0.3' : '' }}

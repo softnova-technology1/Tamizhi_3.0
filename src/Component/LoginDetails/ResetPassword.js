@@ -1,9 +1,12 @@
 import styles from '../../Stylesheet/ResetPassword.module.css';
 import { useRef, useState } from 'react';
-import { Form } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import { emailCheck } from '../../utility/Validation';
 import Spinner from '../Spinner';
+import backBtnImg from '../../image/bacbtn.png';
+
 const ResetPassword = () => {
+  const navigate = useNavigate();
   const emailRef = useRef('');
   const [responseValue, setResponse] = useState(false);
   const [loading, handleSetLoading] = useState(false);
@@ -82,6 +85,13 @@ const ResetPassword = () => {
   return (
     <div className={styles.bg}>
       {loading && <Spinner loading={loading} />}
+      <button
+        className={styles.imageBackButton}
+        onClick={() => navigate(-1)}
+        title="Back"
+      >
+        <img src={backBtnImg} alt="Back" />
+      </button>
       <div
         className={styles.container}
         style={{ opacity: loading ? '0.3' : '' }}

@@ -8,6 +8,7 @@ import {
   useActionData,
   redirect,
 } from 'react-router-dom';
+import { RouterProvider, useNavigate } from 'react-router-dom';
 import {
   nameCheck,
   numberCheck,
@@ -16,7 +17,10 @@ import {
   confirmPasswordCheck,
 } from '../../utility/Validation';
 import Spinner from '../Spinner';
+import backBtnImg from '../../image/bacbtn.png';
+
 export default function SignUp() {
+  const navigate = useNavigate();
   const [fieldValue, setFieldValue] = useState({
     firstName: '',
     lastName: '',
@@ -126,6 +130,13 @@ export default function SignUp() {
   return (
     <div style={{height:"100vh"}}>
       {loading && <Spinner loading={loading} />}
+      <button
+        className={sign.imageBackButton}
+        onClick={() => navigate(-1)}
+        title="Back"
+      >
+        <img src={backBtnImg} alt="Back" />
+      </button>
       <Container
         fluid
         className={sign.Createaccount1}
