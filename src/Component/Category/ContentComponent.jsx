@@ -46,12 +46,12 @@ export default function ContentComponent() {
     }
   }, [location.hash, data]);
 
-  const renderRecursiveData = (items) => {
+  const renderRecursiveData = (items, hideTitle = false) => {
     if (!items || !Array.isArray(items)) return null;
 
     return items.map((item, index) => (
       <div key={`item_${index}_${getRandomInt()}`} className={classes.contentItem}>
-        {(item.title || item.subHeading) && (
+        {(!hideTitle && (item.title || item.subHeading)) && (
           <h3 className={classes.contentTitle}>{item.title || item.subHeading}</h3>
         )}
 
@@ -136,11 +136,12 @@ export default function ContentComponent() {
     // Check if the hash matches the main title itself (Introduction state)
     if (normalizedHash === normalize(data.title)) {
       isIntroduction = true;
-      // Also populate generics belonging to the main topic
+      // Also populate generics or redundant sections belonging to the main topic
       if (data.subTitle) {
         for (let i = 0; i < data.subTitle.length; i++) {
           const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-          if (isGeneric) {
+          const isRedundant = normalize(data.subTitle[i].subHeading) === normalize(data.title);
+          if (isGeneric || isRedundant) {
             activeSections.push(data.subTitle[i]);
           } else {
             break;
@@ -192,11 +193,12 @@ export default function ContentComponent() {
     
     if (hasDescription) {
       isIntroduction = true;
-      // Add all generics belonging to the main title
+      // Add all generics or redundant sections belonging to the main title
       if (data.subTitle && data.subTitle.length > 0) {
         for (let i = 0; i < data.subTitle.length; i++) {
           const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-          if (isGeneric) {
+          const isRedundant = normalize(data.subTitle[i].subHeading) === normalize(data.title);
+          if (isGeneric || isRedundant) {
             activeSections.push(data.subTitle[i]);
           } else {
             break;
@@ -448,12 +450,13 @@ export default function ContentComponent() {
             {activeSections.length > 0 && (
               <div style={{ marginTop: '3rem' }}>
                 {activeSections.map((section, idx) => {
-                  const contextualId = normalize(data.title) === normalize(section.subHeading) 
+                  const isRedundant = normalize(data.title) === normalize(section.subHeading);
+                  const contextualId = isRedundant 
                     ? section.subHeading 
                     : `${data.title}_${section.subHeading}`;
                   return (
                     <div key={idx} id={normalize(contextualId)} style={{ scrollMarginTop: '100px' }}>
-                      {renderRecursiveData([section])}
+                      {renderRecursiveData([section], isRedundant)}
                     </div>
                   );
                 })}

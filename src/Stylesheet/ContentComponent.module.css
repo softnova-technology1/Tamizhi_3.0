@@ -93,11 +93,12 @@
 
 .imgsize {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
+  height: 380px; /* Increased height for better visibility */
+  object-fit: contain; /* Prevents cropping of historical images */
   border-radius: 2px;
+  background-color: rgba(93, 64, 55, 0.04); /* Subtle parchment tint for letterboxing */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: object-fit 0.3s ease;
+  display: block;
 }
 
 .imageWrapper:hover .imgsize {
