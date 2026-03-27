@@ -190,7 +190,7 @@ export default function ContentComponent() {
     // but on the first item for specific items (like Architecture, Books, War)
     const hasDescription = data.description && data.description.length > 0 && data.description[0].trim().length > 0;
     
-    if (isGeneralCategory && hasDescription) {
+    if (hasDescription) {
       isIntroduction = true;
       // Add all generics belonging to the main title
       if (data.subTitle && data.subTitle.length > 0) {
@@ -220,22 +220,6 @@ export default function ContentComponent() {
     }
   }
 
-  // FORCE specific modules (like Architecture, War, Books) to show the first subheading's content 
-  // even if they land on the "Introduction" state, so detailed sub-data (Size, Materials) isn't missed.
-  if (isIntroduction && !isGeneralCategory && data.subTitle && data.subTitle.length > 0) {
-    const firstItem = data.subTitle[0];
-    activeSections.push(firstItem);
-    // Include trailing generics for the first item too
-    for (let i = 1; i < data.subTitle.length; i++) {
-      const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-      if (isGeneric) {
-        activeSections.push(data.subTitle[i]);
-      } else {
-        break;
-      }
-    }
-    isIntroduction = false;
-  }
 
   const PageTransition = {
     initial: { opacity: 0, x: -30, filter: 'blur(3px)' },

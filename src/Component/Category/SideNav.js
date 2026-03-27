@@ -76,16 +76,15 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           normalize(nameOfContent) === 'historical_place' ||
           normalize(nameOfContent) === 'excavation';
 
-        // Land on the first subheading by default for specific items (Architecture, War, Books)
-        // Only show "Introduction" if it's a general category that needs an overview
+        // Show the title button for all categories if they have a description
+        // Use the title itself as the label for specific items (War, Architecture, Books)
         const shouldShowIntro = data.description && 
                                data.description.length > 0 && 
-                               data.description[0].trim().length > 0 &&
-                               isGeneralCategory;
+                               data.description[0].trim().length > 0;
         
         if (shouldShowIntro) {
           displayItems.push({
-            subHeading: introLabel,
+            subHeading: isGeneralCategory ? introLabel : (data.title || introLabel),
             isIntro: true,
             id: normalize(data.title)
           });
