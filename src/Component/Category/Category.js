@@ -1,4 +1,3 @@
-import kingImage from './../../image/cow.png';
 import scrollBg from './../../image/parchment_card.png';
 import stoneBg from './../../image/image.png';
 import img2 from './../../image/kings.jpg';
@@ -13,7 +12,6 @@ import books from './../../image/img8.jpg';
 import lord from './../../image/img12.jpg';
 import excavation from './../../image/img11.webp';
 import mythology from './../../image/img10.jpg';
-import kingImage1 from './../../image/crown.png';
 import styles from '../../Stylesheet/Category.module.css';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';

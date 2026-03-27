@@ -22,11 +22,13 @@
 }
 
 .imgtext {
-  font-weight: bold;
-  font-style: italic;
+  font-weight: 800;
+  font-style: normal;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  margin-top: 1rem;
+  font-family: 'Cinzel', serif;
+  margin-top: 1.2rem;
+  letter-spacing: 0.5px;
+  font-size: 1.4rem;
 }
 
 .listname {
@@ -39,19 +41,55 @@
   margin-bottom: 5rem;
 }
 .flexContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  row-gap: 2rem;
-  column-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 2.5rem 0;
 }
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.4s ease;
+  max-width: fit-content;
+  align-items: center;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-8px);
+}
+
 .flexContainerSingle {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 2.5rem 0;
 }
+
 .imgsize {
-  width: 300px;
+  max-width: 450px;
   height: 300px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.imageCaption {
+  margin-top: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #5d4037;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  opacity: 0.9;
+  margin-bottom: 0px;
+  letter-spacing: 0.5px;
 }
 
 @keyframes slideAndFade {

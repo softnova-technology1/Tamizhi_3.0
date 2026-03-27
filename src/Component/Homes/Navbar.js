@@ -42,9 +42,7 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const toggleLanguage = () => {
-    changeLanguage(language === 'en' ? 'ta' : 'en');
-  };
+
 
 
 

@@ -142,8 +142,9 @@ const Logo = () => {
                     anticipatePin: 1,
                     onUpdate: (self) => {
                         const index = Math.round(self.progress * (sections.length - 1));
-                        if (infoData[index] && activeId !== infoData[index].id) {
-                            setActiveId(infoData[index].id);
+                        if (infoData[index]) {
+                            const newId = infoData[index].id;
+                            setActiveId(prev => (prev !== newId ? newId : prev));
                         }
                     }
                 }

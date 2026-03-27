@@ -9,7 +9,6 @@ import { Context } from '../../Context/contextApi';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollTitle from '../Homes/ScrollTitle';
-import Logo from '../Homes/Logo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,8 +22,6 @@ const WriteContent = () => {
     email: '',
     category: '',
     mistakeContent: '',
-    file: '',
-    file_data: '',
   });
 
   const [edit, setEdit] = useState({
@@ -119,8 +116,6 @@ const WriteContent = () => {
                 email: '',
                 category: '',
                 mistakeContent: '',
-                file: '',
-                file_data: '',
               });
               setEdit({
                 name: false,
@@ -151,26 +146,7 @@ const WriteContent = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const maxSize = 35 * 1024;
-      if (file.size > maxSize) {
-        alert('Image size must be less than 35 KB.');
-        return;
-      }
 
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFieldValue((prev) => ({
-          ...prev,
-          file: file,
-          file_data: reader.result,
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   const handleBlur = (id) => {
     setEdit((prev) => ({

@@ -85,6 +85,7 @@ export default function RootCulture() {
                       data={data}
                       darkmode={darkmode}
                       handleReadMore={handleReadMore}
+                      nameOfContent={nameOfContent}
                     />
                   </Col>
                   <Col xs={12} sm={9} md={9} className={classes.contentContainer}>

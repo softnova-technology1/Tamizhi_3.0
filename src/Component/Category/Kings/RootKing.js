@@ -118,6 +118,7 @@ export default function RootHistory() {
                       data={data}
                       darkmode={darkmode}
                       handleReadMore={handleReadMore}
+                      nameOfContent={nameOfContent}
                     />
                   </Col>
                   <Col
