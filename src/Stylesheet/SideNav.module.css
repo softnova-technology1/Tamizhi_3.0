@@ -5,6 +5,7 @@
   margin-bottom: 2rem;
   line-height: 1.2;
 }
+
 a:link,
 a:hover,
 a:active,
@@ -12,17 +13,21 @@ a:visited {
   color: #c11574;
   text-decoration: none !important;
 }
+
 .head,
 .subhead {
   font-weight: 600;
 }
+
 a {
   text-decoration: none;
 }
+
 .flexcontainer {
   display: flex;
   justify-content: flex-end;
 }
+
 .clickbtn {
   background-color: white;
   color: #b79775;
@@ -33,3 +38,92 @@ a {
   font-size: 16px;
   cursor: pointer;
 }
+
+.navItemsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.navItemWrapper {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 991px) {
+  .maintitle {
+    display: none;
+  }
+
+  /* Unique Ancient Ribbon TopNav */
+  .navItemsContainer {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    gap: 15px; /* Clean spacing */
+    align-items: center;
+    background: linear-gradient(90deg, rgba(230, 215, 180, 0.1), rgba(212, 175, 55, 0.15), rgba(230, 215, 180, 0.1));
+    border-top: 1px dotted rgba(139, 69, 19, 0.3);
+    border-bottom: 1px dotted rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border-radius: 0;
+  }
+
+  .navItemsContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navItemWrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    display: inline-block;
+  }
+
+  /* Text Tabs with Royal Unique Edge Setup */
+  .clickbtn {
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    box-shadow: none !important;
+    padding: 10px 20px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    font-family: 'Cinzel', serif !important; /* Premium Historic Font */
+    width: auto !important;
+    white-space: nowrap;
+    color: #5d4037 !important;
+    border-radius: 18px 4px 18px 4px !important; /* Unique Leaf/Scroll edges! */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    transform: translateY(0) !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Soft Royal Hover */
+  .clickbtn:hover:not(.activeBtn) {
+    transform: translateY(-2px) !important;
+    background: rgba(139, 69, 19, 0.05) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #8b4513 !important;
+  }
+
+  /* The Uniquely Designed 3D Active Tab */
+  .activeBtn {
+    background: linear-gradient(135deg, #4e342e, #2b1710) !important; /* Rich deep wood/brown base */
+    color: #ffd700 !important; /* Vibrant gold text */
+    font-weight: 800 !important;
+    box-shadow: 0 5px 12px rgba(78, 52, 46, 0.4), inset 0 1px 1px rgba(255,255,255,0.1) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+    border: 1px solid #d4af37 !important; /* Gleaming Gold Frame */
+    z-index: 2;
+    transform: translateY(-2px) scale(1.02) !important; 
+    border-radius: 18px 4px 18px 4px !important; /* Retain unique dynamic shape */
+  }
+
+  .activeDot {
+    display: none !important;
+  }
+}
+

@@ -248,3 +248,71 @@
   color: #d4af37 !important;
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
+
+@media (max-width: 991px) {
+  .container {
+    margin-top: 0; /* Ensures flush fit under tablet sticky header */
+  }
+  .imageContainer {
+    height: 42rem !important; /* Perfect tall banner for tablet */
+    background-position: center !important; /* Balanced subject focus */
+  }
+  .textWrapper {
+    width: 92%; /* Exposes a 4% margin gap for the gold glass borders to shine */
+    transform: translate(-50%, -40%); /* Mathematical true center */
+  }
+  .glassContainer {
+    padding: 3rem 1.5rem; /* Reduced horizontal padding for text expansion */
+  }
+  .fontStyle {
+    font-size: 2rem;
+  }
+  .gapBetweenText {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+  .royalSeal {
+    width: 50px;
+    height: 50px;
+    bottom: 5%;
+    right: 5%;
+  }
+  .royalSeal::before {
+    font-size: 0.9rem;
+  }
+  .pathdescription {
+    left: 1.5rem;
+    top: 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 572px) {
+  .imageContainer {
+    height: 50rem !important; /* Exquisite sweet-spot for mobile portrait hero images */
+    background-position: center !important;
+    background-size: cover !important;
+  }
+  .textWrapper {
+    width: 95%; /* Maximizes text width while retaining 2.5% side margins to prevent rod clipping */
+  }
+  .glassContainer {
+    padding: 2.5rem 1rem; /* Maximum internal text space to prevent line-breaks */
+  }
+  .fontStyle {
+    font-size: 1.5rem;
+  }
+  .gapBetweenText {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+  }
+  .scrollPin {
+    height: 10px;
+  }
+  .pinEnd {
+    width: 22px;
+    height: 22px;
+  }
+  .pinLeft { left: -8px; }
+  .pinRight { right: -8px; }
+}

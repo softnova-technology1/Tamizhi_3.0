@@ -1,11 +1,44 @@
 import classes from '../../Stylesheet/SideNav.module.css';
 import { Context } from '../../Context/contextApi';
-import { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useContext, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function SideNav({ data, nameOfContent, handleReadMore = () => {} }) {
   const { darkmode, language } = useContext(Context);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Animation refs for auto-scrolling mobile SideNav tabs
+  const scrollContainerRef = useRef(null);
+  const scrollState = useRef({ isHovered: false, direction: 1 });
+
+  useEffect(() => {
+    // Apply auto-scroll logic uniquely for mobile and tablet views
+    const checkWidth = () => window.innerWidth <= 991;
+    if (!checkWidth()) return;
+
+    let animationId;
+    const scrollStep = 0.5; // pixel per frame speed
+    
+    const animateScroll = () => {
+      const container = scrollContainerRef.current;
+      if (container && !scrollState.current.isHovered) {
+         // Ping-pong scrolling boundary conditions
+         if (container.scrollLeft >= container.scrollWidth - container.clientWidth - 1) {
+            scrollState.current.direction = -1; // Change to scroll left
+         } else if (container.scrollLeft <= 0) {
+            scrollState.current.direction = 1; // Change to scroll right
+         }
+         
+         container.scrollLeft += scrollStep * scrollState.current.direction;
+      }
+      animationId = requestAnimationFrame(animateScroll);
+    };
+
+    animationId = requestAnimationFrame(animateScroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [data]);
 
   const categoryTitles = {
     en: {
@@ -138,7 +171,16 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
         if (activeIndex === -1) activeIndex = 0;
 
         // 5. Render logic (removed the move-to-top logic as requested)
-        return processedItems.map((item, index) => {
+        return (
+          <div 
+             className={classes.navItemsContainer}
+             ref={scrollContainerRef}
+             onTouchStart={() => { scrollState.current.isHovered = true; }}
+             onTouchEnd={() => { setTimeout(() => { scrollState.current.isHovered = false; }, 3000); }}
+             onMouseEnter={() => { scrollState.current.isHovered = true; }}
+             onMouseLeave={() => { setTimeout(() => { scrollState.current.isHovered = false; }, 1000); }}
+          >
+            {processedItems.map((item, index) => {
           const targetHash = `#${item.normalizedHeading}`;
           const isActive = index === activeIndex;
           
@@ -154,7 +196,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           }
 
           return (
-            <div key={`${item.subHeading}_${index}`} style={{ 
+            <div key={`${item.subHeading}_${index}`} className={classes.navItemWrapper} style={{ 
               marginBottom: item.isGeneric ? '0.6rem' : '1.8rem',
               paddingLeft: item.isGeneric ? '1.5rem' : '0px',
               borderLeft: item.isGeneric && isGroupActive ? '2px solid rgba(212, 175, 55, 0.3)' : 'none',
@@ -167,10 +209,28 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                   display: 'block',
                   width: '100%',
                 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(targetHash, { replace: true });
+                  
+                  // For mobile/tablet, smooth scroll to the top of the content Container
+                  // so the user sees the new content gracefully appearing.
+                  if (window.innerWidth <= 991) {
+                    const navContainer = document.querySelector(`.${classes.navItemsContainer}`);
+                    if (navContainer) {
+                      const y = navContainer.getBoundingClientRect().top + window.scrollY - 20;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  } else {
+                    // On desktop, scroll back to the top of the contentWrapper or to 0 if it was scrolled far down
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
               >
                 <button
-                  className={classes.clickbtn}
+                  className={`${classes.clickbtn} ${isActive ? classes.activeBtn : ''}`}
                   style={{
+                    '--active-text-mobile': darkmode === 'off' ? '#5d4037' : '#d4af37',
                     backgroundColor: isActive 
                         ? (darkmode === 'off' ? '#5d4037' : '#d4af37') 
                         : 'transparent',
@@ -208,7 +268,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                       e.currentTarget.style.transform = 'translateY(0px)';
                     }
                   }}
-                  onClick={(event) => handleReadMore(event)}
+                  onClick={(event) => {
+                    handleReadMore(event);
+                  }}
                 >
                   <span style={{ 
                     textTransform: item.isGeneric ? 'capitalize' : 'uppercase',
@@ -217,7 +279,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                     {item.subHeading}
                   </span>
                   {isActive && (
-                    <div style={{
+                    <div className={classes.activeDot} style={{
                       width: '8px',
                       height: '8px',
                       borderRadius: '50%',
@@ -230,7 +292,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
               </a>
             </div>
           );
-        });
+        })}
+        </div>
+        );
       })()}
     </div>
   );
