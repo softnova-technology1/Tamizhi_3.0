@@ -22,7 +22,7 @@ export default function ContentComponent() {
     "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
     "etymology", "origin", "alphabet", "languages", "significance", "cultural", "religious", "architectural", "features", "prominent",
     "excavations", "research", "discoveries", "findings", "phases", "members", "details", "contributions", "implications",
-    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்"
+    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்", "விளைவு", "பாடநெறி", "ஆதாரங்கள்", "சான்றுகள்", "சுருக்கம்"
   ];
 
   const cleanCaption = (text) => {
@@ -493,12 +493,11 @@ export default function ContentComponent() {
                   </h3>
                 )}
 
-                {/* PREPEND Root Content (Images + Description) for specific items (Architecture, War, Books) on their first item's page */}
+                {/* PREPEND Root Content (Images + Description) for specific items (Architecture, War, Books) ONLY on their main subject's first page */}
                 {!isGeneralCategory && 
                  sectionIdx === 0 &&
                  data.subTitle && 
-                 data.subTitle[0] && 
-                 normalize(section.subHeading) === normalize(data.subTitle[0].subHeading) && (
+                 normalize(section.majorHeading || section.subHeading) === normalize(data.title) && (
                   <div style={{ marginBottom: '3rem' }}>
                     {/* Root Images */}
                     {data.image && data.image.length > 0 && (
