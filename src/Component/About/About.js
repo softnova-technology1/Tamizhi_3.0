@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import Aboutimg1 from './../../image/About-img1.png';
-import Aboutimg2 from './../../image/temple6.png';
+import Aboutimg2 from './../../image/aboutimg.png';
 import Aboutimg5 from './../../image/About-img5.png';
 import Aboutimg6 from './../../image/About-img6.png';
 import Aboutimg7 from './../../image/About-img7.png';
 import Aboutimg8 from './../../image/About-img-8.png';
-import CultureImg from './../../image/cultureimg.webp';
-import HistoryImg from './../../image/historyimg.webp';
-import ArchitectureImg from './../../image/architureimg.webp';
-import KingsImg from './../../image/kings.webp';
+import CultureImg from './../../image/culture.png';
+import HistoryImg from './../../image/mission.png';
+import ArchitectureImg from './../../image/offer.png';
+import KingsImg from './../../image/temp.png';
 import classes from '../../Stylesheet/AboutRedesign.module.css';
 import { Context } from '../../Context/contextApi';
 

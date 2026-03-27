@@ -22,9 +22,9 @@
   width: 100%;
 }
 
-:global(.row) {
-  --bs-gutter-x: 1.5rem;
-}
+/* :global(.row) {
+  --bs-gutter-x: -5.5rem;
+} */
 
 .createtitle {
   text-align: center;

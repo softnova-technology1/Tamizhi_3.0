@@ -7,6 +7,7 @@
   overflow: hidden;
   background: url('../image/castpod.png') no-repeat ;
   background-size: cover;
+  background-position: bottom;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +73,7 @@
 
 .micIconInner {
   font-size: 3.5rem;
-  color: #d4af37;
+  color: #282005;
   filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
 }
 
@@ -80,7 +81,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(85, 69, 15, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   animation: pulsate 3s ease-in-out infinite;
 }
@@ -230,5 +231,34 @@
     width: 50px;
     height: 50px;
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  .tamilLogo {
+    max-width: 90%;
+  }
+  .comingSoonText {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-align: center;
+  }
+  .overlay {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .content {
+    width: 100%;
+  }
+  .socialIcons {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 }
