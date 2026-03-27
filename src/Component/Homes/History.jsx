@@ -93,7 +93,7 @@ const data = [
   },
 ];
 export default function History() {
-  const { language, mobileViewOn } = useContext(Context);
+  const { language } = useContext(Context);
   const navigate = useNavigate();
   const handleMoreClick = () => {
     navigate('/category');

@@ -1,7 +1,6 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import Aboutimg1 from './../../image/About-img1.png';
 import Aboutimg2 from './../../image/temple6.png';
-import Aboutimg4 from './../../image/About-img4.png';
 import Aboutimg5 from './../../image/About-img5.png';
 import Aboutimg6 from './../../image/About-img6.png';
 import Aboutimg7 from './../../image/About-img7.png';

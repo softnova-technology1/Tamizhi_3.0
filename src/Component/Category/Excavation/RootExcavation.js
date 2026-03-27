@@ -78,7 +78,7 @@ export default function RootExcavation() {
                     md={3}
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
-                    <SideNav data={data} darkmode={darkmode} />
+                    <SideNav data={data} darkmode={darkmode} nameOfContent="excavation" />
                   </Col>
                   <Col
                     xs={12}

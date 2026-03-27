@@ -58,7 +58,6 @@
 /* Content Area */
 .contentContainer {
   padding: 0 1rem 2rem 2rem; /* Reduced from 4rem */
-  border-left: 2px solid rgba(212, 175, 55, 0.3);
   min-height: 70vh;
   animation: fadeIn 0.8s ease-out;
 }
@@ -86,9 +85,9 @@
 
 /* Reduced Gaps and Sizes for SideNav Container */
 .sideNavContainer h1, .sideNavContainer h2 {
-  font-size: 2rem !important;
-  margin-bottom: 1.5rem !important;
-  padding-bottom: 0.8rem !important;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .sideNavContainer h3 {
@@ -98,9 +97,9 @@
 }
 
 .sideNavContainer p, .sideNavContainer li {
-  font-size: 1.1rem !important;
-  line-height: 1.4 !important;
-  margin-bottom: 1rem !important;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
 }
 
 /* Image Shadows */
@@ -118,7 +117,7 @@
 /* Typography Overrides - Refined Font Sizes */
 .ancientCard h1, .ancientCard h2 {
   font-family: 'Cinzel', serif !important;
-  font-size: 2.5rem !important; /* Adjusted title size for better layout */
+  font-size: 2.8rem !important; /* Adjusted title size for better layout */
   color: #1a0f0a !important; /* Deeper color for clearer contrast */
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -136,7 +135,7 @@
 
 .ancientCard h3 {
   font-family: 'Cinzel', serif !important;
-  font-size: 1.8rem !important; /* Adjusted subheading size */
+  font-size: 1.9rem !important; /* Adjusted subheading size */
   font-weight: 800 !important;
   color: #2b1810 !important; /* Darker subheading text */
   margin-top: 3rem !important;
@@ -149,7 +148,7 @@
 }
 
 .ancientCard p, .ancientCard li {
-  font-size: 1.5rem !important; /* Adjusted body size */
+  font-size: 1.8rem !important; /* Adjusted body size */
   line-height: 1.8 !important; /* Adjusted line spacing */
   text-align: justify;
   margin-bottom: 1.5rem;
@@ -169,32 +168,33 @@
 }
 
 /* Button Styling (if any appear from components) */
-.ancientCard button {
-  background-color: transparent !important;
-  border: 1px solid #d4af37 !important;
-  color: #8b4513 !important;
+/* Button Styling for Content Area Only */
+.contentContainer button {
+  background-color: transparent;
+  border: 1px solid #d4af37;
+  color: #8b4513;
   font-family: 'Cinzel', serif;
-  font-size: 1rem; /* Better button text size */
+  font-size: 1.4rem;
   text-transform: uppercase;
-  padding: 0.8rem 1.8rem !important;
+  padding: 0.8rem 1.8rem;
   transition: all 0.3s;
   cursor: pointer;
   letter-spacing: 1px;
 }
 
-.ancientCard button:hover {
-  background-color: #d4af37 !important;
-  color: #fff !important;
+.contentContainer button:hover {
+  background-color: #d4af37;
+  color: #fff;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-.darkTheme .ancientCard button {
-  color: #d4af37 !important;
+.darkTheme .contentContainer button {
+  color: #d4af37;
 }
 
-.darkTheme .ancientCard button:hover {
-  background-color: #b8860b !important;
-  color: #000 !important;
+.darkTheme .contentContainer button:hover {
+  background-color: #b8860b;
+  color: #000;
 }
 
 /* Media Queries */
@@ -208,7 +208,6 @@
   .contentContainer {
     padding: 0 1rem 1rem 1.5rem;
     border-left: none;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
     margin-top: 3rem;
   }
 }
