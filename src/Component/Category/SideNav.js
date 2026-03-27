@@ -22,7 +22,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
       excavation: 'Excavation',
       mythology: 'Mythology'
     },
-    tn: {
+    ta: {
       history: 'வரலாறு',
       kings: 'அரசர்கள்',
       war: 'போர்',
@@ -38,9 +38,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
     }
   };
 
-  const displayTitle = (nameOfContent && categoryTitles[language || 'en'][nameOfContent.toLowerCase()]) 
-    ? categoryTitles[language || 'en'][nameOfContent.toLowerCase()] 
-    : data.title;
+  const displayTitle = (nameOfContent && categoryTitles[language] && categoryTitles[language][nameOfContent.toLowerCase()]) 
+    ? categoryTitles[language][nameOfContent.toLowerCase()] 
+    : data?.title || '';
 
   const genericSections = [
     "intro", "background", "course", "outcome", "significance", "conclusion", "sources", "summary", 
