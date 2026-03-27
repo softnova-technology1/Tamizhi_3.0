@@ -1,12 +1,13 @@
 .head {
   margin-top: 10px;
 }
-.sandbg{
-    background-image: url(../image/sand.png);
-    background-position: bottom;
-    background-size: cover;
-    background-repeat:no-repeat ;
-    height: 100vh;
+
+.sandbg {
+  background-image: url(../image/sand.png);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .backdropfilter {
@@ -365,7 +366,7 @@
   .forms {
     width: 40%;
     height: auto;
-    
+
   }
 
   .label,
@@ -409,9 +410,12 @@
 }
 
 @keyframes floatEffect {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }

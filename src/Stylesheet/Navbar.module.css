@@ -848,7 +848,7 @@
   }
 }
 
-@media (min-width: 1024px) and(max-width: 1316px) {
+@media (min-width: 1024px) and (max-width: 1316px) {
   .brand {
     font-size: 24px;
     height: auto;

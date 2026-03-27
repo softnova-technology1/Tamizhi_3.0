@@ -32,6 +32,8 @@
 
 .card:hover {
   transform: translateY(-10px);
+  transform: rotate(5deg);
+  transform: scale(1.1);
 }
 
 .imgBox {
@@ -210,7 +212,7 @@
   }
   
   .imgBox {
-    padding: 40px 20px;
+    padding: 40px 10px;
   }
 }
 
