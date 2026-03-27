@@ -7,7 +7,7 @@ import lordDataTn from '../../../Language/tam/lord.json';
 import { useContext, useState, useEffect } from 'react';
 import ImageComponent from '../../ImageComponent';
 import { Context } from '../../../Context/contextApi';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Helmet } from 'react-helmet';
 import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';

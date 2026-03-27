@@ -1,4 +1,4 @@
-import SideNav from '../SideNav.js';
+import SideNav from '../SideNav.jsx';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import classes from '../../../Stylesheet/RootHistory.module.css';
@@ -6,10 +6,10 @@ import classes from '../../../Stylesheet/RootBooks.module.css';
 import architectureDataEn from '../../../Language/en/architecture.json';
 import architectureDataTN from '../../../Language/tam/architecture.json';
 import { useContext, useState, useEffect } from 'react';
-import { Context } from '../../../Context/contextApi.js';
+import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
-import ImageComponent from '../../ImageComponent.js';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import ImageComponent from '../../ImageComponent.jsx';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
 
 export default function RootArchitecture() {

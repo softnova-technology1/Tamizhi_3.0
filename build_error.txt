@@ -1,0 +1,966 @@
+2026-03-27T05:22:09.373Z vite:config config file loaded in 46.72ms
+2026-03-27T05:22:09.377Z vite:env loading env files: [
+  'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/.env',
+  'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/.env.local',
+  'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/.env.production',
+  'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/.env.production.local'
+]
+2026-03-27T05:22:09.377Z vite:env env files loaded in 0.77ms
+2026-03-27T05:22:09.378Z vite:env using resolved env: {}
+2026-03-27T05:22:09.400Z vite:config using resolved config: {
+  plugins: [
+    'vite:watch-package-data',
+    'builtin:vite-alias',
+    'vite:react-babel',
+    'vite:react-refresh-fbm',
+    'vite:react-refresh',
+    'native:modulepreload-polyfill',
+    'vite:resolve-builtin:get-environment',
+    'vite:resolve-builtin',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'native:transform',
+    'builtin:vite-json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite:forward-console',
+    'vite:react-virtual-preamble',
+    'builtin:vite-wasm-fallback',
+    'vite:define',
+    'vite:css-post',
+    'vite:build-html',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:prepare-out-dir',
+    'vite:rollup-options-plugins',
+    'native:dynamic-import-vars',
+    'builtin:vite-import-glob',
+    'vite:react:config-post',
+    'vite:build-import-analysis',
+    'native:import-analysis-build',
+    'vite:terser',
+    'vite:license',
+    'native:manifest',
+    'vite:ssr-manifest',
+    'native:reporter',
+    'builtin:vite-load-fallback'
+  ],
+  server: {
+    port: 3000,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: true,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: [] },
+    middlewareMode: false,
+    fs: {
+      strict: true,
+      deny: [ '.env', '.env.*', '*.{crt,pem}', '**/.git/**' ],
+      allow: [ 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0' ]
+    },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: false,
+    perEnvironmentWatchChangeDuringDev: false,
+    forwardConsole: {
+      enabled: true,
+      unhandledErrors: true,
+      logLevels: [ 'error', 'warn' ]
+    },
+    sourcemapIgnoreList: [Function: isInNodeModules]
+  },
+  build: {
+    target: [ 'chrome111', 'edge111', 'firefox114', 'safari16.4', 'ios16.4' ],
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: true },
+    outDir: 'build',
+    assetsDir: 'assets',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    rolldownOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+    commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+    dynamicImportVarsOptions: { exclude: [ /node_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    license: false,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: 'oxc',
+    rollupOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+    ssr: false,
+    emitAssets: true,
+    createEnvironment: [Function: createEnvironment],
+    cssTarget: [ 'chrome111', 'edge111', 'firefox114', 'safari16.4', 'ios16.4' ],
+    cssMinify: true
+  },
+  worker: {
+    format: 'iife',
+    plugins: '() => plugins',
+    rollupOptions: {},
+    rolldownOptions: {}
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime'
+    ],
+    exclude: [],
+    needsInterop: [],
+    rolldownOptions: {
+      transform: { jsx: { runtime: 'automatic' } },
+      resolve: { symlinks: true },
+      output: { topLevelVar: true }
+    },
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    ignoreOutdatedRequests: false,
+    noDiscovery: false,
+    rollupOptions: [Getter/Setter],
+    esbuildOptions: { preserveSymlinks: false }
+  },
+  oxc: {
+    jsx: {
+      development: false,
+      runtime: 'automatic',
+      importSource: undefined,
+      refresh: false
+    },
+    jsxRefreshInclude: /\.[tj]sx?(?:\?.*)?$/,
+    jsxRefreshExclude: /\/node_modules\//
+  },
+  environments: {
+    client: {
+      define: undefined,
+      resolve: {
+        externalConditions: [ 'node', 'module-sync' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        tsconfigPaths: false,
+        alias: [
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'browser', 'development|production' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime'
+        ],
+        exclude: [],
+        needsInterop: [],
+        rolldownOptions: {
+          transform: { jsx: { runtime: 'automatic' } },
+          resolve: { symlinks: true },
+          output: { topLevelVar: true }
+        },
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        ignoreOutdatedRequests: false,
+        noDiscovery: false,
+        rollupOptions: [Getter/Setter],
+        esbuildOptions: { preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules],
+        preTransformRequests: true,
+        createEnvironment: [Function: defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: [
+          'chrome111',
+          'edge111',
+          'firefox114',
+          'safari16.4',
+          'ios16.4'
+        ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'build',
+        assetsDir: 'assets',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        rolldownOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', '.cjs' ] },
+        dynamicImportVarsOptions: { exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: null,
+        copyPublicDir: true,
+        license: false,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: 'oxc',
+        rollupOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+        ssr: false,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: [
+          'chrome111',
+          'edge111',
+          'firefox114',
+          'safari16.4',
+          'ios16.4'
+        ],
+        cssMinify: true
+      },
+      plugins: [
+        {
+          name: 'vite:watch-package-data',
+          buildStart: [Function: buildStart],
+          buildEnd: [Function: buildEnd],
+          watchChange: [Function: watchChange]
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-alias',
+          _options: {
+            entries: [
+              {
+                find: /^\/?@vite\/env/,
+                replacement: '/@fs/C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/vite/dist/client/env.mjs'
+              },
+              {
+                find: /^\/?@vite\/client/,
+                replacement: '/@fs/C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/vite/dist/client/client.mjs'
+              }
+            ]
+          }
+        },
+        {
+          name: 'vite:react-babel',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: configResolved],
+          options: [Function: options]
+        },
+        {
+          name: 'vite:react-refresh-fbm',
+          enforce: 'pre',
+          transformIndexHtml: { handler: [Function: handler], order: 'pre' }
+        },
+        {
+          name: 'vite:react-refresh',
+          enforce: 'pre',
+          config: [Function: config],
+          resolveId: {
+            filter: { id: /^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: /^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          transformIndexHtml: [Function: transformIndexHtml]
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-module-preload-polyfill',
+          _options: { isServer: false }
+        },
+        {
+          name: 'vite:resolve-builtin:get-environment',
+          buildStart: [Function: buildStart],
+          perEnvironmentStartEndDuringDev: true
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-resolve',
+          _options: {
+            resolveOptions: {
+              isBuild: true,
+              isProduction: true,
+              asSrc: true,
+              preferRelative: false,
+              isRequire: undefined,
+              root: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+              scan: false,
+              mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext', 'main' ],
+              conditions: [ 'module', 'browser', 'development|production' ],
+              externalConditions: [ 'node', 'module-sync' ],
+              extensions: [
+                '.mjs',  '.js',
+                '.mts',  '.ts',
+                '.jsx',  '.tsx',
+                '.json'
+              ],
+              tryIndex: true,
+              tryPrefix: undefined,
+              preserveSymlinks: false,
+              tsconfigPaths: false
+            },
+            environmentConsumer: 'client',
+            environmentName: 'client',
+            builtins: [],
+            external: [],
+            noExternal: [],
+            dedupe: [],
+            disableCache: false,
+            legacyInconsistentCjsInterop: undefined,
+            finalizeBareSpecifier: undefined,
+            finalizeOtherSpecifiers: undefined,
+            resolveSubpathImports: [Function: resolveSubpathImports],
+            yarnPnp: false
+          },
+          getOrder: [AsyncFunction: wrappedHook],
+          load: [AsyncFunction: wrappedHook],
+          resolveId: [AsyncFunction: wrappedHook],
+          transform: [AsyncFunction: wrappedHook],
+          watchChange: [AsyncFunction: wrappedHook],
+          perEnvironmentWatchChangeDuringDev: true
+        },
+        {
+          name: 'vite:html-inline-proxy',
+          resolveId: {
+            filter: { id: /[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: /[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:css',
+          buildStart: [Function: buildStart],
+          buildEnd: [Function: buildEnd],
+          load: {
+            filter: {
+              id: /\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/
+            },
+            handler: [AsyncFunction: handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  /[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: handler]
+          }
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-transform',
+          _options: {
+            root: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+            include: [ /\.(m?ts|[jt]sx)$/ ],
+            exclude: [ /\.js$/ ],
+            jsxRefreshInclude: [ /\.[tj]sx?(?:\?.*)?$/ ],
+            jsxRefreshExclude: [ /\/node_modules\// ],
+            isServerConsumer: false,
+            jsxInject: undefined,
+            transformOptions: {
+              jsx: {
+                development: false,
+                runtime: 'automatic',
+                importSource: undefined,
+                refresh: false
+              },
+              sourcemap: true
+            },
+            yarnPnp: false
+          }
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-json',
+          _options: { namedExports: true, stringify: 'auto', minify: true },
+          getOrder: [AsyncFunction: wrappedHook],
+          load: [AsyncFunction: wrappedHook],
+          resolveId: [AsyncFunction: wrappedHook],
+          transform: [AsyncFunction: wrappedHook],
+          watchChange: [AsyncFunction: wrappedHook]
+        },
+        {
+          name: 'vite:wasm-helper',
+          resolveId: {
+            filter: { id: /^ vite\/wasm\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: {
+              id: [
+                /^ vite\/wasm\-helper\.js$/,
+                /(?<![?#].*)\.wasm\?init/
+              ]
+            },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: undefined
+        },
+        {
+          name: 'vite:worker',
+          buildStart: [Function: buildStart],
+          load: {
+            filter: { id: /(?:\?|&)(worker|sharedworker)(?:&|$)/ },
+            handler: [AsyncFunction: handler]
+          },
+          transform: {
+            filter: { id: /(?:\?|&)worker_file&type=(\w+)(?:&|$)/ },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: [Function: renderChunk],
+          generateBundle: [Function: generateBundle],
+          watchChange: [Function: watchChange]
+        },
+        {
+          name: 'vite:asset',
+          perEnvironmentStartEndDuringDev: true,
+          buildStart: [Function: buildStart],
+          resolveId: {
+            filter: {
+              id: [
+                /(\?|&)url(?:&|$)/,
+                /\.(apng|bmp|png|jpe?g|jfif|pjpeg|pjp|gif|svg|ico|webp|avif|cur|jxl|mp4|webm|ogg|mp3|wav|flac|aac|opus|mov|m4a|vtt|woff2?|eot|ttf|otf|webmanifest|pdf|txt)(\?.*)?$/i
+              ]
+            },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: {
+              id: {
+                include: [
+                  /(\?|&)raw(?:&|$)/,
+                  /(\?|&)url(?:&|$)/,
+                  /\.(apng|bmp|png|jpe?g|jfif|pjpeg|pjp|gif|svg|ico|webp|avif|cur|jxl|mp4|webm|ogg|mp3|wav|flac|aac|opus|mov|m4a|vtt|woff2?|eot|ttf|otf|webmanifest|pdf|txt)(\?.*)?$/i
+                ],
+                exclude: /^\0/
+              }
+            },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: [Function: renderChunk],
+          generateBundle: [Function: generateBundle],
+          watchChange: [Function: watchChange]
+        },
+        {
+          name: 'vite:forward-console',
+          apply: 'serve',
+          configureServer: [Function: configureServer]
+        },
+        {
+          name: 'vite:react-virtual-preamble',
+          resolveId: {
+            order: 'pre',
+            filter: { id: /^@vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: /^ @vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          }
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-wasm-fallback',
+          _options: undefined,
+          getOrder: [AsyncFunction: wrappedHook],
+          load: [AsyncFunction: wrappedHook],
+          resolveId: [AsyncFunction: wrappedHook],
+          transform: [AsyncFunction: wrappedHook],
+          watchChange: [AsyncFunction: wrappedHook]
+        },
+        { name: 'vite:define', options: [Function: options] },
+        {
+          name: 'vite:css-post',
+          renderStart: [Function: renderStart],
+          transform: {
+            filter: {
+              id: {
+                include: /\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  /[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: [AsyncFunction: renderChunk],
+          augmentChunkHash: [Function: augmentChunkHash],
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        {
+          name: 'vite:build-html',
+          transform: {
+            filter: { id: /\.html$/ },
+            handler: [AsyncFunction: handler]
+          },
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        {
+          name: 'vite:worker-import-meta-url',
+          applyToEnvironment: [Function: applyToEnvironment],
+          transform: {
+            filter: {
+              code: /\bnew\s+(?:Worker|SharedWorker)\s*\(\s*(new\s+URL\s*\(\s*('[^']+'|"[^"]+"|`[^`]+`)\s*,\s*import\.meta\.url\s*(?:,\s*)?\))/dg
+            },
+            handler: [AsyncFunction: handler]
+          }
+        },
+        {
+          name: 'vite:asset-import-meta-url',
+          applyToEnvironment: [Function: applyToEnvironment],
+          transform: {
+            filter: {
+              id: {
+                exclude: [
+                  /^ vite\/preload\-helper\.js$/,
+                  /^C:\\Users\\DURGAI\\Desktop\\Tamizhi 3\.0\\Tamizhi_3\.0\\node_modules\\vite\\dist\\client\\client\.mjs$/
+                ]
+              },
+              code: /\bnew\s+URL\s*\(\s*('[^']+'|"[^"]+"|`[^`]+`)\s*,\s*import\.meta\.url\s*(?:,\s*)?\)/dg
+            },
+            handler: [AsyncFunction: handler]
+          }
+        },
+        {
+          name: 'vite:prepare-out-dir',
+          options: [Function: options],
+          renderStart: { order: 'pre', handler: [Function: handler] }
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-dynamic-import-vars',
+          _options: {
+            include: undefined,
+            exclude: [ /node_modules/ ],
+            resolver: [Function: resolver],
+            sourcemap: false
+          }
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-import-glob',
+          _options: {
+            root: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+            sourcemap: false,
+            restoreQueryExtension: false
+          }
+        },
+        {
+          name: 'vite:react:config-post',
+          enforce: 'post',
+          config: [Function: config]
+        },
+        {
+          name: 'vite:build-import-analysis',
+          renderChunk: [Function: renderChunk],
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-build-import-analysis',
+          _options: {
+            preloadCode: `const scriptRel = 'modulepreload';const assetsURL = function(dep) { return "/"+dep };const seen = {};export const __vitePreload = function preload(baseModule, deps, importerUrl) {\n` +
+              '\tlet promise = Promise.resolve();\n' +
+              '\tif (__VITE_IS_MODERN__ && deps && deps.length > 0) {\n' +
+              '\t\tconst links = document.getElementsByTagName("link");\n' +
+              '\t\tconst cspNonceMeta = document.querySelector("meta[property=csp-nonce]");\n' +
+              '\t\tconst cspNonce = cspNonceMeta?.nonce || cspNonceMeta?.getAttribute("nonce");\n' +
+              '\t\tfunction allSettled(promises) {\n' +
+              '\t\t\treturn Promise.all(promises.map((p) => Promise.resolve(p).then((value) => ({\n' +
+              '\t\t\t\tstatus: "fulfilled",\n' +
+              '\t\t\t\tvalue\n' +
+              '\t\t\t}), (reason) => ({\n' +
+              '\t\t\t\tstatus: "rejected",\n' +
+              '\t\t\t\treason\n' +
+              '\t\t\t}))));\n' +
+              '\t\t}\n' +
+              '\t\tpromise = allSettled(deps.map((dep) => {\n' +
+              '\t\t\tdep = assetsURL(dep, importerUrl);\n' +
+              '\t\t\tif (dep in seen) return;\n' +
+              '\t\t\tseen[dep] = true;\n' +
+              '\t\t\tconst isCss = dep.endsWith(".css");\n' +
+              '\t\t\tconst cssSelector = isCss ? "[rel=\\"stylesheet\\"]" : "";\n' +
+              '\t\t\tif (!!importerUrl) for (let i = links.length - 1; i >= 0; i--) {\n' +
+              '\t\t\t\tconst link = links[i];\n' +
+              '\t\t\t\tif (link.href === dep && (!isCss || link.rel === "stylesheet")) return;\n' +
+              '\t\t\t}\n' +
+              '\t\t\telse if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;\n' +
+              '\t\t\tconst link = document.createElement("link");\n' +
+              '\t\t\tlink.rel = isCss ? "stylesheet" : scriptRel;\n' +
+              '\t\t\tif (!isCss) link.as = "script";\n' +
+              '\t\t\tlink.crossOrigin = "";\n' +
+              '\t\t\tlink.href = dep;\n' +
+              '\t\t\tif (cspNonce) link.setAttribute("nonce", cspNonce);\n' +
+              '\t\t\tdocument.head.appendChild(link);\n' +
+              '\t\t\tif (isCss) return new Promise((res, rej) => {\n' +
+              '\t\t\t\tlink.addEventListener("load", res);\n' +
+              '\t\t\t\tlink.addEventListener("error", () => rej(/* @__PURE__ */ new Error(`Unable to preload CSS for ${dep}`)));\n' +
+              '\t\t\t});\n' +
+              '\t\t}));\n' +
+              '\t}\n' +
+              '\tfunction handlePreloadError(err) {\n' +
+              '\t\tconst e = new Event("vite:preloadError", { cancelable: true });\n' +
+              '\t\te.payload = err;\n' +
+              '\t\twindow.dispatchEvent(e);\n' +
+              '\t\tif (!e.defaultPrevented) throw err;\n' +
+              '\t}\n' +
+              '\treturn promise.then((res) => {\n' +
+              '\t\tfor (const item of res || []) {\n' +
+              '\t\t\tif (item.status !== "rejected") continue;\n' +
+              '\t\t\thandlePreloadError(item.reason);\n' +
+              '\t\t}\n' +
+              '\t\treturn baseModule().catch(handlePreloadError);\n' +
+              '\t});\n' +
+              '}',
+            insertPreload: true,
+            optimizeModulePreloadRelativePaths: false,
+            renderBuiltUrl: false,
+            isRelativeBase: false
+          }
+        },
+        {
+          name: 'vite:terser',
+          applyToEnvironment: [Function: applyToEnvironment],
+          renderChunk: [AsyncFunction: renderChunk],
+          closeBundle: [Function: closeBundle]
+        },
+        {
+          name: 'vite:license',
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-reporter',
+          _options: {
+            root: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+            isTty: false,
+            isLib: false,
+            assetsDir: 'assets\\',
+            chunkLimit: 500,
+            logInfo: [Function (anonymous)],
+            reportCompressedSize: true,
+            warnLargeChunks: true
+          }
+        },
+        BuiltinPlugin {
+          enforce: undefined,
+          name: 'builtin:vite-load-fallback',
+          _options: undefined
+        }
+      ],
+      optimizeDepsPluginNames: []
+    }
+  },
+  resolve: {
+    externalConditions: [ 'node', 'module-sync' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    tsconfigPaths: false,
+    alias: [
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 'development|production' ],
+    builtins: []
+  },
+  configFile: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/vite.config.js',
+  configFileDependencies: [ 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/vite.config.js' ],
+  inlineConfig: {
+    root: undefined,
+    base: undefined,
+    mode: undefined,
+    configFile: undefined,
+    configLoader: undefined,
+    logLevel: undefined,
+    clearScreen: undefined,
+    build: { rolldownOptions: undefined, rollupOptions: [Getter/Setter] },
+    worker: { rolldownOptions: undefined, rollupOptions: [Getter/Setter] },
+    optimizeDeps: { rolldownOptions: undefined, rollupOptions: [Getter/Setter] }
+  },
+  root: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/public',
+  cacheDir: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/.vite',
+  command: 'build',
+  mode: 'production',
+  isBundled: true,
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: true,
+    devSourcemap: false
+  },
+  json: { namedExports: true, stringify: 'auto' },
+  esbuild: { jsxDev: false, charset: 'utf8', legalComments: 'none' },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: true,
+    proxy: undefined,
+    cors: {
+      origin: /^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+  env: { BASE_URL: '/', MODE: 'production', DEV: false, PROD: true },
+  assetsInclude: [Function: assetsInclude],
+  rawAssetsInclude: [],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0' => {
+      dir: 'C:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0',
+      data: {
+        name: 'version2.0',
+        version: '0.1.0',
+        private: true,
+        dependencies: {
+          '@emailjs/browser': '^4.4.1',
+          '@fontsource/montserrat': '^5.2.5',
+          '@fortawesome/fontawesome-free': '^6.7.2',
+          '@gsap/react': '^2.1.2',
+          '@react-oauth/google': '^0.12.1',
+          bootstrap: '^5.3.3',
+          dayjs: '^1.11.13',
+          'framer-motion': '^12.38.0',
+          gsap: '^3.14.2',
+          'jwt-decode': '^4.0.0',
+          'lucide-react': '^0.577.0',
+          react: '^19.1.0',
+          'react-bootstrap': '^2.10.9',
+          'react-dom': '^19.1.0',
+          'react-helmet': '^6.1.0',
+          'react-icons': '^5.5.0',
+          'react-router-dom': '^7.4.1',
+          'react-scripts': '5.0.1',
+          'react-spinners': '^0.17.0',
+          swiper: '^11.2.6',
+          'web-vitals': '^2.1.4'
+        },
+        scripts: {
+          start: 'vite',
+          build: 'vite build',
+          preview: 'vite preview',
+          test: 'react-scripts test',
+          eject: 'react-scripts eject',
+          analyze: "source-map-explorer 'build/static/js/*.js'"
+        },
+        eslintConfig: { extends: [ 'react-app', 'react-app/jest' ] },
+        browserslist: {
+          production: [ '>0.2%', 'not dead', 'not op_mini all' ],
+          development: [
+            'last 1 chrome version',
+            'last 1 firefox version',
+            'last 1 safari version'
+          ]
+        },
+        devDependencies: {
+          '@babel/core': '^7.27.1',
+          '@babel/preset-env': '^7.27.2',
+          '@babel/preset-react': '^7.27.1',
+          '@vitejs/plugin-react': '^6.0.1',
+          'babel-loader': '^10.0.0',
+          'css-loader': '^7.1.2',
+          prettier: '^3.5.3',
+          'style-loader': '^4.0.0',
+          vite: '^8.0.3',
+          'vite-plugin-env-compatible': '^2.0.1',
+          'webpack-bundle-analyzer': '^4.10.2',
+          'webpack-cli': '^6.0.1'
+        }
+      },
+      hasSideEffects: [Function: hasSideEffects],
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  appType: 'spa',
+  experimental: {
+    importGlobRestoreExtension: false,
+    renderBuiltUrl: undefined,
+    hmrPartialAccept: false,
+    bundledDev: false
+  },
+  future: undefined,
+  ssr: {
+    target: 'node',
+    optimizeDeps: { esbuildOptions: { preserveSymlinks: false } },
+    resolve: { conditions: undefined, externalConditions: undefined }
+  },
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: isInNodeModules],
+    preTransformRequests: false,
+    createEnvironment: [Function: defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  devtools: { config: { host: 'localhost' }, enabled: false },
+  webSocketToken: 'nWChvJ5z9AKp',
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks],
+  createResolver: [Function: createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  [Symbol(vite:resolved-config)]: true
+}
+[36mvite v8.0.3 [32mbuilding client environment for production...[36m[39m
+[2Ktransforming...2026-03-27T05:22:09.917Z vite:resolve [31m187.41ms[39m [36m./files/montserrat-vietnamese-400-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-vietnamese-400-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m187.74ms[39m [36m./files/montserrat-cyrillic-400-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m187.76ms[39m [36m./files/montserrat-latin-ext-400-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-ext-400-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m187.96ms[39m [36m./files/montserrat-cyrillic-600-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-600-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m188.17ms[39m [36m./files/montserrat-cyrillic-ext-600-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-ext-600-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m188.19ms[39m [36m./files/montserrat-latin-600-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m188.26ms[39m [36m./files/montserrat-latin-ext-600-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-ext-600-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m188.34ms[39m [36m./files/montserrat-latin-400-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-400-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m188.29ms[39m [36m./files/montserrat-cyrillic-ext-700-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-ext-700-normal.woff2[22m
+2026-03-27T05:22:09.918Z vite:resolve [31m188.44ms[39m [36m./files/montserrat-vietnamese-600-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-vietnamese-600-normal.woff2[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m188.34ms[39m [36m./image/sand.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/sand.png[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m188.71ms[39m [36m./files/montserrat-cyrillic-700-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-700-normal.woff2[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m188.69ms[39m [36m./files/montserrat-latin-ext-700-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-ext-700-normal.woff2[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m189.55ms[39m [36m./files/montserrat-cyrillic-ext-400-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-ext-400-normal.woff2[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m188.85ms[39m [36m./files/montserrat-vietnamese-700-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-vietnamese-700-normal.woff2[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m188.80ms[39m [36m./files/montserrat-latin-700-normal.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m94.09ms[39m [36m../image/sand.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/sand.png[22m
+2026-03-27T05:22:09.919Z vite:resolve [31m94.19ms[39m [36m../image/loginback.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/loginback.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m96.78ms[39m [36m../image/footer-bg.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/footer-bg.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.83ms[39m [36m../image/main-hero.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/main-hero.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.93ms[39m [36m./../font/Ananthabairavi-Regular.woff2[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/font/Ananthabairavi-Regular.woff2[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.88ms[39m [36m../image/cholas.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/cholas.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.90ms[39m [36m../image/pandyan.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/pandyan.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.92ms[39m [36m../image/pand.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/pand.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.96ms[39m [36m../image/historys.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/historys.png[22m
+2026-03-27T05:22:09.925Z vite:resolve [31m95.97ms[39m [36m../image/Tamilars.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/Tamilars.png[22m
+2026-03-27T05:22:09.933Z vite:resolve [31m65.21ms[39m [36m../image/About-img2.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/About-img2.png[22m
+2026-03-27T05:22:09.933Z vite:resolve [31m65.21ms[39m [36m../image/temple 3.jpg[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/temple 3.jpg[22m
+2026-03-27T05:22:09.933Z vite:resolve [31m65.36ms[39m [36m../image/About-img4.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/About-img4.png[22m
+2026-03-27T05:22:09.933Z vite:resolve [31m65.12ms[39m [36m../image/premium_header_texture.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/premium_header_texture.png[22m
+2026-03-27T05:22:09.933Z vite:resolve [31m64.89ms[39m [36m../image/parchment_card.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/parchment_card.png[22m
+2026-03-27T05:22:09.934Z vite:resolve [31m64.21ms[39m [36m../image/podcast-bg.png[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/src/image/podcast-bg.png[22m
+2026-03-27T05:22:10.007Z vite:resolve [31m53.02ms[39m [36m./files/montserrat-latin-ext-400-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-ext-400-normal.woff[22m
+2026-03-27T05:22:10.007Z vite:resolve [31m53.83ms[39m [36m./files/montserrat-vietnamese-400-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-vietnamese-400-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m53.13ms[39m [36m./files/montserrat-cyrillic-ext-600-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-ext-600-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m53.30ms[39m [36m./files/montserrat-latin-600-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-600-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.69ms[39m [36m./files/montserrat-latin-ext-600-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-ext-600-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.99ms[39m [36m./files/montserrat-latin-400-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-400-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m53.23ms[39m [36m./files/montserrat-cyrillic-400-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.73ms[39m [36m./files/montserrat-cyrillic-600-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-600-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.67ms[39m [36m./files/montserrat-cyrillic-700-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-700-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.47ms[39m [36m./files/montserrat-cyrillic-ext-700-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-ext-700-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.42ms[39m [36m./files/montserrat-vietnamese-700-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-vietnamese-700-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.39ms[39m [36m./files/montserrat-cyrillic-ext-400-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-cyrillic-ext-400-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.35ms[39m [36m./files/montserrat-latin-700-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff[22m
+2026-03-27T05:22:10.008Z vite:resolve [31m52.29ms[39m [36m./files/montserrat-latin-ext-700-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-latin-ext-700-normal.woff[22m
+2026-03-27T05:22:10.022Z vite:resolve [31m66.28ms[39m [36m./files/montserrat-vietnamese-600-normal.woff[39m -> [2mC:/Users/DURGAI/Desktop/Tamizhi 3.0/Tamizhi_3.0/node_modules/@fontsource/montserrat/files/montserrat-vietnamese-600-normal.woff[22m
+✓ 2637 modules transformed.
+[31m✗[39m Build failed in 844ms
+[31merror during build:
+[31mBuild failed with 1 error:
+
+[plugin vite:css-post]
+SyntaxError: [lightningcss minify] Unexpected token Function("and")
+3978 |  @media (min-width: 1024px) and(max-width: 1316px) {
+3979 |    ._brand_api31_23 {
+3980 |      font-size: 24px;
+     |       ^
+3981 |      height: auto;
+3982 |      clip-path: none;
+    at Module.<anonymous> (C:\Users\DURGAI\Desktop\Tamizhi 3.0\Tamizhi_3.0\node_modules\lightningcss\node\index.js:56:14)
+    at minifyCSS (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:21202:59)
+    at async finalizeCss (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:21048:36)
+    at async Promise.all (index 1)
+    at async Object.run (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:2436:22)
+    at async PluginContextImpl.renderChunk (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:20587:19)
+    at async plugin (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/rolldown/dist/shared/bindingify-input-options-e7ze4hPR.mjs:1234:16)
+    at async plugin.<computed> (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/rolldown/dist/shared/bindingify-input-options-e7ze4hPR.mjs:1593:12)[31m
+    at aggregateBindingErrorsIntoJsError (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/rolldown/dist/shared/error-BLhcSyeg.mjs:48:18)
+    at unwrapBindingResult (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/rolldown/dist/shared/error-BLhcSyeg.mjs:18:128)
+    at #build (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/rolldown/dist/shared/rolldown-build-CPrIX9V6.mjs:3313:34)
+    at async buildEnvironment (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:32849:64)
+    at async Object.build (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:33271:19)
+    at async Object.buildApp (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/chunks/node.js:33268:153)
+    at async CAC.<anonymous> (file:///C:/Users/DURGAI/Desktop/Tamizhi%203.0/Tamizhi_3.0/node_modules/vite/dist/node/cli.js:778:3) {
+  errors: [Getter/Setter]
+}[39m

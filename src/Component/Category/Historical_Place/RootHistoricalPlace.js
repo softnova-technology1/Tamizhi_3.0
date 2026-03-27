@@ -5,10 +5,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 import historical_placeDataEn from '../../../Language/en/historical_place.json';
 import historical_placeDataTN from '../../../Language/tam/historical_place.json';
 import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.js';
-import { Context } from '../../../Context/contextApi.js';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
+import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
-import ImageComponent from '../../ImageComponent.js';
+import ImageComponent from '../../ImageComponent.jsx';
 import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
 

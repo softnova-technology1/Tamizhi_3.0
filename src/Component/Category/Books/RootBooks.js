@@ -5,10 +5,10 @@ import classes from '../../../Stylesheet/RootBooks.module.css'; // Using the new
 import booksDataEn from '../../../Language/en/books.json';
 import booksDataTN from '../../../Language/tam/books.json';
 import { useContext, useState, useEffect } from 'react';
-import { Context } from '../../../Context/contextApi.js';
-import ImageComponent from '../../ImageComponent.js';
+import { Context } from '../../../Context/contextApi.jsx';
+import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
 
 export default function RootBooks() {

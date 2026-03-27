@@ -13,7 +13,7 @@ import kalabhra from '../../../image/kalabhra-img.png';
 import pallava from '../../../image/pallava-head.jpg';
 import { useContext, useEffect, useState, useRef } from 'react';
 import { Context } from '../../../Context/contextApi';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

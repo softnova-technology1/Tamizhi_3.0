@@ -6,10 +6,10 @@ import classes from '../../../Stylesheet/RootBooks.module.css';
 import cultureDataEn from '../../../Language/en/culture.json';
 import cultureDataTN from '../../../Language/tam/culture.json';
 import { useContext, useState, useEffect } from 'react';
-import { Context } from '../../../Context/contextApi.js';
+import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
-import ImageComponent from '../../ImageComponent.js';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import ImageComponent from '../../ImageComponent.jsx';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
 
 export default function RootCulture() {
