@@ -8,7 +8,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
-  padding: 60px 0;
+  padding: 80px 0;
   color: #fff;
   z-index: 1;
 }
@@ -20,83 +20,79 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(0, 0, 0, 0.4); */
   z-index: -1;
+  background: rgba(0, 0, 0, 0.05); /* Very subtle overlay */
 }
 
 .titleWrapper {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   position: relative;
+  padding: 0 20px;
 }
 
 .mainTitle {
-  padding-top: 8rem;
+  padding-top: 100px;
   font-family: 'Cinzel', serif;
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 700;
-  color: #8b4513;
+  color: #5d4037;
   text-transform: uppercase;
-  letter-spacing: 12px;
-  /* text-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  letter-spacing: clamp(4px, 2vw, 12px);
   margin: 0;
-  /* background: linear-gradient(135deg, #d4af37 0%, #f7ef8a 50%, #d4af37 100%); */
-  /* -webkit-background-clip: text; */
-  /* background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
-  /* filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5)); */
+  line-height: 1.2;
 }
 
 .titleDecorativeLine {
-  width: 150px;
+  width: min(200px, 60%);
   height: 3px;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 15px auto;
+  background: linear-gradient(90deg, transparent, #8b4513, transparent);
+  margin: 20px auto;
 }
 
 .historyCard {
   border-radius: 20px;
-  padding: 50px;
-  margin-bottom: 120px;
+  padding: clamp(20px, 5vw, 60px);
+  margin-bottom: clamp(60px, 10vw, 120px);
   position: relative;
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(139, 69, 19, 0.2);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: visible;
-  /* background: rgba(0, 0, 0, 0.1); */
-  backdrop-filter: blur(3px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
 }
 
-/* Decorative Gold Corners */
+/* Decorative Corners - Updated to be more subtle and consistent */
 .historyCard::before,
 .historyCard::after {
   content: '';
   position: absolute;
-  width: 70px;
-  height: 70px;
-  border: 2px solid #241c03;
+  width: clamp(30px, 8vw, 70px);
+  height: clamp(30px, 8vw, 70px);
+  border: 2px solid #8b4513;
   z-index: 5;
+  opacity: 0.6;
 }
 
 .historyCard::before {
-  top: -5px;
-  left: -5px;
+  top: -8px;
+  left: -8px;
   border-right: none;
   border-bottom: none;
 }
 
 .historyCard::after {
-  bottom: -5px;
-  right: -5px;
+  bottom: -8px;
+  right: -8px;
   border-left: none;
   border-top: none;
 }
 
 .historyCard:hover {
-  transform: translateY(-15px) scale(1.01);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.5);
-  /* background: rgba(0, 0, 0, 0.2); */
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  border-color: rgba(139, 69, 19, 0.5);
 }
 
 .cardInner {
@@ -104,7 +100,7 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: clamp(20px, 5vw, 60px);
 }
 
 .cardContent {
@@ -113,104 +109,118 @@
 
 .cardTitle {
   font-family: 'Cinzel', serif;
-  font-size: 3.2rem;
-  color: #fff;
-  margin-bottom: 25px;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  color: #3e2723;
+  margin-bottom: 20px;
   font-weight: 700;
-  letter-spacing: 2px;
-  background: linear-gradient(to right, #745106 0%, #2e270f 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
 }
 
 .cardDesc {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.9;
-  color: #332e2e;
-  text-align: justify;
-  margin-bottom: 35px;
-  opacity: 0.85;
-  letter-spacing: 0.5px;
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  line-height: 1.6;
+  color: #2c1810;
+  text-align: left;
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .imageWrapper {
   flex: 0.8;
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(139, 69, 19, 0.3);
 }
 
 .cardImage {
   width: 100%;
-  height: 450px;
+  aspect-ratio: 4/3;
+  height: auto;
+  max-height: 500px;
   object-fit: cover;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: sepia(0.2) contrast(1.1);
+  transition: transform 1s ease;
 }
 
 .historyCard:hover .cardImage {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .seeMoreBtn {
-  background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%);
-  color: #d4af37;
-  border: 1px solid #d4af37;
-  padding: 12px 35px;
+  background: #5d4037;
+  color: #f7ef8a;
+  border: 1px solid #3e2723;
+  padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 40px);
   font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .seeMoreBtn:hover {
-  background: linear-gradient(135deg, #d4af37 0%, #f7ef8a 100%);
-  color: #1a1a1a;
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  background: #3e2723;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsiveness */
-@media (max-width: 992px) {
-  .cardInner {
+/* Responsiveness Improvements */
+@media (max-width: 1100px) {
+  .cardInner, .cardInner.evenRow {
     flex-direction: column !important;
-    gap: 30px;
+    text-align: center;
   }
   
-  .cardInner.evenRow {
-    flex-direction: column !important;
+  .cardDesc {
+    text-align: center;
   }
 
-  .mainTitle {
-    font-size: 3rem;
+  .imageWrapper {
+    width: 100%;
+    order: -1; /* Image on top in mobile */
   }
 
-  .cardTitle {
-    font-size: 2.2rem;
+  .cardImage {
+    aspect-ratio: 16/9;
   }
 }
 
-@media (max-width: 576px) {
-  .mainTitle {
-    font-size: 2.2rem;
-    letter-spacing: 6px;
+@media (max-width: 768px) {
+  .backgroundContainer {
+    padding-top: 100px;
   }
-
+  
   .historyCard {
-    padding: 25px;
+    margin-bottom: 50px;
   }
 
-  .cardTitle {
-    font-size: 1.8rem;
+  .mainTitle {
+    padding-top: 60px;
   }
 }
+
+@media (max-width: 480px) {
+  .backgroundContainer {
+    padding: 60px 10px;
+  }
+
+  .historyCard::before,
+  .historyCard::after {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .cardTitle {
+    margin-bottom: 15px;
+  }
+  
+  .cardDesc {
+    margin-bottom: 25px;
+  }
+}
+

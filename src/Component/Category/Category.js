@@ -186,21 +186,7 @@ export default function Category() {
           <span className={styles.current}>Category</span>
         </div>
         <div className={styles.titleSection}>
-          {/* <img src={kingImage} alt="king" className={styles.kingImage} /> */}
-          {/* <h1 className={styles.title}>
-            <span className={styles.orangeC}>C</span>
-            <div className={styles.new}>
-              ATEGOR
-              <span className={styles.crownedY}>
-                Y
-                <img
-                  src={kingImage1}
-                  alt="crown"
-                  className={styles.crownImage}
-                />
-              </span>
-            </div>
-          </h1> */}
+         
           <img src={cats} alt="category" className={styles.categoryTitleImg} />
         </div>
         <Container style={{ maxWidth: '100%', width: '100%' }}>
@@ -215,7 +201,7 @@ export default function Category() {
                       backgroundImage: `url(${scrollBg})`,
                       backgroundRepeat: 'no-repeat',
                       backgroundPosition: 'center',
-                      backgroundSize: '100% 100%',
+                      backgroundSize: 'cover',
                     }}
                   >
                     <div className={styles.imgBox}>
