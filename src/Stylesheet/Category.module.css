@@ -216,3 +216,46 @@
   }
 }
 
+@media (max-width: 425px) {
+  .wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  .categoryTitleImg {
+    max-width: 80%;
+    width: auto;
+    margin: 0 auto;
+  }
+  .titleSection {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .gridContainer {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .card {
+    height: 480px !important;
+    max-width: 100%;
+  }
+  .imgBox {
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cardContentImage {
+    width: 150px;
+    height: 150px;
+  }
+  .imgTitle {
+    font-size: 2rem !important;
+  }
+  .description {
+    width: 95%;
+    font-size: 1.1rem !important;
+  }
+}

@@ -47,7 +47,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
     "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
     "etymology", "origin", "alphabet", "languages", "significance", "cultural", "religious", "architectural", "features", "prominent",
     "excavations", "research", "discoveries", "findings", "phases", "members", "details", "contributions", "implications",
-    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்"
+    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்", "விளைவு", "பாடநெறி", "ஆதாரங்கள்", "சான்றுகள்", "சுருக்கம்"
   ];
 
 
@@ -76,16 +76,15 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           normalize(nameOfContent) === 'historical_place' ||
           normalize(nameOfContent) === 'excavation';
 
-        // Land on the first subheading by default for specific items (Architecture, War, Books)
-        // Only show "Introduction" if it's a general category that needs an overview
+        // Show the title button for all categories if they have a description
+        // Use the title itself as the label for specific items (War, Architecture, Books)
         const shouldShowIntro = data.description && 
                                data.description.length > 0 && 
-                               data.description[0].trim().length > 0 &&
-                               isGeneralCategory;
+                               data.description[0].trim().length > 0;
         
         if (shouldShowIntro) {
           displayItems.push({
-            subHeading: introLabel,
+            subHeading: isGeneralCategory ? introLabel : (data.title || introLabel),
             isIntro: true,
             id: normalize(data.title)
           });

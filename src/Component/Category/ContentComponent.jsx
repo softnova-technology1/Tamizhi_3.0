@@ -22,7 +22,7 @@ export default function ContentComponent() {
     "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
     "etymology", "origin", "alphabet", "languages", "significance", "cultural", "religious", "architectural", "features", "prominent",
     "excavations", "research", "discoveries", "findings", "phases", "members", "details", "contributions", "implications",
-    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்"
+    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்", "விளைவு", "பாடநெறி", "ஆதாரங்கள்", "சான்றுகள்", "சுருக்கம்"
   ];
 
   const cleanCaption = (text) => {
@@ -46,12 +46,12 @@ export default function ContentComponent() {
     }
   }, [location.hash, data]);
 
-  const renderRecursiveData = (items) => {
+  const renderRecursiveData = (items, hideTitle = false) => {
     if (!items || !Array.isArray(items)) return null;
 
     return items.map((item, index) => (
       <div key={`item_${index}_${getRandomInt()}`} className={classes.contentItem}>
-        {(item.title || item.subHeading) && (
+        {(!hideTitle && (item.title || item.subHeading)) && (
           <h3 className={classes.contentTitle}>{item.title || item.subHeading}</h3>
         )}
 
@@ -136,11 +136,12 @@ export default function ContentComponent() {
     // Check if the hash matches the main title itself (Introduction state)
     if (normalizedHash === normalize(data.title)) {
       isIntroduction = true;
-      // Also populate generics belonging to the main topic
+      // Also populate generics or redundant sections belonging to the main topic
       if (data.subTitle) {
         for (let i = 0; i < data.subTitle.length; i++) {
           const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-          if (isGeneric) {
+          const isRedundant = normalize(data.subTitle[i].subHeading) === normalize(data.title);
+          if (isGeneric || isRedundant) {
             activeSections.push(data.subTitle[i]);
           } else {
             break;
@@ -190,13 +191,14 @@ export default function ContentComponent() {
     // but on the first item for specific items (like Architecture, Books, War)
     const hasDescription = data.description && data.description.length > 0 && data.description[0].trim().length > 0;
     
-    if (isGeneralCategory && hasDescription) {
+    if (hasDescription) {
       isIntroduction = true;
-      // Add all generics belonging to the main title
+      // Add all generics or redundant sections belonging to the main title
       if (data.subTitle && data.subTitle.length > 0) {
         for (let i = 0; i < data.subTitle.length; i++) {
           const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-          if (isGeneric) {
+          const isRedundant = normalize(data.subTitle[i].subHeading) === normalize(data.title);
+          if (isGeneric || isRedundant) {
             activeSections.push(data.subTitle[i]);
           } else {
             break;
@@ -220,22 +222,6 @@ export default function ContentComponent() {
     }
   }
 
-  // FORCE specific modules (like Architecture, War, Books) to show the first subheading's content 
-  // even if they land on the "Introduction" state, so detailed sub-data (Size, Materials) isn't missed.
-  if (isIntroduction && !isGeneralCategory && data.subTitle && data.subTitle.length > 0) {
-    const firstItem = data.subTitle[0];
-    activeSections.push(firstItem);
-    // Include trailing generics for the first item too
-    for (let i = 1; i < data.subTitle.length; i++) {
-      const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-      if (isGeneric) {
-        activeSections.push(data.subTitle[i]);
-      } else {
-        break;
-      }
-    }
-    isIntroduction = false;
-  }
 
   const PageTransition = {
     initial: { opacity: 0, x: -30, filter: 'blur(3px)' },
@@ -464,12 +450,13 @@ export default function ContentComponent() {
             {activeSections.length > 0 && (
               <div style={{ marginTop: '3rem' }}>
                 {activeSections.map((section, idx) => {
-                  const contextualId = normalize(data.title) === normalize(section.subHeading) 
+                  const isRedundant = normalize(data.title) === normalize(section.subHeading);
+                  const contextualId = isRedundant 
                     ? section.subHeading 
                     : `${data.title}_${section.subHeading}`;
                   return (
                     <div key={idx} id={normalize(contextualId)} style={{ scrollMarginTop: '100px' }}>
-                      {renderRecursiveData([section])}
+                      {renderRecursiveData([section], isRedundant)}
                     </div>
                   );
                 })}
@@ -493,12 +480,11 @@ export default function ContentComponent() {
                   </h3>
                 )}
 
-                {/* PREPEND Root Content (Images + Description) for specific items (Architecture, War, Books) on their first item's page */}
+                {/* PREPEND Root Content (Images + Description) for specific items (Architecture, War, Books) ONLY on their main subject's first page */}
                 {!isGeneralCategory && 
                  sectionIdx === 0 &&
                  data.subTitle && 
-                 data.subTitle[0] && 
-                 normalize(section.subHeading) === normalize(data.subTitle[0].subHeading) && (
+                 normalize(section.majorHeading || section.subHeading) === normalize(data.title) && (
                   <div style={{ marginBottom: '3rem' }}>
                     {/* Root Images */}
                     {data.image && data.image.length > 0 && (
