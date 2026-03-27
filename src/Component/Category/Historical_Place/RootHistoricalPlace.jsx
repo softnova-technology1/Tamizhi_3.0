@@ -1,65 +1,64 @@
-import SideNav from '../SideNav.js';
+import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import classes from '../../../Stylesheet/RootHistory.module.css';
-import classes from '../../../Stylesheet/RootBooks.module.css';
-import architectureDataEn from '../../../Language/en/architecture.json';
-import architectureDataTN from '../../../Language/tam/architecture.json';
+import historical_placeDataEn from '../../../Language/en/historical_place.json';
+import historical_placeDataTN from '../../../Language/tam/historical_place.json';
 import { useContext, useState, useEffect } from 'react';
-import { Context } from '../../../Context/contextApi.js';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
+import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
-import ImageComponent from '../../ImageComponent.js';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import ImageComponent from '../../ImageComponent.jsx';
 import bgImage from '../../../image/sand.png';
+import classes from '../../../Stylesheet/RootBooks.module.css';
 
-export default function RootArchitecture() {
+
+export default function RootHistoricalPlace() {
   const { language, darkmode, navopen } = useContext(Context);
-  const [readMore, setReadMore] = useState(false);
-
-  function handleReadMore() {
-    setReadMore(true);
-  }
+  const nameOfContent = 'historical_place';
   const [show, setShow] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
+  const [readMore, setReadMore] = useState(false);
+  function handleReadMore() {
+    setReadMore(true);
+  }
 
   const location = useLocation();
 
-  const nameOfContent = 'architecture';
   const data =
     language === 'en'
-      ? architectureDataEn['architecture']
-      : architectureDataTN['architecture'];
+      ? historical_placeDataEn[nameOfContent]
+      : historical_placeDataTN[nameOfContent];
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
-        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
-      >
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>
-            Experience Remarkable Ancient Architecture in Tamil Nadu
+            Ancient Shrines to Serene Shores: The Essence of Tamil Nadu
           </title>
           <meta
             name="title"
-            content="Experience Remarkable Ancient Architecture in Tamil Nadu"
+            content="Ancient Shrines to Serene Shores: The Essence of Tamil Nadu"
           />
           <meta
             name="description"
-            content="Tamil Nadu offers a beautiful blend of ancient architecture and spiritual depth, from majestic temples to vibrant cultural symbols."
+            content="Discover the fascinating blend of history and spirituality in Tamil Nadu. Visit iconic temples and experience the vibrant culture that captivates all!"
           />
         </Helmet>
         <Row className={`${classes.bannerRow} g-0`}>
-          <Col xs={12}>
+          <Col xs={12} sm={12} md={12}>
             <ImageComponent
-              tamilContent="  கல் பேசும் கலை – தமிழரின் கட்டடக் காவியம்! "
-              englishContent=" Stones speak art – the architectural epic of Tamils!"
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/architecture-two.jpg "
+              tamilContent="  காலத்தைக் கடந்த கதை சொல்லும் தமிழ் நிலம்!"
+              englishContent="  Tamil land – where every stone tells a timeless tale!"
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/historical-three.jpg"
               pathName={location.pathname}
             />
           </Col>

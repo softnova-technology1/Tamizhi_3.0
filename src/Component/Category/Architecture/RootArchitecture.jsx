@@ -1,21 +1,21 @@
-import SideNav from '../SideNav';
+import SideNav from '../SideNav.jsx';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import classes from '../../../Stylesheet/RootHistory.module.css';
-import warDataEn from '../../../Language/en/war.json';
-import warDataTN from '../../../Language/tam/war.json';
-import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.js';
-import { Context } from '../../../Context/contextApi.js';
-import ImageComponent from '../../ImageComponent.js';
-import { Helmet } from 'react-helmet';
-import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
+import architectureDataEn from '../../../Language/en/architecture.json';
+import architectureDataTN from '../../../Language/tam/architecture.json';
+import { useContext, useState, useEffect } from 'react';
+import { Context } from '../../../Context/contextApi.jsx';
+import { Helmet } from 'react-helmet';
+import ImageComponent from '../../ImageComponent.jsx';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
+import bgImage from '../../../image/sand.png';
 
-export default function RootWar() {
+export default function RootArchitecture() {
   const { language, darkmode, navopen } = useContext(Context);
-
   const [readMore, setReadMore] = useState(false);
+
   function handleReadMore() {
     setReadMore(true);
   }
@@ -24,11 +24,14 @@ export default function RootWar() {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  const nameOfContent = 'war';
 
   const location = useLocation();
 
-  const data = language === 'en' ? warDataEn['war'] : warDataTN['war'];
+  const nameOfContent = 'architecture';
+  const data =
+    language === 'en'
+      ? architectureDataEn['architecture']
+      : architectureDataTN['architecture'];
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
@@ -39,23 +42,24 @@ export default function RootWar() {
       >
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Clashes of Kings: Epic Battles of Tamil Nadu</title>
+          <title>
+            Experience Remarkable Ancient Architecture in Tamil Nadu
+          </title>
           <meta
             name="title"
-            content="Clashes of Kings: Epic Battles of Tamil Nadu"
+            content="Experience Remarkable Ancient Architecture in Tamil Nadu"
           />
           <meta
             name="description"
-            content="Explore Tamil Nadu’s major battles Pullalur, Vatapi, Thirupurambiyam, Takkolam & Toppur uncovering their background, outcomes, key rulers & historic impact"
+            content="Tamil Nadu offers a beautiful blend of ancient architecture and spiritual depth, from majestic temples to vibrant cultural symbols."
           />
         </Helmet>
-
         <Row className={`${classes.bannerRow} g-0`}>
           <Col xs={12}>
             <ImageComponent
-              tamilContent=" வீரத்தின் மொழி, தமிழரின் குரல்! "
-              englishContent="The language of valor, the voice of Tamils!"
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/war-five.jpg "
+              tamilContent="  கல் பேசும் கலை – தமிழரின் கட்டடக் காவியம்! "
+              englishContent=" Stones speak art – the architectural epic of Tamils!"
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/architecture-two.jpg "
               pathName={location.pathname}
             />
           </Col>
@@ -63,7 +67,7 @@ export default function RootWar() {
 
         <div className={classes.contentWrapper}>
           <Row>
-            <Col xs={12} sm={12} md={12}>
+            <Col xs={12}>
               <div
                 className={classes.ancientCard}
                 style={{

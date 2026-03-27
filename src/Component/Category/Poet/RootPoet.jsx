@@ -2,17 +2,17 @@ import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import classes from '../../../Stylesheet/RootHistory.module.css';
-import mythologyDataEn from '../../../Language/en/mythology.json';
-import mythologyDataTN from '../../../Language/tam/mythology.json';
+import poetDataEn from '../../../Language/en/poet.json';
+import poetDataTN from '../../../Language/tam/poet.json';
 import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.js';
-import { Context } from '../../../Context/contextApi.js';
-import ImageComponent from '../../ImageComponent.js';
+import { Context } from '../../../Context/contextApi.jsx';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
+import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
-import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
+import bgImage from '../../../image/sand.png';
 
-export default function RootMythology() {
+export default function RootPoet() {
   const { language, darkmode, navopen } = useContext(Context);
 
   const [readMore, setReadMore] = useState(false);
@@ -25,56 +25,56 @@ export default function RootMythology() {
     return () => clearTimeout(timer);
   }, []);
   const location = useLocation();
+  const nameOfContent = 'poet';
 
-  const nameOfContent = 'mythology';
-  const data =
-    language === 'en'
-      ? mythologyDataEn['mythology']
-      : mythologyDataTN['mythology'];
+  const data = language === 'en' ? poetDataEn['poet'] : poetDataTN['poet'];
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
-       <Container
+      <Container
               fluid
               className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
               style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
             >
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Divine Legends: Myths, Saints & Sacred Traditions</title>
+          <title>Extraordinary Tamil Legacy: Poetic Journeys of Love</title>
           <meta
             name="title"
-            content="Divine Legends: Myths, Saints & Sacred Traditions"
+            content="Extraordinary Tamil Legacy: Poetic Journeys of Love"
           />
           <meta
             name="description"
-            content="Explore India’s rich spiritual tapestry—from saints of the Periya Puranam to deities like Ayyappan, Mariamman, Varuna & more, revealing deep devotion & symbolism"
+            content="Journey through Tamil’s artistic evolution as Chera, Chola, Pallava, and Pandyan poets.the brilliance of Tamil poetry from Alvars to Nayanars"
           />
         </Helmet>
-       <Row className={`${classes.bannerRow} g-0`}>
-                <Col xs={12}>
+
+        <Row className={`${classes.bannerRow} g-0`}>
+                  <Col xs={12}>
             <ImageComponent
-              tamilContent=" கதைகள் அல்ல – நம் நம்பிக்கையின் உயிர்க்களம்!"
-              englishContent=" Not just stories – the soul of our faith!"
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/mythology-head.jpg"
+              tamilContent=" சொல்லின் சுழலில் உலகம் திரும்பியது!"
+              englishContent="The world turned with the swirl of their words!"
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/poet-heads.jpg"
               pathName={location.pathname}
             />
           </Col>
         </Row>
-       <div className={classes.contentWrapper}>
-                 <Row>
-                   <Col xs={12}>
-                     <div
-                       className={classes.ancientCard}
-                       style={{
-                         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(${bgImage})`,
-                         backgroundSize: 'cover',
-                         backgroundPosition: 'center bottom',
-                         backgroundAttachment: 'fixed',
-                         backgroundRepeat: 'no-repeat',
-                       }}
-                     >
-              <Row>
+
+
+   <div className={classes.contentWrapper}>
+          <Row>
+            <Col xs={12}>
+              <div
+                className={classes.ancientCard}
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(${bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center bottom',
+                  backgroundAttachment: 'fixed',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
+                <Row>
                 <Col
                   xs={12}
                   sm={3}
@@ -97,7 +97,7 @@ export default function RootMythology() {
             </div>
           </Col>
         </Row>
-            </div>
+        </div>
       </Container>
     </>
   );

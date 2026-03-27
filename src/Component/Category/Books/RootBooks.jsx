@@ -1,30 +1,33 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
-import excavationDataEn from '../../../Language/en/excavation.json';
-import excavationDataTN from '../../../Language/tam/excavation.json';
-import { useContext } from 'react';
-import { Context } from '../../../Context/contextApi.js';
-import ImageComponent from '../../ImageComponent.js';
-import { useEffect, useState } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.js';
+import classes from '../../../Stylesheet/RootBooks.module.css'; // Using the new CSS module
+import booksDataEn from '../../../Language/en/books.json';
+import booksDataTN from '../../../Language/tam/books.json';
+import { useContext, useState, useEffect } from 'react';
+import { Context } from '../../../Context/contextApi.jsx';
+import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
-import classes from '../../../Stylesheet/RootBooks.module.css';
 
-export default function RootExcavation() {
+export default function RootBooks() {
   const { language, darkmode, navopen } = useContext(Context);
-  const location = useLocation();
+
+  const [readMore, setReadMore] = useState(false);
+  function handleReadMore() {
+    setReadMore(true);
+  }
   const [show, setShow] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  const data =
-    language === 'en'
-      ? excavationDataEn['excavation']
-      : excavationDataTN['excavation'];
+  const nameOfContent = 'books';
+
+  const location = useLocation();
+
+  const data = language === 'en' ? booksDataEn['books'] : booksDataTN['books'];
 
   return (
     <>
@@ -36,28 +39,30 @@ export default function RootExcavation() {
       >
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Tracing Civilizations: Excavations in Tamil Nadu</title>
+          <title>Ancient Tamil Books of Poetry and Philosophy</title>
           <meta
             name="title"
-            content="Tracing Civilizations: Excavations in Tamil Nadu"
+            content="Ancient Tamil Books of Poetry and Philosophy"
           />
           <meta
             name="description"
-            content="Explore major excavations at Attirampakkam, Arikamedu, and Keezhadi revealing ancient tools, urban cultures, and rich heritage through expert research."
+            content="Uncover the emotional depth of Tamil poetry from ancient masters. Revel in insights on love, war, and devotion encapsulated within timeless verses."
           />
         </Helmet>
-
+        
+        {/* Full-width Banner with gap */}
         <Row className={`${classes.bannerRow} g-0`}>
           <Col xs={12}>
             <ImageComponent
-              tamilContent=" புதையலுக்குள் புதைந்த தமிழரின் பெருமை!"
-              englishContent=" Buried treasures reveal Tamil pride!"
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/excavation-two.jpeg"
+              tamilContent=" நான் நிலத்தையும் கடலையும் ஆண்டேன், ஆனால் என் மக்களின் இதயங்களை வென்றேன்."
+              englishContent=" I ruled the Land and The sea, but I conquered the hearts of my people."
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/Books-three.png"
               pathName={location.pathname}
             />
           </Col>
         </Row>
 
+        {/* Content Section with padding */}
         <div className={classes.contentWrapper}>
           <Row>
             <Col xs={12}>
@@ -78,7 +83,12 @@ export default function RootExcavation() {
                     md={3}
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
-                    <SideNav data={data} darkmode={darkmode} nameOfContent="excavation" />
+                    <SideNav
+                      data={data}
+                      darkmode={darkmode}
+                      handleReadMore={handleReadMore}
+                      nameOfContent={nameOfContent}
+                    />
                   </Col>
                   <Col
                     xs={12}
@@ -86,7 +96,9 @@ export default function RootExcavation() {
                     md={9}
                     className={classes.contentContainer}
                   >
-                    <Outlet context={[data]} />
+                    <Outlet
+                      context={[data, nameOfContent, readMore, handleReadMore]}
+                    />
                   </Col>
                 </Row>
               </div>

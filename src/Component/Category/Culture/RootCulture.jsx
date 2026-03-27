@@ -2,17 +2,17 @@ import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import classes from '../../../Stylesheet/RootHistory.module.css';
-import templeDataEn from '../../../Language/en/temple.json';
-import templeDataTN from '../../../Language/tam/temple.json';
-import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.js';
-import { Context } from '../../../Context/contextApi.js';
-import ImageComponent from '../../ImageComponent.js';
-import { Helmet } from 'react-helmet';
-import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
+import cultureDataEn from '../../../Language/en/culture.json';
+import cultureDataTN from '../../../Language/tam/culture.json';
+import { useContext, useState, useEffect } from 'react';
+import { Context } from '../../../Context/contextApi.jsx';
+import { Helmet } from 'react-helmet';
+import ImageComponent from '../../ImageComponent.jsx';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
+import bgImage from '../../../image/sand.png';
 
-export default function RootTemple() {
+export default function RootCulture() {
   const { language, darkmode, navopen } = useContext(Context);
 
   const [readMore, setReadMore] = useState(false);
@@ -24,44 +24,44 @@ export default function RootTemple() {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  const nameOfContent = 'temple';
   const location = useLocation();
 
   const data =
-    language === 'en' ? templeDataEn['temple'] : templeDataTN['temple'];
+    language === 'en' ? cultureDataEn['culture'] : cultureDataTN['culture'];
+  const nameOfContent = 'culture';
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
-        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
-      >
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Uncover Amazing Temples: Tamil Nadu's Beautiful Stories</title>
+          <title>
+            Experience the Unique Festivities of Tamil Nadu's Culture
+          </title>
           <meta
             name="title"
-            content="Uncover Amazing Temples: Tamil Nadu's Beautiful Stories"
+            content="Experience the Unique Festivities of Tamil Nadu's Culture"
           />
           <meta
             name="description"
-            content="Uncover the wonderful blend of spirituality and artistry in Tamil Nadu’s sacred spaces, from grand Hindu temples to serene Jain shrines and churches."
+            content="Join us in celebrating Tamil Nadu’s vibrant culture, featuring its diverse religions, stunning art forms, festivals, and the culinary delights you can't miss!"
           />
         </Helmet>
-
-        <Row className={`${classes.bannerRow} g-0`}>
+        <Row className={` ${classes.bannerRow} g-0`}>
           <Col xs={12}>
             <ImageComponent
-              tamilContent=" சித்தமும் சிவனும் சேர்ந்த தெய்வ மடல்! "
-              englishContent="Where spirit meets Shiva – divine halls of glory!"
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/temple-two.jpg"
+              tamilContent="  தமிழர் பண்பாடு – காலம் மாறினாலும் வேர் மாறாது!"
+              englishContent="  Tamil culture – time may change, but roots remain!"
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/culture-seven.png "
               pathName={location.pathname}
             />
           </Col>
         </Row>
 
-        <div className={classes.contentWrapper}>
+        <div className={classes.contenWrapper}>
           <Row>
             <Col xs={12}>
               <div
@@ -79,7 +79,6 @@ export default function RootTemple() {
                     xs={12}
                     sm={3}
                     md={3}
-                    
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
                     <SideNav
@@ -89,12 +88,7 @@ export default function RootTemple() {
                       nameOfContent={nameOfContent}
                     />
                   </Col>
-                  <Col
-                    xs={12}
-                    sm={9}
-                    md={9}
-                    className={classes.contentContainer}
-                  >
+                  <Col xs={12} sm={9} md={9} className={classes.contentContainer}>
                     <Outlet
                       context={[data, nameOfContent, readMore, handleReadMore]}
                     />

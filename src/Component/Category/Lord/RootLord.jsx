@@ -1,33 +1,35 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import classes from '../../../Stylesheet/RootBooks.module.css'; // Using the new CSS module
-import booksDataEn from '../../../Language/en/books.json';
-import booksDataTN from '../../../Language/tam/books.json';
+// import classes from '../../../Stylesheet/RootHistory.module.css';
+import lordDataEn from '../../../Language/en/lord.json';
+import lordDataTn from '../../../Language/tam/lord.json';
 import { useContext, useState, useEffect } from 'react';
-import { Context } from '../../../Context/contextApi.js';
-import ImageComponent from '../../ImageComponent.js';
+import ImageComponent from '../../ImageComponent';
+import { Context } from '../../../Context/contextApi';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Helmet } from 'react-helmet';
-import TamilAnimation from '../../TamilzhiLoader.js';
 import bgImage from '../../../image/sand.png';
+import classes from '../../../Stylesheet/RootBooks.module.css';
 
-export default function RootBooks() {
-  const { language, darkmode, navopen } = useContext(Context);
 
+export default function RootLord() {
+  const { language } = useContext(Context);
+  const data = language === 'en' ? lordDataEn['lord'] : lordDataTn['lord'];
   const [readMore, setReadMore] = useState(false);
-  function handleReadMore() {
-    setReadMore(true);
-  }
   const [show, setShow] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  const nameOfContent = 'books';
+  function handleReadMore() {
+    setReadMore(true);
+  }
+
+  const { darkmode, navopen } = useContext(Context);
 
   const location = useLocation();
-
-  const data = language === 'en' ? booksDataEn['books'] : booksDataTN['books'];
+  const nameOfContent = 'lord';
 
   return (
     <>
@@ -35,35 +37,31 @@ export default function RootBooks() {
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
-        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
-      >
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Ancient Tamil Books of Poetry and Philosophy</title>
+          <title>The Hidden Path: Mystical Truths Across Traditions</title>
           <meta
             name="title"
-            content="Ancient Tamil Books of Poetry and Philosophy"
+            content="The Hidden Path: Mystical Truths Across Traditions"
           />
           <meta
             name="description"
-            content="Uncover the emotional depth of Tamil poetry from ancient masters. Revel in insights on love, war, and devotion encapsulated within timeless verses."
+            content="Explore the hidden spiritual wisdom within Shiva, Christ, the Prophet, and Eastern paths—revealing unity, silence, and the divine mystery in all traditions"
           />
         </Helmet>
-        
-        {/* Full-width Banner with gap */}
         <Row className={`${classes.bannerRow} g-0`}>
           <Col xs={12}>
             <ImageComponent
-              tamilContent=" நான் நிலத்தையும் கடலையும் ஆண்டேன், ஆனால் என் மக்களின் இதயங்களை வென்றேன்."
-              englishContent=" I ruled the Land and The sea, but I conquered the hearts of my people."
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/Books-three.png"
+              tamilContent=" எங்கு தமிழ், அங்கு தெய்வத்தின் ஒலி!"
+              englishContent=" Where Tamil lives, the divine echoes!"
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/lord-shiva.jpg"
               pathName={location.pathname}
             />
           </Col>
         </Row>
-
-        {/* Content Section with padding */}
         <div className={classes.contentWrapper}>
+
           <Row>
             <Col xs={12}>
               <div
@@ -90,12 +88,7 @@ export default function RootBooks() {
                       nameOfContent={nameOfContent}
                     />
                   </Col>
-                  <Col
-                    xs={12}
-                    sm={9}
-                    md={9}
-                    className={classes.contentContainer}
-                  >
+                  <Col xs={12} sm={9} md={9} className={classes.contentContainer}>
                     <Outlet
                       context={[data, nameOfContent, readMore, handleReadMore]}
                     />

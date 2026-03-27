@@ -2,63 +2,60 @@ import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 // import classes from '../../../Stylesheet/RootHistory.module.css';
-import historical_placeDataEn from '../../../Language/en/historical_place.json';
-import historical_placeDataTN from '../../../Language/tam/historical_place.json';
+import templeDataEn from '../../../Language/en/temple.json';
+import templeDataTN from '../../../Language/tam/temple.json';
 import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.js';
-import { Context } from '../../../Context/contextApi.js';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
+import { Context } from '../../../Context/contextApi.jsx';
+import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
-import ImageComponent from '../../ImageComponent.js';
 import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
 
-
-export default function RootHistoricalPlace() {
+export default function RootTemple() {
   const { language, darkmode, navopen } = useContext(Context);
-  const nameOfContent = 'historical_place';
+
+  const [readMore, setReadMore] = useState(false);
+  function handleReadMore() {
+    setReadMore(true);
+  }
   const [show, setShow] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => setShow(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  const [readMore, setReadMore] = useState(false);
-  function handleReadMore() {
-    setReadMore(true);
-  }
-
+  const nameOfContent = 'temple';
   const location = useLocation();
 
   const data =
-    language === 'en'
-      ? historical_placeDataEn[nameOfContent]
-      : historical_placeDataTN[nameOfContent];
+    language === 'en' ? templeDataEn['temple'] : templeDataTN['temple'];
   return (
     <>
       {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
-        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}
+      >
         <Helmet>
           <meta charSet="utf-8" />
-          <title>
-            Ancient Shrines to Serene Shores: The Essence of Tamil Nadu
-          </title>
+          <title>Uncover Amazing Temples: Tamil Nadu's Beautiful Stories</title>
           <meta
             name="title"
-            content="Ancient Shrines to Serene Shores: The Essence of Tamil Nadu"
+            content="Uncover Amazing Temples: Tamil Nadu's Beautiful Stories"
           />
           <meta
             name="description"
-            content="Discover the fascinating blend of history and spirituality in Tamil Nadu. Visit iconic temples and experience the vibrant culture that captivates all!"
+            content="Uncover the wonderful blend of spirituality and artistry in Tamil Nadu’s sacred spaces, from grand Hindu temples to serene Jain shrines and churches."
           />
         </Helmet>
+
         <Row className={`${classes.bannerRow} g-0`}>
-          <Col xs={12} sm={12} md={12}>
+          <Col xs={12}>
             <ImageComponent
-              tamilContent="  காலத்தைக் கடந்த கதை சொல்லும் தமிழ் நிலம்!"
-              englishContent="  Tamil land – where every stone tells a timeless tale!"
-              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/historical-three.jpg"
+              tamilContent=" சித்தமும் சிவனும் சேர்ந்த தெய்வ மடல்! "
+              englishContent="Where spirit meets Shiva – divine halls of glory!"
+              imgurl="https://tamizhiv2.s3.eu-north-1.amazonaws.com/temple-two.jpg"
               pathName={location.pathname}
             />
           </Col>
@@ -82,6 +79,7 @@ export default function RootHistoricalPlace() {
                     xs={12}
                     sm={3}
                     md={3}
+                    
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
                     <SideNav
