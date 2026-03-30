@@ -85,9 +85,7 @@
   text-decoration: none;
   background-color: #8b4513; 
   color: white !important;
-  /* border-radius: 35px; */
   border-top-left-radius: 30px;
-  /* border-top-right-radius: 30px; */
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   font-size: 1.3rem !important; 
@@ -105,7 +103,7 @@
 }
 
 .wrapper {
-  padding: 120px 20px 60px 20px; /* Increased top padding to avoid fixed header (85px) */
+  padding: 120px 20px 60px 20px; 
   color: white;
   min-height: 100vh;
 }
@@ -153,8 +151,6 @@
   letter-spacing: 1px;
 }
 
-/* Redundant animations and kingImage classes removed for clarity as they are not used in JSX */
-
 @media (max-width: 1200px) {
   .gridContainer {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -169,7 +165,7 @@
   }
   
   .wrapper {
-    padding-top: 100px; /* Space for fixed header */
+    padding-top: 100px; 
   }
 
   .titleSection {

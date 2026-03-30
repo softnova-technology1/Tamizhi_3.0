@@ -266,20 +266,21 @@
     align-items: center;
     gap: 4rem;
   }
-  .form { width: 90%; }
-  .imageContainer { width: 80%; }
+  .form { width: 90%; padding: 2.5rem 2rem; }
+  .imageContainer { width: 90%; }
 }
 
 @media (max-width: 768px) {
-  .title { font-size: 2.2rem; margin-bottom: 3rem; }
-  .form { width: 95%; padding: 2rem 1rem; }
-  .button { width: 80px; height: 80px; font-size: 1.4rem; }
-  .imageWrapper { max-width: 350px; }
+  .title { font-size: 2rem; margin-bottom: 2.5rem; }
+  .form { width: 95%; padding: 1.5rem 1rem; }
+  .button { width: 70px; height: 70px; font-size: 1.2rem; }
+  .imageWrapper { max-width: 320px; }
   .container { padding: 4rem 1rem; }
 }
 
 @media (max-width: 480px) {
   .title { font-size: 1.8rem; margin-bottom: 2rem; }
+  .title::after{display:none;}
   .input, .textarea { font-size: 16px !important; }
   .input::placeholder, .textarea::placeholder { font-size: 16px !important; }
   .imageCaption { font-size: 1.2rem; }

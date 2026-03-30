@@ -60,7 +60,7 @@ const Hero = () => {
         });
 
         mm.add("(max-width: 768px)", () => {
-            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0 });
+            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0.3 }); // Partial visibility initially for mobile context
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -72,7 +72,7 @@ const Hero = () => {
             });
 
             tl.fromTo(pngRef.current,
-                { y: "80vh", scale: 0.85, opacity: 0 },
+                { y: "70vh", scale: 0.85, opacity: 0.3 },
                 { 
                     y: "0vh", 
                     scale: 0.95, 
@@ -83,7 +83,7 @@ const Hero = () => {
             );
 
             tl.fromTo(pngRef2.current,
-                { y: "90vh", scale: 0.9, opacity: 0 },
+                { y: "80vh", scale: 0.9, opacity: 0.3 },
                 { 
                     y: "-5vh", 
                     scale: 1, 
@@ -104,8 +104,8 @@ const Hero = () => {
      
     return (
         <section className={styles.heroSection} ref={heroRef}>
+            <div className={styles.backgroundLayer}></div>
             <div className={styles.stickyContainer}>
-                <div className={styles.backgroundLayer}></div>
                 <div className={styles.overlay}></div>
                 <img
                     src={templePng}

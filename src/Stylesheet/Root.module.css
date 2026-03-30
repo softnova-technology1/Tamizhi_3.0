@@ -17,7 +17,6 @@
   margin: 0;
   width: 100%;
   max-width: 100%;
-  /* overflow-x: hidden; */
 }
 
 .spinner {
@@ -43,11 +42,11 @@
 }
 
 .modalContainer {
-  padding: 120px 70px 70px 70px;
+  padding: 85px 50px 70px 50px;
   background: url("../image/loginback.png") no-repeat center center;
   background-size: 100% 100%;
-  width: 580px;
-  min-height: 750px;
+  width: 540px;
+  min-height: 640px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,8 +63,8 @@
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  top: 22rem;
-  right: -12px;
+  top: 55px;
+  right: 15px;
   z-index: 10003;
 }
 
@@ -153,7 +152,6 @@
   }
 }
 
-/* Back Button Stylings */
 .imageBackButton {
   position: fixed;
   bottom: 40px;
@@ -204,7 +202,6 @@
   }
 }
 
-/* Responsiveness */
 @media screen and (max-width: 768px) {
   .imageBackButton {
     bottom: 25px;
@@ -218,14 +215,29 @@
 
 @media screen and (min-width: 320px) and (max-width: 530px) {
   .modalContainer {
-    width: 300px;
-    min-width: 250px;
+    width: 90vw;
+    max-width: 380px;
+    min-width: 280px;
+    min-height: 520px;
+    padding: 80px 40px 40px 40px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -45%);
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
     animation: scalePop 0.5s ease-in-out forwards;
   }
+
+  .modalTop {
+    top: 50px;
+    right: 5px;
+  }
+
+  .modalTop span {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+  }
+
 }

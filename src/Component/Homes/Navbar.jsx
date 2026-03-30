@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styles from '../../Stylesheet/Navbar.module.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdOutlineMenuOpen, MdPerson } from 'react-icons/md';
@@ -27,6 +27,8 @@ const searchTextContent = [
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [category, setCategory] = useState({
     categorySelection: '',
     searchText: '',
@@ -41,6 +43,19 @@ const Header = () => {
   } = useContext(Context);
 
   const navigate = useNavigate();
+
+  // Handle scroll detection for mobile header transition
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
 
@@ -250,127 +265,110 @@ const Header = () => {
       </header>
 
       <div className={styles.mobileHeader}>
-        <div className={styles.topBar}>
-          <div className={styles.menuContainer}>
+        <div className={styles.singleBar}>
+          <div className={styles.leftActions}>
             <MdOutlineMenuOpen
               className={styles.iconbar}
               onClick={() => setShowMobileMenu((prev) => !prev)}
             />
-            {showMobileMenu && (
-              <div className={styles.mobileMenuOverlay} onClick={() => setShowMobileMenu(false)}>
-                <div className={styles.mobileMenuContent} onClick={(e) => e.stopPropagation()}>
-                  <div className={styles.mobileMenuHeader}>
-                    <h2 className={styles.mobileMenuTitle}>MENU</h2>
-                    <button className={styles.closeMenu} onClick={() => setShowMobileMenu(false)}>&times;</button>
-                  </div>
-                  <ul className={styles.mobileNavLinks}>
-                    <li><Link to="/" onClick={() => setShowMobileMenu(false)}>HOME</Link></li>
-                    <li><Link to="/category" onClick={() => setShowMobileMenu(false)}>CATEGORY</Link></li>
-                    <li><Link to="/podcast" onClick={() => setShowMobileMenu(false)}>PODCAST</Link></li>
-                    <li><Link to="/about" onClick={() => setShowMobileMenu(false)}>ABOUT</Link></li>
-                    <li><Link to="/contact" onClick={() => setShowMobileMenu(false)}>CONTACT</Link></li>
-                    <li><a href="#towrite" onClick={() => setShowMobileMenu(false)} className={styles.mobileWriteBtn}>TO WRITE</a></li>
-                  </ul>
-                  <div className={styles.menuDivider}></div>
-                  <div className={styles.mobileCategoryHeader}>CATEGORIES</div>
-                  <ul className={styles.customDropdown}>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/subcategory/history')}>History</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/subcategory/kings')}>Kings</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/war')}>War</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/culture')}>Culture</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/temple')}>Temple</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/architecture')}>Architecture</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/historical_place')}>Historical Place</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/poet')}>Poet</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/books')}>Books</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/lord')}>Lord</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/excavation')}>Excavation</li>
-                    <li onClick={() => handleSelectAndClose('categorySelection', '/mythology')}>Mythology</li>
-                  </ul>
-                </div>
-              </div>
-            )}
           </div>
 
-          <h1 className={styles.logo}>Tamizhi</h1>
-          {/* <div className={styles.userLogin}>
-            <MdPerson className={styles.iconuser} />
-            {tokenContext ? (
-              <button
-                className={styles.logout}
-                onClick={() => handleLogOut()}
-                style={{ color: '#4b2e0f' }}
-              >
-                Logout
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                className={styles.text1}
-                style={{ color: '#4b2e0f' }}
-              >
-                Login
-              </Link>
-            )}
-          </div> */}
-          <div className={styles.userLogin} onClick={() => !tokenContext && navigate('/login')} style={{ cursor: 'pointer' }}>
-            <MdPerson className={styles.iconuser} />
-            {tokenContext ? (
-              <button
-                className={styles.logout}
-                onClick={() => handleLogOut()}
-                style={{ color: '#4b2e0f' }}
-              >
-                Logout
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                className={styles.text1}
-                style={{ color: '#4b2e0f' }}
-              >
-                Login
-              </Link>
-            )}
-          </div>
-        </div>
+          {!isSearchActive ? (
+            <h1 className={styles.logo}>Tamizhi</h1>
+          ) : null}
 
-        <div className={styles.bottomBar}>
-          <div className={styles.searchWrapper}>
-            <input
-              type="text"
-              placeholder="Search"
-              name="searchText"
-              onKeyDown={(event) =>
-                event.key === 'Enter' ? handleClick(event) : ''
-              }
-              onChange={(event) =>
-                handleSearch('searchText', event.target.value)
-              }
-              className={styles.searchInput}
-            />
-            <button
-              className={styles.searchIcon}
-              onClick={handleClick}
-              aria-label="search"
+          <div className={`${styles.searchControl} ${isSearchActive ? styles.searchActive : ''}`}>
+            {isSearchActive && (
+              <input
+                type="text"
+                placeholder="Search..."
+                autoFocus
+                className={styles.animatedSearchInput}
+                onBlur={() => !category.searchText && setIsSearchActive(false)}
+                onChange={(e) => handleSearch('searchText', e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleClick(e)}
+              />
+            )}
+            <button 
+              className={styles.searchToggleBtn} 
+              onClick={() => setIsSearchActive(!isSearchActive)}
             >
-              <FaSearch style={{ width: '25px', height: '25px' }} />
+              <FaSearch size={20} />
             </button>
           </div>
-          <div className={styles.mobileLangSwitcher}>
-            <div
-              className={`${styles.langTabMobile} ${language === 'en' ? styles.activeTabMobile : ''}`}
-              onClick={() => changeLanguage('en')}
-            >
-              EN
+
+          <div className={styles.rightActions}>
+            <div className={styles.mobileLangSwitcher}>
+              <div
+                className={`${styles.langTabMobile} ${language === 'en' ? styles.activeTabMobile : ''}`}
+                onClick={() => changeLanguage('en')}
+              >
+                EN
+              </div>
+              <div
+                className={`${styles.langTabMobile} ${language === 'ta' ? styles.activeTabMobile : ''}`}
+                onClick={() => changeLanguage('ta')}
+              >
+                தமிழ்
+              </div>
             </div>
-            <div
-              className={`${styles.langTabMobile} ${language === 'ta' ? styles.activeTabMobile : ''}`}
-              onClick={() => changeLanguage('ta')}
-            >
-              தமிழ்
+            
+            <div className={styles.userLoginMobile} onClick={() => !tokenContext && navigate('/login')}>
+              <MdPerson className={styles.iconuser} />
+              {tokenContext ? (
+                <span className={styles.logoutText} onClick={handleLogOut}>OUT</span>
+              ) : (
+                <span className={styles.loginText}>IN</span>
+              )}
             </div>
           </div>
+
+          {showMobileMenu && (
+            <div className={styles.mobileMenuOverlay} onClick={() => setShowMobileMenu(false)}>
+              <div className={styles.mobileMenuContent} onClick={(e) => e.stopPropagation()}>
+                <div className={styles.mobileMenuHeader}>
+                  <div className={styles.menuBrand}>
+                    <span className={styles.brandMainTiny}>TAMIZHI</span>
+                  </div>
+                  <button className={styles.closeMenu} onClick={() => setShowMobileMenu(false)}>&times;</button>
+                </div>
+                
+                <div className={styles.mobileNavLinksWrapper}>
+                  <ul className={styles.mobileNavLinks}>
+                    <li style={{"--i": 1}}><Link to="/" onClick={() => setShowMobileMenu(false)}><span>HOME</span></Link></li>
+                    <li style={{"--i": 2}}><Link to="/category" onClick={() => setShowMobileMenu(false)}><span>CATEGORY</span></Link></li>
+                    <li style={{"--i": 3}}><Link to="/podcast" onClick={() => setShowMobileMenu(false)}><span>PODCAST</span></Link></li>
+                    <li style={{"--i": 4}}><Link to="/about" onClick={() => setShowMobileMenu(false)}><span>ABOUT</span></Link></li>
+                    <li style={{"--i": 5}}><Link to="/contact" onClick={() => setShowMobileMenu(false)}><span>CONTACT</span></Link></li>
+                  </ul>
+                  
+                  <div className={styles.mobileActions}>
+                    <a href="#towrite" onClick={() => setShowMobileMenu(false)} className={styles.mobileWriteBtnModern}>
+                      CONTRIBUTE HERITAGE
+                    </a>
+                  </div>
+                </div>
+
+                <div className={styles.menuDividerModern}></div>
+                
+                <div className={styles.mobileCategoryHeaderModern}>EXPLORE BY ERA</div>
+                <div className={styles.categoryGrid}>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/subcategory/history')}>History</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/subcategory/kings')}>Kings</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/war')}>War</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/culture')}>Culture</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/temple')}>Temple</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/architecture')}>Architecture</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/historical places')}>Historical places</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/poet')}>Poet</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/books')}>Books</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/lord')}>Lord</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/excavation')}>Excavation</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/mythology')}>Mythology</div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

@@ -32,7 +32,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.5) 100%);
+  background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.5) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -43,14 +43,12 @@
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 45%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(255, 255, 255, 0.05) 55%,
-    transparent 100%
-  );
+  background: linear-gradient(105deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 45%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 55%,
+      transparent 100%);
   z-index: 2;
   transform: skewX(-20deg);
   animation: raySweep 30s infinite;
@@ -58,10 +56,19 @@
 }
 
 @keyframes raySweep {
-  0% { left: -100%; }
-  10% { left: 150%; }
-  100% { left: 150%; }
+  0% {
+    left: -100%;
+  }
+
+  10% {
+    left: 150%;
+  }
+
+  100% {
+    left: 150%;
+  }
 }
+
 .fontStyle {
   font-family: 'Cinzel', serif !important;
   font-size: 2.8rem;
@@ -70,7 +77,7 @@
   text-transform: none;
   line-height: 1.4;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .textWrapper {
@@ -85,13 +92,11 @@
 }
 
 .glassContainer {
-  background: linear-gradient(
-    180deg,
-    rgba(253, 245, 230, 0.1) 0%,
-    rgba(0, 0, 0, 0.45) 15%,
-    rgba(0, 0, 0, 0.45) 85%,
-    rgba(253, 245, 230, 0.1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(253, 245, 230, 0.1) 0%,
+      rgba(0, 0, 0, 0.45) 15%,
+      rgba(0, 0, 0, 0.45) 85%,
+      rgba(253, 245, 230, 0.1) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 5rem 4rem;
@@ -114,10 +119,11 @@
   height: 62px;
   background: radial-gradient(circle at 35% 35%, #9b1a1a 0%, #4a0808 100%);
   border-radius: 50%;
-  box-shadow: 
-    inset 0 0 15px rgba(0,0,0,0.6),
-    0 5px 15px rgba(0,0,0,0.4),
-    0 0 0 2px rgba(212, 175, 55, 0.6), /* Slightly thinner outer accent */
+  box-shadow:
+    inset 0 0 15px rgba(0, 0, 0, 0.6),
+    0 5px 15px rgba(0, 0, 0, 0.4),
+    0 0 0 2px rgba(212, 175, 55, 0.6),
+    /* Slightly thinner outer accent */
     0 0 0 3px rgba(5d, 40, 37, 0.8);
   z-index: 15;
   display: flex;
@@ -126,43 +132,54 @@
   transform: rotate(-15deg);
   opacity: 0;
   animation: sealStamp 1s cubic-bezier(0.17, 0.89, 0.32, 1.28) 4.5s forwards;
-  border: 3px double #d4af37; /* Slightly thinner inner border */
+  border: 3px double #d4af37;
+  /* Slightly thinner inner border */
 }
 
 .royalSeal::before {
   content: 'தமிழி';
   font-family: 'Arima', cursive;
-  font-size: 1.1rem; /* Slightly larger for visibility */
-  color: #ffcc00; /* Vibrant gold */
-  font-weight: 950; /* Extra bold for embossing look */
-  text-shadow: 
-    1px 1px 1px rgba(0,0,0,0.8), 
-    -1px -1px 0 rgba(255, 255, 255, 0.2), /* Inner highlight for depth */
+  font-size: 1.1rem;
+  /* Slightly larger for visibility */
+  color: #ffcc00;
+  /* Vibrant gold */
+  font-weight: 950;
+  /* Extra bold for embossing look */
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.8),
+    -1px -1px 0 rgba(255, 255, 255, 0.2),
+    /* Inner highlight for depth */
     0 0 5px rgba(255, 204, 0, 0.5);
   letter-spacing: 0.05em;
   transform: translateY(-2px);
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 @keyframes sealStamp {
-  0% { transform: scale(3) rotate(-15deg); opacity: 0; }
-  100% { transform: scale(1) rotate(-15deg); opacity: 1; }
+  0% {
+    transform: scale(3) rotate(-15deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) rotate(-15deg);
+    opacity: 1;
+  }
 }
 
 .scrollPin {
   position: absolute;
   left: -2%;
   width: 104%;
-  height: 12px; /* Even slimmer rod */
-  background: linear-gradient(
-    to bottom,
-    #5d4037 0%,
-    #d4af37 40%,
-    #d4af37 60%,
-    #5d4037 100%
-  );
+  height: 12px;
+  /* Even slimmer rod */
+  background: linear-gradient(to bottom,
+      #5d4037 0%,
+      #d4af37 40%,
+      #d4af37 60%,
+      #5d4037 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 
@@ -178,50 +195,128 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 28px; /* Slightly larger end caps */
+  width: 28px;
+  /* Slightly larger end caps */
   height: 28px;
   background: radial-gradient(circle at 35% 35%, #fff1a8 0%, #d4af37 60%, #8b6b1d 100%);
   border-radius: 50%;
   border: 1.5px solid #5d4037;
-  box-shadow: 
+  box-shadow:
     0 0 15px rgba(212, 175, 55, 0.6),
-    inset 0 2px 4px rgba(255,255,255,0.8);
+    inset 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
-.pinLeft { left: -16px; }
-.pinRight { right: -16px; }
+.pinLeft {
+  left: -16px;
+}
+
+.pinRight {
+  right: -16px;
+}
 
 @keyframes unroll {
-  0% {
-    transform: scaleY(0) scaleX(0.98);
-    opacity: 0;
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@media (max-width: 991px) {
+  .container {
+    margin-top: 0;
   }
-  20% {
-    opacity: 1;
+  .imageContainer {
+    height: 42rem !important;
   }
-  100% {
-    transform: scaleY(1) scaleX(1);
-    opacity: 1;
+  .textWrapper {
+    width: 92%;
+    transform: translate(-50%, -50%);
+  }
+  .glassContainer {
+    padding: 3.5rem 2rem;
+    border-left: 2px solid rgba(212, 175, 55, 0.4);
+    border-right: 2px solid rgba(212, 175, 55, 0.4);
+    animation: unroll 1.5s ease-out forwards;
+  }
+  
+  .scrollPin {
+    height: 10px;
+  }
+  .pinEnd {
+    width: 24px;
+    height: 24px;
+  }
+  .pinLeft { left: -12px; }
+  .pinRight { right: -12px; }
+
+  .fontStyle {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .gapBetweenText {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+  }
+  .royalSeal {
+    width: 60px;
+    height: 60px;
+    bottom: 5%;
+    right: 5%;
   }
 }
 
-.glassContainer::before, .glassContainer::after {
-  content: none; /* Removed the previous indicators as we now use scrollPins */
+@media (max-width: 572px) {
+  .imageContainer {
+    height: 45rem !important;
+  }
+  .textWrapper {
+    width: 96%;
+  }
+  .glassContainer {
+    padding: 2.5rem 1rem;
+  }
+  .scrollPin {
+    height: 8px;
+  }
+  .pinEnd {
+    width: 18px;
+    height: 18px;
+  }
+  .pinLeft { left: -9px; }
+  .pinRight { right: -9px; }
+  .fontStyle {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+  .gapBetweenText {
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+  }
+  .royalSeal {
+    display: none; /* Removed for mobile only as requested */
+  }
+}
+
+.glassContainer::before,
+.glassContainer::after {
+  content: none;
+  /* Removed the previous indicators as we now use scrollPins */
 }
 
 .gapBetweenText {
   margin-top: 4rem;
-  font-family: 'Arima', cursive !important; /* Switched to a more artistic Tamil font */
+  font-family: 'Arima', cursive !important;
+  /* Switched to a more artistic Tamil font */
   font-size: 2.6rem;
   font-weight: 600;
   color: #fdf5e6;
   line-height: 1.4;
   letter-spacing: 0.02em;
 }
+
 .svg {
   width: 12px;
   height: 12px;
 }
+
 .pathdescription {
   font-family: 'Cinzel', serif;
   font-size: 0.95rem;
@@ -229,11 +324,12 @@
   position: absolute;
   top: 2.5rem;
   left: 3rem;
-  z-index: 10; /* Increased z-index */
+  z-index: 10;
+  /* Increased z-index */
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .pathLink {
@@ -247,4 +343,101 @@
   opacity: 1;
   color: #d4af37 !important;
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 991px) {
+  .container {
+    margin-top: 0;
+    /* Ensures flush fit under tablet sticky header */
+  }
+
+  .imageContainer {
+    height: 42rem !important;
+    /* Perfect tall banner for tablet */
+    background-position: center !important;
+    /* Balanced subject focus */
+  }
+
+  .textWrapper {
+    width: 92%;
+    /* Exposes a 4% margin gap for the gold glass borders to shine */
+    transform: translate(-50%, -40%);
+    /* Mathematical true center */
+  }
+
+  .glassContainer {
+    padding: 3rem 1.5rem;
+    /* Reduced horizontal padding for text expansion */
+  }
+
+  .fontStyle {
+    font-size: 2rem;
+  }
+
+  .gapBetweenText {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .royalSeal {
+    width: 50px;
+    height: 50px;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  .royalSeal::before {
+    font-size: 0.9rem;
+  }
+
+  .pathdescription {
+    left: 1.5rem;
+    top: 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 572px) {
+  .imageContainer {
+    height: 50rem !important;
+    /* Exquisite sweet-spot for mobile portrait hero images */
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  .textWrapper {
+    width: 95%;
+    /* Maximizes text width while retaining 2.5% side margins to prevent rod clipping */
+  }
+
+  .glassContainer {
+    padding: 2.5rem 1rem;
+    /* Maximum internal text space to prevent line-breaks */
+  }
+
+  .fontStyle {
+    font-size: 1.5rem;
+  }
+
+  .gapBetweenText {
+    font-size: 1.35rem;
+    margin-top: 1.5rem;
+  }
+
+  .scrollPin {
+    height: 10px;
+  }
+
+  .pinEnd {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pinLeft {
+    left: -8px;
+  }
+
+  .pinRight {
+    right: -8px;
+  }
 }

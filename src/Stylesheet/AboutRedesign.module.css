@@ -118,7 +118,10 @@ html {
   line-height: 1.8;
   color: #555;
   text-align: justify;
+}
 
+:global(html[lang="ta"]) .introParagraph {
+  text-align: left;
 }
 .intopara{
   font-size: 1.8rem;

@@ -213,7 +213,7 @@ export default function Login({ homePage, handleModal }) {
                   autoComplete="nope"
                   required
                   placeholder="Enter Password"
-                  style={{ marginTop: homePage ? '40px' : '' }}
+                  style={{ marginTop: homePage ? '15px' : '' }}
                   className={log.inputpass}
                   onChange={(event) =>
                     handleChange('password', event.target.value)
