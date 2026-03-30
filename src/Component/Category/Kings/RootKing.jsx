@@ -17,7 +17,7 @@ const contentData = {
       'சோழனின் செருப்பில் நிலம் நடுங்கியது – சீரழியாத சாம்ராஜ்யம்!"',
     englishContent:
       'The land trembled beneath Chola’s feet – an empire that knew no fall!',
-    imgUrl: 'https://tamizhiv2.s3.eu-north-1.amazonaws.com/chola-head.pn',
+    imgUrl: 'https://tamizhiv2.s3.eu-north-1.amazonaws.com/chola-head.png',
   },
   chera: {
     tamilContent: 'வணிகமும் வீரமும் சேரநாட்டின் நிழலில் நிழன்றது!',
@@ -68,9 +68,9 @@ export default function RootHistory() {
     <>
       {show && <TamilAnimation show={setShow} />}
       <Container
-      fluid
-              className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
-              style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
+        fluid
+        className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
+        style={{ opacity: navopen ? 0.5 : 1, padding: 0 }}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Extraordinary Temples: A Journey with Chola and Chera</title>

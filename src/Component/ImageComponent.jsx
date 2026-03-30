@@ -74,7 +74,6 @@ export default function ImageComponent({
       </div>
       <div className={classes.textWrapper} key={pathName}>
          <div className={classes.glassContainer}>
-            {/* Scroll Rod Top */}
             <div className={`${classes.scrollPin} ${classes.pinTop}`}>
               <div className={`${classes.pinEnd} ${classes.pinLeft}`}></div>
               <div className={`${classes.pinEnd} ${classes.pinRight}`}></div>
@@ -85,10 +84,10 @@ export default function ImageComponent({
               {tamilContent}
             </div>
 
-            {/* Tamil Royal Wax Seal */}
+        
             <div className={classes.royalSeal}></div>
 
-            {/* Scroll Rod Bottom */}
+
             <div className={`${classes.scrollPin} ${classes.pinBottom}`}>
               <div className={`${classes.pinEnd} ${classes.pinLeft}`}></div>
               <div className={`${classes.pinEnd} ${classes.pinRight}`}></div>
