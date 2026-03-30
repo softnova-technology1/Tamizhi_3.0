@@ -1,14 +1,11 @@
 const fs = require('fs');
 const fn = './src/Language/tam/kings.json';
 const d = JSON.parse(fs.readFileSync(fn));
-
-// Fix chola administration
 const cholaAdmin = d.chola.subTitle.find(s => s.title === 'நிர்வாகம்' && s.subHeading === 'வரலாறு');
 if (cholaAdmin) {
   cholaAdmin.subHeading = 'நிர்வாகம்';
 }
 
-// Fix chera list formatting
 d.chera.subTitle.forEach(s => {
   if (!s.data && s.list && s.title) {
     const t = s.title;

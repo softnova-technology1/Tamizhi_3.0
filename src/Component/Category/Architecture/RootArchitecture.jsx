@@ -1,7 +1,6 @@
 import SideNav from '../SideNav.jsx';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
 import classes from '../../../Stylesheet/RootBooks.module.css';
 import architectureDataEn from '../../../Language/en/architecture.json';
 import architectureDataTN from '../../../Language/tam/architecture.json';

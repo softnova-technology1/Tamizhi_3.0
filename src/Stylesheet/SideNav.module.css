@@ -69,6 +69,8 @@ a {
     border-bottom: 1px dotted rgba(139, 69, 19, 0.3);
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     border-radius: 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 
   .navItemsContainer::-webkit-scrollbar {

@@ -8,26 +8,23 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Animation refs for auto-scrolling mobile SideNav tabs
   const scrollContainerRef = useRef(null);
   const scrollState = useRef({ isHovered: false, direction: 1 });
 
   useEffect(() => {
-    // Apply auto-scroll logic uniquely for mobile and tablet views
     const checkWidth = () => window.innerWidth <= 991;
     if (!checkWidth()) return;
 
     let animationId;
-    const scrollStep = 0.5; // pixel per frame speed
+    const scrollStep = 0.5; 
     
     const animateScroll = () => {
       const container = scrollContainerRef.current;
       if (container && !scrollState.current.isHovered) {
-         // Ping-pong scrolling boundary conditions
          if (container.scrollLeft >= container.scrollWidth - container.clientWidth - 1) {
-            scrollState.current.direction = -1; // Change to scroll left
+            scrollState.current.direction = -1; 
          } else if (container.scrollLeft <= 0) {
-            scrollState.current.direction = 1; // Change to scroll right
+            scrollState.current.direction = 1; 
          }
          
          container.scrollLeft += scrollStep * scrollState.current.direction;
@@ -80,7 +77,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
     "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
     "etymology", "origin", "alphabet", "languages", "significance", "cultural", "religious", "architectural", "features", "prominent",
     "excavations", "research", "discoveries", "findings", "phases", "members", "details", "contributions", "implications",
-    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்"
+    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்", "விளைவு", "பாடநெறி", "ஆதாரங்கள்", "சான்றுகள்", "சுருக்கம்"
   ];
 
 
@@ -99,7 +96,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
         
         let displayItems = [];
         
-        // 1. Add Introduction if data has description AND it's a general category intro
         const isGeneralCategory = 
           normalize(nameOfContent) === 'mythology' ||
           normalize(nameOfContent) === 'history' ||
@@ -109,26 +105,21 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           normalize(nameOfContent) === 'historical_place' ||
           normalize(nameOfContent) === 'excavation';
 
-        // Land on the first subheading by default for specific items (Architecture, War, Books)
-        // Only show "Introduction" if it's a general category that needs an overview
         const shouldShowIntro = data.description && 
                                data.description.length > 0 && 
-                               data.description[0].trim().length > 0 &&
-                               isGeneralCategory;
+                               data.description[0].trim().length > 0;
         
         if (shouldShowIntro) {
           displayItems.push({
-            subHeading: introLabel,
+            subHeading: isGeneralCategory ? introLabel : (data.title || introLabel),
             isIntro: true,
             id: normalize(data.title)
           });
         }
         
-        // 2. Add subTitles, filtering out redundant ones ONLY if intro button is shown
         if (data.subTitle) {
           data.subTitle.forEach(item => {
             if (!item.subHeading) return;
-            // Avoid duplicate buttons if we already have a root button with this exact name
             const isRedundant = normalize(item.subHeading) === normalize(data.title);
             if (!isRedundant || !shouldShowIntro) {
               displayItems.push(item);
@@ -136,7 +127,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           });
         }
 
-        // 3. Logic to determine IDs and track active state
         const usedIds = new Map();
         let currentMajorHeading = data.title;
         const processedItems = displayItems.map((item) => {
@@ -163,14 +153,10 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           return { ...item, normalizedHeading, isGeneric, currentMajorHeading };
         });
 
-        // 4. Identify the active item index
         const currentHash = normalize(decodeURIComponent(location.hash).substring(1));
         let activeIndex = processedItems.findIndex(item => item.normalizedHeading === currentHash);
         
-        // Default to index 0 if no hash matches
         if (activeIndex === -1) activeIndex = 0;
-
-        // 5. Render logic (removed the move-to-top logic as requested)
         return (
           <div 
              className={classes.navItemsContainer}
@@ -184,7 +170,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           const targetHash = `#${item.normalizedHeading}`;
           const isActive = index === activeIndex;
           
-          // Secondary active check for group active logic (for generics)
           const isGroupActive = currentHash.startsWith(normalize(item.currentMajorHeading)) || 
                                 (!location.hash && (
                                   normalize(item.currentMajorHeading) === normalize(data.title) || 
@@ -213,8 +198,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                   e.preventDefault();
                   navigate(targetHash, { replace: true });
                   
-                  // For mobile/tablet, smooth scroll to the top of the content Container
-                  // so the user sees the new content gracefully appearing.
                   if (window.innerWidth <= 991) {
                     const navContainer = document.querySelector(`.${classes.navItemsContainer}`);
                     if (navContainer) {
@@ -222,7 +205,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                       window.scrollTo({ top: y, behavior: 'smooth' });
                     }
                   } else {
-                    // On desktop, scroll back to the top of the contentWrapper or to 0 if it was scrolled far down
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }
                 }}

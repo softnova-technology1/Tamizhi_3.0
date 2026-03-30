@@ -1,4 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
+import { Search } from 'lucide-react';
 import { getRandomInt } from '../../utility/uniqueIdGenerator';
 import { useOutletContext, useLocation } from 'react-router-dom';
 import classes from '../../Stylesheet/ContentComponent.module.css';
@@ -22,20 +23,17 @@ export default function ContentComponent() {
     "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
     "etymology", "origin", "alphabet", "languages", "significance", "cultural", "religious", "architectural", "features", "prominent",
     "excavations", "research", "discoveries", "findings", "phases", "members", "details", "contributions", "implications",
-    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்"
+    "முடிவுரை", "பின்னணி", "போக்கு", "முக்கியத்துவம்", "வரலாறு", "நிர்வாகம்", "சமயம்", "பெயர்க்காரணம்", "தோற்றம்", "மொழி", "கலாச்சாரம", "அகழ்வாராய்ச்சி", "ஆராய்ச்சி", "கண்டுபிடிப்புகள்", "கட்டங்கள்", "உறுப்பினர்கள்", "தகவல்கள்", "அறிமுகம்", "விளைவு", "பாடநெறி", "ஆதாரங்கள்", "சான்றுகள்", "சுருக்கம்"
   ];
 
   const cleanCaption = (text) => {
     if (!text) return '';
-    // Strip trailing plus and numbers (e.g., "+1", "+2") OR just trailing numbers (e.g., "Agni2")
-    // Also replace mid-string + with spaces
     return text.toString().replace(/[\s+]*\d+$/g, '').replace(/\+/g, ' ').trim();
   };
 
   useEffect(() => {
     if (location.hash) {
       const elementId = normalize(decodeURIComponent(location.hash.substring(1)));
-      // Delay slightly to ensure content is rendered
       const timer = setTimeout(() => {
         const element = document.getElementById(elementId);
         if (element) {
@@ -46,14 +44,18 @@ export default function ContentComponent() {
     }
   }, [location.hash, data]);
 
-  const renderRecursiveData = (items) => {
+  const renderRecursiveData = (items, filterTitle = false) => {
     if (!items || !Array.isArray(items)) return null;
 
-    return items.map((item, index) => (
-      <div key={`item_${index}_${getRandomInt()}`} className={classes.contentItem}>
-        {(item.title || item.subHeading) && (
-          <h3 className={classes.contentTitle}>{item.title || item.subHeading}</h3>
-        )}
+    return items.map((item, index) => {
+      const shouldHide = (filterTitle === true) || 
+                         (typeof filterTitle === 'string' && normalize(item.title || item.subHeading) === normalize(filterTitle));
+      
+      return (
+        <div key={`item_${index}_${getRandomInt()}`} className={classes.contentItem}>
+          {(!shouldHide && (item.title || item.subHeading)) && (
+            <h3 className={classes.contentTitle}>{item.title || item.subHeading}</h3>
+          )}
 
         {item.image && (
           <div className={classes.flexContainer}>
@@ -109,17 +111,16 @@ export default function ContentComponent() {
           </div>
         ))}
 
-        {/* Handle nested data arrays recursively */}
         {item.data && (
           <div className={classes.nestedData}>
-            {renderRecursiveData(item.data)}
+            {renderRecursiveData(item.data, filterTitle)}
           </div>
         )}
       </div>
-    ));
-  };
+    );
+  });
+};
 
-  // Determine if this is a general category intro or a specific item intro
   const isGeneralCategory = 
     normalize(nameOfContent) === 'mythology' ||
     normalize(nameOfContent) === 'history' ||
@@ -133,14 +134,13 @@ export default function ContentComponent() {
     const normalizedHash = normalize(hash);
     let currentMajorHeading = data.title;
 
-    // Check if the hash matches the main title itself (Introduction state)
     if (normalizedHash === normalize(data.title)) {
       isIntroduction = true;
-      // Also populate generics belonging to the main topic
       if (data.subTitle) {
         for (let i = 0; i < data.subTitle.length; i++) {
           const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-          if (isGeneric) {
+          const isRedundant = normalize(data.subTitle[i].subHeading) === normalize(data.title);
+          if (isGeneric || isRedundant) {
             activeSections.push(data.subTitle[i]);
           } else {
             break;
@@ -159,12 +159,10 @@ export default function ContentComponent() {
       return { ...sub, normalizedSubHeading: normalize(contextualId), isGeneric, majorHeading: currentMajorHeading };
     });
 
-    // Find the primary active item
     const targetItem = processedSubTitles.find(s => s.normalizedSubHeading === normalizedHash);
     
     if (targetItem) {
       if (!targetItem.isGeneric) {
-        // If it's a major heading, get it and all its trailing generic sub-headings
         const index = processedSubTitles.indexOf(targetItem);
         activeSections.push(targetItem);
         for (let i = index + 1; i < processedSubTitles.length; i++) {
@@ -175,7 +173,6 @@ export default function ContentComponent() {
           }
         }
       } else {
-        // If it's a specific generic heading, just show that one
         activeSections.push(targetItem);
       }
       isIntroduction = false;
@@ -186,17 +183,15 @@ export default function ContentComponent() {
       isIntroduction = true;
     }
   } else {
-    // Landing page logic: Land on Intro for general categories, 
-    // but on the first item for specific items (like Architecture, Books, War)
     const hasDescription = data.description && data.description.length > 0 && data.description[0].trim().length > 0;
     
-    if (isGeneralCategory && hasDescription) {
+    if (hasDescription) {
       isIntroduction = true;
-      // Add all generics belonging to the main title
       if (data.subTitle && data.subTitle.length > 0) {
         for (let i = 0; i < data.subTitle.length; i++) {
           const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-          if (isGeneric) {
+          const isRedundant = normalize(data.subTitle[i].subHeading) === normalize(data.title);
+          if (isGeneric || isRedundant) {
             activeSections.push(data.subTitle[i]);
           } else {
             break;
@@ -205,7 +200,6 @@ export default function ContentComponent() {
       }
     } else if (data.subTitle && data.subTitle.length > 0) {
       activeSections = [data.subTitle[0]];
-      // Include trailing generics for the first item
       for (let i = 1; i < data.subTitle.length; i++) {
         const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
         if (isGeneric) {
@@ -220,22 +214,6 @@ export default function ContentComponent() {
     }
   }
 
-  // FORCE specific modules (like Architecture, War, Books) to show the first subheading's content 
-  // even if they land on the "Introduction" state, so detailed sub-data (Size, Materials) isn't missed.
-  if (isIntroduction && !isGeneralCategory && data.subTitle && data.subTitle.length > 0) {
-    const firstItem = data.subTitle[0];
-    activeSections.push(firstItem);
-    // Include trailing generics for the first item too
-    for (let i = 1; i < data.subTitle.length; i++) {
-      const isGeneric = genericSections.some(g => data.subTitle[i].subHeading.toLowerCase().includes(g));
-      if (isGeneric) {
-        activeSections.push(data.subTitle[i]);
-      } else {
-        break;
-      }
-    }
-    isIntroduction = false;
-  }
 
   const PageTransition = {
     initial: { opacity: 0, x: -30, filter: 'blur(3px)' },
@@ -274,46 +252,43 @@ export default function ContentComponent() {
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', padding: '1rem 0' }}>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '30px' }}>
-        <input
-          type="text"
-          placeholder="Global Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          style={{
-            padding: '12px 25px',
-            borderRadius: '30px',
-            border: `2px solid ${darkmode === 'off' ? '#d4af37' : '#8b6b1d'}`,
-            backgroundColor: darkmode === 'off' ? 'rgba(255, 255, 255, 0.8)' : '#2b2a2a',
-            color: darkmode === 'off' ? '#1a0f0a' : '#d1c9c9',
-            outline: 'none',
-            fontSize: '1.2rem',
-            width: '350px',
-            fontWeight: '500',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
-          }}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' && searchResults.length > 0) {
-              const firstMatch = searchResults[0];
-              if (firstMatch.contextualId) {
-                // Navigate to the topic and clear search
-                window.location.hash = normalize(firstMatch.contextualId);
-                setSearchQuery('');
+      <div className={classes.searchContainer}>
+        <div style={{ position: 'relative', width: 'auto', minWidth: '350px' }}>
+          <Search 
+            className={classes.searchIcon} 
+            size={20}
+            style={{
+              position: 'absolute',
+              left: '20px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              color: darkmode === 'off' ? '#8b4513' : '#d4af37',
+              zIndex: 10,
+              opacity: 0.7
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Global Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className={classes.searchInput}
+            style={{
+              border: `2px solid ${darkmode === 'off' ? '#d4af37' : '#8b6b1d'}`,
+              backgroundColor: darkmode === 'off' ? 'rgba(255, 255, 255, 0.9)' : '#2b2a2a',
+              color: darkmode === 'off' ? '#1a0f0a' : '#d1c9c9',
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && searchResults.length > 0) {
+                const firstMatch = searchResults[0];
+                if (firstMatch.contextualId) {
+                  window.location.hash = normalize(firstMatch.contextualId);
+                  setSearchQuery('');
+                }
               }
-            }
-          }}
-          onFocus={(e) => {
-            e.target.style.width = '450px';
-            e.target.style.borderColor = '#d4af37';
-            e.target.style.boxShadow = '0 6px 25px rgba(212, 175, 55, 0.15)';
-          }}
-          onBlur={(e) => {
-            e.target.style.width = '350px';
-            e.target.style.borderColor = darkmode === 'off' ? '#d4af37' : '#8b6b1d';
-            e.target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
-          }}
-        />
+            }}
+          />
+        </div>
       </div>
 
       <AnimatePresence mode="wait">
@@ -460,16 +435,16 @@ export default function ContentComponent() {
                 </p>
               ))}
 
-            {/* Render grouped generic sections if they exist in Introduction state */}
             {activeSections.length > 0 && (
               <div style={{ marginTop: '3rem' }}>
                 {activeSections.map((section, idx) => {
-                  const contextualId = normalize(data.title) === normalize(section.subHeading) 
+                  const isRedundant = normalize(data.title) === normalize(section.subHeading);
+                  const contextualId = isRedundant 
                     ? section.subHeading 
                     : `${data.title}_${section.subHeading}`;
                   return (
                     <div key={idx} id={normalize(contextualId)} style={{ scrollMarginTop: '100px' }}>
-                      {renderRecursiveData([section])}
+                      {renderRecursiveData([section], isRedundant)}
                     </div>
                   );
                 })}
@@ -493,14 +468,11 @@ export default function ContentComponent() {
                   </h3>
                 )}
 
-                {/* PREPEND Root Content (Images + Description) for specific items (Architecture, War, Books) on their first item's page */}
                 {!isGeneralCategory && 
                  sectionIdx === 0 &&
                  data.subTitle && 
-                 data.subTitle[0] && 
-                 normalize(section.subHeading) === normalize(data.subTitle[0].subHeading) && (
+                 normalize(section.majorHeading || section.subHeading) === normalize(data.title) && (
                   <div style={{ marginBottom: '3rem' }}>
-                    {/* Root Images */}
                     {data.image && data.image.length > 0 && (
                       <Container style={{ margin: '0 0 2rem 0', maxWidth: '100%', width: 'auto' }}>
                         <Row>
@@ -525,7 +497,6 @@ export default function ContentComponent() {
                         </Row>
                       </Container>
                     )}
-                    {/* Root Description */}
                     {data.description && data.description.map((descriptionArray, idx) => (
                       <p
                         key={`root_desc_${idx}`}
@@ -543,8 +514,7 @@ export default function ContentComponent() {
                   </div>
                 )}
 
-                {/* Main section content rendering recursive */}
-                {section.data ? renderRecursiveData(section.data) : (
+                {section.data ? renderRecursiveData(section.data, section.subHeading) : (
                   <div className={classes.contentOver}>
                     {section.description && section.description.map((desc, i) => (
                       <p key={i} className={classes.contentDescription} style={{ color: darkmode === 'off' ? '#35383d' : '#d1c9c9' }}>

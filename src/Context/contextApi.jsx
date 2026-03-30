@@ -19,7 +19,6 @@ export const Context = createContext({
   handleSetLoading: () => {},
   handleMobileView: () => {},
 });
-
 export default function ContextProvider({ children }) {
   const [language, setLanguage] = useState('en');
   const [darkmode, setDarkMode] = useState('off');
@@ -29,7 +28,6 @@ export default function ContextProvider({ children }) {
   const [sticky, setSticky] = useState(false);
   const [loading, setLoading] = useState(false);
   const [mobileViewOn, setMobileViewOn] = useState(false);
-
   function handleNavOpen() {
     setNavOpen((pre) => {
       return !pre;

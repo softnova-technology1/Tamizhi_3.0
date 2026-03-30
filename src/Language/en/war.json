@@ -2,6 +2,7 @@
   "war": {
     "id": 1,
     "title": "Battle of Pullalur (618 619 CE)",
+    "bgImage": "war_pullalur_bg.png",
     "description": [
       "The Battle of Pullalur (618 619 CE) was a significant military engagement between the Chalukyas of Badami led by Pulakeshin II and the Pallavas of Kanchipuram under the leadership of Mahendravarman I. This battle played a critical role in shaping the power dynamics in South India during the early medieval period. Here's a detailed account of the war:"
     ],
@@ -212,6 +213,7 @@
       },
       {
         "subHeading": "Battle of Vatapi (642 CE)",
+        "bgImage": "war_vatapi_bg.png",
         "data": [
           {
             "title": "Battle of Vatapi (642 CE)",
@@ -410,6 +412,7 @@
       },
       {
         "subHeading": "Battle of Thirupurambiyam (879 CE)",
+        "bgImage": "war_thirupurambiyam_bg.png",
         "data": [
           {
             "title": "Battle of Thirupurambiyam (879 CE)",
@@ -544,6 +547,7 @@
       },
       {
         "subHeading": "Battle of Takkolam (949 CE)",
+        "bgImage": "warimg.png",
         "data": [
           {
             "title": "Battle of Takkolam (949 CE)",
@@ -731,6 +735,7 @@
       },
       {
         "subHeading": "Battle of Toppur (1616–1617)",
+        "bgImage": "warimg.png",
         "data": [
           {
             "title": "Battle of Toppur (1616–1617)",

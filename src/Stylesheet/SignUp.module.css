@@ -22,9 +22,9 @@
   width: 100%;
 }
 
-:global(.row) {
-  --bs-gutter-x: 1.5rem;
-}
+/* :global(.row) {
+  --bs-gutter-x: -5.5rem;
+} */
 
 .createtitle {
   text-align: center;
@@ -217,9 +217,12 @@
 }
 
 @keyframes floatEffect {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
