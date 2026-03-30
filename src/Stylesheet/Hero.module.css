@@ -288,7 +288,7 @@
 
 @media (max-width: 480px) {
     .heroSection {
-      height: 130vh;
+      height: 100vh; /* Reduced from 130vh for tighter transition */
     }
     .tamil1Image {
       font-size: 2.5rem; /* Better scaling for mobile */
@@ -300,7 +300,8 @@
       margin-bottom: 40px; /* Less spacing on small mobile */
     }
     .overlay {
-      margin-top: 25%;
+      margin-top: 15%; /* Reduced from 25% */
+      padding-top: 40px;
     }
 
     .templeImageLayer1 {

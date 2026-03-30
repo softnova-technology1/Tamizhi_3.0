@@ -13,8 +13,10 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-  width: 100px; /* Fixed width to prevent layout shift when text disappears */
-  height: 50px;  /* Align with line-height or image size */
+  width: 100px;
+  /* Fixed width to prevent layout shift when text disappears */
+  height: 50px;
+  /* Align with line-height or image size */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -421,46 +423,32 @@
   transform: translateX(190px);
 } */
 @media (max-width: 1316px) {
-  .leftTop {
-    flex: 0 0 auto;
+  .topBar {
+    padding: 10px 20px;
+    gap: 15px;
   }
 
   .navLinks {
-    transform: translateX(170px);
+    gap: 8px;
   }
 
-  .newbar {
-    justify-content: space-evenly;
+  .navItem {
+    padding: 0 10px;
   }
 
-  .newbar1 {
-    justify-content: space-evenly;
+  .navItem a {
+    font-size: 1.1rem;
   }
 
-  .searchInput {
-    border: none;
-    outline: none;
-    font-size: 10px !important;
-    width: 100%;
-    background: transparent;
+  .searchContainer {
+    max-width: 350px;
+    margin: 0 10px;
   }
 
-  .rownew {
-    display: block;
-  }
-
-  .navBar {
-    margin: 0 20px;
-  }
-
-  .actions {
-    flex-wrap: wrap;
-    transform: none;
-  }
-
-  .brand {
-    font-size: 24px;
-    text-align: center;
+  .writeBtn, .loginBtn {
+    min-width: 100px;
+    padding: 6px 15px;
+    font-size: 1.1rem;
   }
 
   .searchBox {
@@ -479,10 +467,6 @@
   .toggleBox {
     width: 100px;
     height: 30px;
-  }
-
-  .navLinks {
-    gap: 12px;
   }
 
   .circle {
@@ -523,6 +507,23 @@
     transform: none;
   }
 }
+
+@media (max-width: 1150px) {
+  .navLinks {
+    display: none;
+  }
+
+  .topBar {
+    justify-content: space-between;
+  }
+
+  .searchContainer {
+    flex: 1;
+    max-width: none;
+    margin: 0 20px;
+  }
+}
+
 
 /* Mobile screens (768px and below) */
 @media (max-width: 768px) {
@@ -583,7 +584,7 @@
 
   .iconbar {
     color: #cfa15f;
-    font-size: 1.8rem !important;
+    font-size: 2.8rem !important;
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 6px;
@@ -752,30 +753,35 @@
   }
 
   .userLoginMobile {
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 48px;
-    height: 30px;
+    gap: 4px;
+    min-width: 55px;
+    height: 25px;
+    padding: 0 8px;
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(207, 161, 95, 0.3);
-    border-radius: 12px;
+    border: 1px solid rgba(207, 161, 95, 0.4);
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
 
   .userLoginMobile:hover {
-    background: rgba(207, 161, 95, 0.1);
+    background: rgba(207, 161, 95, 0.15);
     border-color: #cfa15f;
   }
 
   .loginText, .logoutText {
-    
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 900;
     line-height: 1;
-    margin-top: 3px;
+    margin: 0;
+    display: flex;
+    align-items: center;
     letter-spacing: 0.8px;
     text-transform: uppercase;
+    color: #cfa15f;
   }
 
   .iconButtons {
@@ -1098,7 +1104,7 @@
   }
 }
 
-@media (min-width: 1024px) and(max-width: 1316px) {
+@media (min-width: 1024px) and (max-width: 1316px) {
   .brand {
     font-size: 24px;
     height: auto;

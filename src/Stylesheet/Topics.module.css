@@ -271,6 +271,13 @@
 }
 
 @media (max-width: 480px) {
+    .topicsSection {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .header {
+        margin-bottom: 1rem !important;
+    }
     .title {
         font-size: 1.5rem;
     }

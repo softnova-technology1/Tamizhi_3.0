@@ -368,3 +368,48 @@ html {
     font-size: 2.5rem;
   }
 }
+
+@media (max-width: 425px) {
+  .aboutContainer {
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 2rem;
+  }
+  .roadmapContainer {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+  .roadmapItem, .roadmapItem:nth-child(even) {
+    padding-left: 35px; 
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+  .roadmapDot {
+    left: 5px;
+    width: 25px;
+    height: 25px;
+  }
+  .roadmapDot img {
+    width: 15px;
+    height: 15px;
+  }
+  .roadmapContent {
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .introSection {
+    padding: 2rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .heroContent {
+    padding: 1rem;
+    width: 100%;
+  }
+  .heroArea, section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
