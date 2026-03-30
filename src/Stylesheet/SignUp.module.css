@@ -195,7 +195,7 @@
   }
 
   .boxshadow2 {
-   padding: 95px 75px 87px 72px; /* Increased for scroll handles */
+   
     min-height: 600px;
     background-size: 100% 100%;
   }
@@ -220,7 +220,6 @@
 
   .buttonsign2 {
     width: 100%;
-    min-width: unset;
     height: 45px;
   }
 

@@ -10,6 +10,20 @@
   height: 100vh;
 }
 
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Height is relative to heroSection now */
+  background-image: url('../image/main-hero.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  filter: brightness(0.5);
+}
+
 .backdropfilter {
   backdrop-filter: blur(10px);
 }
@@ -244,9 +258,7 @@
     padding: 20px 0px 10px 0px;
     font-size: 2.2rem !important;
   }
-.contains{
-  padding: 0px;
-}  
+ 
 .warning {
     width: 100%;
   }
@@ -319,8 +331,10 @@
   }
 
   .forms {
-    width: 40%;
-    height: auto;
+    width: 100% !important;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 95px 60px 80px 60px; /* Aligned with scroll handles */
   }
 
   .formsHome {
@@ -354,8 +368,10 @@
   }
 
   .forms {
-    width: 40%;
-    height: auto;
+    width: 100% !important;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 100px 70px 90px 70px;
   }
 
   .label,
@@ -384,9 +400,9 @@
   }
 
   .forms {
-    width: 40%;
-    height: auto;
-
+    width: 100% !important;
+    max-width: 500px;
+    margin: 20px auto;
   }
 
   .label,
