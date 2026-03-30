@@ -1,5 +1,5 @@
 import styles from '../../Stylesheet/Footer.module.css';
-import logo from './../../image/logo2.png';
+import logo from './../../image/Group 65.webp';
 import { Link } from 'react-router-dom';
 import {
   FaFacebookF,
@@ -15,9 +15,6 @@ import logo1 from './../../image/softnovaLogo.webp';
 const Footer = () => {
   return (
     <>
-      <div className={styles.footer1}>
-        <div className={styles.scrollBg}></div>
-      </div>
       <footer className={styles.footer}>
         <div className={styles.content1}>
           <div className={styles.left}>
@@ -44,7 +41,7 @@ const Footer = () => {
                   target="_blank"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF className='hi' />
+                  <FaFacebookF />
                 </Link>
               </div>
               <div className={styles.iconborder2}>

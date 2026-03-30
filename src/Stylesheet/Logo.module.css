@@ -210,8 +210,15 @@
     font-style: italic;
     margin-bottom: 15px;
     background: rgba(201, 163, 78, 0.1);
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-left: 4px solid #C9A34E;
+    line-height: 1.4;
+}
+
+:global(html[lang="ta"]) .tamilPoetic {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    text-align: left;
 }
 
 .descriptionBody {
@@ -237,6 +244,14 @@
     color: #1a110c;
     line-height: 1.7;
     text-align: justify;
+}
+
+/* Tamil Alignment Fix */
+:global(html[lang="ta"]) .meaningText {
+    text-align: left;
+    text-justify: none;
+    word-break: keep-all;
+    hyphens: none;
 }
 
 .cardTexture {
@@ -457,8 +472,8 @@
 
     .palmLeafCard {
         height: auto;
-        min-height: 380px;
-        padding: 40px 25px;
+        min-height: 320px;
+        padding: 30px 20px;
     }
 
     .highlightPulsar {
@@ -482,7 +497,7 @@
     }
 
     .palmLeafCard {
-        min-height: 480px; /* Better for vertical text space */
+        min-height: 400px; /* Better for vertical text space */
     }
 
     .cardHeader {

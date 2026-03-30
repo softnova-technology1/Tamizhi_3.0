@@ -161,7 +161,7 @@ const ContactUs = () => {
      
 
       <div className="row align-items-center justify-content-around gap-5">
-        <div className="col-md-5 mb-4 mb-md-0">
+        <div className="col-md-5 mb-4 mb-md-0" id={styles.colsone}>
           <div className={styles.imageWrapper}>
             <video
               autoPlay
@@ -177,7 +177,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="col-md-5">
+        <div className="col-md-5" id={styles.colstwo}>
           <div className={styles.formWrapper}>
             <h3 className={styles.formTitle}>
               {language === 'en' ? "Let's get connected" : "இணைந்திருப்போம்..."}
