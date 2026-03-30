@@ -136,6 +136,10 @@
   letter-spacing: 0.5px;
 }
 
+:global(html[lang="ta"]) .cardDesc {
+  text-align: left;
+}
+
 .imageWrapper {
   flex: 0.8;
   position: relative;

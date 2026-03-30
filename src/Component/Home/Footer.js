@@ -15,9 +15,6 @@ import logo1 from './../../image/softnovaLogo.webp';
 const Footer = () => {
   return (
     <>
-      <div className={styles.footer1}>
-        <div className={styles.scrollBg}></div>
-      </div>
       <footer className={styles.footer}>
         <div className={styles.content1}>
           <div className={styles.left}>

@@ -157,6 +157,11 @@
   font-family: 'EB Garamond', serif !important;
 }
 
+:global(html[lang="ta"]) .ancientCard p,
+:global(html[lang="ta"]) .ancientCard li {
+  text-align: left;
+}
+
 .ancientCard li {
   margin-bottom: 2rem;
   list-style-type: '❧ '; /* Using the ornament as a bullet */

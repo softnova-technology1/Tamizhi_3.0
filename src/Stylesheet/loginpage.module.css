@@ -49,7 +49,7 @@
 
 .input {
   width: 350px !important;
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 1.5rem !important;
   color: #3e2723;
   font-weight: 550;
@@ -61,7 +61,7 @@
 
 .inputpass {
   width: 350px !important;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 1.5rem !important;
   color: #3e2723;
   font-weight: 550;
@@ -130,11 +130,11 @@
 .check {
   width: 15px;
   height: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .label {
-  padding-top: 26px;
+  padding-top: 20px;
   font-size: 1.6rem;
   font-weight: 550;
 }
@@ -151,7 +151,7 @@
 }
 
 .forgot {
-  padding-top: 35px;
+  padding-top: 24px;
   padding-left: 20px;
   font-size: 1.6rem;
   font-weight: 550;
@@ -171,12 +171,12 @@
   border: none;
   width: 220px;
   border-radius: 10;
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 .create {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 1.8rem;
   justify-content: center !important;
   align-items: center;
@@ -189,7 +189,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .hrLine {
@@ -240,17 +240,22 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .welcome {
-    padding: 20px 0px 0px 0px;
+    padding: 20px 0px 10px 0px;
+    font-size: 2.2rem !important;
   }
-
-  .warning {
+.contains{
+  padding: 0px;
+}  
+.warning {
     width: 100%;
   }
 
   .danger {
     width: 100%;
   }
-
+  .forms{
+    margin-top: 0;
+  }
   .forms1 {
     display: none;
   }
@@ -258,6 +263,8 @@
   .input,
   .inputpass {
     width: 100% !important;
+    font-size: 1.2rem !important;
+    margin-top: 15px !important;
   }
 
   .head {
@@ -266,15 +273,28 @@
 
   .label,
   .forgot {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     align-self: center;
     justify-self: center;
+  }
+
+  .buttontxt {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+
+  .create {
+    font-size: 1.4rem;
+    padding-top: 20px;
   }
 
   .flex {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
   }
 }
 

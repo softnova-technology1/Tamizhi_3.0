@@ -126,13 +126,12 @@
 }
 
 .Createaccount1 {
-
   background-image: url(../image/sand.png);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  padding: 40px 0;
+  min-height: 100vh;
+  padding: 20px 0;
 }
 
 .createtitle2 {
@@ -147,38 +146,66 @@
 }
 
 @media (max-width: 768px) {
-  .imagtamil1 {
-    display: none;
+  .signtitle h1 {
+    font-size: 2rem;
   }
 
-  .imagtamil2 {
+  .imagtamil1, .imagtamil2 {
     display: none;
   }
 
   .createtitle {
     width: 100%;
-    padding: 0 10px;
-    margin: 0 auto;
+    padding: 0 15px;
+    margin-top: 20px;
+  }
+.createtitle1{
+  margin-top: 0px;
+}
+  .createtitle2 {
+    font-size: 2rem;
+   
   }
 
   .boxshadow2 {
-    width: 100%;
+   padding: 95px 75px 87px 72px; /* Increased for scroll handles */
+    min-height: 600px;
+    background-size: 100% 100%;
   }
 
   .form1 {
-    width: 100%;
+    font-size: 1.2rem;
+    height: 35px;
   }
 
-  .boxshadow2 {
-    padding: 40px;
-    box-shadow: none;
+  .form1::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .form2 {
+    margin-top: 25px; /* Reduced gap */
+    height: auto;
+  }
+
+  .buttonsign1 {
+    margin-top: 30px;
+  }
+
+  .buttonsign2 {
+    width: 100%;
+    min-width: unset;
+    height: 45px;
+  }
+
+  .buttonsign3 {
+    font-size: 1.4rem;
   }
 
   .imageBackButton {
-    bottom: 30px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
+    bottom: 20px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
   }
 }
 

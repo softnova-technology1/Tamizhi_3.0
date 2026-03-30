@@ -44,7 +44,7 @@ const Footer = () => {
                   target="_blank"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF />
+                  <FaFacebookF className='hi' />
                 </Link>
               </div>
               <div className={styles.iconborder2}>

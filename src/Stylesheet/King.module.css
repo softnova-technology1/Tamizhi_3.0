@@ -99,6 +99,10 @@
   text-align: justify;
 }
 
+:global(html[lang="ta"]) .kingdesc {
+  text-align: left;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

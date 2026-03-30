@@ -44,6 +44,7 @@ export default function ContextProvider({ children }) {
   }, []);
   function changeLanguage(value) {
     setLanguage(value);
+    document.documentElement.lang = value === 'ta' ? 'ta' : 'en';
   }
   const handleSetLoading = useCallback(function handleSetLoading(value) {
     setLoading(value);
