@@ -288,7 +288,7 @@
 
 @media (max-width: 480px) {
     .heroSection {
-      height: 100vh; /* Reduced from 130vh for tighter transition */
+      height: 120vh; /* Restored some height to allow parallax scroll for temple images */
     }
     .tamil1Image {
       font-size: 2.5rem; /* Better scaling for mobile */
@@ -307,10 +307,12 @@
     .templeImageLayer1 {
       width: 150%;
       bottom: 0%;
+      opacity: 0.9 !important; /* Ensure visibility */
     }
 
     .templeImageLayer2 {
       width: 180%;
       bottom: -5%;
+      opacity: 1 !important;
     }
 }
