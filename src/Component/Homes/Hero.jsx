@@ -28,70 +28,73 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: heroRef.current,
                     start: "top top",
-                    end: "bottom bottom",
+                    end: "+=200%", // Provides 2 screens' worth of scroll distance for the sequential animation
                     scrub: 1.5,
+                    pin: true,     // This provides the scroll lock behavior
+                    anticipatePin: 1
                 }
             });
 
-            // 1. Parallaxone Comes Up First
+            // 1. Parallaxone Comes Up First Slowly
             tl.fromTo(pngRef.current,
                 { y: "100vh", scale: 0.7, opacity: 0 },
                 { 
-                    y: "-10vh", 
+                    y: "0vh", 
                     scale: 0.9, 
                     opacity: 1, 
-                    duration: 1.5, 
+                    duration: 2, 
                     ease: "power2.out" 
                 }
             );
 
-            // 2. Pa.png Comes Up Second
+            // 2. Next, Pa.png Comes Up
             tl.fromTo(pngRef2.current,
                 { y: "100vh", scale: 0.8, opacity: 0 },
                 { 
-                    y: "-20vh", 
+                    y: "-10vh", 
                     scale: 1, 
                     opacity: 1, 
-                    duration: 1.5, 
+                    duration: 2, 
                     ease: "power2.out" 
-                },
-                "-=0.7" // Staggered overlap for smooth transition
+                }
+                // Removed the negative offset as requested (sequential animation)
             );
         });
 
         mm.add("(max-width: 768px)", () => {
-            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0.3 }); // Partial visibility initially for mobile context
+            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0 }); 
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: heroRef.current,
                     start: "top top",
-                    end: "bottom bottom",
+                    end: "+=150%", // Mobile scroll distance
                     scrub: 1,
+                    pin: true,
+                    anticipatePin: 1
                 }
             });
 
             tl.fromTo(pngRef.current,
-                { y: "70vh", scale: 0.85, opacity: 0.3 },
-                { 
-                    y: "0vh", 
-                    scale: 0.95, 
-                    opacity: 1, 
-                    duration: 1, 
-                    ease: "power1.out" 
+                { y: "80vh", scale: 0.85, opacity: 0 },
+                {
+                    y: "10vh",
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power1.out"
                 }
             );
 
             tl.fromTo(pngRef2.current,
-                { y: "80vh", scale: 0.9, opacity: 0.3 },
-                { 
-                    y: "-5vh", 
-                    scale: 1, 
-                    opacity: 1, 
-                    duration: 1, 
-                    ease: "power1.out" 
-                },
-                "-=0.5"
+                { y: "90vh", scale: 0.9, opacity: 0 },
+                {
+                    y: "0vh",
+                    scale: 1.1,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power1.out"
+                }
             );
         });
 
@@ -99,9 +102,9 @@ const Hero = () => {
     }, { scope: heroRef });
 
 
-     const { mobileViewOn } = useContext(Context);
-    
-     
+    const { mobileViewOn } = useContext(Context);
+
+
     return (
         <section className={styles.heroSection} ref={heroRef}>
             <div className={styles.backgroundLayer}></div>

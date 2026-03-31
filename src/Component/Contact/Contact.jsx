@@ -254,7 +254,8 @@ const ContactUs = () => {
               <div className={styles.infoText}>
                 <span className={styles.infoLabel}>Visit Us</span>
                 <span className={styles.infoValue}>
-                  1st Floor, Aadhil block, Shavanna apartment, SNV Mahal back side, Near SBI bank, Peravurani.
+               1st Floor, Softnova Appartment, SNV Mahal back side,
+Near SBI bank, Peravurani.
                 </span>
               </div>
             </div>
