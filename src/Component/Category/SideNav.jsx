@@ -204,9 +204,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                       const y = navContainer.getBoundingClientRect().top + window.scrollY - 20;
                       window.scrollTo({ top: y, behavior: 'smooth' });
                     }
-                  } else {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }
+                   }
                 }}
               >
                 <button

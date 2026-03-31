@@ -168,7 +168,7 @@ export default function Login({ homePage, handleModal }) {
       <Container style={{ opacity: loading ? '0.3' : '', padding: homePage ? '0' : '' }}>
         {!homePage && <h1 className={log.welcome}>Welcome Back!</h1>}
         {homePage && <h3 className={log.welcomeHome}>Welcome Back!</h3>}
-        <Row className={log.head} style={{justifyContent:"space-between", margin: 0}}>
+        <Row className={`${log.head} align-items-center`} style={{justifyContent:"space-between", margin: 0, minHeight: homePage ? 'auto' : 'calc(100vh - 150px)'}}>
           <Col
             xs={12}
             sm={12}
@@ -186,7 +186,7 @@ export default function Login({ homePage, handleModal }) {
               >
                 {responseData && responseData}
                 {googleResponse && (
-                  <p className={log.warning} style={{ width: '100%' }}>
+                   <p className={log.warning} style={{ width: '100%' }}>
                     {googleResponse}
                   </p>
                 )}

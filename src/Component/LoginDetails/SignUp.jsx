@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import sign from '../../Stylesheet/SignUp.module.css';
 import { Col, Container, Row, Button, Form } from 'react-bootstrap';
-import tamil1 from './../../image/logo2.png';
+import tamil1 from './../../image/FINAL-LOGO.png';
 import {
   Form as RouterForm,
   useSubmit,
@@ -142,13 +142,7 @@ export default function SignUp() {
         className={sign.Createaccount1}
         style={{ opacity: loading ? '0.3' : '' }}
       >
-        <Row>
-          <Col xs={12} className={sign.signtitle}>
-            <h1>Welcome Back!</h1>
-          </Col>
-        </Row>
-
-        <Row className={sign.createtitle1}>
+        <Row className={`${sign.createtitle1} align-items-center`}>
           <Col xs={12} md={7} className={sign.createtitle}>
             <div>
               <h1 className={sign.createtitle2}>Create an Account</h1>
@@ -315,7 +309,7 @@ export default function SignUp() {
           </Col>
 
           <Col md={5} className={sign.imagtamil1}>
-            <img src={tamil1} className={sign.imagtamil2} alt="gh" width={'90%'} height={'100%'}/>
+            <img src={tamil1} className={sign.imagtamil2} alt="tamizhi-logo" />
           </Col>
         </Row>
       </Container>
