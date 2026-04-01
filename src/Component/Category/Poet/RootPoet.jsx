@@ -1,7 +1,6 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
 import poetDataEn from '../../../Language/en/poet.json';
 import poetDataTN from '../../../Language/tam/poet.json';
 import { useContext, useState, useEffect } from 'react';

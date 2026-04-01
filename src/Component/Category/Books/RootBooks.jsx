@@ -50,7 +50,6 @@ export default function RootBooks() {
           />
         </Helmet>
         
-        {/* Full-width Banner with gap */}
         <Row className={`${classes.bannerRow} g-0`}>
           <Col xs={12}>
             <ImageComponent
@@ -62,7 +61,7 @@ export default function RootBooks() {
           </Col>
         </Row>
 
-        {/* Content Section with padding */}
+
         <div className={classes.contentWrapper}>
           <Row>
             <Col xs={12}>

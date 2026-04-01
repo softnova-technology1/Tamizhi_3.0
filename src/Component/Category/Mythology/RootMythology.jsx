@@ -1,7 +1,6 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
 import mythologyDataEn from '../../../Language/en/mythology.json';
 import mythologyDataTN from '../../../Language/tam/mythology.json';
 import { useContext, useState, useEffect } from 'react';

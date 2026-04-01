@@ -6,7 +6,7 @@ import tamilagam from '../../../image/Tamilagam.jpg';
 import tamizhar from '../../../image/tamilar.png';
 import tamil from '../../../image/tamizh.jpg';
 import brahmi from '../../../image/brahmi.jpg';
-import chola from '../../../image/cholar.png';
+import chola from '../../../image/CholarKings.png';
 import chera from '../../../image/cheras-img.png';
 import pandiya from '../../../image/pandiya-img.png';
 import kalabhra from '../../../image/kalabhra-img.png';
@@ -129,7 +129,6 @@ function Subcategory() {
 
   useEffect(() => {
     if (!show && (name === 'history' || name === 'kings')) {
-      // GSAP Animations for Cards
       cardsRef.current.forEach((card, index) => {
         if (card) {
           gsap.fromTo(
@@ -156,7 +155,6 @@ function Subcategory() {
         }
       });
 
-      // Animate main title
       gsap.fromTo(
         '.subcategory-main-title',
         { opacity: 0, y: -50 },
@@ -171,7 +169,6 @@ function Subcategory() {
       : 'அரசர்கள்'
     : '';
 
-  // Redesigned Layout for History and Kings
   if (name === 'history' || name === 'kings') {
     return (
       <>
@@ -226,8 +223,6 @@ function Subcategory() {
     );
   }
 
-
-  // Original Layout for other categories (Kings, etc.)
   return (
     <>
       {show && <TamilAnimation show={setShow} />}

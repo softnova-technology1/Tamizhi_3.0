@@ -1,5 +1,5 @@
 import styles from '../../Stylesheet/Footer.module.css';
-import logo from './../../image/logo2.png';
+import logo from './../../image/FINAL-LOGO.png';
 import { Link } from 'react-router-dom';
 import {
   FaFacebookF,
@@ -44,7 +44,7 @@ const Footer = () => {
                   target="_blank"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF />
+                  <FaFacebookF className='hi' />
                 </Link>
               </div>
               <div className={styles.iconborder2}>

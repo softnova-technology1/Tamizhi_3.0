@@ -112,8 +112,7 @@ export default function RootHistory() {
                 <Row>
                   <Col
                     xs={12}
-                    sm={3}
-                    md={3}
+                    lg={3}
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
                     <SideNav
@@ -125,8 +124,7 @@ export default function RootHistory() {
                   </Col>
                   <Col
                     xs={12}
-                    sm={9}
-                    md={9}
+                    lg={9}
                     className={classes.contentContainer}
                   >
                     <Outlet

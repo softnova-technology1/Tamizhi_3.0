@@ -79,12 +79,10 @@ export default function ExcavationComponent() {
   if (normalizedHash === normalize(data.title) || !normalizedHash) {
     isIntroduction = true;
   } else {
-    // Find the primary active item
     const targetItem = processedSubTitles.find(s => s.normalizedSubHeading === normalizedHash);
     
     if (targetItem) {
       if (!targetItem.isGeneric) {
-        // If it's a major heading, get it and all its trailing generic sub-headings
         const index = processedSubTitles.indexOf(targetItem);
         activeSections.push(targetItem);
         for (let i = index + 1; i < processedSubTitles.length; i++) {
@@ -95,14 +93,12 @@ export default function ExcavationComponent() {
           }
         }
       } else {
-        // If it's a specific generic heading, just show that one
         activeSections.push(targetItem);
       }
       isIntroduction = false;
     }
   }
 
-  // Search Logic
   let searchResults = [];
   if (searchQuery.trim() !== '') {
     const q = searchQuery.toLowerCase();
@@ -179,7 +175,6 @@ export default function ExcavationComponent() {
           </Container>
         ))}
 
-        {/* Recursive data rendering */}
         {item.data && renderRecursiveData(item.data)}
       </div>
     ));
@@ -193,7 +188,6 @@ export default function ExcavationComponent() {
         </h2>
         
         {item.data ? renderRecursiveData(item.data) : (
-          /* Case for root-level description/images when no data array present */
           <div className={classes.contentOver}>
              {item.image && item.image.map((img, i) => (
                 <div key={`root_img_${i}`} style={{ marginBottom: '1.5rem' }}>
@@ -208,7 +202,6 @@ export default function ExcavationComponent() {
           </div>
         )}
 
-        {/* Support for data-specific Introduction (Legacy root image/desc) */}
         {isMain && !item.data && (
            <p className={classes.marginBottomdes}>No specific data blocks found.</p>
         )}
@@ -218,7 +211,6 @@ export default function ExcavationComponent() {
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', padding: '1rem 0' }}>
-      {/* Search Input */}
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
         <input
           type="text"

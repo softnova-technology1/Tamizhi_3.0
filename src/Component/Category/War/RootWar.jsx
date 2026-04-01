@@ -1,7 +1,6 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
 import warDataEn from '../../../Language/en/war.json';
 import warDataTN from '../../../Language/tam/war.json';
 import { useContext, useState, useEffect } from 'react';
@@ -77,8 +76,7 @@ export default function RootWar() {
                 <Row>
                   <Col
                     xs={12}
-                    sm={3}
-                    md={3}
+                    lg={3}
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
                     <SideNav
@@ -90,8 +88,7 @@ export default function RootWar() {
                   </Col>
                   <Col
                     xs={12}
-                    sm={9}
-                    md={9}
+                    lg={9}
                     className={classes.contentContainer}
                   >
                     <Outlet

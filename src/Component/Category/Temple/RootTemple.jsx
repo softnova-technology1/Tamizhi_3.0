@@ -1,7 +1,6 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
 import templeDataEn from '../../../Language/en/temple.json';
 import templeDataTN from '../../../Language/tam/temple.json';
 import { useContext, useState, useEffect } from 'react';
@@ -77,9 +76,7 @@ export default function RootTemple() {
                 <Row>
                   <Col
                     xs={12}
-                    sm={3}
-                    md={3}
-                    
+                    lg={3}
                     className={`${classes.sideNavContainer} ${classes.mobileHidden}`}
                   >
                     <SideNav
@@ -91,8 +88,7 @@ export default function RootTemple() {
                   </Col>
                   <Col
                     xs={12}
-                    sm={9}
-                    md={9}
+                    lg={9}
                     className={classes.contentContainer}
                   >
                     <Outlet
