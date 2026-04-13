@@ -17,7 +17,6 @@
   margin: 0;
   width: 100%;
   max-width: 100%;
-  /* overflow-x: hidden; */
 }
 
 .spinner {
@@ -153,7 +152,6 @@
   }
 }
 
-/* Back Button Stylings */
 .imageBackButton {
   position: fixed;
   bottom: 40px;
@@ -204,7 +202,6 @@
   }
 }
 
-/* Responsiveness */
 @media screen and (max-width: 768px) {
   .imageBackButton {
     bottom: 25px;

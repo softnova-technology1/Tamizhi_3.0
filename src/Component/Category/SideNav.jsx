@@ -1,11 +1,41 @@
 import classes from '../../Stylesheet/SideNav.module.css';
 import { Context } from '../../Context/contextApi';
-import { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useContext, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function SideNav({ data, nameOfContent, handleReadMore = () => {} }) {
   const { darkmode, language } = useContext(Context);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollContainerRef = useRef(null);
+  const scrollState = useRef({ isHovered: false, direction: 1 });
+
+  useEffect(() => {
+    const checkWidth = () => window.innerWidth <= 991;
+    if (!checkWidth()) return;
+
+    let animationId;
+    const scrollStep = 0.5; 
+    
+    const animateScroll = () => {
+      const container = scrollContainerRef.current;
+      if (container && !scrollState.current.isHovered) {
+         if (container.scrollLeft >= container.scrollWidth - container.clientWidth - 1) {
+            scrollState.current.direction = -1; 
+         } else if (container.scrollLeft <= 0) {
+            scrollState.current.direction = 1; 
+         }
+         
+         container.scrollLeft += scrollStep * scrollState.current.direction;
+      }
+      animationId = requestAnimationFrame(animateScroll);
+    };
+
+    animationId = requestAnimationFrame(animateScroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [data]);
 
   const categoryTitles = {
     en: {
@@ -66,7 +96,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
         
         let displayItems = [];
         
-        // 1. Add Introduction if data has description AND it's a general category intro
         const isGeneralCategory = 
           normalize(nameOfContent) === 'mythology' ||
           normalize(nameOfContent) === 'history' ||
@@ -76,8 +105,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           normalize(nameOfContent) === 'historical_place' ||
           normalize(nameOfContent) === 'excavation';
 
-        // Show the title button for all categories if they have a description
-        // Use the title itself as the label for specific items (War, Architecture, Books)
         const shouldShowIntro = data.description && 
                                data.description.length > 0 && 
                                data.description[0].trim().length > 0;
@@ -90,11 +117,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           });
         }
         
-        // 2. Add subTitles, filtering out redundant ones ONLY if intro button is shown
         if (data.subTitle) {
           data.subTitle.forEach(item => {
             if (!item.subHeading) return;
-            // Avoid duplicate buttons if we already have a root button with this exact name
             const isRedundant = normalize(item.subHeading) === normalize(data.title);
             if (!isRedundant || !shouldShowIntro) {
               displayItems.push(item);
@@ -102,7 +127,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           });
         }
 
-        // 3. Logic to determine IDs and track active state
         const usedIds = new Map();
         let currentMajorHeading = data.title;
         const processedItems = displayItems.map((item) => {
@@ -129,19 +153,23 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           return { ...item, normalizedHeading, isGeneric, currentMajorHeading };
         });
 
-        // 4. Identify the active item index
         const currentHash = normalize(decodeURIComponent(location.hash).substring(1));
         let activeIndex = processedItems.findIndex(item => item.normalizedHeading === currentHash);
         
-        // Default to index 0 if no hash matches
         if (activeIndex === -1) activeIndex = 0;
-
-        // 5. Render logic (removed the move-to-top logic as requested)
-        return processedItems.map((item, index) => {
+        return (
+          <div 
+             className={classes.navItemsContainer}
+             ref={scrollContainerRef}
+             onTouchStart={() => { scrollState.current.isHovered = true; }}
+             onTouchEnd={() => { setTimeout(() => { scrollState.current.isHovered = false; }, 3000); }}
+             onMouseEnter={() => { scrollState.current.isHovered = true; }}
+             onMouseLeave={() => { setTimeout(() => { scrollState.current.isHovered = false; }, 1000); }}
+          >
+            {processedItems.map((item, index) => {
           const targetHash = `#${item.normalizedHeading}`;
           const isActive = index === activeIndex;
           
-          // Secondary active check for group active logic (for generics)
           const isGroupActive = currentHash.startsWith(normalize(item.currentMajorHeading)) || 
                                 (!location.hash && (
                                   normalize(item.currentMajorHeading) === normalize(data.title) || 
@@ -153,7 +181,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           }
 
           return (
-            <div key={`${item.subHeading}_${index}`} style={{ 
+            <div key={`${item.subHeading}_${index}`} className={classes.navItemWrapper} style={{ 
               marginBottom: item.isGeneric ? '0.6rem' : '1.8rem',
               paddingLeft: item.isGeneric ? '1.5rem' : '0px',
               borderLeft: item.isGeneric && isGroupActive ? '2px solid rgba(212, 175, 55, 0.3)' : 'none',
@@ -166,10 +194,23 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                   display: 'block',
                   width: '100%',
                 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(targetHash, { replace: true });
+                  
+                  if (window.innerWidth <= 991) {
+                    const navContainer = document.querySelector(`.${classes.navItemsContainer}`);
+                    if (navContainer) {
+                      const y = navContainer.getBoundingClientRect().top + window.scrollY - 20;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                   }
+                }}
               >
                 <button
-                  className={classes.clickbtn}
+                  className={`${classes.clickbtn} ${isActive ? classes.activeBtn : ''}`}
                   style={{
+                    '--active-text-mobile': darkmode === 'off' ? '#5d4037' : '#d4af37',
                     backgroundColor: isActive 
                         ? (darkmode === 'off' ? '#5d4037' : '#d4af37') 
                         : 'transparent',
@@ -207,7 +248,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                       e.currentTarget.style.transform = 'translateY(0px)';
                     }
                   }}
-                  onClick={(event) => handleReadMore(event)}
+                  onClick={(event) => {
+                    handleReadMore(event);
+                  }}
                 >
                   <span style={{ 
                     textTransform: item.isGeneric ? 'capitalize' : 'uppercase',
@@ -216,7 +259,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                     {item.subHeading}
                   </span>
                   {isActive && (
-                    <div style={{
+                    <div className={classes.activeDot} style={{
                       width: '8px',
                       height: '8px',
                       borderRadius: '50%',
@@ -229,7 +272,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
               </a>
             </div>
           );
-        });
+        })}
+        </div>
+        );
       })()}
     </div>
   );

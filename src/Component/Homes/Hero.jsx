@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import styles from '../../Stylesheet/Hero.module.css';
 import templePng from '../../image/parralaxone.png'; // Updated to use isolated gopuram
-
 import extra from "../../image/pa.png"
 import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
 import tamil1 from './../../image/Tamil_1x.webp';
@@ -28,94 +27,73 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: heroRef.current,
                     start: "top top",
-                    end: "bottom bottom",
+                    end: "+=200%", // Provides 2 screens' worth of scroll distance for the sequential animation
                     scrub: 1.5,
+                    pin: true,     // This provides the scroll lock behavior
+                    anticipatePin: 1
                 }
             });
 
-            // 1. Parallaxone Comes Up First
+            // 1. Parallaxone Comes Up First Slowly
             tl.fromTo(pngRef.current,
                 { y: "100vh", scale: 0.7, opacity: 0 },
                 { 
-                    y: "-10vh", 
+                    y: "0vh", 
                     scale: 0.9, 
                     opacity: 1, 
-                    duration: 1.5, 
+                    duration: 2, 
                     ease: "power2.out" 
                 }
             );
 
-            // 2. Pa.png Comes Up Second
+            // 2. Next, Pa.png Comes Up
             tl.fromTo(pngRef2.current,
                 { y: "100vh", scale: 0.8, opacity: 0 },
                 { 
-                    y: "-20vh", 
+                    y: "-10vh", 
                     scale: 1, 
                     opacity: 1, 
-                    duration: 1.5, 
+                    duration: 2, 
                     ease: "power2.out" 
-                },
-                "-=0.7" // Staggered overlap for smooth transition
+                }
+                // Removed the negative offset as requested (sequential animation)
             );
         });
 
-        mm.add("(max-width: 480px)", () => {
-            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 1 });
+        mm.add("(max-width: 768px)", () => {
+            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0 }); 
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: heroRef.current,
                     start: "top top",
-                    end: "bottom bottom",
+                    end: "+=150%", // Mobile scroll distance
                     scrub: 1,
+                    pin: true,
+                    anticipatePin: 1
                 }
             });
 
             tl.fromTo(pngRef.current,
-                { y: "0vh", scale: 1, opacity: 1 },
-                { 
-                    y: "0vh", 
-                    scale: 1, 
-                    opacity: 1, 
-                    duration: 1, 
-                    ease: "none" 
-                }
-            );
-        });
-
-        mm.add("(min-width: 481px) and (max-width: 1024px)", () => {
-            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0.5 });
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: heroRef.current,
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                }
-            });
-
-            tl.fromTo(pngRef.current,
-                { y: "40vh", scale: 1, opacity: 0.8 },
-                { 
-                    y: "0vh", 
-                    scale: 1.05, 
-                    opacity: 1, 
-                    duration: 1, 
-                    ease: "power1.out" 
+                { y: "80vh", scale: 0.85, opacity: 0 },
+                {
+                    y: "10vh",
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power1.out"
                 }
             );
 
             tl.fromTo(pngRef2.current,
-                { y: "60vh", scale: 1.1, opacity: 0.8 },
-                { 
-                    y: "0vh", 
-                    scale: 1.2, 
-                    opacity: 1, 
-                    duration: 1, 
-                    ease: "power1.out" 
-                },
-                "-=0.6"
+                { y: "90vh", scale: 0.9, opacity: 0 },
+                {
+                    y: "0vh",
+                    scale: 1.1,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power1.out"
+                }
             );
         });
 
@@ -123,9 +101,9 @@ const Hero = () => {
     }, { scope: heroRef });
 
 
-     const { mobileViewOn } = useContext(Context);
-    
-     
+    const { mobileViewOn } = useContext(Context);
+
+
     return (
         <section className={styles.heroSection} ref={heroRef}>
             <div className={styles.backgroundLayer}></div>

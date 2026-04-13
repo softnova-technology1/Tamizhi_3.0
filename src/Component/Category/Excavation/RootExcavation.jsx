@@ -1,7 +1,6 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import classes from '../../../Stylesheet/RootHistory.module.css';
 import excavationDataEn from '../../../Language/en/excavation.json';
 import excavationDataTN from '../../../Language/tam/excavation.json';
 import { useContext } from 'react';

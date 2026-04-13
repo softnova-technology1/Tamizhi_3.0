@@ -7,7 +7,9 @@
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .backgroundLayer {
@@ -52,14 +54,16 @@
 .welcome {
   text-align: center;
   font-weight: bold;
-  font-size: 4rem !important;
-  padding: 40px 0px 30px 0px;
+  font-size: 3rem !important;
+  color: #3e2723;
+  margin-bottom: 20px;
 }
 
 .welcomeHome {
   text-align: center;
   font-weight: bold;
-  font-size: 2.5rem !important;
+  font-size: 2.2rem !important;
+  color: #3e2723;
 }
 
 .input {
@@ -90,13 +94,13 @@
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 60px 40px;
+  align-items: center;
+  padding: 100px 110px;
   background: url('../image/loginback.png') no-repeat center;
   background-size: 100% 100%;
   box-shadow: none;
-  border-radius: 8px;
-  margin-top: 25px;
-  min-height: 600px;
+  min-height: 550px;
+  margin-top: 20px;
 }
 
 .formsHome {
@@ -128,18 +132,21 @@
 }
 
 .forms1 {
-  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contains {
-  padding: 30px 30px 30px 30px;
+  width: 100%;
+  padding: 20px;
 }
 
 .image {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  margin-top: 70px;
+  width: 100%;
 }
 
 .check {
@@ -179,14 +186,24 @@
 
 .buttontxt {
   font-size: 1.6rem;
-  font-weight: 550;
-  background-color: rgb(201, 199, 199);
-  color: black;
+  font-weight: bold;
+  background-color: #c5a059;
+  color: white;
   text-decoration: none;
   border: none;
-  width: 220px;
-  border-radius: 10;
-  margin-top: 15px;
+  width: 100%;
+  max-width: 250px;
+  height: 50px;
+  border-radius: 25px;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.buttontxt:hover {
+  background-color: #b38f4d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .create {
@@ -239,8 +256,15 @@
 }
 
 .tamilimgs {
-  width: 60%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+  transition: transform 0.5s ease;
+}
+
+.tamilimgs:hover {
+  transform: scale(1.03);
 }
 
 .toastContainer {
@@ -331,10 +355,9 @@
   }
 
   .forms {
-    width: 100% !important;
     max-width: 450px;
     margin: 20px auto;
-    padding: 95px 60px 80px 60px; /* Aligned with scroll handles */
+    padding: 100px 70px 90px 70px; /* Aligned with scroll handles */
   }
 
   .formsHome {
@@ -368,7 +391,6 @@
   }
 
   .forms {
-    width: 100% !important;
     max-width: 500px;
     margin: 20px auto;
     padding: 100px 70px 90px 70px;
@@ -400,7 +422,6 @@
   }
 
   .forms {
-    width: 100% !important;
     max-width: 500px;
     margin: 20px auto;
   }

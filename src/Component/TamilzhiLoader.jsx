@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from '../Stylesheet/TamilzhiLoader.module.css';
 
 const languages = [
-  { script: ["த", "மி", "ழி"], name: "Tamil" },
-
+  { script: ["த", "மி", "ழ்"], name: "Tamil" },
   { script: ["त", "मि", "ज़ि"], name: "Hindi" },
   { script: ["ത", "മി", "ഴി"], name: "Malayalam" },
   { script: ["త", "మి", "ళి"], name: "Telugu" },

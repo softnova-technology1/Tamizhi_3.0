@@ -153,7 +153,7 @@ const Header = () => {
 
           {/* Navigation Section */}
           <ul className={styles.navLinks}>
-            <li className={styles.navItem}><Link to="/">HOME</Link></li>
+            <li className={styles.navItem}><Link to="/" id={styles.home}>HOME</Link></li>
             <li className={styles.navItem}>
               <Link to="/category" onClick={(e) => {
                 e.preventDefault();

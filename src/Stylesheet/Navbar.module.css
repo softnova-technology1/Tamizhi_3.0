@@ -383,6 +383,8 @@
   }
 }
 
+
+
 @media (max-width: 768px) {
   .headerWrapper {
     display: none;
@@ -1196,5 +1198,21 @@
   .closeButton {
     top: -20px;
     right: 0;
+  }
+}
+
+@media(min-width: 1440px) {
+   .topBar {
+    padding: 12px 30px;
+  } 
+  #home{
+    display: none;
+  }
+  .writeBtn{
+    min-width: 100px;
+  }
+  .loginBtn{
+    min-width: 60px;
+    min-height: 60px;
   }
 }
