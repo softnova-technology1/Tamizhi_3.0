@@ -343,8 +343,8 @@ const Header = () => {
                   </ul>
                   
                   <div className={styles.mobileActions}>
-                    <a href="#towrite" onClick={() => setShowMobileMenu(false)} className={styles.mobileWriteBtnModern}>
-                      CONTRIBUTE HERITAGE
+                    <a href="/write" onClick={() => setShowMobileMenu(false)} className={styles.mobileWriteBtnModern}>
+                      TO WRITE
                     </a>
                   </div>
                 </div>

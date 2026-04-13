@@ -286,33 +286,70 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 481px) and (max-width: 1024px) {
     .heroSection {
-      height: 120vh; /* Restored some height to allow parallax scroll for temple images */
-    }
-    .tamil1Image {
-      font-size: 2.5rem; /* Better scaling for mobile */
-    }
-    .heading1 {
-      font-size: 1.2rem;
-    }
-    .symbol img {
-      margin-bottom: 40px; /* Less spacing on small mobile */
-    }
-    .overlay {
-      margin-top: 15%; /* Reduced from 25% */
-      padding-top: 40px;
+        height: 120vh;
     }
 
     .templeImageLayer1 {
-      width: 150%;
-      bottom: 0%;
-      opacity: 0.9 !important; /* Ensure visibility */
+  
+        bottom: 0%;
+        opacity: 1 !important;
     }
 
     .templeImageLayer2 {
-      width: 180%;
-      bottom: -5%;
-      opacity: 1 !important;
+        display: block !important; /* Show side temples on tablet as before */
+        width: 140%;
+        bottom: -10%;
+    }
+
+    .overlay {
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .backgroundLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 200%;
+        height: 100%;
+        background-image: url('../image/main-hero.png');
+        background-position: center bottom !important;
+        background-repeat: no-repeat;
+        background-size: cover !important;
+        z-index: 0;
+        filter: brightness(0.5);
+    }
+
+    .heroSection {
+        height: 105vh; /* Very tight scroll room */
+    }
+
+    .tamil1Image {
+        font-size: 2.5rem;
+    }
+
+    .templeImageLayer1 {
+       display: none !important;
+    }
+
+    .templeImageLayer2 {
+        display: none !important;
+    }
+
+    .heading1 {
+        font-size: 1.2rem;
+    }
+
+    .symbol img {
+        margin-bottom: 40px;
+    }
+
+    .overlay {
+        margin-top: 30%;
+        
+       
     }
 }

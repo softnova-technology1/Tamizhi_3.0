@@ -59,8 +59,8 @@ const Hero = () => {
             );
         });
 
-        mm.add("(max-width: 768px)", () => {
-            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0.3 }); // Partial visibility initially for mobile context
+        mm.add("(max-width: 480px)", () => {
+            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 1 });
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -72,10 +72,34 @@ const Hero = () => {
             });
 
             tl.fromTo(pngRef.current,
-                { y: "70vh", scale: 0.85, opacity: 0.3 },
+                { y: "0vh", scale: 1, opacity: 1 },
                 { 
                     y: "0vh", 
-                    scale: 0.95, 
+                    scale: 1, 
+                    opacity: 1, 
+                    duration: 1, 
+                    ease: "none" 
+                }
+            );
+        });
+
+        mm.add("(min-width: 481px) and (max-width: 1024px)", () => {
+            gsap.set([pngRef.current, pngRef2.current], { xPercent: -50, opacity: 0.5 });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                }
+            });
+
+            tl.fromTo(pngRef.current,
+                { y: "40vh", scale: 1, opacity: 0.8 },
+                { 
+                    y: "0vh", 
+                    scale: 1.05, 
                     opacity: 1, 
                     duration: 1, 
                     ease: "power1.out" 
@@ -83,15 +107,15 @@ const Hero = () => {
             );
 
             tl.fromTo(pngRef2.current,
-                { y: "80vh", scale: 0.9, opacity: 0.3 },
+                { y: "60vh", scale: 1.1, opacity: 0.8 },
                 { 
-                    y: "-5vh", 
-                    scale: 1, 
+                    y: "0vh", 
+                    scale: 1.2, 
                     opacity: 1, 
                     duration: 1, 
                     ease: "power1.out" 
                 },
-                "-=0.5"
+                "-=0.6"
             );
         });
 
