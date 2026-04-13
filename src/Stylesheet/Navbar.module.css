@@ -1198,7 +1198,8 @@
     right: 0;
   }
 }
-@media (min-width: 1440px) {
+
+@media(min-width: 1440px) {
    .topBar {
     padding: 12px 30px;
   } 
