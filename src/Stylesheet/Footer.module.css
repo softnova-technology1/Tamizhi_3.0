@@ -59,6 +59,7 @@
   padding: 5rem 0rem;
   
 }
+
 }
 
 .left {
@@ -573,12 +574,15 @@
   .left {
     grid-column: span 2;
   }
-.footer {
-  padding: 5rem 0rem;  
-}
+
 
   .navLinks, .contact {
     width: 100%;
     margin: 0;
+  }
+}
+@media (max-width:480px){
+  .footer{
+    padding: 0px;
   }
 }

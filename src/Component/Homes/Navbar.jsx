@@ -147,7 +147,7 @@ const Header = () => {
 
       
           <ul className={styles.navLinks}>
-            <li className={styles.navItem}><Link to="/">HOME</Link></li>
+            <li className={styles.navItem}><Link to="/" id={styles.home}>HOME</Link></li>
             <li className={styles.navItem}>
               <Link to="/category" onClick={(e) => {
                 e.preventDefault();
@@ -325,8 +325,8 @@ const Header = () => {
                   </ul>
                   
                   <div className={styles.mobileActions}>
-                    <a href="#towrite" onClick={() => setShowMobileMenu(false)} className={styles.mobileWriteBtnModern}>
-                      CONTRIBUTE HERITAGE
+                    <a href="/write" onClick={() => setShowMobileMenu(false)} className={styles.mobileWriteBtnModern}>
+                      TO WRITE
                     </a>
                   </div>
                 </div>
