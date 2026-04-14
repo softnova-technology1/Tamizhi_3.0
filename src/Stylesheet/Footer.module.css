@@ -11,7 +11,6 @@
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Decorative Stone Frieze at the top */
 .footer::before {
   content: '';
   position: absolute;
@@ -23,7 +22,6 @@
     repeating-linear-gradient(45deg, #8b4513 0, #8b4513 2px, transparent 2px, transparent 10px);
   opacity: 0.3;
 }
-
 .content1 {
   display: flex;
   flex-direction: column;
@@ -32,7 +30,6 @@
   margin: 0 auto;
   padding: 0 20px 40px;
 }
-
 @media (min-width: 1024px) {
   .content1 {
     flex-direction: row;
@@ -140,7 +137,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  /* font-size: 20px !important; */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -152,7 +148,7 @@
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  /* border-bottom: 1px solid rgba(241, 196, 15, 0.3); */
+
   display: inline-block;
   padding-bottom: 5px;
   padding-left: 20px;
@@ -277,9 +273,9 @@
   width: 100px;
   height: 100px;
   object-fit: contain;
-  /* filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3)); */
+ 
   border-radius: 50%;
-  /* background: rgba(255, 255, 255, 0.05); */
+ 
   padding: 5px;
   border: 1px solid rgba(212, 175, 55, 0.2);
   transition: transform 0.4s ease;
@@ -308,7 +304,7 @@
 .imgsize {
   width: 80px;
   height: auto;
-  /* filter: grayscale(1) invert(1) brightness(0.8); */
+
   opacity: 0.6;
   transition: all 0.3s ease;
 }
@@ -335,7 +331,7 @@
 @media (max-width: 1023px) {
  
 
-  /* Liquid Glass Layout */
+  
   .content1 {
     gap: 30px;
     padding: 30px 0;
@@ -352,7 +348,7 @@
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 40px 10px 40px 10px; /* Asymmetric for innovative look */
+    border-radius: 40px 10px 40px 10px;
     padding: 45px 20px;
     margin: 0 auto;
     width: 95%;
@@ -390,12 +386,12 @@
     height: 100px;
     background: rgba(0, 0, 0, 0.9);
     border: 2px solid #ffd700;
-    border-radius: 35%; /* Squircle shape */
+    border-radius: 35%; 
     padding: 12px;
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
   }
 
-  /* Neon Heritage Pulse */
+  
   .tamilText {
     font-size: 1.5rem;
     color: #ffd700;
@@ -416,7 +412,7 @@
     margin-bottom: 25px;
   }
 
-  /* Separate Floating Social Dock */
+  
   .socialicons1 {
     position: relative;
     padding: 13px 31px;
@@ -441,7 +437,7 @@
     background: #000;
     border: 1.5px solid #ffd700;
     border-radius: 8px;
-    transform: rotate(45deg); /* Diamond shape */
+    transform: rotate(45deg);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     align-items: center;
@@ -455,7 +451,7 @@
     justify-content: center !important;
     transform: rotate(-45deg);
     color: #ffd700 !important;
-    font-size: 14px; /* Decreased icon size */
+    font-size: 14px; 
     width: 100%;
     height: 100%;
     text-decoration: none;
@@ -496,7 +492,7 @@
     width: 100%;
   }
 
-  /* Make 'Contact Support' (the 5th item) span 2 columns if it's the last one */
+
   .navLinks li:last-child:nth-child(odd) {
     grid-column: span 2;
   }
@@ -534,7 +530,7 @@
   }
 
   .icon1 {
-    display: none; /* Innovative minimalist: remove redundant icons */
+    display: none;
   }
 
   .pad {
@@ -563,7 +559,7 @@
   }
 }
 
-/* Tablet Specific: 2-column boxes for better data density */
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .content1 {
     display: grid;

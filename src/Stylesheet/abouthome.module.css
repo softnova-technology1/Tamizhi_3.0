@@ -76,7 +76,7 @@
   line-height: 1.6;
   color: #4e342e;
   margin-bottom: 30px;
-  text-align: left; /* Changed from justify to fix gaps */
+  text-align: left; 
   font-weight: 500;
   word-spacing: normal;
 }
@@ -123,12 +123,10 @@
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
-  /* max-width: 450px; */
 }
 
 .aboutImage {
   width: 90%;
-  /* max-width: 450px; */
   height: auto;
   object-fit: cover;
   filter: sepia(0.3) contrast(1.1);
@@ -222,7 +220,7 @@
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
-    text-align: left; /* Ensure left alignment on mobile */
+    text-align: left; 
   }
   .topDecoration{
     display: none;

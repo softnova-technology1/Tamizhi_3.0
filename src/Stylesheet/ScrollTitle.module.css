@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     padding: 1.5rem 3.5rem;
-    /* Padding for text to not overwrite rollers */
+    
     min-width: 250px;
 }
 
@@ -22,26 +22,26 @@
 .scrollTitleContainer h2,
 .scrollTitleContainer h3 {
     margin: 0 !important;
-    /* override any layout margins so the scroll fits perfectly */
+    
     position: relative;
     z-index: 2;
     color: #3b2210;
     font-family: 'Playfair Display', cursive;
     font-weight: 900;
     font-size: 3rem;
-    /* Dark vintage ink color */
+   
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4);
     opacity: 0;
-    /* starts hidden for animation */
+
 }
 
 .scrollBg {
     position: absolute;
     top: 4px;
     left: 11px;
-    /* Offset inwards from the left roller */
+    
     height: calc(100% - 8px);
-    /* Create a highly realistic vintage paper texture look */
+    
     background-color: #ebd193;
     background-image:
         linear-gradient(90deg, rgba(70, 30, 10, 0.4) 0%, rgba(70, 30, 10, 0.05) 5%, transparent 20%, transparent 80%, rgba(70, 30, 10, 0.05) 95%, rgba(70, 30, 10, 0.4) 100%),
@@ -53,14 +53,14 @@
     border-top: 1px solid rgba(160, 110, 60, 0.4);
     border-bottom: 1px solid rgba(160, 110, 60, 0.4);
     border-radius: 1px;
-    z-index: 1; /* Above left knobs, below left cylinder */
+    z-index: 1; 
     overflow: visible;
-    /* allows right roller to show outside the div */
+    
     width: 0;
-    /* Start rolled up */
+   
 }
 
-/* LEFT ROLLER MAIN CYLINDER: Fixed on the container */
+
 .scrollTitleContainer::before {
     content: '';
     position: absolute;
@@ -73,7 +73,7 @@
     z-index: 3;
 }
 
-/* LEFT ROLLER KNOBS (Pill shape behind) */
+
 .scrollTitleContainer::after {
     content: '';
     position: absolute;
@@ -87,7 +87,7 @@
     z-index: 0;
 }
 
-/* RIGHT ROLLER MAIN CYLINDER: Moves with the expanding width of .scrollBg */
+
 .scrollBg::after {
     content: '';
     position: absolute;
@@ -100,7 +100,7 @@
     z-index: 3;
 }
 
-/* RIGHT ROLLER KNOBS (Pill shape behind) */
+
 .scrollBg::before {
     content: '';
     position: absolute;
@@ -111,7 +111,7 @@
     background: linear-gradient(to right, #1f0d05 0%, #381b0c 30%, #472211 50%, #381b0c 70%, #1f0d05 100%);
     border-radius: 11px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
-    z-index: -1; /* Paints perfectly behind the scrollBg paper */
+    z-index: -1; 
 }
 
 @media (max-width: 768px) {
@@ -146,14 +146,14 @@
 
 @media (max-width: 480px) {
     .scrollTitleContainer {
-        padding: 0.8rem 3.5rem; /* Increased side padding */
+        padding: 0.8rem 3.5rem;
         min-width: 140px;
     }
 
     .scrollTitleContainer h1,
     .scrollTitleContainer h2,
     .scrollTitleContainer h3 {
-        font-size: 1.1rem !important; /* Slightly smaller for long titles */
+        font-size: 1.1rem !important; 
         white-space: nowrap;
     }
 }

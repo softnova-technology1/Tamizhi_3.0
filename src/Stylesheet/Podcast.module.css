@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-/* Vignette Shadow Effect */
+
 .vignette {
   position: absolute;
   top: 0;
@@ -25,7 +25,7 @@
   z-index: 1;
 }
 
-/* Mist/Cloud Effect Animation */
+
 .mistCloud {
   position: absolute;
   width: 200%;
@@ -55,7 +55,7 @@
   padding: 20px;
 }
 
-/* Mic Icon Design */
+
 .micIconContainer {
   position: relative;
   width: 120px;
@@ -91,7 +91,7 @@
   50% { transform: scale(1.3); opacity: 0.8; }
 }
 
-/* Content & Typography */
+
 .content {
   display: flex;
   flex-direction: column;
@@ -143,7 +143,7 @@
   opacity: 0.8;
 }
 
-/* Social Medallions */
+
 .socialIcons {
   display: flex;
   gap: 30px;
@@ -156,7 +156,7 @@
   height: 65px;
   background: radial-gradient(circle at 30% 30%, #2c1810 0%, #1a0f0a 100%);
   border: 2px solid #d4af37;
-  border-radius: 15% 35% 15% 35% / 35% 15% 35% 15%; /* Unique asymmetric "carved" shape */
+  border-radius: 15% 35% 15% 35% / 35% 15% 35% 15%; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,7 +197,7 @@
   transform: scale(1.1);
 }
 
-/* Responsiveness */
+
 @media screen and (max-width: 768px) {
   .comingSoonText {
     font-size: 2.8rem;

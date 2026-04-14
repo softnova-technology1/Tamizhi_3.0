@@ -153,7 +153,7 @@
 }
 
 .overlay {
-  /* background: rgba(0, 0, 0, 0.6); */
+  
   padding: 20px;
   text-align: center;
   border-radius: 10px;
@@ -205,7 +205,7 @@
 
 
 .tamil1Image {
-  /* transform: translateY(-62px); */
+ 
   font-family: 'Ananthabairavi Regular';
   font-size: 10rem;
   font-display: swap;
@@ -220,7 +220,7 @@
 
 .yellowText {
   color: #f1c40f;
-  /* or use 'yellow' if you prefer */
+ 
   font-weight: bold;
 }
 
@@ -239,12 +239,12 @@
 
   .tamil1Image {
     font-size: 5rem;
-    /* Adjusted for better fit */
+  
   }
 
   .vanakkamImage {
     max-width: 60%;
-    /* Slightly smaller for balance */
+  
   }
 
   .heading1 {
@@ -256,7 +256,7 @@
 @media (max-width: 767px) {
   .heroSection {
     height: 100vh;
-    /* Increased to allow scroll parallax */
+   
   }
   .backgroundLayer{
     background-position: unset;
@@ -267,9 +267,9 @@
 
   .overlay {
     padding-top: 100px;
-    /* Reduced offset for better visibility */
+   
     margin-top: 20%;
-    /* Adjusted for content centering */
+   
   }
 
   .tamil1Image {
@@ -287,22 +287,22 @@
 
   .symbol img {
     max-width: 10vh;
-    /* Reduced slightly */
+   
   }
 
   .templeImageLayer1 {
     width: 110%;
-    /* Slightly wider for impact */
+   
     bottom: -5%;
-    /* Pulled up */
+  
     opacity: 0.8;
   }
 
   .templeImageLayer2 {
     width: 130%;
-    /* Larger foreground temple */
+   
     bottom: -15%;
-    /* Pulled up */
+   
     z-index: 10;
   }
 }
@@ -310,12 +310,12 @@
 @media (max-width: 480px) {
   .heroSection {
     height: 100vh;
-    /* Restored some height to allow parallax scroll for temple images */
+
   }
 
   .tamil1Image {
     font-size: 4.5rem;
-    /* Better scaling for mobile */
+   
   }
 
   .heading1 {
@@ -324,12 +324,12 @@
 
   .symbol img {
     margin-bottom: 40px;
-    /* Less spacing on small mobile */
+    
   }
 
   .overlay {
     margin-top: 60%;
-    /* Reduced from 25% */
+ 
     padding-top: 40px;
   }
 
@@ -337,7 +337,7 @@
     width: 150%;
     bottom: 0%;
     opacity: 0.9 !important;
-    /* Ensure visibility */
+    
   }
 
   .templeImageLayer2 {
