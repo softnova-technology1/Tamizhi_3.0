@@ -168,7 +168,7 @@
 .searchInput {
   width: 350px;
   padding: 12px 25px;
-  padding-left: 55px; /* Added for the icon */
+  padding-left: 55px; 
   border-radius: 40px;
   font-size: 1.1rem;
   font-family: 'EB Garamond', serif;
@@ -185,7 +185,7 @@
     margin-top: 20px;
   }
   .searchContainer > div {
-    width: 90% !important; /* Targeting the search wrapper div */
+    width: 90% !important; 
   }
   .searchInput {
     width: 100% !important;

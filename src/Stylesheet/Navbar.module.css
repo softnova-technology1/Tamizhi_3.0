@@ -14,9 +14,9 @@
   display: inline-block;
   cursor: pointer;
   width: 100px;
-  /* Fixed width to prevent layout shift when text disappears */
+  
   height: 50px;
-  /* Align with line-height or image size */
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,7 @@
 .brandSub {
   font-size: 1rem;
   color: #64b5f6;
-  /* Soft cyan color from design */
+ 
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 5px;
@@ -159,7 +159,7 @@
   margin: 0 25px;
   flex: 1;
   max-width: 480px;
-  /* Increased to accommodate category dropdown */
+
 }
 
 .categorySection {
@@ -219,7 +219,7 @@
   font-style: italic;
 }
 
-/* Premium Language Switcher (Double Tab Design) */
+
 .premiumLangSwitcher {
   display: flex;
   align-items: center;
@@ -356,7 +356,7 @@
   font-size: 2.22rem;
 }
 
-/* Maintain mobile header responsiveness */
+
 .mobileHeader {
   display: none;
 }
@@ -421,9 +421,7 @@
   }
 }
 
-/* .navLinks {
-  transform: translateX(190px);
-} */
+
 @media (max-width: 1316px) {
   .topBar {
     padding: 10px 20px;
@@ -527,7 +525,7 @@
 }
 
 
-/* Mobile screens (768px and below) */
+
 @media (max-width: 768px) {
   .topBar {
     padding-bottom: 20px;
@@ -677,7 +675,7 @@
      
     background-color: #1c1c1c;
     color: #cfa15f;
-    /* Gold color for logo/text */
+  
   }
 
   .headerWrapper {
@@ -846,7 +844,7 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(4px); /* Reduced for clarity */
+    backdrop-filter: blur(4px); 
     z-index: 2000;
   }
 
@@ -1116,7 +1114,7 @@
   }
 }
 
-/* LOGIN MODAL STYLES */
+
 .loginModal :global(.modal-dialog) {
   max-width: 600px !important;
   width: 90% !important;
@@ -1164,22 +1162,22 @@
 @media (max-width: 768px) {
   .loginModal :global(.modal-dialog) {
     max-width: 95% !important;
-    margin: 3rem auto !important; /* Increased top margin to prevent cutoff */
+    margin: 3rem auto !important; 
   }
 
   .modalContent {
-    min-height: 600px; /* Increased to accommodate content comfortably */
-    padding: 60px 20px 30px; /* Added top padding for cylinders */
-    background-size: 100% 100% !important; /* Keep as 100% to fill the scroll shape */
+    min-height: 600px; 
+    padding: 60px 20px 30px;
+    background-size: 100% 100% !important;
   }
 
   .closeButton {
-    top: -15px; /* Moved up above the scroll handle */
+    top: -15px; 
     right: -5px;
     width: 38px;
     height: 38px;
     font-size: 24px;
-    background: #d32f2f; /* Sharper red */
+    background: #d32f2f;
     border: 2px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   }

@@ -123,7 +123,7 @@
     inset 0 0 15px rgba(0, 0, 0, 0.6),
     0 5px 15px rgba(0, 0, 0, 0.4),
     0 0 0 2px rgba(212, 175, 55, 0.6),
-    /* Slightly thinner outer accent */
+  
     0 0 0 3px rgba(5d, 40, 37, 0.8);
   z-index: 15;
   display: flex;
@@ -133,22 +133,22 @@
   opacity: 0;
   animation: sealStamp 1s cubic-bezier(0.17, 0.89, 0.32, 1.28) 4.5s forwards;
   border: 3px double #d4af37;
-  /* Slightly thinner inner border */
+ 
 }
 
 .royalSeal::before {
   content: 'தமிழி';
   font-family: 'Arima', cursive;
   font-size: 1.1rem;
-  /* Slightly larger for visibility */
+ 
   color: #ffcc00;
-  /* Vibrant gold */
+ 
   font-weight: 950;
-  /* Extra bold for embossing look */
+  
   text-shadow:
     1px 1px 1px rgba(0, 0, 0, 0.8),
     -1px -1px 0 rgba(255, 255, 255, 0.2),
-    /* Inner highlight for depth */
+  
     0 0 5px rgba(255, 204, 0, 0.5);
   letter-spacing: 0.05em;
   transform: translateY(-2px);
@@ -172,7 +172,7 @@
   left: -2%;
   width: 104%;
   height: 12px;
-  /* Even slimmer rod */
+  
   background: linear-gradient(to bottom,
       #5d4037 0%,
       #d4af37 40%,
@@ -196,7 +196,6 @@
   top: 50%;
   transform: translateY(-50%);
   width: 28px;
-  /* Slightly larger end caps */
   height: 28px;
   background: radial-gradient(circle at 35% 35%, #fff1a8 0%, #d4af37 60%, #8b6b1d 100%);
   border-radius: 50%;
@@ -291,20 +290,20 @@
     margin-top: 1.2rem;
   }
   .royalSeal {
-    display: none; /* Removed for mobile only as requested */
+    display: none; 
   }
 }
 
 .glassContainer::before,
 .glassContainer::after {
   content: none;
-  /* Removed the previous indicators as we now use scrollPins */
+  
 }
 
 .gapBetweenText {
   margin-top: 4rem;
   font-family: 'Arima', cursive !important;
-  /* Switched to a more artistic Tamil font */
+  
   font-size: 2.6rem;
   font-weight: 600;
   color: #fdf5e6;
@@ -325,7 +324,7 @@
   top: 2.5rem;
   left: 3rem;
   z-index: 10;
-  /* Increased z-index */
+ 
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -348,26 +347,26 @@
 @media (max-width: 991px) {
   .container {
     margin-top: 0;
-    /* Ensures flush fit under tablet sticky header */
+   
   }
 
   .imageContainer {
     height: 42rem !important;
-    /* Perfect tall banner for tablet */
+   
     background-position: center !important;
-    /* Balanced subject focus */
+    
   }
 
   .textWrapper {
     width: 92%;
-    /* Exposes a 4% margin gap for the gold glass borders to shine */
+   
     transform: translate(-50%, -40%);
-    /* Mathematical true center */
+   
   }
 
   .glassContainer {
     padding: 3rem 1.5rem;
-    /* Reduced horizontal padding for text expansion */
+   
   }
 
   .fontStyle {
@@ -400,19 +399,19 @@
 @media (max-width: 572px) {
   .imageContainer {
     height: 50rem !important;
-    /* Exquisite sweet-spot for mobile portrait hero images */
+   
     background-position: center !important;
     background-size: cover !important;
   }
 
   .textWrapper {
     width: 95%;
-    /* Maximizes text width while retaining 2.5% side margins to prevent rod clipping */
+
   }
 
   .glassContainer {
     padding: 2.5rem 1rem;
-    /* Maximum internal text space to prevent line-breaks */
+ 
   }
 
   .fontStyle {

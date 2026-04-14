@@ -37,17 +37,17 @@
 }
 
 .image {
-  aspect-ratio: 16 / 9; /* Preserves image ratio */
+  aspect-ratio: 16 / 9;
   background-color: #d9d9d9;
   border-radius: 8px;
   overflow: hidden;
-  width: 100%; /* Full width */
+  width: 100%; 
 }
 
 .cardSmall .image {
   aspect-ratio: 16 / 9;
   width: 100%;
-  height: auto; /* Remove fixed height */
+  height: auto; 
 }
 
 .text {
@@ -161,7 +161,7 @@
   flex-wrap: nowrap;
 }
 
-/* 1280x1440 */
+
 @media (min-width: 1280px) and (max-height: 1440px) {
   .image {
     width: 500px;
@@ -179,7 +179,7 @@
   }
 }
 
-/* 1920x1080 */
+
 @media (min-width: 1920px) and (max-height: 1080px) {
   .image {
     width: 580px;
@@ -201,7 +201,7 @@
   }
 }
 
-/* 1440x900 */
+
 @media (min-width: 1440px) and (max-height: 900px) {
   .image {
     width: 520px;
@@ -222,7 +222,7 @@
   }
 }
 
-/* Mobile Screens (up to 768px) */
+
 @media (max-width: 768px) {
   .cardLarge,
   .cardSmall {

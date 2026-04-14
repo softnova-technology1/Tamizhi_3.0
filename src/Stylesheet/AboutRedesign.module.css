@@ -1,10 +1,10 @@
-/* AboutRedesign.module.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   --primary-glow: #603725;
   --accent-gold: #c5a059;
-  /* --bg-cream: #fff9f0; */
+ 
   --text-dark: #2c1a12;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.3);
@@ -23,7 +23,7 @@ html {
   padding-bottom: 5rem;
 }
 
-/* Hero Section */
+
 .heroSection {
   position: relative;
   height: 70vh;
@@ -80,7 +80,7 @@ html {
   60% {transform: translateY(-5px);}
 }
 
-/* Intro Section */
+
 .introSection {
   max-width: 1200px;
   margin: 0 auto;
@@ -147,7 +147,7 @@ html {
   transform: scale(1.05);
 }
 
-/* Roadmap Section */
+
 .roadmapContainer {
   max-width: 1200px;
   margin: 6rem auto;
@@ -294,7 +294,7 @@ html {
   transform: scale(1.1);
 }
 
-/* Animations */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -306,7 +306,7 @@ html {
   }
 }
 
-/* Responsive */
+
 @media (max-width: 968px) {
   .roadmapContainer::before {
     left: 20px;

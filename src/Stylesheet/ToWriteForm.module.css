@@ -23,7 +23,7 @@
   background-position: bottom !important;
   background-attachment: fixed !important;
 }
-/* Unique background: Ancient Tamil Script fragments scattered */
+
 .container::before {
   content: 'அ ஆ இ ஈ உ ஊ';
   position: absolute;
@@ -69,7 +69,7 @@
   z-index: 1;
 }
 
-/* The "Scroll" Background Effect - Uniquely styled as a hanging tapestry */
+
 .form {
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@
   border-left: 2px solid #d2b48c;
   border-right: 2px solid #d2b48c;
   transform-origin: top;
-  overflow: visible; /* To allow rollers to show */
+  overflow: visible; 
   background: rgba(253, 245, 230, 0.37);
 }
 
@@ -113,7 +113,7 @@
   position: relative;
 }
 
-/* Palm Leaf Strip Input Style */
+
 .input,
 .textarea {
   width: 100%;
@@ -150,7 +150,7 @@
   resize: none;
 }
 
-/* Unique "Royal Seal" Submit Button */
+
 .button {
   margin: 0rem auto 0 !important;
   width: 100px;
@@ -188,7 +188,7 @@
 }
 
 .imageContainer {
-  /* width: 40%; */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,7 +196,7 @@
   position: relative;
 }
 
-/* Unique arched stone carving frame for the image */
+
 .imageWrapper {
   position: relative;
   padding: 15px;
@@ -260,7 +260,7 @@
 .danger { background: rgba(198, 40, 40, 0.1); border: 2px solid #c62828; color: #b71c1c; }
 .warning { background: rgba(249, 168, 37, 0.1); border: 2px solid #f9a825; color: #f57f17; }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
   .formContainer {
     flex-direction: column-reverse;

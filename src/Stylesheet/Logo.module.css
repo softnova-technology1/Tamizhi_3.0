@@ -10,7 +10,7 @@
     padding: 0 5%;
 }
 
-/* Sticky Left Side */
+
 .stickyLogoAside {
     flex: 0 0 35%;
     height: 100%;
@@ -24,7 +24,7 @@
 
 .logoFrame {
     position: relative;
-    width: 480px; /* Increased Size */
+    width: 480px;
     height: 480px;
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@
 }
 
 .mainLogo {
-    width: 420px; /* Larger Logo */
+    width: 420px; 
     height: 420px;
     object-fit: contain;
     z-index: 2;
@@ -71,7 +71,7 @@
     font-weight: 900;
     font-size: 2.5rem;
     color: #554108;
-    /* padding-top: 2rem; */
+   
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -82,7 +82,7 @@
     font-style: italic;
 }
 
-/* Right Side Scroll Strip */
+
 .scrollStripContainer {
     flex: 1;
     height: 100%;
@@ -90,19 +90,19 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 30px; /* Ensured first card visibility */
+    padding-left: 30px; 
 }
 
 .scrollStripInner {
     display: flex;
-    gap: 70px; /* Increased gap */
+    gap: 70px;
     height: 60%;
     padding: 30px 100px 30px 0;
   
 }
 
 .cardWrapper {
-    flex: 0 0 320px; /* Reduced width */
+    flex: 0 0 320px; 
     height: 100%;
     display: flex;
     align-items: center;
@@ -111,7 +111,7 @@
 
 .palmLeafCard {
     width: 100%;
-    height: 420px; /* Reduced height */
+    height: 420px; 
     background: #E8D3B9;
     border-radius: 12px;
     padding: 25px;
@@ -135,7 +135,7 @@
         0 0 20px rgba(201, 163, 78, 0.3);
 }
 
-/* Prominent Active State (Enhanced by GSAP) */
+
 .cardActive {
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.3),
@@ -229,7 +229,7 @@
     padding-right: 15px;
 }
 
-/* Custom Scrollbar for Card Content */
+
 .descriptionBody::-webkit-scrollbar {
     width: 4px;
 }
@@ -247,7 +247,7 @@
     text-align: justify;
 }
 
-/* Tamil Alignment Fix */
+
 :global(html[lang="ta"]) .meaningText {
     text-align: left;
     text-justify: none;
@@ -258,12 +258,12 @@
 .cardTexture {
     position: absolute;
     inset: 0;
-    /* background-image: url("https://www.transparenttextures.com/patterns/old-paper.png"); */
+  
     opacity: 0.4;
     pointer-events: none;
 }
 
-/* Logo Highlights */
+
 .logoHighlightOverlay {
     position: absolute;
     inset: 0;
@@ -320,7 +320,7 @@
     inset: 0;
 }
 
-/* Extra decorative ring for active state */
+
 .pulsarRing::after {
     content: '';
     position: absolute;
@@ -340,7 +340,7 @@
     to { transform: rotate(360deg); }
 }
 
-/* Navigation Dots */
+
 .navigationDots {
     position: absolute;
     bottom: -60px;
@@ -403,18 +403,18 @@
 
 @media (max-width: 1024px) {
     .navigationDots {
-        display: none; /* Already naturally handled by scroll on mobile */
+        display: none;
     }
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
     .horizontalLogoStory {
         flex-direction: column;
         height: auto;
         padding: 50px 0;
         overflow: visible;
-        display: block; /* Break flex for natural flow */
+        display: block; 
     }
 
     .sectionHeader {
@@ -468,7 +468,7 @@
         flex: none;
         width: 100%;
         height: auto;
-        transform: none !important; /* Disable GSAP scaling on mobile if needed */
+        transform: none !important; 
     }
 
     .palmLeafCard {
@@ -478,7 +478,7 @@
     }
 
     .highlightPulsar {
-        display: none; /* Hide interactive pulsars on mobile to avoid clutter */
+        display: none;
     }
 }
 
@@ -498,7 +498,7 @@
     }
 
     .palmLeafCard {
-        min-height: 400px; /* Better for vertical text space */
+        min-height: 400px; 
     }
 
     .cardHeader {

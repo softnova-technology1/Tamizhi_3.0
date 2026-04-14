@@ -1,6 +1,6 @@
 .container {
   text-align: center;
-  /* background-color: #f5f5fa; */
+ 
   padding: 30px 20px;
 }
 
@@ -21,7 +21,7 @@
   justify-content: center;
   border: 1px solid #333;
   border-radius: 12px;
-  /* padding: 20px; */
+  
   background-color: #f8f8fc;
   position: relative;
   max-width: 950px;
@@ -79,16 +79,7 @@
   position: relative;
 }
 
-/* .circle {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  border: 2px dashed #555;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+
 
 .circle {
   width: 190px;
@@ -159,7 +150,7 @@
   pointer-events: auto;
 }
 
-/* 1280x1440 */
+
 @media (min-width: 1280px) and (max-height: 1440px) {
   .carouselBox {
     max-width: 100%;
@@ -196,7 +187,7 @@
   }
 }
 
-/* 1440x900 */
+
 @media (min-width: 1440px) and (max-height: 900px) {
   .carouselBox {
     max-width: 100%;
@@ -215,13 +206,13 @@
   }
 }
 
-/* Mobile screens */
+
 @media (max-width: 768px) {
   .carouselBox {
     flex-direction: column;
     padding: 15px;
     max-width: 100%;
-    /* display: none; */
+   
   }
 
   .carousel {
@@ -249,6 +240,6 @@
   }
 
   .arrow {
-    display: none; /* hide arrows on small screens */
+    display: none; 
   }
 }

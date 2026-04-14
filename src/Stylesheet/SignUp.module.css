@@ -22,9 +22,6 @@
   width: 100%;
 }
 
-/* :global(.row) {
-  --bs-gutter-x: -5.5rem;
-} */
 
 .createtitle {
   text-align: center;
@@ -59,7 +56,7 @@
 
 .form2 {
   justify-content: center;
-  /* display: flex; */
+  
   height: 50px;
   margin-top: 50px;
 }
@@ -179,7 +176,7 @@
   }
 
   .form2 {
-    margin-top: 35px; /* Reduced from 50px */
+    margin-top: 35px; 
   }
 
   .buttonsign1 {
@@ -187,7 +184,7 @@
   }
 
   .imagtamil1 {
-    display: none; /* Hide side image on tablets for more scroll space */
+    display: none; 
   }
 
   .createtitle {
@@ -233,7 +230,7 @@
   }
 
   .form2 {
-    margin-top: 25px; /* Reduced gap */
+    margin-top: 25px; 
     height: auto;
   }
 
