@@ -27,7 +27,6 @@ export default function Root() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Show loader for 3 seconds on every initial refresh/mount
     const timer = setTimeout(() => {
       setIsRefreshing(false);
     }, 3000);

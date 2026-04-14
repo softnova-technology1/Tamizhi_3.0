@@ -56,7 +56,6 @@ const AboutSection = () => {
 
   return (
     <div className={classes.aboutContainer}>
-      {/* Hero Section */}
       <section className={classes.heroSection}>
         <div className={classes.heroContent}>
           <h1 className={classes.heroTitle}>
@@ -69,7 +68,6 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* Intro Section */}
       <section className={classes.introSection}>
         <div className={classes.introTextContainer}>
           <h2 className={classes.introHeading}>
@@ -116,7 +114,6 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* Feature Roadmap Section */}
       <div className={classes.roadmapContainer}>
         {sections.map((section, index) => (
           <div 
@@ -127,7 +124,6 @@ const AboutSection = () => {
               <img src={section.image} alt="Step Icon" />
             </div>
             <div className={classes.roadmapContent}>
-              {/* <div className={classes.roadmapTag}></div> */}
               <h3 className={classes.roadmapTitle}>{section.title}</h3>
               <div className={classes.roadmapText}>
                 {section.content}

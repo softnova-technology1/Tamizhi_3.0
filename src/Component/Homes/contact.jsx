@@ -12,8 +12,6 @@ import {
   FaLinkedin,
 } from 'react-icons/fa';
 import scrollVideo from '../../image/contactdove.mp4';
-// import Logo from './Logo';
-
 const ContactUs = () => {
   const [fieldValue, setFieldValue] = useState({
     firstName: '',

@@ -17,7 +17,6 @@ const Topics = () => {
                     </ScrollTitle>
                 </div>
                 <div className={styles.grid}>
-                    {/* Chola Dynasty - Large Card */}
                     <div className={`${styles.card} ${styles.chola}`}>
                         <div className={styles.content}>
                             <h3>{language === 'en' ? 'CHOLA DYNASTY' : 'சோழர் அரசாட்சி'}</h3>
@@ -34,7 +33,6 @@ const Topics = () => {
                     </div>
 
                     <div className={styles.smallGrid}>
-                        {/* Historical Places - Small Card */}
                         <div className={`${styles.card} ${styles.smallCard} ${styles.historical}`} onClick={() => navigate('/historical_place')}>
                             <div className={styles.contentBottom}>
                                 <h3>{language === 'en' ? 'HISTORICAL PLACES' : 'பாரம்பரிய இடங்கள்'}</h3>
@@ -49,8 +47,6 @@ const Topics = () => {
                             </div>
                             <div className={styles.overlay}></div>
                         </div>
-
-                        {/* Tamilar - Small Card */}
                         <div className={`${styles.card} ${styles.smallCard} ${styles.tamilarSmall}`}>
                             <div className={styles.contentBottom}>
                                 <h3>{language === 'en' ? 'TAMILAR' : 'தமிழர்'}</h3>
@@ -66,8 +62,6 @@ const Topics = () => {
                             <div className={styles.overlay}></div>
                         </div>
                     </div>
-
-                    {/* Pandyan Dynasty - Full Width Bottom Card */}
                     <div className={`${styles.card} ${styles.fullWidth} ${styles.pandyan}`}>
                         <div className={styles.content}>
                             <h3>{language === 'en' ? 'PANDYAN DYNASTY' : 'பாண்டியர் அரசாட்சி'}</h3>

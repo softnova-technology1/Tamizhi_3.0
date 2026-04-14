@@ -17,7 +17,6 @@ import {
 } from 'react-icons/md';
 
 import ScrollTitle from '../Homes/ScrollTitle';
-
 import templeImg from '../../image/logoD4.png';
 import natureImg from '../../image/logoD2.png';
 import statueImg from '../../image/logoD1.png';
@@ -120,8 +119,6 @@ const Logo = () => {
 
         mm.add("(min-width: 1025px)", () => {
             const sections = gsap.utils.toArray(`.${styles.cardWrapper}`);
-
-            // Main Horizontal Scroll
             const scrollTween = gsap.to(sections, {
                 x: () => -(scrollRef.current.scrollWidth - scrollRef.current.offsetWidth),
                 ease: "none",
@@ -149,12 +146,8 @@ const Logo = () => {
                     }
                 }
             });
-
-            // Card Highlight & Active Detection
             sections.forEach((section, i) => {
                 const card = section.querySelector(`.${styles.palmLeafCard}`);
-
-                // Optimized Card Animation (no extra setActiveId triggers here as onUpdate handles it)
                 gsap.to(card, {
                     scale: 1.12,
                     duration: 0.5,
@@ -177,10 +170,7 @@ const Logo = () => {
                 ease: "sine.inOut"
             });
         });
-
-        // Mobile/Tablet specific logic if needed
         mm.add("(max-width: 1024px)", () => {
-            // Potentially add scroll reveal for cards here
             gsap.utils.toArray(`.${styles.cardWrapper}`).forEach((card, i) => {
                 gsap.from(card, {
                     opacity: 0,
@@ -216,7 +206,6 @@ const Logo = () => {
             className={styles.horizontalLogoStory}
             ref={containerRef}
         >
-            {/* Standardized Scroll Title at Top */}
             <div className={styles.sectionHeader}>
                 <ScrollTitle>
                     {language === 'en' ? 'Logo Meaning' : 'லோகோ விளக்கம்'}
@@ -231,7 +220,6 @@ const Logo = () => {
                         className={styles.mainLogo}
                     />
 
-                    {/* Element Highlights Over Logo */}
                     <div className={styles.logoHighlightOverlay}>
                         {infoData.map((item, index) => (
                             <div
@@ -247,8 +235,6 @@ const Logo = () => {
                         ))}
                     </div>
                 </div>
-
-                {/* Additional Active Buttons (Dots) */}
                 <div className={styles.navigationDots}>
                     {infoData.map((item, index) => (
                         <button

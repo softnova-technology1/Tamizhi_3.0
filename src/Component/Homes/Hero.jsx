@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import styles from '../../Stylesheet/Hero.module.css';
-import templePng from '../../image/parralaxone.png'; // Updated to use isolated gopuram
+import templePng from '../../image/parralaxone.png'; 
 import extra from "../../image/pa.png"
 import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
 import tamil1 from './../../image/Tamil_1x.webp';
@@ -27,14 +27,13 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: heroRef.current,
                     start: "top top",
-                    end: "+=200%", // Provides 2 screens' worth of scroll distance for the sequential animation
+                    end: "+=200%", 
                     scrub: 1.5,
-                    pin: true,     // This provides the scroll lock behavior
+                    pin: true,     
                     anticipatePin: 1
                 }
             });
 
-            // 1. Parallaxone Comes Up First Slowly
             tl.fromTo(pngRef.current,
                 { y: "100vh", scale: 0.7, opacity: 0 },
                 { 
@@ -45,8 +44,6 @@ const Hero = () => {
                     ease: "power2.out" 
                 }
             );
-
-            // 2. Next, Pa.png Comes Up
             tl.fromTo(pngRef2.current,
                 { y: "100vh", scale: 0.8, opacity: 0 },
                 { 
@@ -56,7 +53,6 @@ const Hero = () => {
                     duration: 2, 
                     ease: "power2.out" 
                 }
-                // Removed the negative offset as requested (sequential animation)
             );
         });
 
@@ -67,7 +63,7 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: heroRef.current,
                     start: "top top",
-                    end: "+=150%", // Mobile scroll distance
+                    end: "+=150%", 
                     scrub: 1,
                     pin: true,
                     anticipatePin: 1
@@ -121,29 +117,7 @@ const Hero = () => {
                     ref={pngRef2}
                     alt="Temple Foreground Layer"
                 />
-                {/* <div className={`containers ${styles.heroContent}`}>
-                    <div className={styles.tag}>DISCOVER HISTORY LIKE NEVER BEFORE</div>
-                    <h1 className={styles.title}>
-                        Vanakkam <br />
-                        <span className={styles.highlight}>TAMIZHI</span>
-                    </h1>
-                    <h1 className={styles.quote}>
-                        "யாதும் ஊரே யாவரும் கேளிர்"
-                    </h1>
-                    <div className={styles.actions}>
-                        <button className="btn-primarys">EXPLORE HERITAGE</button>
-                        <button className={`btn-secondarys ${styles.secondarys}`}>OUR STORY</button>
-                    </div>
-                </div> */}
                 <div className={styles.wrapper1} xs={12} sm={12} md={3}>
-                    {/* <img
-                        src={HeaderImage}
-                        alt="Background"
-                        className={styles.bgImage}
-                        fetchPriority="high"
-                        loading="eager"
-                        decoding="async"
-                    /> */}
                     <div className={styles.overlay} xs={12} sm={12} md={3}>
                         <div className={styles.heading1} xs={12} sm={12} md={3}>
                             <img

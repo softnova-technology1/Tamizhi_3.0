@@ -10,14 +10,11 @@ export default function Podcast() {
   const micRef = useRef(null);
 
   useEffect(() => {
-    // Reveal animation
     const tl = gsap.timeline();
     tl.fromTo(contentRef.current, 
       { opacity: 0, y: 100, scale: 0.9 }, 
       { opacity: 1, y: 0, scale: 1, duration: 1.8, ease: 'power4.out', delay: 0.3 }
     );
-
-    // Floating animation for mic
     gsap.to(micRef.current, {
       y: -20,
       duration: 3,
@@ -29,7 +26,6 @@ export default function Podcast() {
 
   return (
     <div className={styles.container} ref={containerRef}>
-      {/* Cinematic Background Overlay */}
       <div className={styles.vignette}></div>
       <div className={styles.mistCloud}></div>
       

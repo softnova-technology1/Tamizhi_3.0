@@ -1,7 +1,7 @@
 import SideNav from '../SideNav';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import classes from '../../../Stylesheet/RootBooks.module.css'; // Using the new CSS module
+import classes from '../../../Stylesheet/RootBooks.module.css'; 
 import booksDataEn from '../../../Language/en/books.json';
 import booksDataTN from '../../../Language/tam/books.json';
 import { useContext, useState, useEffect } from 'react';

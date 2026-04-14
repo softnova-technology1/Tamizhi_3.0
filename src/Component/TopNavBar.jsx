@@ -44,14 +44,12 @@ export default function TopNavBar({
   return (
     <header className={classes.topContainer}>
       <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between', padding: '0 60px' }}>
-        {/* Logo Section */}
+    
         <div className={classes.leftTop}>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <h1 className={classes.logo}>Tamizhi</h1>
           </Link>
         </div>
-
-        {/* Navigation Section */}
         <nav className={`${classes.active} ${classes.navBar}`}>
           <div className={classes.layout_nav_list}>
             <Link to="/" className={classes.linkStyle}>{language === 'en' ? 'Home' : 'முகப்பு'}</Link>
@@ -61,8 +59,6 @@ export default function TopNavBar({
             <Link to="/contact" className={classes.linkStyle}>{language === 'en' ? 'Contact' : 'தொடர்புக்கு'}</Link>
           </div>
         </nav>
-
-        {/* Actions Section */}
         <div className={classes.layout}>
           <div className={classes.alignment} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             {!mobileViewOn && <p className={classes.centerAlignment}>Language</p>}
@@ -102,8 +98,6 @@ export default function TopNavBar({
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu Overlay */}
       {navopen && (
         <div className={classes.layout_nav}>
           <div className={classes.layout_nav_list}>

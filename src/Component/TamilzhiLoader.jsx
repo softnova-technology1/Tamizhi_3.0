@@ -16,7 +16,7 @@ const TamilAnimation = ({ show }) => {
     
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % languages.length);
-    }, 600); // Change language every 600ms
+    }, 600);
 
     return () => clearInterval(interval);
   }, [show]);

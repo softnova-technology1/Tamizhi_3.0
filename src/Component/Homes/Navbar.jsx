@@ -23,8 +23,6 @@ const searchTextContent = [
   'mythology',
 ];
 
-
-
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -44,7 +42,6 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  // Handle scroll detection for mobile header transition
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -137,42 +134,31 @@ const Header = () => {
     <>
       <header className={`${styles.headerWrapper} fixed-top`}>
         <div className={styles.topBar}>
-          {/* Logo Section */}
           <div className={styles.leftTop}>
             <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '15px' }}>
-              {/* <div className={styles.gLogoBox}>G</div> */}
               <div className={styles.brandInfo}>
                 <span className={styles.brandMain}>
                   <span className={styles.brandText}>TAMIZHI</span>
                   <img src={hoverimg} alt="" className={styles.logoHoverOverlay} aria-hidden="true" />
                 </span>
-                {/* <span className={styles.brandSub}>SCHOLARLY ARCHIVE</span> */}
               </div>
             </Link>
           </div>
 
-          {/* Navigation Section */}
+      
           <ul className={styles.navLinks}>
             <li className={styles.navItem}><Link to="/">HOME</Link></li>
             <li className={styles.navItem}>
               <Link to="/category" onClick={(e) => {
                 e.preventDefault();
-                // Logic to toggle a category list if needed, or just link
                 navigate('/category');
               }}>CATEGORY</Link>
             </li>
             <li className={styles.navItem}><Link to="/podcast">PODCAST</Link></li>
-            {/* <li className={styles.navItem}>
-              <Link to="/category-books">
-                <FaScroll className={styles.iconScroll} /> BOOKS
-              </Link>
-            </li> */}
             <li className={styles.navItem}><Link to="/about">ABOUT</Link></li>
             <li className={styles.navItem}><Link to="/contact">CONTACT</Link></li>
-            {/* <li className={styles.navItem}><Link to="/donate">DONATE</Link></li> */}
+          
           </ul>
-
-          {/* Search Section */}
           <div className={styles.searchContainer}>
             <div className={styles.categorySection}>
               <select
@@ -217,8 +203,6 @@ const Header = () => {
               <FaSearch size={20} />
             </button>
           </div>
-
-          {/* Actions Section */}
           <div className={styles.actionButtons}>
             <a href="/write" className={styles.writeBtn}>TO WRITE</a>
 
@@ -227,8 +211,6 @@ const Header = () => {
             ) : (
               <button className={styles.loginBtn} onClick={() => navigate('/login')}>LOGIN</button>
             )}
-
-            {/* Premium Language Switcher */}
             <div className={styles.premiumLangSwitcher}>
               <button 
                 className={`${styles.langTab} ${language === 'en' ? styles.langTabActive : ''}`} 
@@ -371,20 +353,6 @@ const Header = () => {
           )}
         </div>
       </div>
-
-      {/* <Modal
-        show={showModal}
-        onHide={handleModal}
-        centered
-        className={styles.loginModal}
-      >
-        <div className={styles.modalContent}>
-          <button className={styles.closeButton} onClick={handleModal}>
-            &times;
-          </button>
-          <Login homePage={true} handleModal={handleModal} />
-        </div>
-      </Modal> */}
     </>
   );
 };

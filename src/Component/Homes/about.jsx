@@ -1,5 +1,4 @@
 import styles from '../../Stylesheet/abouthome.module.css';
-// import about from './../../image/ancient_dancer.png';
 import bharatham from "../../image/bharatha.mp4"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
@@ -33,8 +32,6 @@ const AboutUs = ({ lang = 'en' }) => {
   return (
     <div className={styles.aboutContainer}>
       <div className='containers'>
-
-        {/* Decorative Corner Ornaments */}
         <div className={styles.topDecoration}>
           <svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 10 Q 25 0, 50 10 T 100 10" fill="none" stroke="#8b4513" strokeWidth="2" />

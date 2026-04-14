@@ -44,8 +44,6 @@ const WriteContent = () => {
     emailjs.init({
       publicKey: 'd4SFdVVQWcQPp5o-d',
     });
-
-    // Vertical Unrolling Animation using clip-path
     const ctx = gsap.context(() => {
       gsap.fromTo(formRef.current,
         {
@@ -65,8 +63,6 @@ const WriteContent = () => {
           }
         }
       );
-
-      // Animate inner contents separately for a "sliding out" effect
       gsap.fromTo(contentsRef.current,
         { opacity: 0, scaleY: 0.8, transformOrigin: "top" },
         {
@@ -288,19 +284,6 @@ const WriteContent = () => {
                 </p>
               )}
             </div>
-
-            {/* <div className={styles.inputRow}>
-              <input
-                type="file"
-                id="file"
-                name="file_data"
-                accept="image/*"
-                onChange={handleFileChange}
-                className={styles.input}
-                aria-label="File Upload"
-              />
-            </div> */}
-
             <button type="submit" className={styles.button}>
               {language === 'en' ? "SEAL" : "அனுப்புக"}
             </button>
