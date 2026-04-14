@@ -3,7 +3,6 @@ import styles from '../../Stylesheet/Navbar.module.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdOutlineMenuOpen, MdPerson } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
-import hoverimg from '../../image/hoverimg.png'
 import { Context } from '../../Context/contextApi';
 
 const kings = ['chola', 'chera', 'pandyan', 'kalabhra', 'pallavas'];
@@ -139,7 +138,7 @@ const Header = () => {
               <div className={styles.brandInfo}>
                 <span className={styles.brandMain}>
                   <span className={styles.brandText}>TAMIZHI</span>
-                  <img src={hoverimg} alt="" className={styles.logoHoverOverlay} aria-hidden="true" />
+                  <img src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/hoverimg.png" alt="" className={styles.logoHoverOverlay} aria-hidden="true" />
                 </span>
               </div>
             </Link>

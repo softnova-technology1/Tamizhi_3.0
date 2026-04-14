@@ -4,8 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import styles from '../../Stylesheet/Hero.module.css';
 import templePng from '../../image/parralaxone.png'; 
-import extra from "../../image/pa.png"
-import vanakkam from './../../image/Vanakkam TAMIZHI.webp';
+import extra from "../../image/pa.png";
 import tamil1 from './../../image/Tamil_1x.webp';
 import tamil2 from './../../image/Tamil_2x.webp';
 import { Context } from '../../Context/contextApi';
@@ -106,13 +105,14 @@ const Hero = () => {
             <div className={styles.stickyContainer}>
                 <div className={styles.overlay}></div>
                 <img
-                    src={templePng}
+                  src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/fi.png"
+                    
                     className={styles.templeImageLayer1}
                     ref={pngRef}
                     alt="Temple Background Layer"
                 />
                 <img
-                    src={extra}
+                  src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/pa.png"
                     className={styles.templeImageLayer2}
                     ref={pngRef2}
                     alt="Temple Foreground Layer"
@@ -121,7 +121,7 @@ const Hero = () => {
                     <div className={styles.overlay} xs={12} sm={12} md={3}>
                         <div className={styles.heading1} xs={12} sm={12} md={3}>
                             <img
-                                src={vanakkam}
+                                src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Image20250415120403.webp"
                                 alt="Vanakkam"
                                 className={styles.vanakkamImage}
                                 loading="lazy"
@@ -139,7 +139,7 @@ const Hero = () => {
                         <div className={styles.symbol}>
                             {mobileViewOn ? (
                                 <img
-                                    src={tamil1}
+                                    src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Tamil_2x.webp"
                                     alt="Tamil Symbol"
                                     srcSet={`${tamil1} 1x, ${tamil2} 2x`}
                                     className={styles.tamil2Image}

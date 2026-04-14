@@ -184,7 +184,7 @@
 }
 
 .sandBg{
-  background-image: url("./image/sand.png");
+  background-image: url("https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/sand.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

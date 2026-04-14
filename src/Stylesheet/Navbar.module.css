@@ -2,7 +2,7 @@
 
 .headerWrapper {
   font-family: 'EB Garamond', serif;
-  background: url("../image/premium_header_texture.png") repeat;
+  background: url("https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/premium_header_texture.png") repeat;
   padding: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid #5a4a35;
@@ -1199,7 +1199,7 @@
   }
 }
 
-@media(min-width: 1440px) {
+@media(max-width: 1440px) {
    .topBar {
     padding: 12px 30px;
   } 
