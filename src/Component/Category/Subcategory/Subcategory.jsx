@@ -13,7 +13,6 @@ import kalabhra from '../../../image/kalabhra-img.png';
 import pallava from '../../../image/pallava-head.jpg';
 import { useContext, useEffect, useState, useRef } from 'react';
 import { Context } from '../../../Context/contextApi';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -119,16 +118,15 @@ const jsonSet = {
 function Subcategory() {
   const name = useParams().value;
   const { language } = useContext(Context);
-  const [show, setShow] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
-    if (!show && (name === 'history' || name === 'kings')) {
+    if (isLoaded && (name === 'history' || name === 'kings')) {
       cardsRef.current.forEach((card, index) => {
         if (card) {
           gsap.fromTo(
@@ -161,7 +159,7 @@ function Subcategory() {
         { opacity: 1, y: 0, duration: 1.5, ease: 'back.out(1.7)' }
       );
     }
-  }, [show, name]);
+  }, [isLoaded, name]);
 
   const tamilHead = name
     ? language !== 'en' && name.toLowerCase() === 'history'
@@ -172,7 +170,6 @@ function Subcategory() {
   if (name === 'history' || name === 'kings') {
     return (
       <>
-        {show && <TamilAnimation show={setShow} />}
         <div className={historyStyles.backgroundContainer}>
           <Container>
             <div className={historyStyles.titleWrapper}>

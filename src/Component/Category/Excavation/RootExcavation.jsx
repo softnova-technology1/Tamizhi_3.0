@@ -7,7 +7,6 @@ import { useContext } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
 import { useEffect, useState } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Helmet } from 'react-helmet';
 import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
@@ -15,11 +14,6 @@ import classes from '../../../Stylesheet/RootBooks.module.css';
 export default function RootExcavation() {
   const { language, darkmode, navopen } = useContext(Context);
   const location = useLocation();
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const data =
     language === 'en'
       ? excavationDataEn['excavation']
@@ -27,7 +21,6 @@ export default function RootExcavation() {
 
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

@@ -4,7 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import historical_placeDataEn from '../../../Language/en/historical_place.json';
 import historical_placeDataTN from '../../../Language/tam/historical_place.json';
 import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
 import ImageComponent from '../../ImageComponent.jsx';
@@ -15,11 +14,6 @@ import classes from '../../../Stylesheet/RootBooks.module.css';
 export default function RootHistoricalPlace() {
   const { language, darkmode, navopen } = useContext(Context);
   const nameOfContent = 'historical_place';
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const [readMore, setReadMore] = useState(false);
   function handleReadMore() {
     setReadMore(true);
@@ -33,7 +27,6 @@ export default function RootHistoricalPlace() {
       : historical_placeDataTN[nameOfContent];
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

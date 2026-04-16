@@ -6,7 +6,6 @@ import kingDataTN from '../../../Language/tam/kings.json';
 import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Helmet } from 'react-helmet';
 import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
@@ -47,11 +46,6 @@ export default function RootHistory() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const nameOfContent = 'kings';
   const location = useLocation();
   const params = useParams();
@@ -66,7 +60,6 @@ export default function RootHistory() {
   let imgUrl = contentData[params.kingsValue.toLowerCase()].imgUrl;
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

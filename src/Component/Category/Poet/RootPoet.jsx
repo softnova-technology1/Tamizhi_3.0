@@ -5,7 +5,6 @@ import poetDataEn from '../../../Language/en/poet.json';
 import poetDataTN from '../../../Language/tam/poet.json';
 import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
 import classes from '../../../Stylesheet/RootBooks.module.css';
@@ -18,18 +17,12 @@ export default function RootPoet() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const location = useLocation();
   const nameOfContent = 'poet';
 
   const data = language === 'en' ? poetDataEn['poet'] : poetDataTN['poet'];
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
               fluid
               className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

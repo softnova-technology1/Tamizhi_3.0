@@ -8,7 +8,6 @@ import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
 import ImageComponent from '../../ImageComponent.jsx';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
 
 export default function RootCulture() {
@@ -18,11 +17,6 @@ export default function RootCulture() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const location = useLocation();
 
   const data =
@@ -30,7 +24,6 @@ export default function RootCulture() {
   const nameOfContent = 'culture';
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

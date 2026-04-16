@@ -64,10 +64,7 @@ const AboutUs = ({ lang = 'en' }) => {
         </div>
 
         <div className={styles.imageSection}>
-          <video autoPlay loop muted className={styles.aboutImage}
-            loading="lazy"
-            decoding="async"
-            fetchPriority="low">
+          <video autoPlay loop muted className={styles.aboutImage} preload="none">
             <source src={bharatham} type="video/mp4" />
           </video>
         </div>

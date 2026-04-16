@@ -3,8 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import mythologyDataEn from '../../../Language/en/mythology.json';
 import mythologyDataTN from '../../../Language/tam/mythology.json';
-import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
+import { useContext, useState } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
@@ -18,11 +17,6 @@ export default function RootMythology() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const location = useLocation();
 
   const nameOfContent = 'mythology';
@@ -32,7 +26,6 @@ export default function RootMythology() {
       : mythologyDataTN['mythology'];
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
        <Container
               fluid
               className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

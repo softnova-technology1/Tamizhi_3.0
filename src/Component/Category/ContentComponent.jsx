@@ -13,11 +13,21 @@ export default function ContentComponent() {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
 
-  const hash = location.hash ? decodeURIComponent(location.hash.substring(1)) : null;
+  const safeDecode = (str) => {
+    try {
+      return decodeURIComponent(str);
+    } catch (e) {
+      return str;
+    }
+  };
+
+  const hash = location.hash ? safeDecode(location.hash.substring(1)) : null;
   let activeSections = [];
   let isIntroduction = false;
 
-  const normalize = (s) => (s || '').trim().toLowerCase().replace(/[\s,._-]+/g, '_');
+  const normalize = (s) => (s || '').trim().toLowerCase()
+    .replace(/[^\w\u00C0-\u1FFF\u2C00-\uD7FF]+/g, '_')
+    .replace(/^_+|_+$/g, '');
   const genericSections = [
     "intro", "background", "course", "outcome", "significance", "conclusion", "sources", "summary", 
     "reign", "legacy", "early", "middle", "later", "history", "administration", "religion", "society",
@@ -33,7 +43,7 @@ export default function ContentComponent() {
 
   useEffect(() => {
     if (location.hash) {
-      const elementId = normalize(decodeURIComponent(location.hash.substring(1)));
+      const elementId = normalize(safeDecode(location.hash.substring(1)));
       const timer = setTimeout(() => {
         const element = document.getElementById(elementId);
         if (element) {
@@ -76,18 +86,18 @@ export default function ContentComponent() {
           </div>
         )}
 
-        {item.description && item.description.map((desc, i) => (
+        {item.description && (Array.isArray(item.description) ? item.description : [item.description]).map((desc, i) => (
           <p key={`desc_${i}`} className={classes.contentDescription} style={{ color: darkmode === 'off' ? '#35383d' : '#d1c9c9' }}>
-            {desc.split(/<\/br>|<br>|<br\/>/).map((text, j, arr) => (
+            {desc && typeof desc === 'string' ? desc.split(/<\/br>|<br>|<br\/>/).map((text, j, arr) => (
               <span key={j}>
                 {text}
                 {j < arr.length - 1 && <br />}
               </span>
-            ))}
+            )) : desc}
           </p>
         ))}
 
-        {item.list && (
+        {item.list && Array.isArray(item.list) && (
           <ul className={classes.contentList}>
             {item.list.map((listItem, i) => (
               <li key={`li_${i}`} style={{ color: darkmode === 'off' ? '#35383d' : '#d1c9c9' }}>
@@ -97,7 +107,7 @@ export default function ContentComponent() {
           </ul>
         )}
 
-        {item.details && item.details.map((detail, i) => (
+        {item.details && (Array.isArray(item.details) ? item.details : [item.details]).map((detail, i) => (
           <p key={`detail_${i}`} className={classes.contentDescription} style={{ color: darkmode === 'off' ? 'black' : '#d1c9c9', fontWeight: 600 }}>
             {detail}
           </p>
@@ -148,6 +158,8 @@ export default function ContentComponent() {
         }
       }
     } else {
+    const usedIds = new Map();
+    let currentMajorHeading = data.title;
     const processedSubTitles = (data.subTitle || []).map(sub => {
       const isGeneric = genericSections.some(g => sub.subHeading.toLowerCase().includes(g));
       if (!isGeneric) currentMajorHeading = sub.subHeading;
@@ -156,7 +168,16 @@ export default function ContentComponent() {
         ? sub.subHeading
         : `${currentMajorHeading}_${sub.subHeading}`;
 
-      return { ...sub, normalizedSubHeading: normalize(contextualId), isGeneric, majorHeading: currentMajorHeading };
+      let normalizedSubHeading = normalize(contextualId);
+      if (usedIds.has(normalizedSubHeading)) {
+        const count = usedIds.get(normalizedSubHeading) + 1;
+        usedIds.set(normalizedSubHeading, count);
+        normalizedSubHeading = `${normalizedSubHeading}_${count}`;
+      } else {
+        usedIds.set(normalizedSubHeading, 1);
+      }
+
+      return { ...sub, normalizedSubHeading, isGeneric, majorHeading: currentMajorHeading };
     });
 
     const targetItem = processedSubTitles.find(s => s.normalizedSubHeading === normalizedHash);
@@ -420,18 +441,18 @@ export default function ContentComponent() {
               </Container>
             )}
             {data.description &&
-              data.description.map((descriptionArray) => (
+              (Array.isArray(data.description) ? data.description : [data.description]).map((descriptionArray) => (
                 <p
                   key={`${data.title}_desc_${getRandomInt()}`}
                   style={{ color: darkmode === 'off' ? '#35383d' : '#d1c9c9' }}
                   className={classes.marginBottomdes}
                 >
-                  {descriptionArray.split(/<\/br>|<br>|<br\/>/).map((text, i, arr) => (
+                  {descriptionArray && typeof descriptionArray === 'string' ? descriptionArray.split(/<\/br>|<br>|<br\/>/).map((text, i, arr) => (
                     <span key={i}>
                       {text}
                       {i < arr.length - 1 && <br />}
                     </span>
-                  ))}
+                  )) : descriptionArray}
                 </p>
               ))}
 

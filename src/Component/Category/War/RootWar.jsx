@@ -4,7 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import warDataEn from '../../../Language/en/war.json';
 import warDataTN from '../../../Language/tam/war.json';
 import { useContext, useState, useEffect } from 'react';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Context } from '../../../Context/contextApi.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
@@ -18,11 +17,6 @@ export default function RootWar() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const nameOfContent = 'war';
 
   const location = useLocation();
@@ -30,7 +24,6 @@ export default function RootWar() {
   const data = language === 'en' ? warDataEn['war'] : warDataTN['war'];
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

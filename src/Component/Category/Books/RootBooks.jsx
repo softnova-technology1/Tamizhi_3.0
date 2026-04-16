@@ -8,7 +8,6 @@ import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
 
 export default function RootBooks() {
@@ -18,11 +17,6 @@ export default function RootBooks() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const nameOfContent = 'books';
 
   const location = useLocation();
@@ -31,7 +25,6 @@ export default function RootBooks() {
 
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

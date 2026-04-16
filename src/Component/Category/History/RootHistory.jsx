@@ -8,7 +8,6 @@ import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import { Helmet } from 'react-helmet';
 import ImageComponent from '../../ImageComponent.jsx';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import bgImage from '../../../image/sand.png';
 
 const contentData = {
@@ -44,11 +43,6 @@ export default function RootHistory() {
   function handleReadMore() {
     setReadMore(true);
   }
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   const nameOfContent = 'history';
 
   const { language, darkmode, navopen } = useContext(Context);
@@ -67,7 +61,6 @@ export default function RootHistory() {
   let imgUrl = contentData[params.historyValue.toLowerCase()].imgUrl;
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}

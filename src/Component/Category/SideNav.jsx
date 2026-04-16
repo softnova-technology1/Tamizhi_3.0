@@ -91,8 +91,20 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
       </h1>
       
       {(() => {
-        const normalize = (s) => (s || '').trim().toLowerCase().replace(/[\s,._-]+/g, '_');
+        const normalize = (s) => (s || '').trim().toLowerCase()
+          .replace(/[^\w\u00C0-\u1FFF\u2C00-\uD7FF]+/g, '_')
+          .replace(/^_+|_+$/g, '');
+
+        const safeDecode = (str) => {
+          try {
+            return decodeURIComponent(str);
+          } catch (e) {
+            return str;
+          }
+        };
+
         const introLabel = language === 'en' ? 'Introduction' : 'அறிமுகம்';
+        const currentHash = normalize(safeDecode(location.hash).substring(1));
         
         let displayItems = [];
         
@@ -153,7 +165,6 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
           return { ...item, normalizedHeading, isGeneric, currentMajorHeading };
         });
 
-        const currentHash = normalize(decodeURIComponent(location.hash).substring(1));
         let activeIndex = processedItems.findIndex(item => item.normalizedHeading === currentHash);
         
         if (activeIndex === -1) activeIndex = 0;
@@ -196,7 +207,9 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                 }}
                 onClick={(e) => {
                   e.preventDefault();
-                  navigate(targetHash, { replace: true });
+                  // For hash-based navigation on the same page, window.location.hash is more reliable
+                  const cleanHash = item.normalizedHeading;
+                  window.location.hash = cleanHash;
                   
                   if (window.innerWidth <= 991) {
                     const navContainer = document.querySelector(`.${classes.navItemsContainer}`);
@@ -204,7 +217,7 @@ export default function SideNav({ data, nameOfContent, handleReadMore = () => {}
                       const y = navContainer.getBoundingClientRect().top + window.scrollY - 20;
                       window.scrollTo({ top: y, behavior: 'smooth' });
                     }
-                   }
+                  }
                 }}
               >
                 <button

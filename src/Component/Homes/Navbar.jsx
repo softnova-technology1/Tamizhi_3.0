@@ -14,7 +14,7 @@ const searchTextContent = [
   'culture',
   'temple',
   'architecture',
-  'historical place',
+  'historical_place',
   'poet',
   'books',
   'lord',
@@ -109,7 +109,7 @@ const Header = () => {
         navigate(`/subcategory/${serachingText}`);
       } else {
         let contentText = searchTextContent.find(
-          (item) => item === serachingText,
+          (item) => item.toLowerCase() === serachingText.replace(/\s+/g, '_'),
         );
         let findings1 = kings.find((item) => item === serachingText);
         let findings2 = history.find((item) => item === serachingText);
@@ -121,8 +121,10 @@ const Header = () => {
             navigate(`/history/${serachingText}`);
           } else if (findings1) {
             navigate(`/kings/${serachingText}`);
+          } else if (serachingText === 'books' || contentText === 'books') {
+            navigate('/category-books');
           } else {
-            navigate(`/${serachingText}`);
+            navigate(`/${contentText || serachingText.replace(/\s+/g, '_')}`);
           }
         }
       }
@@ -340,9 +342,9 @@ const Header = () => {
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/culture')}>Culture</div>
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/temple')}>Temple</div>
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/architecture')}>Architecture</div>
-                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/historical places')}>Historical places</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/historical_place')}>Historical places</div>
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/poet')}>Poet</div>
-                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/books')}>Books</div>
+                  <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/category-books')}>Books</div>
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/lord')}>Lord</div>
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/excavation')}>Excavation</div>
                   <div className={styles.catItem} onClick={() => handleSelectAndClose('categorySelection', '/mythology')}>Mythology</div>

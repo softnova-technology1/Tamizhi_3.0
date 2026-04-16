@@ -373,6 +373,19 @@
       loading="eager"
       type="image/webp"
     />
+    <!-- Critical Background Preloads -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://tamizhiv2.s3.eu-north-1.amazonaws.com/main-hero.png"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/sand.png"
+      fetchpriority="low"
+    />
     <link
       rel="preload"
       href="/fonts/Ananthabairavi-Regular.woff2"
@@ -380,27 +393,25 @@
       type="font/woff2"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload critical fonts to break request chains -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Kavivanar&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="preload"
+      href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_eeA.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Consolidated Google Fonts Link - Optimized with specific weights and display=swap -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600;700&family=Outfit:wght@400;600&family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Arima:wght@400;700&family=Kavivanar&display=swap"
       rel="stylesheet"
     />
 
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Tamizhi | Explore Tamil History, Culture & Heritage</title>
   </head>
   <body>

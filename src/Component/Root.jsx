@@ -29,7 +29,7 @@ export default function Root() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsRefreshing(false);
-    }, 3000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
 

@@ -166,9 +166,7 @@ const ContactUs = () => {
               loop
               muted
               className={styles.contactImage}
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
+              preload="none"
             >
               <source src={scrollVideo} type="video/mp4" />
             </video>

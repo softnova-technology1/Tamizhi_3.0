@@ -124,7 +124,8 @@ const Hero = () => {
                                 src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Image20250415120403.webp"
                                 alt="Vanakkam"
                                 className={styles.vanakkamImage}
-                                loading="lazy"
+                                loading="eager"
+                                fetchpriority="high"
                                 decoding="async"
                                 width="590"
                                 height="300"
@@ -143,6 +144,9 @@ const Hero = () => {
                                     alt="Tamil Symbol"
                                     srcSet={`${tamil1} 1x, ${tamil2} 2x`}
                                     className={styles.tamil2Image}
+                                    loading="eager"
+                                    fetchpriority="high"
+                                    decoding="async"
                                     width="300"
                                     height="200"
                                 />
@@ -151,6 +155,9 @@ const Hero = () => {
                                     src={tamil2}
                                     alt="Tamil Symbol"
                                     className={styles.tamil2Image}
+                                    loading="eager"
+                                    fetchpriority="high"
+                                    decoding="async"
                                     width="600"
                                     height="400"
                                 />

@@ -6,7 +6,6 @@ import lordDataTn from '../../../Language/tam/lord.json';
 import { useContext, useState, useEffect } from 'react';
 import ImageComponent from '../../ImageComponent';
 import { Context } from '../../../Context/contextApi';
-import TamilAnimation from '../../TamilzhiLoader.jsx';
 import { Helmet } from 'react-helmet';
 import bgImage from '../../../image/sand.png';
 import classes from '../../../Stylesheet/RootBooks.module.css';
@@ -16,11 +15,6 @@ export default function RootLord() {
   const { language } = useContext(Context);
   const data = language === 'en' ? lordDataEn['lord'] : lordDataTn['lord'];
   const [readMore, setReadMore] = useState(false);
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
   function handleReadMore() {
     setReadMore(true);
   }
@@ -32,7 +26,6 @@ export default function RootLord() {
 
   return (
     <>
-      {show && <TamilAnimation show={setShow} />}
       <Container
         fluid
         className={`${classes.rootContainer} ${darkmode !== 'off' ? classes.darkTheme : ''}`}
