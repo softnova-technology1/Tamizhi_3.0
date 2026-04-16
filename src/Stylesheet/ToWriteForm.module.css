@@ -17,7 +17,7 @@
 
 #towrite{
   padding-top: 12rem;
-  background-image: url('../image/sand.png')!important;
+  background-image: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/sand.webp')!important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: bottom !important;

@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import sign from '../../Stylesheet/SignUp.module.css';
 import { Col, Container, Row, Button, Form } from 'react-bootstrap';
-import tamil1 from './../../image/FINAL-LOGO.png';
 import {
   Form as RouterForm,
   useSubmit,
@@ -17,8 +16,6 @@ import {
   confirmPasswordCheck,
 } from '../../utility/Validation';
 import Spinner from '../Spinner';
-import backBtnImg from '../../image/bacbtn.png';
-
 export default function SignUp() {
   const navigate = useNavigate();
   const [fieldValue, setFieldValue] = useState({
@@ -135,7 +132,7 @@ export default function SignUp() {
         onClick={() => navigate(-1)}
         title="Back"
       >
-        <img src={backBtnImg} alt="Back" />
+        <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/bacbtn.webp"} alt="Back" />
       </button>
       <Container
         fluid
@@ -309,7 +306,7 @@ export default function SignUp() {
           </Col>
 
           <Col md={5} className={sign.imagtamil1}>
-            <img src={tamil1} className={sign.imagtamil2} alt="tamizhi-logo" />
+            <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/FINAL-LOGO.webp"} className={sign.imagtamil2} alt="tamizhi-logo" />
           </Col>
         </Row>
       </Container>
@@ -330,7 +327,7 @@ export async function action({ request }) {
 
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/user/signup`,
+      `${import.meta.env.VITE_APP_BACKEND_URL}/user/signup`,
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },

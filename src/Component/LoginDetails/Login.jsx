@@ -3,15 +3,12 @@ import { Suspense, useContext, useState, lazy } from 'react';
 import log from '../../Stylesheet/loginpage.module.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import thamil from '../../image/FINAL-LOGO.png';
 import {
   Form as ReactRouterForm,
   useNavigate,
   Link,
   redirect,
 } from 'react-router-dom';
-import backBtnImg from '../../image/bacbtn.png';
-
 import { Context } from '../../Context/contextApi';
 import Spinner from '../Spinner';
 const GoogleLogin = lazy(() =>
@@ -34,7 +31,7 @@ export default function Login({ homePage, handleModal }) {
     try {
       handleSetLoading(true);
       let response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/user/login`,
+        `${import.meta.env.VITE_APP_BACKEND_URL}/user/login`,
         {
           method: 'POST',
           headers: {
@@ -79,7 +76,7 @@ export default function Login({ homePage, handleModal }) {
       try {
         handleSetLoading(true);
         let response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/user/login`,
+          `${import.meta.env.VITE_APP_BACKEND_URL}/user/login`,
           {
             method: 'POST',
             headers: {
@@ -162,7 +159,7 @@ export default function Login({ homePage, handleModal }) {
           onClick={() => navigate(-1)}
           title="Back"
         >
-          <img src={backBtnImg} alt="Back" />
+          <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/bacbtn.webp"} alt="Back" />
         </button>
       )}
       <Container style={{ opacity: loading ? '0.3' : '', padding: homePage ? '0' : '' }}>
@@ -274,7 +271,7 @@ export default function Login({ homePage, handleModal }) {
           {!homePage && (
             <Col xs={12} sm={12} md={6} className={log.forms1}>
               <div className={log.image}>
-                <img src={thamil} alt="Thamil-img" className={log.tamilimgs} />
+                <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/FINAL-LOGO.webp"} alt="Thamil-img" className={log.tamilimgs} />
               </div>
             </Col>
           )}
@@ -292,7 +289,7 @@ export async function action({ request, params }) {
   };
   try {
     let response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/user/login`,
+      `${import.meta.env.VITE_APP_BACKEND_URL}/user/login`,
       {
         method: 'POST',
         headers: {

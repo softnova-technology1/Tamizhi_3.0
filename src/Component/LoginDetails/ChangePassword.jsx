@@ -4,8 +4,6 @@ import { passwordCheck, confirmPasswordCheck } from '../../utility/Validation';
 import { useSearchParams, useNavigate, Form } from 'react-router-dom';
 import { Context } from '../../Context/contextApi';
 import Spinner from '../Spinner';
-import backBtnImg from '../../image/bacbtn.png';
-
 const ChangePassword = () => {
   const [fieldValue, setFieldValue] = useState({
     newPassword: '',
@@ -50,7 +48,7 @@ const ChangePassword = () => {
         try {
           handleSetLoading(true);
           let response = await fetch(
-            `${process.env.REACT_APP_BACKEND_URL}/user/reset-password`,
+            `${import.meta.env.VITE_APP_BACKEND_URL}/user/reset-password`,
             {
               method: 'POST',
               headers: { 'content-type': 'application/json' },
@@ -165,7 +163,7 @@ const ChangePassword = () => {
         onClick={() => navigate(-1)}
         title="Back"
       >
-        <img src={backBtnImg} alt="Back" />
+        <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/bacbtn.webp"} alt="Back" />
       </button>
       <div
         className={styles.container}

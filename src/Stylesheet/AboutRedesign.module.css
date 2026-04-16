@@ -17,7 +17,7 @@ html {
 .aboutContainer {
   font-family: 'Outfit', sans-serif;
   color: var(--text-dark);
-  background: url('../image/sand.png') no-repeat bottom fixed;
+  background: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/sand.webp') no-repeat bottom fixed;
   background-size: cover;
   overflow-x: hidden;
   padding-bottom: 5rem;
@@ -30,7 +30,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(44, 26, 18, 0.4), rgba(44, 26, 18, 0.6)), url('../image/About-img2.png');
+  background: linear-gradient(rgba(44, 26, 18, 0.4), rgba(44, 26, 18, 0.6)), url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/About-img2.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

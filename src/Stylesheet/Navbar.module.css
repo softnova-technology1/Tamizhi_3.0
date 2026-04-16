@@ -2,7 +2,7 @@
 
 .headerWrapper {
   font-family: 'EB Garamond', serif;
-  background: url("https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/premium_header_texture.png") repeat;
+  background: url("https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/premium_header_texture.webp") repeat;
   padding: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid #5a4a35;
@@ -855,8 +855,8 @@
     width: 80%;
     max-width: 380px;
     height: 100vh;
-    background: rgba(18, 18, 18, 0.92); /* Increased opacity slightly */
-    backdrop-filter: blur(10px) saturate(150%); /* Reduced blur for sharpness */
+    background: rgba(18, 18, 18, 0.92); 
+    backdrop-filter: blur(10px) saturate(150%); 
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     padding: 40px 30px;
     display: flex;
@@ -1123,7 +1123,7 @@
 
 .modalContent {
   position: relative;
-  background: url('../image/parchment_card.png') no-repeat center center !important;
+  background: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/parchment_card.webp') no-repeat center center !important;
   background-size: 100% 100% !important;
   padding: 20px !important;
   border-radius: 12px;

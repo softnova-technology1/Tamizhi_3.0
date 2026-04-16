@@ -1,5 +1,4 @@
 import styles from '../../Stylesheet/abouthome.module.css';
-import bharatham from "../../image/bharatha.mp4"
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../Context/contextApi';
@@ -68,7 +67,7 @@ const AboutUs = ({ lang = 'en' }) => {
             loading="lazy"
             decoding="async"
             fetchPriority="low">
-            <source src={bharatham} type="video/mp4" />
+            <source src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi-videos/bharatha.webm" type="video/mp4" />
           </video>
         </div>
         </div>

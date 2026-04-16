@@ -113,24 +113,24 @@
 }
 
 .chola {
-    background-image: url('../image/cholas.png');
+    background-image: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Chola.webp');
 }
 
 .historical {
-    background-image: url('../image/historys.png');
+    background-image: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/historys.webp');
 }
 
 .pandyan {
-    background-image: url('../image/pandyan.png');
+    background-image: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/pandyan.webp');
 }
 
-.tamilar {
+/* .tamilar {
     background-image: url('../image/pand.png');
    
-}
+} */
 
 .tamilarSmall {
-    background-image: url('../image/Tamilars.png');
+    background-image: url('https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Tamilars.webp');
     background-position: top;
 }
 

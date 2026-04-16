@@ -41,7 +41,7 @@ export default function App() {
       try {
         handleSetLoading(true);
         let response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/user/find-user`,
+          `${import.meta.env.VITE_APP_BACKEND_URL}/user/find-user`,
           {
             method: 'GET',
             headers: {

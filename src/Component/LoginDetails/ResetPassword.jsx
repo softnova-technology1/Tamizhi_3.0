@@ -3,7 +3,6 @@ import { useRef, useState } from 'react';
 import { Form, useNavigate } from 'react-router-dom';
 import { emailCheck } from '../../utility/Validation';
 import Spinner from '../Spinner';
-import backBtnImg from '../../image/bacbtn.png';
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ const ResetPassword = () => {
       try {
         handleSetLoading(true);
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/user/forgot-password`,
+          `${import.meta.env.VITE_APP_BACKEND_URL}/user/forgot-password`,
           {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -90,7 +89,7 @@ const ResetPassword = () => {
         onClick={() => navigate(-1)}
         title="Back"
       >
-        <img src={backBtnImg} alt="Back" />
+        <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/bacbtn.webp"} alt="Back" />
       </button>
       <div
         className={styles.container}

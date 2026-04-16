@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import styles from '../../Stylesheet/Podcast.module.css';
 import { FaYoutube, FaInstagram, FaFacebook, FaLinkedin, FaMicrophoneAlt } from 'react-icons/fa';
 import gsap from 'gsap';
-import logoImg from '../../image/Vanakkam TAMIZHI.webp';
-
 export default function Podcast() {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
@@ -37,7 +35,7 @@ export default function Podcast() {
         
         <div className={styles.content} ref={contentRef}>
           <div className={styles.logoWrapper}>
-             <img src={logoImg} alt="Tamizhi" className={styles.tamilLogo} />
+             <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Image20250415120403.webp"} alt="Tamizhi" className={styles.tamilLogo} />
           </div>
           
           <div className={styles.textContainer}>
