@@ -9,7 +9,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from './Homes/Navbar';
 import ScrollToTopComponent from './ScrollToTopComponent';
 import Spinner from './Spinner';
-import backBtnImg from '../image/bacbtn.png';
 
 export default function Root() {
   const {
@@ -96,7 +95,7 @@ export default function Root() {
           onClick={() => navigate(-1)}
           title="Back"
         >
-          <img src={backBtnImg} alt="Back" />
+          <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/bacbtn.webp"} alt="Back" />
         </button>
       )}
       <Container

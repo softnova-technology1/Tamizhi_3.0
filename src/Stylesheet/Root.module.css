@@ -43,7 +43,7 @@
 
 .modalContainer {
   padding: 85px 50px 70px 50px;
-  background: url("../image/loginback.png") no-repeat center center;
+  background: url("https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/loginback.webp") no-repeat center center;
   background-size: 100% 100%;
   width: 540px;
   min-height: 640px;
@@ -159,17 +159,14 @@
   width: 65px;
   height: 65px;
   border: none;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  border-radius: 50%;
+  background: transparent;
   cursor: pointer;
   z-index: 10002;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding: 10px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   animation: floatEffect 3s ease-in-out infinite;
 }
 
@@ -182,8 +179,6 @@
 
 .imageBackButton:hover {
   transform: scale(1.1) rotate(-5deg);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 .imageBackButton:active {

@@ -8,7 +8,7 @@ import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../../Context/contextApi.jsx';
 import ImageComponent from '../../ImageComponent.jsx';
 import { Helmet } from 'react-helmet';
-import bgImage from '../../../image/sand.png';
+import TamilAnimation from '../../TamilzhiLoader.jsx';
 
 export default function RootBooks() {
   const { language, darkmode, navopen } = useContext(Context);
@@ -61,7 +61,7 @@ export default function RootBooks() {
               <div
                 className={classes.ancientCard}
                 style={{
-                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url(${bgImage})`,
+                  backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.4)), url("https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/sand.webp")`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center bottom',
                   backgroundAttachment: 'fixed',

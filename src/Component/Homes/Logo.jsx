@@ -4,8 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import styles from '../../Stylesheet/Logo.module.css';
 import { Context } from '../../Context/contextApi';
-import logoImg from '../../image/FINAL-LOGO.png';
-
+import ScrollTitle from './ScrollTitle';
 import {
     MdOutlineWbSunny,
     MdAccountBalance,
@@ -15,16 +14,6 @@ import {
     MdTranslate,
     MdHistoryEdu
 } from 'react-icons/md';
-
-import ScrollTitle from '../Homes/ScrollTitle';
-import templeImg from '../../image/logoD4.png';
-import natureImg from '../../image/logoD2.png';
-import statueImg from '../../image/logoD1.png';
-import palmImg from '../../image/logoD3.png';
-import tamilImg from '../../image/logoD5.png';
-import mapImg from '../../image/logoD6.png';
-import grammarImg from '../../image/Five-tamil.png';
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const infoData = [
@@ -32,7 +21,7 @@ const infoData = [
         id: 'nature',
         titleTn: 'இயற்கை வாழ்க்கை',
         titleEn: 'Nature Living',
-        img: natureImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/logoD2.webp",
         icon: <MdOutlineWbSunny />,
         tamilHighlight: 'இயற்கையே எமது முதல் ஆசான்',
         meaningTn: 'தமிழர் வாழ்வியல் ஐந்திணைகளை அடிப்படையாகக் கொண்டது. குறிஞ்சி, முல்லை, மருதம், நெய்தல், பாலை என நிலத்தை தரம் பிரித்து இயற்கையோடு இசைந்து வாழ்ந்தனர். நீர் மேலாண்மை மற்றும் பனை மரங்கள் நமது வாழ்வியலின் உயிர்நாடி.',
@@ -43,7 +32,7 @@ const infoData = [
         id: 'temple',
         titleTn: 'தமிழர் கட்டிடக்கலை',
         titleEn: 'Temple Architecture',
-        img: templeImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/logoD4.webp",
         icon: <MdAccountBalance />,
         tamilHighlight: 'கல்லிலே கவிதை வடித்த கலை',
         meaningTn: 'திராவிடக் கட்டிடக்கலையின் உச்சம் தமிழர்களின் கோயில்கள். கல்லிலே கவிதை வடித்தவர்கள் நம் முன்னோர். தஞ்சைப் பெரிய கோயில் முதல் மதுரை மீனாட்சி கோயில் வரை அறிவியல், வானியல் மற்றும் கலை ஆகியவற்றின் சங்கமம் இவை.',
@@ -54,7 +43,7 @@ const infoData = [
         id: 'statue',
         titleTn: 'கலை & நடனம்',
         titleEn: 'Arts & Dance',
-        img: statueImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/logoD1.webp",
         icon: <MdEmojiPeople />,
         tamilHighlight: 'ஆடல் வல்லான் அருளிய நடனம்',
         meaningTn: 'பரதநாட்டியம் மற்றும் நாட்டுப்புறக் கலைகள் நமது பண்பாட்டின் பிரதிபலிப்பு. ஐம்பொன் சிலைகள் தமிழர்களின் உலோகவியல் அறிவிற்குச் சான்று. ஆடல் வல்லான் நடராஜரின் வடிவம் பிரபஞ்ச இயக்கத்தின் குறியீடு.',
@@ -65,7 +54,7 @@ const infoData = [
         id: 'palm',
         titleTn: 'பழமையான அறிவு',
         titleEn: 'Ancient Wisdom',
-        img: palmImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/logoD3.webp",
         icon: <MdMenuBook />,
         tamilHighlight: 'அழியாத அறிவின் கருவூலம்',
         meaningTn: 'ஓலைச்சுவடிகள் தமிழரின் அறிவுக் கருவூலங்கள். மருத்துவம், வானியல், இலக்கியம் என அனைத்தும் ஏடுகளில் பாதுகாக்கப்பட்டன. 2000 ஆண்டுகளுக்கு முந்தைய தகவல்களை இன்றும் நாம் அறியச் செய்வது ஓலைச்சுவடிகளே.',
@@ -76,7 +65,7 @@ const infoData = [
         id: 'tamil',
         titleTn: 'மொழி பெருமை',
         titleEn: 'Tamil Pride',
-        img: tamilImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/logoD5.webp",
         icon: <MdTranslate />,
         tamilHighlight: 'கல் தோன்றி மண் தோன்றாக் காலத்து மொழி',
         meaningTn: 'உலகில் இன்று வழக்கில் உள்ள மிகப்பழமையான செம்மொழி தமிழ். "யாதும் ஊரே யாவரும் கேளிர்" என்ற உலகளாவிய தத்துவத்தை உலகுக்குத் தந்த மொழி. எழுத்து, ஆணிவேர் மற்றும் தமிழரின் அடையாளம் இதுவே.',
@@ -87,7 +76,7 @@ const infoData = [
         id: 'map',
         titleTn: 'தமிழர் அடையாளம்',
         titleEn: 'Tamil Identity',
-        img: mapImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/logoD6.webp",
         icon: <MdMap />,
         tamilHighlight: 'நிலமும் மக்களும் எமது பலம்',
         meaningTn: 'குமரிக்கண்டம் முதல் நவீன தமிழகம் வரை பரந்து விரிந்த நமது நிலம். கீழடி மற்றும் ஆதிச்சநல்லூர் அகழ்வாய்வுகள் தமிழரின் தொன்மையை உலகிற்குப் பறைசாற்றுகின்றன. கடல் கடந்து வாணிபம் செய்த வீரப் பரம்பரை இது.',
@@ -98,7 +87,7 @@ const infoData = [
         id: 'grammar',
         titleTn: 'ஐந்திலக்கணம்',
         titleEn: 'LITERARY WISDOM',
-        img: grammarImg,
+        img: "https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/Five-tamil.webp",
         icon: <MdHistoryEdu />,
         tamilHighlight: 'கலை, மொழி, பெருமை, பண்பாடு, மரபு',
         meaningTn: 'கலை, மொழி, பெருமை, பண்பாடு, மரபு — தமிழின் அடையாளத்தை உருவாக்கும் ஐந்து அம்சங்கள்; அழகு, அறிவு, வரலாறு, வாழ்க்கை முறைகள் அனைத்தையும் ஒன்றாக இணைக்கும் செம்மையான பாரம்பரியம்.',
@@ -215,7 +204,7 @@ const Logo = () => {
             <div className={styles.stickyLogoAside}>
                 <div className={styles.logoFrame} ref={logoRef}>
                     <img
-                        src={logoImg}
+                        src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/FINAL-LOGO.webp"
                         alt="Tamizhi"
                         className={styles.mainLogo}
                     />

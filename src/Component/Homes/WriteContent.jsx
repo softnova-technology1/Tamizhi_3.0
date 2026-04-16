@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import styles from '../../Stylesheet/ToWriteForm.module.css';
-import write from './../../image/writes.png';
 import { Form } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { emailCheck, nameCheck, numberCheck } from '../../utility/Validation';
@@ -293,7 +292,7 @@ const WriteContent = () => {
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <img
-              src={write}
+              src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/writes.webp"
               alt="writing scene"
               className={styles.image}
               loading="lazy"

@@ -1,5 +1,4 @@
 import styles from '../../Stylesheet/Footer.module.css';
-import logo from './../../image/FINAL-LOGO.png';
 import { Link } from 'react-router-dom';
 import {
   FaFacebookF,
@@ -10,8 +9,6 @@ import {
   FaPhoneAlt,
   FaLinkedin,
 } from 'react-icons/fa';
-import logo1 from './../../image/softnovaLogo.webp';
-
 const Footer = () => {
   return (
     <>
@@ -22,7 +19,7 @@ const Footer = () => {
         <div className={styles.content1}>
           <div className={styles.left}>
             <div className={styles.brandWrapper}>
-              <img src={logo} alt="Tamizhi" className={styles.logo} />
+              <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/FINAL-LOGO.webp"} alt="Tamizhi" className={styles.logo} />
               <div className={styles.brandText}>
                 <h1 className={styles.logoText}>
                   Tam<span className={styles.highlight}>i</span>
@@ -151,7 +148,7 @@ const Footer = () => {
             <div className={styles.logoText1}>
               <span>Tamizhi is a division of</span>
               <img
-                src={logo1}
+                src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/softnovaLogo.webp"
                 alt="softnova"
                 className={styles.imgsize}
                 width="80"

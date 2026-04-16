@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from '../../Stylesheet/ContactRedesign.module.css';
-import MapImage from '../../image/tamilnadu.png';
+// import MapImage from '../../image/tamilnadu.png';
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -122,7 +122,7 @@ const ContactUs = () => {
           </p>
         </div>
         <div className={styles.heroImageWrapper}>
-          <img src={MapImage} alt="Tamil Nadu Map" className={styles.mapImg} />
+          <img src={"https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi2-0/tamilnadu.webp"} alt="Tamil Nadu Map" className={styles.mapImg} />
         </div>
       </section>
 

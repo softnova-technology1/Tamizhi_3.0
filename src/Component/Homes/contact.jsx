@@ -11,7 +11,7 @@ import {
   FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa';
-import scrollVideo from '../../image/contactdove.mp4';
+// import scrollVideo from '../../image/contactdove.mp4';
 const ContactUs = () => {
   const [fieldValue, setFieldValue] = useState({
     firstName: '',
@@ -168,11 +168,10 @@ const ContactUs = () => {
               className={styles.contactImage}
               preload="none"
             >
-              <source src={scrollVideo} type="video/mp4" />
+              <source src="https://tamizhiv2.s3.eu-north-1.amazonaws.com/tamizhi-videos/dove.webm" type="video/mp4" />
             </video>
           </div>
         </div>
-
         <div className="col-md-5" id={styles.colstwo}>
           <div className={styles.formWrapper}>
             <h3 className={styles.formTitle}>
