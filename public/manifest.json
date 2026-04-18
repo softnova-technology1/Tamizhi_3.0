@@ -3,9 +3,8 @@
   "name": "Tamizhi | Explore Tamil History & Heritage",
   "icons": [
     {
-      "src": "/tha.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/tha.webp",
+      "type": "image/webp"
     }
   ],
   "start_url": "/",
